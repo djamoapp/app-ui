@@ -120,7 +120,7 @@ class _AppStepperState extends State<AppStepper> {
               Expanded(
                 child: StandardButtons.large(
                   prefixIcon: CupertinoIcons.chevron_back,
-                  text: "Précédent",
+                  label: "Précédent",
                   style: StandardButtonStyle.outlined,
                   onPressed: () {
                     if (widget.onPrevStep != null) {
@@ -154,7 +154,7 @@ class _AppStepperState extends State<AppStepper> {
               Expanded(
                 child: _currentStep == widget.steps.length - 1
                     ? StandardButtons.large(
-                        text: "Terminer",
+                        label: "Terminer",
                         onPressed: () {
                           _isCurrentStepValid =
                               widget.steps[_currentStep].validator?.call() ??
@@ -170,7 +170,7 @@ class _AppStepperState extends State<AppStepper> {
                       )
                     : StandardButtons.large(
                         suffixIcon: CupertinoIcons.chevron_forward,
-                        text: "Suivant",
+                        label: "Suivant",
                         onPressed: () {
                           /*if (widget.onNextStep == null) {
                       if (currentStep+1 <= widget.steps.length-1) {

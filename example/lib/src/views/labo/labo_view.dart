@@ -1,13 +1,18 @@
+import 'package:app_ui/core/constants/constants.dart';
 import 'package:app_ui/core_components/controls/transaction_type_switcher/transaction_type_switcher.dart';
 import 'package:app_ui/core_components/controls/transaction_type_switcher/transaction_type_switcher_item.dart';
+import 'package:app_ui/core_components/views/account/app_account_card.dart';
 import 'package:app_ui/core_components/views/tool_tip/tool_tip.dart';
 import 'package:app_ui/design_tokens/colors/interface_colors.dart';
+import 'package:app_ui/design_tokens/iconography/colored_icons.dart';
 import 'package:app_ui_example/src/utils/constants.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
-import 'package:app_ui/core_components/controls/text_fields/flat_text_field.dart';
 import 'package:app_ui/core_components/views/vault_target_tracker/vault_target_tracker.dart';
 import 'package:app_ui/design_tokens/iconography/app_icons.dart';
+import 'package:app_ui/core_components/controls/vault_cta/app_vault_creation_cta.dart';
 
 class LaboView extends StatelessWidget {
   LaboView({Key? key}) : super(key: key);
@@ -18,7 +23,7 @@ class LaboView extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Labo"),
       ),
-      body: Padding(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(24),
         child: Column(
           children: <Widget>[
@@ -46,13 +51,33 @@ class LaboView extends StatelessWidget {
               },
             ),
             Gap(50),
-            const AppFlatTextField(placeHolderText: "placeHolderText"),
+            AppAccountCard(
+              image: SvgPicture.asset(
+                AppColoredIcons.book,
+                package: kPackageName,
+              ),
+              trailing: Icon(AppIcons.add),
+              balance: 2000000,
+              title: "Principal",
+              formatter: kAmountFormatter,
+            ),
             Gap(50),
-            const AppToolTip(
+            AppVaultCreationCTA(
+              leading: SvgPicture.asset(
+                AppColoredIcons.book,
+                package: kPackageName,
+              ),
               title: "Créez-vous un coffre",
               subTitle: "Épargner simplement et rapidement",
-              image: kSgbciLogo,
-              isVaultToolTip: true,
+            ),
+            Gap(50),
+            AppToolTip(
+              title: "Créez-vous un coffre",
+              subTitle: "Épargner simplement et rapidement",
+              leading: SvgPicture.asset(
+                AppColoredIcons.car,
+                package: kPackageName,
+              ),
             ),
             Gap(50),
             AppVaultTargetTracker(

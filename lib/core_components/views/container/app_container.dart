@@ -2,8 +2,8 @@ import 'package:app_ui/core_components/views/section_label/section_label.dart';
 import 'package:app_ui/design_tokens/layout_and_spacing/spacing.dart';
 import 'package:flutter/material.dart';
 
-class AppWhiteBox extends StatelessWidget {
-  const AppWhiteBox(
+class AppContainer extends StatelessWidget {
+  const AppContainer(
       {Key? key,
       this.boxDecoration,
       this.padding,

@@ -20,7 +20,7 @@ class PopUsView extends StatelessWidget {
           Divider(),
           AppSpacing.m,
           PrimaryCTA(
-            text: "Show Pop-up with icon",
+            label: "Show Pop-up with icon",
             onPressed: () {
               showAppPopUp(
                 context,
@@ -33,7 +33,7 @@ class PopUsView extends StatelessWidget {
           Divider(),
           AppSpacing.m,
           PrimaryCTA(
-            text: "Show Pop-up with title",
+            label: "Show Pop-up with title",
             onPressed: () {
               showAppPopUp(
                 context,
@@ -46,7 +46,7 @@ class PopUsView extends StatelessWidget {
           Divider(),
           AppSpacing.m,
           PrimaryCTA(
-            text: "Show simple Pop-up",
+            label: "Show simple Pop-up",
             onPressed: () {
               showAppPopUp(
                 context,

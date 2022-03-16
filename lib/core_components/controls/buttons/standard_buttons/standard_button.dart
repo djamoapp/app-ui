@@ -7,7 +7,7 @@ import 'package:app_ui/design_tokens/layout_and_spacing/spacing.dart';
 class StandardButton extends StatelessWidget {
   const StandardButton({
     Key? key,
-    this.labelText = "Button",
+    this.label = "Button",
     this.enabled = true,
     this.prefixIcon,
     required this.style,
@@ -24,7 +24,7 @@ class StandardButton extends StatelessWidget {
   final StandardButtonStyle style;
   final IconData? prefixIcon;
   final IconData? suffixIcon;
-  final String labelText;
+  final String label;
   final bool enabled;
   final TextStyle textStyle;
   final double prefixIconSize;
@@ -75,7 +75,7 @@ class StandardButton extends StatelessWidget {
                         AppSpacing.xs,
                       ],
                       Text(
-                        labelText,
+                        label,
                         style: textStyle.copyWith(
                           color: style == StandardButtonStyle.filled
                               ? Colors.white

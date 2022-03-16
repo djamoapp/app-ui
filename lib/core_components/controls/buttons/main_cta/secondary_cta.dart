@@ -5,12 +5,12 @@ import 'package:app_ui/design_tokens/typography/typography.dart' as t;
 
 class SecondaryCTA extends StatelessWidget {
   const SecondaryCTA(
-      {Key? key, this.onPressed, this.text = "Button", this.isLoading = false})
+      {Key? key, this.onPressed, this.label = "Button", this.isLoading = false})
       : super(key: key);
 
   final Function()? onPressed;
 
-  final String text;
+  final String label;
 
   final bool isLoading;
 
@@ -29,7 +29,7 @@ class SecondaryCTA extends StatelessWidget {
                     height: 40,
                     child: Center(
                       child: Text(
-                        text,
+                        label,
                         style: t.AppTypography.title!.small!.copyWith(
                             color: InterfaceColors.action.defaultColor),
                       ),

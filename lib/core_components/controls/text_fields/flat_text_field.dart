@@ -1,8 +1,7 @@
+import 'package:app_ui/core_components/views/container/app_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:gap/gap.dart';
-import 'package:app_ui/core_components/views/white_box/app_white_box.dart';
-
 import '../../../design_tokens/colors/interface_colors.dart';
 import '../../../design_tokens/colors/neutral_colors.dart';
 import '../../../design_tokens/iconography/app_icons.dart';
@@ -69,7 +68,7 @@ class _AppFlatTextFieldState extends State<AppFlatTextField> {
 
   @override
   Widget build(BuildContext context) {
-    return AppWhiteBox(
+    return AppContainer(
       padding: const EdgeInsets.only(
         top: 20,
         bottom: 20,

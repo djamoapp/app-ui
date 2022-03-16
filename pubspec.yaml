@@ -47,31 +47,31 @@ flutter:
     - family: Futura PT
       fonts:
         - asset: assets/fonts/futura_pt/FuturaPT-Bold.ttf
-          weight: 500
+          weight: 800
 
         - asset: assets/fonts/futura_pt/FuturaPT-BoldOblique.ttf
-          weight: 500
+          weight: 800
           style: italic
 
         - asset: assets/fonts/futura_pt/FuturaPT-Book.ttf
-          weight: 200
+          weight: 400
 
         - asset: assets/fonts/futura_pt/FuturaPT-BookOblique.ttf
-          weight: 200
+          weight: 400
           style: italic
 
         - asset: assets/fonts/futura_pt/FuturaPT-DemiBold.ttf
-          weight: 300
+          weight: 600
 
         - asset: assets/fonts/futura_pt/FuturaPT-DemiBoldOblique.ttf
-          weight: 300
+          weight: 600
           style: italic
 
         - asset: assets/fonts/futura_pt/FuturaPT-ExtraBold.ttf
-          weight: 600
+          weight: 900
 
         - asset: assets/fonts/futura_pt/FuturaPT-ExtraBoldOblique.ttf
-          weight: 600
+          weight: 900
           style: italic
 
         - asset: assets/fonts/futura_pt/FuturaPT-Heavy.ttf
@@ -82,17 +82,17 @@ flutter:
           style: italic
 
         - asset: assets/fonts/futura_pt/FuturaPT-Light.ttf
-          weight: 100
+          weight: 300
 
         - asset: assets/fonts/futura_pt/FuturaPT-LightOblique.ttf
-          weight: 100
+          weight: 300
           style: italic
 
         - asset: assets/fonts/futura_pt/FuturaPT-Medium.ttf
-          weight: 400
+          weight: 500
 
         - asset: assets/fonts/futura_pt/FuturaPT-MediumOblique.ttf
-          weight: 400
+          weight: 500
           style: italic
 
     - family: Djamo Icons

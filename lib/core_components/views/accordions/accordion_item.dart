@@ -1,6 +1,6 @@
+import 'package:app_ui/core_components/views/container/app_container.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:app_ui/core_components/views/white_box/app_white_box.dart';
 import 'package:app_ui/design_tokens/colors/interface_colors.dart';
 import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
 import 'package:app_ui/design_tokens/iconography/app_icons.dart';
@@ -28,7 +28,7 @@ class AppAccordionItem<T> extends StatelessWidget {
           onTap!(value);
         }
       },
-      child: AppWhiteBox(
+      child: AppContainer(
         padding: const EdgeInsets.only(
           left: 16,
           right: 16,

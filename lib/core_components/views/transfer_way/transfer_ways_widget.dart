@@ -1,8 +1,8 @@
+import 'package:app_ui/core_components/views/container/app_container.dart';
 import 'package:app_ui/core_components/views/transfer_way/transfer_way.dart';
 import 'package:app_ui/design_tokens/layout_and_spacing/spacing.dart';
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
-import 'package:app_ui/core_components/views/white_box/app_white_box.dart';
 import 'horizontal_listview_dot_indicator.dart';
 
 class AppTransferWaysWidget<ID> extends StatelessWidget {
@@ -25,7 +25,7 @@ class AppTransferWaysWidget<ID> extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final ScrollController scrollController = ScrollController();
-    return AppWhiteBox(
+    return AppContainer(
       child: !isLoading
           ? Column(
               mainAxisSize: MainAxisSize.min,
