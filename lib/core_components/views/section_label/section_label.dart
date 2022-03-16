@@ -33,7 +33,7 @@ class AppSectionLabel extends StatelessWidget {
         if (onButtonTap != null)
           StandardButtons.medium(
             style: StandardButtonStyle.text,
-            text: buttonLabel,
+            label: buttonLabel,
             onPressed: onButtonTap,
           ),
       ],

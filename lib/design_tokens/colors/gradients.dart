@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 
-class Gradients {
+class AppGradients {
 
-  Gradients._();
+  AppGradients._();
 
   static const LinearGradient style1 = LinearGradient(
     begin: Alignment.topCenter,

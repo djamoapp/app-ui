@@ -7,13 +7,13 @@ class PrimaryCTA extends StatelessWidget {
   const PrimaryCTA(
       {Key? key,
       this.onPressed,
-      this.text = "Confirmer",
+      this.label = "Confirmer",
       this.isLoading = false})
       : super(key: key);
 
   final Function()? onPressed;
 
-  final String text;
+  final String label;
 
   final bool isLoading;
 
@@ -48,7 +48,7 @@ class PrimaryCTA extends StatelessWidget {
                   children: [
                     Expanded(
                         child: Text(
-                      text,
+                      label,
                       style: t.AppTypography.title!.small!
                           .copyWith(color: Colors.white),
                       textAlign: TextAlign.center,

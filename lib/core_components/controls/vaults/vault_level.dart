@@ -1,7 +1,7 @@
+import 'package:app_ui/core_components/views/container/app_container.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:intl/intl.dart';
-import 'package:app_ui/core_components/views/white_box/app_white_box.dart';
 import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
 import 'package:app_ui/design_tokens/layout_and_spacing/spacing.dart';
 import 'package:app_ui/design_tokens/typography/typography.dart';
@@ -36,7 +36,7 @@ class AppVaultLevel extends StatelessWidget {
   Widget build(BuildContext context) {
     double percentage = (balance * 100) / amount;
 
-    return AppWhiteBox(
+    return AppContainer(
       padding: const EdgeInsets.only(
         top: 8,
         bottom: 8,

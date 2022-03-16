@@ -1,6 +1,6 @@
+import 'package:app_ui/core_components/views/container/app_container.dart';
 import 'package:flutter/material.dart';
 import 'package:app_ui/core_components/views/accordions/accordion_item.dart';
-import 'package:app_ui/core_components/views/white_box/app_white_box.dart';
 import 'package:app_ui/design_tokens/layout_and_spacing/spacing.dart';
 import 'package:app_ui/design_tokens/typography/typography.dart' as t;
 
@@ -20,7 +20,7 @@ class AppAccordion extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppWhiteBox(
+    return AppContainer(
       padding: const EdgeInsets.only(
         left: 16,
         right: 16,

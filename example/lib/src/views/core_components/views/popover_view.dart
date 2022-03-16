@@ -28,7 +28,7 @@ class PopoverView extends StatelessWidget {
           Divider(),
           AppSpacing.m,
           PrimaryCTA(
-            text: "Show No Action Popover",
+            label: "Show No Action Popover",
             onPressed: () {
               showAppNoActionPopover(context);
             },

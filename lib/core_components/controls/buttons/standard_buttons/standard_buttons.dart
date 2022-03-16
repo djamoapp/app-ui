@@ -10,11 +10,11 @@ class StandardButtons {
           {StandardButtonStyle style = StandardButtonStyle.filled,
           IconData? prefixIcon,
           IconData? suffixIcon,
-          String text = "Button",
+          String label = "Button",
           bool enabled = true,
           Function()? onPressed}) =>
       StandardButton(
-        labelText: text,
+        label: label,
         enabled: enabled,
         prefixIcon: prefixIcon,
         style: style,
@@ -36,11 +36,11 @@ class StandardButtons {
           {StandardButtonStyle style = StandardButtonStyle.filled,
           IconData? prefixIcon,
           IconData? suffixIcon,
-          String text = "Button",
+          String label = "Button",
           bool enabled = true,
           Function()? onPressed}) =>
       StandardButton(
-        labelText: text,
+        label: label,
         enabled: enabled,
         prefixIcon: prefixIcon,
         style: style,
@@ -62,11 +62,11 @@ class StandardButtons {
           {StandardButtonStyle style = StandardButtonStyle.filled,
           IconData? prefixIcon,
           IconData? suffixIcon,
-          String text = "Button",
+          String label = "Button",
           bool enabled = true,
           Function()? onPressed}) =>
       StandardButton(
-        labelText: text,
+        label: label,
         enabled: enabled,
         prefixIcon: prefixIcon,
         style: style,

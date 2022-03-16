@@ -1,3 +1,4 @@
+import 'package:app_ui/core_components/views/container/app_container.dart';
 import 'package:app_ui/core_components/views/tags/tag.dart';
 import 'package:app_ui/design_tokens/colors/interface_colors.dart';
 import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
@@ -8,7 +9,6 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:intl/intl.dart';
 import 'package:app_ui/core_components/views/system_messages/inline/basic_inline.dart';
-import 'package:app_ui/core_components/views/white_box/app_white_box.dart';
 import 'package:app_ui/design_tokens/typography/typography.dart' as t;
 
 class AppTransactionPreview extends StatelessWidget {
@@ -49,7 +49,7 @@ class AppTransactionPreview extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AppWhiteBox(
+    return AppContainer(
       borderRadius: BorderRadius.only(
         topRight: Radius.circular(isFirst ? 16 : 0),
         topLeft: Radius.circular(isFirst ? 16 : 0),

@@ -9,7 +9,7 @@ class AppTypography {
     large: const AppTextStyle(
       fontSize: 16,
       lineHeight: 20 / 16,
-      fontWeight: FontWeight.w100,
+      fontWeight: FontWeight.w300,
     ),
     bMedium200: const AppTextStyle(
       fontSize: 14,
@@ -24,27 +24,27 @@ class AppTypography {
     medium: const AppTextStyle(
       fontSize: 14,
       lineHeight: 18 / 14,
-      fontWeight: FontWeight.w100,
+      fontWeight: FontWeight.w300,
     ),
     bSmall: const AppTextStyle(
       fontSize: 12.5,
       lineHeight: 16 / 12.5,
-      fontWeight: FontWeight.w400,
+      fontWeight: FontWeight.w500,
     ),
     small: const AppTextStyle(
       fontSize: 12.5,
       lineHeight: 16 / 12.5,
-      fontWeight: FontWeight.w100,
+      fontWeight: FontWeight.w300,
     ),
     bTiny: const AppTextStyle(
       fontSize: 10.5,
-      lineHeight: 16 / 10.5,
-      fontWeight: FontWeight.w400,
+      lineHeight: 14 / 10.5,
+      fontWeight: FontWeight.w500,
     ),
     tiny: const AppTextStyle(
       fontSize: 10.5,
-      lineHeight: 16 / 10.5,
-      fontWeight: FontWeight.w100,
+      lineHeight: 14 / 10.5,
+      fontWeight: FontWeight.w300,
     ),
   );
 
@@ -52,27 +52,32 @@ class AppTypography {
     large: const AppTextStyle(
       fontSize: 18,
       lineHeight: 22.5 / 18,
-      fontWeight: FontWeight.w200,
+      fontWeight: FontWeight.w400,
     ),
     bMedium200: const AppTextStyle(
       fontSize: 16,
       lineHeight: 20 / 16,
-      fontWeight: FontWeight.w400,
+      fontWeight: FontWeight.w700,
     ),
     bMedium100: const AppTextStyle(
       fontSize: 16,
       lineHeight: 20 / 16,
-      fontWeight: FontWeight.w200,
+      fontWeight: FontWeight.w500,
+    ),
+    medium: const AppTextStyle(
+      fontSize: 16,
+      lineHeight: 20 / 16,
+      fontWeight: FontWeight.w400,
     ),
     bSmall: const AppTextStyle(
       fontSize: 14,
       lineHeight: 18 / 14,
-      fontWeight: FontWeight.w400,
+      fontWeight: FontWeight.w500,
     ),
     small: const AppTextStyle(
       fontSize: 14,
       lineHeight: 18 / 14,
-      fontWeight: FontWeight.w200,
+      fontWeight: FontWeight.w400,
     ),
   );
 
@@ -80,12 +85,12 @@ class AppTypography {
     large: const AppTextStyle(
       fontSize: 22.5,
       lineHeight: 29 / 22.5,
-      fontWeight: FontWeight.w400,
+      fontWeight: FontWeight.w500,
     ),
     bMedium200: const AppTextStyle(
       fontSize: 20,
       lineHeight: 26 / 20,
-      fontWeight: FontWeight.bold,
+      fontWeight: FontWeight.w700,
     ),
     bMedium100: const AppTextStyle(
       fontSize: 20,
@@ -100,7 +105,7 @@ class AppTypography {
     small: const AppTextStyle(
       fontSize: 18,
       lineHeight: 22.5 / 18,
-      fontWeight: FontWeight.w400,
+      fontWeight: FontWeight.w500,
     ),
   );
 
@@ -113,12 +118,12 @@ class AppTypography {
     bLarge: const AppTextStyle(
       fontSize: 29,
       lineHeight: 37 / 29,
-      fontWeight: FontWeight.bold,
+      fontWeight: FontWeight.w700,
     ),
     medium: const AppTextStyle(
       fontSize: 26,
       lineHeight: 34 / 26,
-      fontWeight: FontWeight.bold,
+      fontWeight: FontWeight.w700,
     ),
   );
 }

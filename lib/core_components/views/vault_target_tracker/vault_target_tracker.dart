@@ -1,8 +1,8 @@
+import 'package:app_ui/core_components/views/container/app_container.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:intl/intl.dart';
 import 'package:app_ui/core_components/views/title_label/title_with_label.dart';
-import 'package:app_ui/core_components/views/white_box/app_white_box.dart';
 import 'package:app_ui/design_tokens/iconography/app_icons.dart';
 
 import '../../../design_tokens/colors/interface_colors.dart';
@@ -32,7 +32,7 @@ class AppVaultTargetTracker extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double percentage = (balance * 100) / limitAmount;
-    return AppWhiteBox(
+    return AppContainer(
       child: Column(
         children: [
           AppTitleWithLabel(

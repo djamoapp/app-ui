@@ -73,7 +73,7 @@ void showAppPopUp(BuildContext context,
                 Expanded(
                   child: StandardButtons.large(
                     style: StandardButtonStyle.outlined,
-                    text: "Non",
+                    label: "Non",
                     onPressed: () {
                       Navigator.of(context).pop();
                       if (onNo != null) {
@@ -85,7 +85,7 @@ void showAppPopUp(BuildContext context,
                 const Gap(24),
                 Expanded(
                   child: StandardButtons.large(
-                    text: "Oui",
+                    label: "Oui",
                     onPressed: () {
                       if (onYes != null) {
                         onYes(context);
