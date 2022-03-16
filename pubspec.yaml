@@ -1,0 +1,104 @@
+name: app_ui
+description: Djamo Design System Plugin
+version: 0.0.1
+homepage: "djamo.ci"
+
+environment:
+  sdk: ">=2.12.0 <3.0.0"
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  gap:
+  shimmer:
+  expansion_tile_card:
+  country_calling_code_picker:
+  mask_text_input_formatter:
+  cached_network_image:
+  charts_flutter:
+  percent_indicator:
+  dotted_line:
+  custom_sliding_segmented_control:
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter.
+flutter:
+
+  assets:
+    # Images
+    - assets/images/
+
+    # Icons
+    - assets/icons/colored/
+    - assets/icons/3d/
+
+    # GIF
+    - assets/gif/
+
+  fonts:
+    - family: Futura PT
+      fonts:
+        - asset: assets/fonts/futura_pt/FuturaPT-Bold.ttf
+          weight: 500
+
+        - asset: assets/fonts/futura_pt/FuturaPT-BoldOblique.ttf
+          weight: 500
+          style: italic
+
+        - asset: assets/fonts/futura_pt/FuturaPT-Book.ttf
+          weight: 200
+
+        - asset: assets/fonts/futura_pt/FuturaPT-BookOblique.ttf
+          weight: 200
+          style: italic
+
+        - asset: assets/fonts/futura_pt/FuturaPT-DemiBold.ttf
+          weight: 300
+
+        - asset: assets/fonts/futura_pt/FuturaPT-DemiBoldOblique.ttf
+          weight: 300
+          style: italic
+
+        - asset: assets/fonts/futura_pt/FuturaPT-ExtraBold.ttf
+          weight: 600
+
+        - asset: assets/fonts/futura_pt/FuturaPT-ExtraBoldOblique.ttf
+          weight: 600
+          style: italic
+
+        - asset: assets/fonts/futura_pt/FuturaPT-Heavy.ttf
+          weight: 700
+
+        - asset: assets/fonts/futura_pt/FuturaPT-HeavyOblique.ttf
+          weight: 700
+          style: italic
+
+        - asset: assets/fonts/futura_pt/FuturaPT-Light.ttf
+          weight: 100
+
+        - asset: assets/fonts/futura_pt/FuturaPT-LightOblique.ttf
+          weight: 100
+          style: italic
+
+        - asset: assets/fonts/futura_pt/FuturaPT-Medium.ttf
+          weight: 400
+
+        - asset: assets/fonts/futura_pt/FuturaPT-MediumOblique.ttf
+          weight: 400
+          style: italic
+
+    - family: Djamo Icons
+      fonts:
+        - asset: assets/fonts/app_icons/Djamo-icons-font.ttf
+
+    - family: OCRAStd
+      fonts:
+        - asset: assets/fonts/ocrastd/OCRAStd.otf

@@ -1,0 +1,256 @@
+import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
+import 'package:app_ui/design_tokens/layout_and_spacing/spacing.dart';
+import 'package:app_ui_example/src/controllers/design_tokens/colors_controller.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+class ColorsView extends GetView<ColorsController> {
+  const ColorsView({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: const Text(
+            "Colors",
+            style: TextStyle(
+              color: NeutralColors.neutral900,
+              fontWeight: FontWeight.bold,
+              fontSize: 30,
+            ),
+          ),
+        ),
+        body: ListView(
+          padding: const EdgeInsets.all(20),
+          children: [
+            const Text(
+              "Brand Colors",
+              style: TextStyle(
+                  color: NeutralColors.neutral900,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 30),
+            ),
+            AppSpacing.m,
+            for (int i = 0; i < controller.brandColors.length; i++) ...[
+              Text(controller.brandColors[i]["name"]),
+              const Divider(),
+              SizedBox(
+                height: 150,
+                child: ListView(
+                  shrinkWrap: true,
+                  scrollDirection: Axis.horizontal,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text("Primary"),
+                        AppSpacing.s,
+                        _brandColorWidget(
+                            controller.brandColors[i]["color"].primary!),
+                      ],
+                    ),
+                    AppSpacing.m,
+                    if (controller.brandColors[i]["color"].light != null)
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text("Light"),
+                          AppSpacing.s,
+                          _brandColorWidget(
+                              controller.brandColors[i]["color"].light!),
+                        ],
+                      ),
+                    if (controller.brandColors[i]["color"].light == null) ...[
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text("Light 200"),
+                          AppSpacing.s,
+                          _brandColorWidget(
+                              controller.brandColors[i]["color"].light200!),
+                        ],
+                      ),
+                      AppSpacing.m,
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          const Text("Light 100"),
+                          AppSpacing.s,
+                          _brandColorWidget(
+                              controller.brandColors[i]["color"].light100!),
+                        ],
+                      ),
+                    ],
+                    AppSpacing.m,
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text("Dark"),
+                        AppSpacing.s,
+                        _brandColorWidget(
+                            controller.brandColors[i]["color"].dark!),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ],
+            AppSpacing.xl,
+            const Text(
+              "Neutral Colors",
+              style: TextStyle(
+                  color: NeutralColors.neutral900,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 30),
+            ),
+            AppSpacing.m,
+            SizedBox(
+              height: 150,
+              child: ListView(
+                shrinkWrap: true,
+                scrollDirection: Axis.horizontal,
+                children: [
+                  for (int i = 0; i < 9; i++) ...[
+                    Column(
+                      children: [
+                        Text("${900 - (i * 100)}"),
+                        AppSpacing.s,
+                        _neutralColorWidget(
+                            NeutralColors.neutral[900 - (i * 100)] as Color),
+                      ],
+                    ),
+                    AppSpacing.m,
+                  ]
+                ],
+              ),
+            ),
+            AppSpacing.xl,
+            const Text(
+              "Interface Colors",
+              style: TextStyle(
+                  color: NeutralColors.neutral900,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 30),
+            ),
+            AppSpacing.m,
+            Row(
+              children: [
+                const Text("Default"),
+                AppSpacing.m,
+                Expanded(
+                  child: SizedBox(
+                    height: 150,
+                    child: ListView(
+                      shrinkWrap: true,
+                      scrollDirection: Axis.horizontal,
+                      children: [
+                        for (int i = 0;
+                            i < controller.interfaceColors.length;
+                            i++) ...[
+                          Column(
+                            children: [
+                              Text(controller.interfaceColors[i]["name"]),
+                              AppSpacing.s,
+                              _neutralColorWidget(controller
+                                  .interfaceColors[i]["color"].defaultColor),
+                            ],
+                          ),
+                          AppSpacing.m,
+                        ]
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                const Text("Disabled"),
+                AppSpacing.m,
+                Expanded(
+                  child: SizedBox(
+                    height: 150,
+                    child: ListView(
+                      shrinkWrap: true,
+                      scrollDirection: Axis.horizontal,
+                      children: [
+                        for (int i = 0;
+                            i < controller.interfaceColors.length;
+                            i++) ...[
+                          Column(
+                            children: [
+                              Text(controller.interfaceColors[i]["name"]),
+                              AppSpacing.s,
+                              _neutralColorWidget(controller
+                                  .interfaceColors[i]["color"].disabledColor),
+                            ],
+                          ),
+                          AppSpacing.m,
+                        ]
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Row(
+              children: [
+                const Text("Background"),
+                AppSpacing.m,
+                Expanded(
+                  child: SizedBox(
+                    height: 150,
+                    child: ListView(
+                      shrinkWrap: true,
+                      scrollDirection: Axis.horizontal,
+                      children: [
+                        for (int i = 0;
+                            i < controller.interfaceColors.length;
+                            i++) ...[
+                          Column(
+                            children: [
+                              Text(controller.interfaceColors[i]["name"]),
+                              AppSpacing.s,
+                              _neutralColorWidget(controller
+                                  .interfaceColors[i]["color"].backGroundColor),
+                            ],
+                          ),
+                          AppSpacing.m,
+                        ]
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ));
+  }
+
+  Widget _brandColorWidget(Color color) {
+    return Container(
+      height: 100,
+      width: 100,
+      decoration: BoxDecoration(
+        color: color,
+        borderRadius: const BorderRadius.only(
+          topLeft: Radius.circular(8),
+          topRight: Radius.circular(24),
+          bottomRight: Radius.circular(24),
+          bottomLeft: Radius.circular(8),
+        ),
+      ),
+    );
+  }
+
+  Widget _neutralColorWidget(Color color) {
+    return Container(
+      height: 100,
+      width: 100,
+      decoration: BoxDecoration(
+        color: color,
+        shape: BoxShape.circle,
+      ),
+    );
+  }
+}
