@@ -2,7 +2,7 @@ import 'package:app_ui/core/enums/standard_button_style.dart';
 import 'package:flutter/material.dart';
 import 'package:app_ui/core_components/views/loader/loader.dart';
 import 'package:app_ui/design_tokens/colors/interface_colors.dart';
-import 'package:app_ui/design_tokens/layout_and_spacing/spacing.dart';
+import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
 
 class StandardButton extends StatelessWidget {
   const StandardButton({
@@ -74,7 +74,7 @@ class StandardButton extends StatelessWidget {
                                   ? InterfaceColors.action.defaultColor
                                   : InterfaceColors.action.disabledColor,
                         ),
-                        AppSpacing.xs,
+                        AppGaps.xs,
                       ],
                       Text(
                         label,
@@ -87,7 +87,7 @@ class StandardButton extends StatelessWidget {
                         ),
                       ),
                       if (suffixIcon != null) ...[
-                        AppSpacing.xs,
+                        AppGaps.xs,
                         Icon(
                           suffixIcon,
                           size: suffixIconSize,

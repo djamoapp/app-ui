@@ -1,31 +1,29 @@
 import 'dart:math';
-
 import 'package:charts_flutter/flutter.dart' as charts;
 import 'package:app_ui/core_components/views/tags/tag.dart';
 import 'package:app_ui/design_tokens/colors/brand_colors.dart';
 import 'package:app_ui/design_tokens/colors/interface_colors.dart';
 import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
 import 'package:app_ui/design_tokens/iconography/app_icons.dart';
-import 'package:app_ui/design_tokens/layout_and_spacing/spacing.dart';
+import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:app_ui/design_tokens/typography/typography.dart' as t;
 
 class AppAnalyticsWidget extends StatefulWidget {
-  const AppAnalyticsWidget(this.data,
-      {Key? key,
-      this.dataDomainKey = "day",
-      this.dataMeasureFnKey = "sales",
-      this.momoTotalAmount = 20000,
-      this.paymentsTotalAmount = 14000,
-      this.expensesTotalAmount = 60000,
-      this.initialMonth,
-      this.monthLabels,
-      this.onCurrentMonthChanged,
-      required this.formatter})
-      : super(key: key);
+  const AppAnalyticsWidget(
+    this.data, {
+    Key? key,
+    this.dataDomainKey = "day",
+    this.dataMeasureFnKey = "sales",
+    this.momoTotalAmount = 20000,
+    this.paymentsTotalAmount = 14000,
+    this.expensesTotalAmount = 60000,
+    this.initialMonth,
+    this.monthLabels,
+    this.onCurrentMonthChanged,
+  }) : super(key: key);
 
   final List<List<Map<String, dynamic>>> data;
 
@@ -42,8 +40,6 @@ class AppAnalyticsWidget extends StatefulWidget {
   final double expensesTotalAmount;
 
   final int? initialMonth;
-
-  final NumberFormat formatter;
 
   final void Function(int currentMonth)? onCurrentMonthChanged;
 
@@ -75,8 +71,6 @@ class AppAnalyticsWidget extends StatefulWidget {
         "November",
         "December"
       ],
-      formatter: NumberFormat.currency(
-          locale: "de_DE", decimalDigits: 0, symbol: "F CFA"),
     );
   }
 
@@ -148,7 +142,7 @@ class _AppAnalyticsWidgetState extends State<AppAnalyticsWidget> {
                   ),
                 ),
               ),
-              AppSpacing.s,
+              AppGaps.s,
               Expanded(
                 child: Container(
                   height: 32,
@@ -168,7 +162,7 @@ class _AppAnalyticsWidgetState extends State<AppAnalyticsWidget> {
                   ),
                 ),
               ),
-              AppSpacing.s,
+              AppGaps.s,
               GestureDetector(
                 onTap: () {
                   if (_currentMonth < widget.data.length - 1) {
@@ -196,7 +190,7 @@ class _AppAnalyticsWidgetState extends State<AppAnalyticsWidget> {
                   ),
                 ),
               ),
-              AppSpacing.s,
+              AppGaps.s,
               GestureDetector(
                 onTap: () {
                   setState(() {
@@ -226,9 +220,9 @@ class _AppAnalyticsWidgetState extends State<AppAnalyticsWidget> {
               ),
             ],
           ),
-          AppSpacing.m,
+          AppGaps.m,
           Text(
-            "${widget.formatter.format(widget.expensesTotalAmount)}F CFA",
+            "${widget.expensesTotalAmount}F CFA",
             style: t.AppTypography.headLine!.bLarge,
           ),
           Text(
@@ -279,7 +273,7 @@ class _AppAnalyticsWidgetState extends State<AppAnalyticsWidget> {
             ),
           ),
           if (_showGauges) ...[
-            AppSpacing.m,
+            AppGaps.m,
             Row(
               children: [
                 Expanded(
@@ -303,9 +297,9 @@ class _AppAnalyticsWidgetState extends State<AppAnalyticsWidget> {
                                 backGroundColor:
                                     BrandColors.yellow.light100 as Color,
                               ),
-                              AppSpacing.xs,
+                              AppGaps.xs,
                               Text(
-                                  "${widget.formatter.format(widget.momoTotalAmount)}F CFA")
+                                  "${widget.momoTotalAmount}F CFA")
                             ],
                           ),
                         ),
@@ -328,7 +322,7 @@ class _AppAnalyticsWidgetState extends State<AppAnalyticsWidget> {
                     ),
                   ),
                 ),
-                AppSpacing.s,
+                AppGaps.s,
                 Expanded(
                   child: Container(
                     padding: const EdgeInsets.all(8),
@@ -349,9 +343,9 @@ class _AppAnalyticsWidgetState extends State<AppAnalyticsWidget> {
                                 backGroundColor:
                                     BrandColors.pink.light as Color,
                               ),
-                              AppSpacing.xs,
+                              AppGaps.xs,
                               Text(
-                                  "${widget.formatter.format(widget.paymentsTotalAmount)}F CFA")
+                                  "${widget.paymentsTotalAmount}F CFA")
                             ],
                           ),
                         ),

@@ -1,20 +1,20 @@
 import 'package:app_ui/design_tokens/colors/interface_colors.dart';
 import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
-import 'package:app_ui/design_tokens/layout_and_spacing/spacing.dart';
+import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:app_ui/design_tokens/typography/typography.dart' as t;
 
 class AppAccountWidget<ID> extends StatelessWidget {
   const AppAccountWidget(
       {Key? key,
       this.selected = true,
-      /*this.onTap, */ required this.label,
+      /*this.onTap, */ 
+      required this.label,
       this.icon,
       required this.balance,
       this.id,
       this.imagePath,
-      required this.formatter})
+    })
       : super(key: key);
 
   final ID? id;
@@ -27,9 +27,7 @@ class AppAccountWidget<ID> extends StatelessWidget {
 
   final bool selected;
 
-  final double balance;
-
-  final NumberFormat formatter;
+  final String balance;
 
   //final Function(bool value)? onTap;
 
@@ -60,7 +58,7 @@ class AppAccountWidget<ID> extends StatelessWidget {
                 children: [
                   Expanded(child: Container()),
                   Text(
-                    "${formatter.format(balance)}F",
+                    balance,
                     style: t.AppTypography.label!.bMedium200,
                   ),
                   Text(
@@ -68,7 +66,7 @@ class AppAccountWidget<ID> extends StatelessWidget {
                     style: t.AppTypography.body!.bSmall!
                         .copyWith(color: NeutralColors.disabledTextColor),
                   ),
-                  AppSpacing.s,
+                  AppGaps.s,
                   AnimatedContainer(
                     duration: const Duration(milliseconds: 300),
                     height: 4,

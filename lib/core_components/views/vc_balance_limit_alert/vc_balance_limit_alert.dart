@@ -1,24 +1,23 @@
 import 'package:app_ui/core_components/views/container/app_container.dart';
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 import 'package:app_ui/core_components/controls/buttons/main_cta/primary_cta.dart';
 import 'package:app_ui/design_tokens/colors/interface_colors.dart';
 import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
-import 'package:app_ui/design_tokens/layout_and_spacing/spacing.dart';
+import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
 import 'package:app_ui/design_tokens/typography/typography.dart' as t;
 
 class AppVCBalanceLimitAlert extends StatelessWidget {
-  const AppVCBalanceLimitAlert(
-      {Key? key,
-      this.title,
-      this.subTitle,
-      this.buttonLabel,
-      this.value = 100000,
-      this.maxValue = 2000000,
-      this.limit = 200000,
-      this.onButtonTap,
-      required this.formatter})
-      : super(key: key);
+  const AppVCBalanceLimitAlert({
+    Key? key,
+    this.title,
+    this.subTitle,
+    this.buttonLabel,
+    this.onButtonTap,
+    required this.level,
+    required this.balance,
+    required this.maxAmount,
+    required this.cursorPosition,
+  }) : super(key: key);
 
   final String? title;
 
@@ -26,22 +25,18 @@ class AppVCBalanceLimitAlert extends StatelessWidget {
 
   final String? buttonLabel;
 
-  final double value;
+  final double level;
 
-  final double maxValue;
+  final double cursorPosition;
 
-  final double limit;
+  final String balance;
 
-  final Function()? onButtonTap;
+  final String maxAmount;
 
-  final NumberFormat formatter;
+  final void Function()? onButtonTap;
 
   @override
   Widget build(BuildContext context) {
-    double percentage = value / maxValue;
-    double percentageToLimit = value / limit;
-    double percentageLimitToMaxValue = limit / maxValue;
-
     return AppContainer(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -56,7 +51,7 @@ class AppVCBalanceLimitAlert extends StatelessWidget {
             style: t.AppTypography.body!.bMedium100!
                 .copyWith(color: NeutralColors.disabledTextColor),
           ),
-          AppSpacing.m,
+          AppGaps.m,
           LayoutBuilder(
             builder: (ctx, constraint) => Stack(
               alignment: Alignment.center,
@@ -73,15 +68,15 @@ class AppVCBalanceLimitAlert extends StatelessWidget {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(6),
                     child: LinearProgressIndicator(
-                      value: percentage,
+                      value: level,
                       backgroundColor: Colors.transparent,
                       valueColor: AlwaysStoppedAnimation<Color>(
-                          percentageToLimit <= 0.5
-                              ? InterfaceColors.success.defaultColor!
-                              : percentageToLimit > 0.5 &&
-                                      percentageToLimit <= 0.75
-                                  ? InterfaceColors.alert.defaultColor!
-                                  : InterfaceColors.error.defaultColor!),
+                        level <= 0.5
+                            ? InterfaceColors.success.defaultColor!
+                            : level > 0.5 && level <= 0.75
+                                ? InterfaceColors.alert.defaultColor!
+                                : InterfaceColors.error.defaultColor!,
+                      ),
                     ),
                   ),
                 ),
@@ -89,7 +84,7 @@ class AppVCBalanceLimitAlert extends StatelessWidget {
                   alignment: Alignment.centerLeft,
                   child: Container(
                     margin: EdgeInsets.only(
-                      left: constraint.maxWidth * percentageLimitToMaxValue,
+                      left: constraint.maxWidth * cursorPosition,
                     ),
                     height: 16,
                     width: 2,
@@ -101,30 +96,30 @@ class AppVCBalanceLimitAlert extends StatelessWidget {
               ],
             ),
           ),
-          AppSpacing.xs,
+          AppGaps.xs,
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
-                formatter.format(value),
+                balance,
                 style: t.AppTypography.body!.bMedium100!.copyWith(
-                  color: percentageToLimit <= 0.5
-                      ? InterfaceColors.success.defaultColor
-                      : percentageToLimit > 0.5 && percentageToLimit <= 0.75
-                          ? InterfaceColors.alert.defaultColor
-                          : InterfaceColors.error.defaultColor,
+                  color: level <= 0.5
+                      ? InterfaceColors.success.defaultColor!
+                      : level > 0.5 && level <= 0.75
+                          ? InterfaceColors.alert.defaultColor!
+                          : InterfaceColors.error.defaultColor!,
                 ),
               ),
               Text(
-                formatter.format(maxValue),
+                maxAmount,
                 style: t.AppTypography.body!.bMedium100!
                     .copyWith(color: Colors.black),
               )
             ],
           ),
-          AppSpacing.xl,
+          AppGaps.xl,
           PrimaryCTA(
-            label: "Commander une carte physique",
+            label: buttonLabel ?? "Commander une carte physique",
             onPressed: onButtonTap,
           ),
         ],

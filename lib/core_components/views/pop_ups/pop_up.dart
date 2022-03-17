@@ -2,7 +2,7 @@ import 'package:app_ui/core/enums/standard_button_style.dart';
 import 'package:app_ui/core_components/controls/buttons/standard_buttons/standard_buttons.dart';
 import 'package:app_ui/design_tokens/colors/interface_colors.dart';
 import 'package:app_ui/design_tokens/iconography/app_icons.dart';
-import 'package:app_ui/design_tokens/layout_and_spacing/spacing.dart';
+import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
 import 'package:app_ui/design_tokens/typography/typography.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -54,7 +54,7 @@ void showAppPopUp(BuildContext context,
                 color: InterfaceColors.action.defaultColor,
                 size: 32.37,
               ),
-              if (title != null) AppSpacing.m,
+              if (title != null) AppGaps.m,
             ],
             if (title != null)
               Text(
@@ -67,7 +67,7 @@ void showAppPopUp(BuildContext context,
               textAlign: TextAlign.center,
               style: AppTypography.body!.bMedium100,
             ),
-            AppSpacing.l,
+            AppGaps.l,
             Row(
               children: [
                 Expanded(

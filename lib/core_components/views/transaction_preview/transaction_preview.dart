@@ -3,49 +3,48 @@ import 'package:app_ui/core_components/views/tags/tag.dart';
 import 'package:app_ui/design_tokens/colors/interface_colors.dart';
 import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
 import 'package:app_ui/design_tokens/iconography/app_icons.dart';
-import 'package:app_ui/design_tokens/layout_and_spacing/spacing.dart';
+import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:intl/intl.dart';
 import 'package:app_ui/core_components/views/system_messages/inline/basic_inline.dart';
 import 'package:app_ui/design_tokens/typography/typography.dart' as t;
 
 class AppTransactionPreview extends StatelessWidget {
-  const AppTransactionPreview(
-      {Key? key,
-      required this.title,
-      required this.date,
-      required this.leading,
-      required this.tag,
-      required this.hasGif,
-      this.gifMessage,
-      required this.amount,
-      this.onTap,
-      this.titleColor = NeutralColors.neutral900,
-      required this.amountColor,
-      this.onGifTap,
-      this.errorMessage,
-      this.isFirst = false,
-      this.isLast = false,
-      required this.formatter})
-      : super(key: key);
+  const AppTransactionPreview({
+    Key? key,
+    required this.title,
+    required this.date,
+    required this.leading,
+    required this.tag,
+    required this.hasGif,
+    this.gifMessage,
+    required this.amount,
+    this.onTap,
+    this.titleColor = NeutralColors.neutral900,
+    required this.amountColor,
+    this.onGifTap,
+    this.errorMessage,
+    this.isFirst = false,
+    this.isLast = false,
+    required this.time,
+  }) : super(key: key);
 
   final String title;
-  final DateTime date;
+  final String date;
+  final String time;
   final Widget leading;
   final AppTag tag;
   final bool hasGif;
   final String? gifMessage;
-  final double amount;
-  final Function()? onTap;
+  final String amount;
+  final void Function()? onTap;
   final String? errorMessage;
   final Color titleColor;
   final Color amountColor;
-  final Function()? onGifTap;
+  final void Function()? onGifTap;
   final bool isFirst;
   final bool isLast;
-  final NumberFormat formatter;
 
   @override
   Widget build(BuildContext context) {
@@ -61,11 +60,11 @@ class AppTransactionPreview extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            DateFormat("dd/MM/y").format(date),
+            date,
             style: t.AppTypography.label!.small!
                 .copyWith(color: NeutralColors.disabledTextColor),
           ),
-          AppSpacing.m,
+          AppGaps.m,
           Row(
             children: [
               leading,
@@ -80,16 +79,16 @@ class AppTransactionPreview extends StatelessWidget {
                       style: t.AppTypography.label!.small!
                           .copyWith(color: titleColor),
                     ),
-                    AppSpacing.xs,
+                    AppGaps.xs,
                     tag,
-                    AppSpacing.xs,
+                    AppGaps.xs,
                     Text(
-                      DateFormat("HH:mm").format(date),
+                      time,
                       style: t.AppTypography.body!.small!
                           .copyWith(color: NeutralColors.disabledTextColor),
                     ),
                     if (errorMessage != null) ...[
-                      AppSpacing.xs,
+                      AppGaps.xs,
                       DjamoBasicInline(
                         iconData: AppIcons.alert,
                         textColor: InterfaceColors.error.defaultColor!,
@@ -101,10 +100,10 @@ class AppTransactionPreview extends StatelessWidget {
                   ],
                 ),
               ),
-              Text("${formatter.format(amount)}FCFA",
+              Text(amount,
                   style: t.AppTypography.label!.small!
                       .copyWith(color: amountColor)),
-              AppSpacing.xs,
+              AppGaps.xs,
               Container(
                 height: 20,
                 width: 20,
@@ -123,7 +122,7 @@ class AppTransactionPreview extends StatelessWidget {
             ],
           ),
           if (hasGif) ...[
-            AppSpacing.s,
+            AppGaps.s,
             GestureDetector(
               onTap: onGifTap,
               child: Container(
@@ -154,7 +153,7 @@ class AppTransactionPreview extends StatelessWidget {
                             size: 10.67,
                             color: NeutralColors.disabledTextColor,
                           ),
-                          AppSpacing.xs,
+                          AppGaps.xs,
                           Text(
                             "GIF",
                             style: t.AppTypography.body!.bTiny!.copyWith(
@@ -168,7 +167,7 @@ class AppTransactionPreview extends StatelessWidget {
               ),
             ),
           ],
-          AppSpacing.m,
+          AppGaps.m,
           const Divider(
             thickness: 1,
             color: Color(0xffE0E0E0),

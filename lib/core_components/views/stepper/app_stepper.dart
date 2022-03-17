@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:app_ui/core_components/controls/buttons/standard_buttons/standard_buttons.dart';
 import 'package:app_ui/design_tokens/colors/interface_colors.dart';
 import 'package:app_ui/design_tokens/iconography/app_icons.dart';
-import 'package:app_ui/design_tokens/layout_and_spacing/spacing.dart';
+import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
 
 import 'app_step.dart';
 
@@ -98,7 +98,7 @@ class _AppStepperState extends State<AppStepper> {
             }
           }),
         ),
-        AppSpacing.l,
+        AppGaps.l,
         Expanded(
           child: PageView(
             controller: _pageController,
@@ -107,7 +107,7 @@ class _AppStepperState extends State<AppStepper> {
                 widget.steps.length, (index) => widget.steps[index].content),
           ),
         ),
-        AppSpacing.l,
+        AppGaps.l,
         if (widget.controlsBuilder != null)
           widget.controlsBuilder!.call(
             context,
@@ -150,7 +150,7 @@ class _AppStepperState extends State<AppStepper> {
                   },
                 ),
               ),
-              AppSpacing.m,
+              AppGaps.m,
               Expanded(
                 child: _currentStep == widget.steps.length - 1
                     ? StandardButtons.large(

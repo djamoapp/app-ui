@@ -1,7 +1,7 @@
 import 'package:app_ui/core_components/controls/buttons/main_cta/primary_cta.dart';
 import 'package:app_ui/core_components/views/pop_ups/pop_up.dart';
 import 'package:app_ui/design_tokens/iconography/app_icons.dart';
-import 'package:app_ui/design_tokens/layout_and_spacing/spacing.dart';
+import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
 import 'package:flutter/material.dart';
 
 class PopUsView extends StatelessWidget {
@@ -18,7 +18,7 @@ class PopUsView extends StatelessWidget {
         children: [
           Text("Pop-Up With Icon"),
           Divider(),
-          AppSpacing.m,
+          AppGaps.m,
           PrimaryCTA(
             label: "Show Pop-up with icon",
             onPressed: () {
@@ -28,10 +28,10 @@ class PopUsView extends StatelessWidget {
               );
             },
           ),
-          AppSpacing.xl,
+          AppGaps.xl,
           Text("Pop-Up With Title"),
           Divider(),
-          AppSpacing.m,
+          AppGaps.m,
           PrimaryCTA(
             label: "Show Pop-up with title",
             onPressed: () {
@@ -41,10 +41,10 @@ class PopUsView extends StatelessWidget {
               );
             },
           ),
-          AppSpacing.xl,
+          AppGaps.xl,
           Text("Pop-Up Without head"),
           Divider(),
-          AppSpacing.m,
+          AppGaps.m,
           PrimaryCTA(
             label: "Show simple Pop-up",
             onPressed: () {

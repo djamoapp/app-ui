@@ -5,7 +5,6 @@ import 'package:app_ui/core_components/views/account/app_account_card.dart';
 import 'package:app_ui/core_components/views/tool_tip/tool_tip.dart';
 import 'package:app_ui/design_tokens/colors/interface_colors.dart';
 import 'package:app_ui/design_tokens/iconography/colored_icons.dart';
-import 'package:app_ui_example/src/utils/constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -52,20 +51,17 @@ class LaboView extends StatelessWidget {
             ),
             Gap(50),
             AppAccountCard(
-              image: SvgPicture.asset(
+              leading: SvgPicture.asset(
                 AppColoredIcons.book,
-                package: kPackageName,
               ),
               trailing: Icon(AppIcons.add),
-              balance: 2000000,
+              balance: "2000000",
               title: "Principal",
-              formatter: kAmountFormatter,
             ),
             Gap(50),
             AppVaultCreationCTA(
               leading: SvgPicture.asset(
                 AppColoredIcons.book,
-                package: kPackageName,
               ),
               title: "Créez-vous un coffre",
               subTitle: "Épargner simplement et rapidement",
@@ -76,15 +72,14 @@ class LaboView extends StatelessWidget {
               subTitle: "Épargner simplement et rapidement",
               leading: SvgPicture.asset(
                 AppColoredIcons.car,
-                package: kPackageName,
               ),
             ),
             Gap(50),
             AppVaultTargetTracker(
-              limitAmount: 200000,
-              balance: 50000,
-              endDate: DateTime.now(),
-              amountFormatter: kAmountFormatter,
+              label: 'label',
+              endDate: '10/10/1999',
+              level: 0.10,
+              title: 'title',
             ),
           ],
         ),

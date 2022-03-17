@@ -1,7 +1,7 @@
 import 'package:app_ui/core_components/views/container/app_container.dart';
 import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
 import 'package:app_ui/design_tokens/iconography/app_icons.dart';
-import 'package:app_ui/design_tokens/layout_and_spacing/spacing.dart';
+import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
 import 'package:app_ui/design_tokens/typography/typography.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -42,7 +42,7 @@ class AppToolTip extends StatelessWidget {
         child: Row(
           children: [
             leading,
-            AppSpacing.m,
+            AppGaps.m,
             Expanded(
               child: SingleChildScrollView(
                 child: Column(
@@ -52,7 +52,7 @@ class AppToolTip extends StatelessWidget {
                       title,
                       style: AppTypography.title!.bMedium100,
                     ),
-                    AppSpacing.xs,
+                    AppGaps.xs,
                     Text(
                       subTitle,
                       style: AppTypography.body!.bSmall!
@@ -62,7 +62,7 @@ class AppToolTip extends StatelessWidget {
                 ),
               ),
             ),
-            AppSpacing.m,
+            AppGaps.m,
             IconButton(
               icon: Icon(
                 AppIcons.cross,

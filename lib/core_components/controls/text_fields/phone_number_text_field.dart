@@ -7,7 +7,7 @@ import 'package:gap/gap.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:app_ui/core_components/controls/text_fields/text_field.dart';
 import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
-import 'package:app_ui/design_tokens/layout_and_spacing/spacing.dart';
+import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
 import 'package:app_ui/design_tokens/typography/typography.dart' as t;
 
 class AppPhoneNumberTextField extends StatefulWidget {
@@ -122,7 +122,7 @@ class _AppPhoneNumberTextFieldState extends State<AppPhoneNumberTextField> {
             ),
           ),
         ),
-        AppSpacing.xs,
+        AppGaps.xs,
         Expanded(
           child: AppTextField(
             keyboardType: const TextInputType.numberWithOptions(
