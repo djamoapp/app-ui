@@ -1,7 +1,6 @@
 import 'package:app_ui/core_components/views/container/app_container.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:intl/intl.dart';
 import 'package:app_ui/core_components/views/title_label/title_with_label.dart';
 import 'package:app_ui/design_tokens/iconography/app_icons.dart';
 
@@ -12,33 +11,25 @@ import '../../../design_tokens/typography/typography.dart';
 class AppVaultTargetTracker extends StatelessWidget {
   const AppVaultTargetTracker(
       {Key? key,
-      required this.balance,
-      required this.limitAmount,
-      required this.amountFormatter,
-      required this.endDate,
-      this.dateFormatter})
+    required this.title, required this.label, required this.level, required this.endDate})
       : super(key: key);
 
-  final double balance;
+  final String title;
 
-  final double limitAmount;
+  final String label;
 
-  final NumberFormat amountFormatter;
+  final String endDate;
 
-  final DateTime endDate;
-
-  final DateFormat? dateFormatter;
+  final double level;
 
   @override
   Widget build(BuildContext context) {
-    double percentage = (balance * 100) / limitAmount;
     return AppContainer(
       child: Column(
         children: [
           AppTitleWithLabel(
-            title: "${percentage.ceil()}% atteint",
-            label:
-                "${amountFormatter.format(balance)}/${amountFormatter.format(limitAmount)}",
+            title: title,
+            label: label,
           ),
           const Gap(16),
           Container(
@@ -53,7 +44,7 @@ class AppVaultTargetTracker extends StatelessWidget {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(6),
               child: LinearProgressIndicator(
-                value: percentage / 100,
+                value: level,
                 backgroundColor: Colors.transparent,
                 valueColor: AlwaysStoppedAnimation<Color>(
                     InterfaceColors.action.defaultColor!),
@@ -72,7 +63,7 @@ class AppVaultTargetTracker extends StatelessWidget {
                 ),
                 const Gap(5),
                 Text(
-                  (dateFormatter ?? DateFormat("dd/MM/y")).format(endDate),
+                  endDate,
                   style: AppTypography.label!.small!
                       .copyWith(color: NeutralColors.disabledTextColor),
                 ),

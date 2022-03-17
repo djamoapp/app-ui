@@ -5,7 +5,7 @@ import 'package:app_ui/core_components/views/system_messages/inline/basic_inline
 import 'package:app_ui/design_tokens/colors/interface_colors.dart';
 import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
 import 'package:app_ui/design_tokens/iconography/app_icons.dart';
-import 'package:app_ui/design_tokens/layout_and_spacing/spacing.dart';
+import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
 import 'package:app_ui/design_tokens/typography/typography.dart' as t;
 
 class AppTextField extends StatefulWidget {
@@ -75,7 +75,7 @@ class _AppTextFieldState extends State<AppTextField> {
             widget.label!,
             style: t.AppTypography.label!.bSmall,
           ),
-          AppSpacing.xs,
+          AppGaps.xs,
         ],
         Stack(
           children: [

@@ -1,5 +1,5 @@
 import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
-import 'package:app_ui/design_tokens/layout_and_spacing/spacing.dart';
+import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
 import 'package:app_ui/design_tokens/typography/typography.dart';
 import 'package:app_ui_example/src/controllers/design_tokens/typography_controller.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +24,7 @@ class TypographyView extends GetView<TypographyController> {
                 fontWeight: FontWeight.bold,
                 fontSize: 30),
           ),
-          AppSpacing.m,
+          AppGaps.m,
           Text("Font Name"),
           Divider(),
           const Text(
@@ -34,7 +34,7 @@ class TypographyView extends GetView<TypographyController> {
                 fontWeight: FontWeight.bold,
                 fontSize: 40),
           ),
-          AppSpacing.m,
+          AppGaps.m,
           Text("Font Weights"),
           Divider(),
           Row(
@@ -69,7 +69,7 @@ class TypographyView extends GetView<TypographyController> {
               ),
             ],
           ),
-          AppSpacing.xl,
+          AppGaps.xl,
           const Text(
             "Token Set",
             style: TextStyle(
@@ -77,10 +77,10 @@ class TypographyView extends GetView<TypographyController> {
                 fontWeight: FontWeight.bold,
                 fontSize: 30),
           ),
-          AppSpacing.m,
+          AppGaps.m,
           Text("Typography Token Set"),
           Divider(),
-          AppSpacing.m,
+          AppGaps.m,
           Container(
             decoration: BoxDecoration(
               border: Border.all(
@@ -106,7 +106,7 @@ class TypographyView extends GetView<TypographyController> {
                     Text("Weight/Size/Line Height"),
                   ],
                 ),
-                AppSpacing.m,
+                AppGaps.m,
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -193,7 +193,7 @@ class TypographyView extends GetView<TypographyController> {
               ],
             ),
           ),
-          AppSpacing.m,
+          AppGaps.m,
           Container(
             decoration: BoxDecoration(
               border: Border.all(
@@ -219,7 +219,7 @@ class TypographyView extends GetView<TypographyController> {
                     Text("Weight/Size/Line Height"),
                   ],
                 ),
-                AppSpacing.m,
+                AppGaps.m,
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -292,7 +292,7 @@ class TypographyView extends GetView<TypographyController> {
               ],
             ),
           ),
-          AppSpacing.m,
+          AppGaps.m,
           Container(
             decoration: BoxDecoration(
               border: Border.all(
@@ -318,7 +318,7 @@ class TypographyView extends GetView<TypographyController> {
                     Text("Weight/Size/Line Height"),
                   ],
                 ),
-                AppSpacing.m,
+                AppGaps.m,
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -391,7 +391,7 @@ class TypographyView extends GetView<TypographyController> {
               ],
             ),
           ),
-          AppSpacing.m,
+          AppGaps.m,
           Container(
             decoration: BoxDecoration(
               border: Border.all(
@@ -417,7 +417,7 @@ class TypographyView extends GetView<TypographyController> {
                     Text("Weight/Size/Line Height"),
                   ],
                 ),
-                AppSpacing.m,
+                AppGaps.m,
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [

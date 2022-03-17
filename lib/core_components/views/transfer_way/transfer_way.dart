@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:app_ui/design_tokens/layout_and_spacing/spacing.dart';
+import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
 import 'package:app_ui/design_tokens/typography/typography.dart' as t;
 import '../cached_network_image/app_cached_network_image.dart';
 
@@ -56,7 +56,7 @@ class AppTransferWay<ID> extends StatelessWidget {
                         )),
               ),
             )),
-        AppSpacing.xs,
+        AppGaps.xs,
         Text(
           label,
           style: t.AppTypography.body!.bSmall,

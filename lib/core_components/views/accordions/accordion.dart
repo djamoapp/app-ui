@@ -1,7 +1,7 @@
 import 'package:app_ui/core_components/views/container/app_container.dart';
 import 'package:flutter/material.dart';
 import 'package:app_ui/core_components/views/accordions/accordion_item.dart';
-import 'package:app_ui/design_tokens/layout_and_spacing/spacing.dart';
+import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
 import 'package:app_ui/design_tokens/typography/typography.dart' as t;
 
 class AppAccordion extends StatelessWidget {
@@ -44,7 +44,7 @@ class AppAccordion extends StatelessWidget {
           children: [
             for (int i = 0; i < items.length; i++) ...[
               items[i],
-              if (items[i] != items.last) AppSpacing.s,
+              if (items[i] != items.last) AppGaps.s,
             ]
           ],
         ),

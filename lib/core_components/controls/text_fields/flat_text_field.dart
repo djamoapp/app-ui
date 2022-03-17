@@ -5,7 +5,7 @@ import 'package:gap/gap.dart';
 import '../../../design_tokens/colors/interface_colors.dart';
 import '../../../design_tokens/colors/neutral_colors.dart';
 import '../../../design_tokens/iconography/app_icons.dart';
-import '../../../design_tokens/layout_and_spacing/spacing.dart';
+import '../../../design_tokens/layout_and_spacing/app_gaps.dart';
 import '../../../design_tokens/typography/typography.dart';
 import '../../views/system_messages/inline/basic_inline.dart';
 
@@ -82,7 +82,7 @@ class _AppFlatTextFieldState extends State<AppFlatTextField> {
           if (widget.label != null) ...[
             Row(
               children: [
-                AppSpacing.xs,
+                AppGaps.xs,
                 Text(
                   widget.label!,
                   style: AppTypography.label!.bSmall!.copyWith(
@@ -92,7 +92,7 @@ class _AppFlatTextFieldState extends State<AppFlatTextField> {
                 ),
               ],
             ),
-            AppSpacing.s,
+            AppGaps.s,
           ],
           Stack(
             children: [

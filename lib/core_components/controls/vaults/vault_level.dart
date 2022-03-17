@@ -1,41 +1,36 @@
 import 'package:app_ui/core_components/views/container/app_container.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:intl/intl.dart';
 import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
-import 'package:app_ui/design_tokens/layout_and_spacing/spacing.dart';
+import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
 import 'package:app_ui/design_tokens/typography/typography.dart';
-
 import '../../../design_tokens/colors/interface_colors.dart';
-import '../../views/cached_network_image/app_cached_network_image.dart';
 
 class AppVaultLevel extends StatelessWidget {
-  const AppVaultLevel(
-      {Key? key,
-      this.label = "Label",
-      this.balance = 50000,
-      this.amount = 240000,
-      required this.image,
-      this.isLocalImage = false,
-      required this.formatter})
-      : super(key: key);
+  const AppVaultLevel({
+    Key? key,
+    this.title = "Label",
+    required this.balance,
+    required this.amount,
+    required this.leading,
+    required this.level,
+    required this.subTitle,
+  }) : super(key: key);
 
-  final String label;
+  final String title;
 
-  final double balance;
+  final String balance;
 
-  final double amount;
+  final String amount;
 
-  final String image;
+  final Widget leading;
 
-  final bool isLocalImage;
+  final double level;
 
-  final NumberFormat formatter;
+  final String subTitle;
 
   @override
   Widget build(BuildContext context) {
-    double percentage = (balance * 100) / amount;
-
     return AppContainer(
       padding: const EdgeInsets.only(
         top: 8,
@@ -45,18 +40,7 @@ class AppVaultLevel extends StatelessWidget {
       ),
       child: Row(
         children: [
-          if (isLocalImage)
-            Image.asset(
-              image,
-              height: 30,
-              width: 30,
-            ),
-          if (!isLocalImage)
-            AppCachedNetworkImage(
-              imageUrl: image,
-              height: 30,
-              width: 30,
-            ),
+          leading,
           const Gap(18),
           Expanded(
             child: Column(
@@ -64,19 +48,19 @@ class AppVaultLevel extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  label,
+                  title,
                   style: AppTypography.label!.bSmall!.copyWith(
                       fontSize: 14,
                       color: NeutralColors.disabledBackGroundColor),
                 ),
-                AppSpacing.xs,
+                AppGaps.xs,
                 Text(
-                  formatter.format(amount),
+                  amount,
                   style: AppTypography.label!.bMedium100!.copyWith(
                     fontSize: 16,
                   ),
                 ),
-                AppSpacing.s,
+                AppGaps.s,
                 Container(
                   height: 4,
                   decoration: BoxDecoration(
@@ -89,19 +73,19 @@ class AppVaultLevel extends StatelessWidget {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(6),
                     child: LinearProgressIndicator(
-                      value: percentage / 100,
+                      value: level,
                       backgroundColor: Colors.transparent,
                       valueColor: AlwaysStoppedAnimation<Color>(
                           InterfaceColors.action.defaultColor!),
                     ),
                   ),
                 ),
-                AppSpacing.xs,
+                AppGaps.xs,
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     Text(
-                      "${percentage.ceil()}% enregistrés (${formatter.format(balance)})",
+                      subTitle,
                       style: AppTypography.label!.bSmall!.copyWith(
                           fontSize: 10.5,
                           color: NeutralColors.bordersHoverColor),

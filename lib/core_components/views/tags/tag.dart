@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
-import 'package:app_ui/design_tokens/layout_and_spacing/spacing.dart';
+import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
 import 'package:app_ui/design_tokens/typography/typography.dart' as t;
 
 class AppTag extends StatelessWidget {
@@ -52,7 +52,7 @@ class AppTag extends StatelessWidget {
               size: 8,
               color: textAndIconColor,
             ),
-            AppSpacing.xs,
+            AppGaps.xs,
           ],
           Text(text,
               style: t.AppTypography.body!.bSmall!.copyWith(

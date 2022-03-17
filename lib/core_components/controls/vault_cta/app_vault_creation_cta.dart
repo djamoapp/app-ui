@@ -1,6 +1,6 @@
 import 'package:app_ui/core_components/views/container/app_container.dart';
 import 'package:app_ui/design_tokens/colors/gradients.dart';
-import 'package:app_ui/design_tokens/layout_and_spacing/spacing.dart';
+import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
 import 'package:app_ui/design_tokens/typography/typography.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -34,7 +34,7 @@ class AppVaultCreationCTA extends StatelessWidget {
         child: Row(
           children: [
             leading,
-            AppSpacing.m,
+            AppGaps.m,
             Expanded(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -45,7 +45,7 @@ class AppVaultCreationCTA extends StatelessWidget {
                       color: Colors.white,
                     ),
                   ),
-                  AppSpacing.xs,
+                  AppGaps.xs,
                   Text(
                     subTitle,
                     style: AppTypography.body!.bSmall!.copyWith(
@@ -55,7 +55,7 @@ class AppVaultCreationCTA extends StatelessWidget {
                 ],
               ),
             ),
-            AppSpacing.m,
+            AppGaps.m,
             Icon(
               CupertinoIcons.chevron_right,
               color: Colors.white,
