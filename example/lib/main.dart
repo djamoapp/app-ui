@@ -19,15 +19,14 @@ class SystemDesignApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       theme: ThemeData(
+        primaryColor: Colors.white,
         appBarTheme: AppBarTheme(
           elevation: 0,
           centerTitle: true,
-          color: InterfaceColors.action.backGroundColor,
           iconTheme: const IconThemeData(
             color: NeutralColors.neutral900,
           ),
           titleTextStyle: const TextStyle(
-            color: Colors.black,
             fontWeight: FontWeight.bold,
             fontSize: 30,
             fontFamily: kFontFamily,

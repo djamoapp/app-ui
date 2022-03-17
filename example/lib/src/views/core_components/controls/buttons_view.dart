@@ -1,6 +1,7 @@
 import 'package:app_ui/core/enums/standard_button_style.dart';
 import 'package:app_ui/core_components/controls/buttons/main_cta/primary_cta.dart';
 import 'package:app_ui/core_components/controls/buttons/main_cta/secondary_cta.dart';
+import 'package:app_ui/core_components/controls/buttons/standard_buttons/expanded_button.dart';
 import 'package:app_ui/core_components/controls/buttons/standard_buttons/standard_buttons.dart';
 import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
 import 'package:app_ui/design_tokens/iconography/app_icons.dart';
@@ -52,6 +53,8 @@ class ButtonsView extends GetView<ButtonsController> {
               Text("Large"),
               Divider(),
               AppGaps.m,
+              // Filled
+              AppGaps.m,
               Row(
                 children: [
                   StandardButtons.large(style: StandardButtonStyle.filled),
@@ -86,6 +89,44 @@ class ButtonsView extends GetView<ButtonsController> {
                       prefixIcon: AppIcons.noteText),
                 ],
               ),
+              AppGaps.m,
+              // FilledLight
+              AppGaps.m,
+              Row(
+                children: [
+                  StandardButtons.large(style: StandardButtonStyle.filledLight),
+                  AppGaps.l,
+                  StandardButtons.large(
+                      style: StandardButtonStyle.filledLight, enabled: false),
+                ],
+              ),
+              AppGaps.m,
+              Row(
+                children: [
+                  StandardButtons.large(
+                      style: StandardButtonStyle.filledLight,
+                      suffixIcon: CupertinoIcons.chevron_forward),
+                  AppGaps.l,
+                  StandardButtons.large(
+                      style: StandardButtonStyle.filledLight,
+                      enabled: false,
+                      suffixIcon: CupertinoIcons.chevron_forward),
+                ],
+              ),
+              AppGaps.m,
+              Row(
+                children: [
+                  StandardButtons.large(
+                      style: StandardButtonStyle.filledLight,
+                      prefixIcon: AppIcons.noteText),
+                  AppGaps.l,
+                  StandardButtons.large(
+                      style: StandardButtonStyle.filledLight,
+                      enabled: false,
+                      prefixIcon: AppIcons.noteText),
+                ],
+              ),
+              // Outlined
               AppGaps.m,
               Row(
                 children: [
@@ -382,6 +423,24 @@ class ButtonsView extends GetView<ButtonsController> {
                       prefixIcon: AppIcons.noteText),
                 ],
               ),
+              AppGaps.m,
+              Container(
+                height: 150,
+                width: 100,
+                child: AppExpandedButton(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Icon(AppIcons.add),
+                      Text(
+                        "Ajouter de l’argent",
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
+                  ),
+                ),
+              )
             ],
           ),
         ],

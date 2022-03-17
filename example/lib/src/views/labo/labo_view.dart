@@ -20,7 +20,7 @@ class LaboView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Labo"),
+        title: Text("Labo"),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(24),

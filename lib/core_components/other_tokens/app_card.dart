@@ -26,53 +26,55 @@ class AppCard extends StatelessWidget {
 
     final double imageWidth = width / 1.4;
 
-    return Stack(alignment: AlignmentDirectional.topCenter, children: <Widget>[
-      Container(
-        margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-        decoration: const BoxDecoration(
-            color: Colors.black12,
-            borderRadius: BorderRadius.all(
-              Radius.circular(20.0),
+    return Stack(
+      alignment: AlignmentDirectional.topCenter,
+      children: <Widget>[
+        Container(
+          margin: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+          decoration: const BoxDecoration(
+              color: Colors.black12,
+              borderRadius: BorderRadius.all(
+                Radius.circular(20.0),
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black54,
+                  blurRadius: 10.0,
+                  spreadRadius: 0,
+                  offset: Offset(
+                    0,
+                    10,
+                  ),
+                )
+              ]),
+          child: SizedBox(
+            height: width / 2,
+            child: Image.asset(
+              accountIsActive
+                  ? 'assets/images/djamo_card_empty.png'
+                  : 'assets/images/djamo_card_empty_lock.png',
+              package: kPackageName,
             ),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black54,
-                blurRadius: 10.0,
-                spreadRadius: 0,
-                offset: Offset(
-                  0,
-                  10,
-                ),
-              )
-            ]),
-        child: SizedBox(
-          height: width / 2,
-          child: Image.asset(
-            accountIsActive
-                ? 'assets/images/djamo_card_empty.png'
-                : 'assets/images/djamo_card_empty_lock.png',
-            package: kPackageName,
           ),
+          //alignment: Alignment.center,
+          //fit: BoxFit.contain,
         ),
-        //alignment: Alignment.center,
-        //fit: BoxFit.contain,
-      ),
-      Shimmer.fromColors(
+        Shimmer.fromColors(
           baseColor: Colors.white,
           highlightColor: Colors.black,
           loop: 1,
           child: SizedBox(
-              width: imageWidth,
-              height: width / 2,
-              child: Column(children: [
+            width: imageWidth,
+            height: width / 2,
+            child: Column(
+              children: [
                 Expanded(
                     child: Container(
                   alignment: Alignment.topLeft,
                   margin: const EdgeInsets.fromLTRB(5, 30, 0, 0),
                   child: AppText(
                     text: fullName,
-                    type: '',
-                    customTextStyle: const TextStyle(
+                    textStyle: const TextStyle(
                       package: kPackageName,
                       fontFamily: kDjamoCardFontFamily,
                       color: Colors.white,
@@ -85,8 +87,7 @@ class AppCard extends StatelessWidget {
                     margin: const EdgeInsets.fromLTRB(5, 0, 0, 10),
                     child: AppText(
                       text: cardNumbers,
-                      type: '',
-                      customTextStyle: const TextStyle(
+                      textStyle: const TextStyle(
                         package: kPackageName,
                         fontFamily: kDjamoCardFontFamily,
                         color: Colors.white,
@@ -96,60 +97,66 @@ class AppCard extends StatelessWidget {
                 Container(
                   alignment: Alignment.bottomLeft,
                   margin: const EdgeInsets.fromLTRB(5, 0, 0, 15),
-                  child: Row(children: [
-                    Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const [
-                          AppText(
-                              text: "Exp Date",
-                              type: '',
-                              textAlign: TextAlign.start,
-                              customTextStyle: TextStyle(
-                                package: kPackageName,
-                                fontFamily: kDjamoCardFontFamily,
-                                color: Colors.white,
-                                fontSize: 9,
-                              )),
-                          AppText(
-                              text: "**/**",
-                              type: '',
-                              textAlign: TextAlign.start,
-                              customTextStyle: TextStyle(
-                                package: kPackageName,
-                                fontFamily: kDjamoCardFontFamily,
-                                color: Colors.white,
-                                fontSize: 9,
-                              ))
-                        ]),
-                    Container(
+                  child: Row(
+                    children: [
+                      Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: const [
+                            AppText(
+                                text: "Exp Date",
+                                textAlign: TextAlign.start,
+                                textStyle: TextStyle(
+                                  package: kPackageName,
+                                  fontFamily: kDjamoCardFontFamily,
+                                  color: Colors.white,
+                                  fontSize: 9,
+                                )),
+                            AppText(
+                                text: "**/**",
+                                textAlign: TextAlign.start,
+                                textStyle: TextStyle(
+                                  package: kPackageName,
+                                  fontFamily: kDjamoCardFontFamily,
+                                  color: Colors.white,
+                                  fontSize: 9,
+                                ))
+                          ]),
+                      Container(
                         margin: const EdgeInsets.symmetric(horizontal: 20),
                         child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              const AppText(
-                                  text: "CVV",
-                                  type: '',
-                                  textAlign: TextAlign.start,
-                                  customTextStyle: TextStyle(
-                                    package: kPackageName,
-                                    fontFamily: kDjamoCardFontFamily,
-                                    color: Colors.white,
-                                    fontSize: 9,
-                                  )),
-                              AppText(
-                                  text: cvv,
-                                  type: '',
-                                  textAlign: TextAlign.start,
-                                  customTextStyle: const TextStyle(
-                                    package: kPackageName,
-                                    fontFamily: kDjamoCardFontFamily,
-                                    color: Colors.white,
-                                    fontSize: 9,
-                                  ))
-                            ])),
-                  ]),
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const AppText(
+                              text: "CVV",
+                              textAlign: TextAlign.start,
+                              textStyle: TextStyle(
+                                package: kPackageName,
+                                fontFamily: kDjamoCardFontFamily,
+                                color: Colors.white,
+                                fontSize: 9,
+                              ),
+                            ),
+                            AppText(
+                              text: cvv,
+                              textAlign: TextAlign.start,
+                              textStyle: const TextStyle(
+                                package: kPackageName,
+                                fontFamily: kDjamoCardFontFamily,
+                                color: Colors.white,
+                                fontSize: 9,
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-              ])))
-    ]);
+              ],
+            ),
+          ),
+        )
+      ],
+    );
   }
 }
