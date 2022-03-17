@@ -39,9 +39,11 @@ class StandardButton extends StatelessWidget {
     return Container(
       decoration: style == StandardButtonStyle.filled
           ? _filledDecoration
-          : style == StandardButtonStyle.outlined
-              ? _outlinedDecoration
-              : null,
+          : style == StandardButtonStyle.filledLight
+              ? _filledLightDecoration
+              : style == StandardButtonStyle.outlined
+                  ? _outlinedDecoration
+                  : null,
       child: Material(
         color: Colors.transparent,
         child: InkWell(
@@ -120,6 +122,11 @@ class StandardButton extends StatelessWidget {
                 ),
               ])
             : null,
+      );
+
+  BoxDecoration get _filledLightDecoration => BoxDecoration(
+        color: InterfaceColors.action.specialColor,
+        borderRadius: BorderRadius.circular(borderRadius),
       );
 
   BoxDecoration get _outlinedDecoration => BoxDecoration(
