@@ -1,4 +1,5 @@
 import 'package:app_ui/core/constants/constants.dart';
+import 'package:app_ui/core_components/controls/basic_tag/basic_tag.dart';
 import 'package:app_ui/core_components/controls/transaction_type_switcher/transaction_type_switcher.dart';
 import 'package:app_ui/core_components/controls/transaction_type_switcher/transaction_type_switcher_item.dart';
 import 'package:app_ui/core_components/views/account/app_account_card.dart';
@@ -86,6 +87,13 @@ class LaboView extends StatelessWidget {
               endDate: DateTime.now(),
               amountFormatter: kAmountFormatter,
             ),
+            Gap(50),
+            AppBasicTag(
+              label: "Bonjour",
+              onSelected: (value) {
+                print(value);
+              },
+            )
           ],
         ),
       ),
