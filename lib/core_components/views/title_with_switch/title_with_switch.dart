@@ -11,7 +11,9 @@ class AppTitleWithSwitch extends StatelessWidget {
       required this.onChanged,
       this.title = "Title",
       this.subTitle,
-      this.leading})
+      this.leading,
+      this.titleStyle,
+      this.subTitleStyle})
       : super(key: key);
 
   final String title;
@@ -23,6 +25,10 @@ class AppTitleWithSwitch extends StatelessWidget {
   final bool selected;
 
   final void Function(bool value) onChanged;
+
+  final TextStyle? titleStyle;
+
+  final TextStyle? subTitleStyle;
 
   @override
   Widget build(BuildContext context) {
@@ -40,18 +46,20 @@ class AppTitleWithSwitch extends StatelessWidget {
             children: [
               Text(
                 title,
-                style: AppTypography.label!.bMedium200!.copyWith(
-                  fontSize: 16,
-                ),
+                style: titleStyle ??
+                    AppTypography.label!.bMedium100!.copyWith(
+                      fontSize: 16,
+                    ),
               ),
               if (subTitle != null) ...[
                 const Gap(2),
                 Text(
                   subTitle!,
-                  style: AppTypography.body!.bSmall!.copyWith(
-                    fontSize: 12.5,
-                    color: NeutralColors.disabledBackGroundColor,
-                  ),
+                  style: subTitleStyle ??
+                      AppTypography.body!.bSmall!.copyWith(
+                        fontSize: 12.5,
+                        color: NeutralColors.disabledBackGroundColor,
+                      ),
                 ),
               ]
             ],
