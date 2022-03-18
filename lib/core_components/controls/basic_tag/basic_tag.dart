@@ -53,7 +53,7 @@ class _AppBasicTagState extends State<AppBasicTag> {
         }
       },
       child: AppTag(
-        text: "Epargne",
+        text: widget.label,
         padding: const EdgeInsets.only(
           top: 6,
           bottom: 6,
