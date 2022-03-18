@@ -1,6 +1,5 @@
 import 'package:app_ui/core_components/views/vc_balance_limit_alert/vc_balance_limit_alert.dart';
-import 'package:app_ui/design_tokens/layout_and_spacing/spacing.dart';
-import 'package:app_ui_example/src/utils/constants.dart';
+import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
 import 'package:flutter/material.dart';
 
 class VCBalanceLimitAlertView extends StatelessWidget {
@@ -17,20 +16,14 @@ class VCBalanceLimitAlertView extends StatelessWidget {
           children: [
             Text("VC Balance Limit Alert"),
             Divider(),
-            AppSpacing.m,
+            AppGaps.m,
             AppVCBalanceLimitAlert(
-              formatter: kAmountFormatter,
+              balance: '100.000',
+              level: 0.25,
+              cursorPosition: 200000 / 700000,
+              maxAmount: '700.000',
             ),
-            AppSpacing.m,
-            AppVCBalanceLimitAlert(
-              value: 150000,
-              formatter: kAmountFormatter,
-            ),
-            AppSpacing.m,
-            AppVCBalanceLimitAlert(
-              value: 200000,
-              formatter: kAmountFormatter,
-            ),
+            AppGaps.m,
           ],
         ));
   }

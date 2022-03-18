@@ -1,7 +1,7 @@
 import 'package:app_ui/core_components/views/transaction_logos/avatar/avatar.dart';
 import 'package:app_ui/core_components/views/transaction_logos/logo/logo.dart';
 import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
-import 'package:app_ui/design_tokens/layout_and_spacing/spacing.dart';
+import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
 import 'package:app_ui_example/src/utils/constants.dart';
 import 'package:flutter/material.dart';
 
@@ -24,7 +24,7 @@ class TransactionLogoView extends StatelessWidget {
                 fontWeight: FontWeight.bold,
                 fontSize: 30),
           ),
-          AppSpacing.m,
+          AppGaps.m,
           Text("Normal Logos"),
           Divider(),
           SizedBox(
@@ -34,20 +34,20 @@ class TransactionLogoView extends StatelessWidget {
               shrinkWrap: true,
               children: [
                 AppLogo(image: kGlovoLogo),
-                AppSpacing.m,
+                AppGaps.m,
                 AppLogo(image: kJumiaLogo),
-                AppSpacing.m,
+                AppGaps.m,
                 AppLogo(image: kKfcLogo),
-                AppSpacing.m,
+                AppGaps.m,
                 AppLogo(image: kBkLogo),
-                AppSpacing.m,
+                AppGaps.m,
                 AppLogo(image: kYangoLogo),
-                AppSpacing.m,
+                AppGaps.m,
                 AppLogo(image: kNetflixLogo),
               ],
             ),
           ),
-          AppSpacing.m,
+          AppGaps.m,
           Text("Unavailable Logos"),
           Divider(),
           SizedBox(
@@ -57,28 +57,28 @@ class TransactionLogoView extends StatelessWidget {
               shrinkWrap: true,
               children: [
                 AppLogo(image: kOrangeLogo),
-                AppSpacing.m,
+                AppGaps.m,
                 AppLogo(
                   image: kOrangeLogo,
                   available: false,
                 ),
-                AppSpacing.m,
+                AppGaps.m,
                 AppLogo(image: kMtnLogo),
-                AppSpacing.m,
+                AppGaps.m,
                 AppLogo(
                   image: kMtnLogo,
                   available: false,
                 ),
-                AppSpacing.m,
+                AppGaps.m,
                 AppLogo(image: kSgbciLogo),
-                AppSpacing.m,
+                AppGaps.m,
                 AppLogo(
                   image: kSgbciLogo,
                   available: false,
                 ),
-                AppSpacing.m,
+                AppGaps.m,
                 AppLogo(image: kSibLogo),
-                AppSpacing.m,
+                AppGaps.m,
                 AppLogo(
                   image: kSibLogo,
                   available: false,
@@ -86,7 +86,7 @@ class TransactionLogoView extends StatelessWidget {
               ],
             ),
           ),
-          AppSpacing.xl,
+          AppGaps.xl,
           const Text(
             "Avatars",
             style: TextStyle(
@@ -94,7 +94,7 @@ class TransactionLogoView extends StatelessWidget {
                 fontWeight: FontWeight.bold,
                 fontSize: 30),
           ),
-          AppSpacing.m,
+          AppGaps.m,
           Text("Djamo Avatar"),
           Divider(),
           SizedBox(
@@ -107,17 +107,17 @@ class TransactionLogoView extends StatelessWidget {
                   image: kProfile1,
                   isDjamoAvatar: true,
                 ),
-                AppSpacing.m,
+                AppGaps.m,
                 AppAvatar(
                   image: kProfile2,
                   isDjamoAvatar: true,
                 ),
-                AppSpacing.m,
+                AppGaps.m,
                 AppAvatar(
                   image: kProfile3,
                   isDjamoAvatar: true,
                 ),
-                AppSpacing.m,
+                AppGaps.m,
                 AppAvatar(
                   image: kProfile4,
                   isDjamoAvatar: true,
@@ -125,7 +125,7 @@ class TransactionLogoView extends StatelessWidget {
               ],
             ),
           ),
-          AppSpacing.m,
+          AppGaps.m,
           Text("Normal Avatars"),
           Divider(),
           SizedBox(
@@ -137,15 +137,15 @@ class TransactionLogoView extends StatelessWidget {
                 AppAvatar(
                   image: kProfile1,
                 ),
-                AppSpacing.m,
+                AppGaps.m,
                 AppAvatar(
                   image: kProfile2,
                 ),
-                AppSpacing.m,
+                AppGaps.m,
                 AppAvatar(
                   image: kProfile3,
                 ),
-                AppSpacing.m,
+                AppGaps.m,
                 AppAvatar(
                   image: kProfile4,
                 ),

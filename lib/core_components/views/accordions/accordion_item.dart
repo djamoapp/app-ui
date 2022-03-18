@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:app_ui/design_tokens/colors/interface_colors.dart';
 import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
 import 'package:app_ui/design_tokens/iconography/app_icons.dart';
-import 'package:app_ui/design_tokens/layout_and_spacing/spacing.dart';
+import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
 import 'package:app_ui/design_tokens/typography/typography.dart' as t;
 
 class AppAccordionItem<T> extends StatelessWidget {
@@ -41,7 +41,7 @@ class AppAccordionItem<T> extends StatelessWidget {
         child: Row(
           children: [
             value == groupValue ? _checkedWidget : _unCheckedWidget,
-            AppSpacing.m,
+            AppGaps.m,
             Expanded(
               child: Text(
                 label,
@@ -49,7 +49,7 @@ class AppAccordionItem<T> extends StatelessWidget {
                     .copyWith(color: Colors.black),
               ),
             ),
-            AppSpacing.m,
+            AppGaps.m,
             if (value != groupValue)
               Icon(
                 CupertinoIcons.chevron_forward,

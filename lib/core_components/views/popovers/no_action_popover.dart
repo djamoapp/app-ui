@@ -1,7 +1,7 @@
 import 'package:app_ui/core/constants/constants.dart';
 import 'package:app_ui/design_tokens/typography/typography.dart';
 import 'package:flutter/material.dart';
-import 'package:app_ui/design_tokens/layout_and_spacing/spacing.dart';
+import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
 
 import '../cached_network_image/app_cached_network_image.dart';
 
@@ -44,7 +44,7 @@ void showAppNoActionPopover(BuildContext context,
                   height: 120,
                   width: 120,
                 ),
-              AppSpacing.s,
+              AppGaps.s,
               Text(
                 body,
                 style: AppTypography.body!.large!.copyWith(color: Colors.black),

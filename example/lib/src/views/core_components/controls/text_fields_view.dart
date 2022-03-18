@@ -1,7 +1,7 @@
 import 'package:app_ui/core_components/controls/text_fields/text_field.dart';
 import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
 import 'package:app_ui/design_tokens/iconography/app_icons.dart';
-import 'package:app_ui/design_tokens/layout_and_spacing/spacing.dart';
+import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
 import 'package:app_ui_example/src/utils/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:app_ui/core_components/controls/text_fields/flat_text_field.dart';
@@ -25,52 +25,52 @@ class TextFieldsView extends StatelessWidget {
                 fontWeight: FontWeight.bold,
                 fontSize: 30),
           ),
-          AppSpacing.m,
+          AppGaps.m,
           const AppFlatTextField(
             placeHolderText: "PlaceHolderText",
             label: "Label Text",
           ),
-          AppSpacing.m,
+          AppGaps.m,
           const Text("Normals"),
           const Divider(),
-          AppSpacing.m,
+          AppGaps.m,
           const AppTextField(),
-          AppSpacing.m,
+          AppGaps.m,
           const AppTextField(
             errorText: kDefaultErrorText,
           ),
-          AppSpacing.m,
+          AppGaps.m,
           const AppTextField(
             enabled: false,
           ),
-          AppSpacing.xl,
+          AppGaps.xl,
           const Text("With Label"),
           const Divider(),
-          AppSpacing.m,
+          AppGaps.m,
           const AppTextField(
             label: "Label",
           ),
-          AppSpacing.m,
+          AppGaps.m,
           const AppTextField(
             label: "Label",
             errorText: kDefaultErrorText,
           ),
-          AppSpacing.m,
+          AppGaps.m,
           const AppTextField(
             label: "Label",
             enabled: false,
           ),
-          AppSpacing.xl,
+          AppGaps.xl,
           const Text("Normals with Icon"),
           const Divider(),
-          AppSpacing.m,
+          AppGaps.m,
           AppTextField(
             suffixIcon: Icon(
               AppIcons.profile,
               color: NeutralColors.neutral[600],
             ),
           ),
-          AppSpacing.m,
+          AppGaps.m,
           AppTextField(
             suffixIcon: Icon(
               AppIcons.profile,
@@ -78,7 +78,7 @@ class TextFieldsView extends StatelessWidget {
             ),
             errorText: kDefaultErrorText,
           ),
-          AppSpacing.m,
+          AppGaps.m,
           AppTextField(
             suffixIcon: Icon(
               AppIcons.profile,
@@ -86,10 +86,10 @@ class TextFieldsView extends StatelessWidget {
             ),
             enabled: false,
           ),
-          AppSpacing.xl,
+          AppGaps.xl,
           const Text("With Label & Icon"),
           const Divider(),
-          AppSpacing.m,
+          AppGaps.m,
           AppTextField(
             label: "Label",
             suffixIcon: Icon(
@@ -97,7 +97,7 @@ class TextFieldsView extends StatelessWidget {
               color: NeutralColors.neutral[600],
             ),
           ),
-          AppSpacing.m,
+          AppGaps.m,
           AppTextField(
             label: "Label",
             suffixIcon: Icon(
@@ -106,7 +106,7 @@ class TextFieldsView extends StatelessWidget {
             ),
             errorText: kDefaultErrorText,
           ),
-          AppSpacing.m,
+          AppGaps.m,
           AppTextField(
             label: "Label",
             suffixIcon: Icon(

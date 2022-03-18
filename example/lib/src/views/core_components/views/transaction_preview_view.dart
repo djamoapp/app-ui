@@ -19,7 +19,7 @@ class TransactionPreviewView extends StatelessWidget {
         padding: const EdgeInsets.all(20),
         children: [
           AppTransactionPreview(
-            amount: -5000,
+            amount: "-5000",
             leading: const AppAvatar(
               image: kProfile3,
               isDjamoAvatar: true,
@@ -30,9 +30,9 @@ class TransactionPreviewView extends StatelessWidget {
             tag: const AppTag(
               icon: AppIcons.djamo,
             ),
-            date: DateTime.now(),
+            date: "DateTime.now()",
             amountColor: InterfaceColors.error.defaultColor!,
-            formatter: kAmountFormatter,
+            time: 'Time',
           ),
         ],
       ),

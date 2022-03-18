@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:app_ui/design_tokens/layout_and_spacing/spacing.dart';
+import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
 
 import 'account_widget.dart';
 
@@ -32,7 +32,7 @@ class AppAccountsScrollingSet<ID> extends StatelessWidget {
           );
         },
         itemCount: accounts.length,
-        separatorBuilder: (BuildContext context, int index) => AppSpacing.l,
+        separatorBuilder: (BuildContext context, int index) => AppGaps.l,
       ),
     );
   }

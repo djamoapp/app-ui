@@ -1,5 +1,5 @@
 import 'package:app_ui/core_components/views/section_label/section_label.dart';
-import 'package:app_ui/design_tokens/layout_and_spacing/spacing.dart';
+import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
 import 'package:flutter/material.dart';
 
 class AppContainer extends StatelessWidget {
@@ -69,7 +69,7 @@ class AppContainer extends StatelessWidget {
                       onButtonTap: onActionButtonTap,
                     ),
               ),
-              AppSpacing.s,
+              AppGaps.s,
               _whiteBox(),
             ],
           )
@@ -100,7 +100,7 @@ class AppContainer extends StatelessWidget {
                       buttonLabel: actionButtonText ?? "",
                       onButtonTap: onActionButtonTap,
                     ),
-                AppSpacing.s,
+                AppGaps.s,
                 if (child != null) child!,
               ],
             )
