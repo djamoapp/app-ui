@@ -5,7 +5,11 @@ import 'package:app_ui/design_tokens/typography/typography.dart' as t;
 
 class SecondaryCTA extends StatelessWidget {
   const SecondaryCTA(
-      {Key? key, this.onPressed, this.label = "Button", this.isLoading = false})
+      {Key? key,
+      this.onPressed,
+      this.label = "Button",
+      this.isLoading = false,
+      this.enabled = true})
       : super(key: key);
 
   final Function()? onPressed;
@@ -14,11 +18,13 @@ class SecondaryCTA extends StatelessWidget {
 
   final bool isLoading;
 
+  final bool enabled;
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
       highlightColor: Colors.transparent,
-      onTap: isLoading ? null : onPressed,
+      onTap: enabled && !isLoading ? onPressed : null,
       borderRadius: BorderRadius.circular(24),
       child: isLoading
           ? const Center(child: AppLoader())
@@ -31,7 +37,10 @@ class SecondaryCTA extends StatelessWidget {
                       child: Text(
                         label,
                         style: t.AppTypography.title!.small!.copyWith(
-                            color: InterfaceColors.action.defaultColor),
+                          color: enabled && !isLoading
+                              ? InterfaceColors.action.defaultColor
+                              : InterfaceColors.action.disabledColor,
+                        ),
                       ),
                     ),
                   ),

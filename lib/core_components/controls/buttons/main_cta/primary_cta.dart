@@ -8,7 +8,8 @@ class PrimaryCTA extends StatelessWidget {
       {Key? key,
       this.onPressed,
       this.label = "Confirmer",
-      this.isLoading = false})
+      this.isLoading = false,
+      this.enabled = true})
       : super(key: key);
 
   final Function()? onPressed;
@@ -16,21 +17,27 @@ class PrimaryCTA extends StatelessWidget {
   final String label;
 
   final bool isLoading;
+  final bool enabled;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: InterfaceColors.action.defaultColor,
+        color: enabled && !isLoading
+            ? InterfaceColors.action.defaultColor
+            : InterfaceColors.action.disabledColor,
         borderRadius: BorderRadius.circular(24),
-        boxShadow: [
-          BoxShadow(
-            color: InterfaceColors.action.defaultColor!.withAlpha(81.6.round()),
-            offset: const Offset(0, 2),
-            blurRadius: 4,
-            spreadRadius: 0,
-          ),
-        ],
+        boxShadow: enabled && !isLoading
+            ? [
+                BoxShadow(
+                  color: InterfaceColors.action.defaultColor!
+                      .withAlpha(81.6.round()),
+                  offset: const Offset(0, 2),
+                  blurRadius: 4,
+                  spreadRadius: 0,
+                ),
+              ]
+            : null,
       ),
       height: 40,
       child: Material(

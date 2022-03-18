@@ -47,9 +47,7 @@ class StandardButton extends StatelessWidget {
       child: Material(
         color: Colors.transparent,
         child: InkWell(
-          onTap: enabled
-              ? (isLoading ? null : onPressed)
-              : (isLoading ? null : onPressed),
+          onTap: enabled && !isLoading ? onPressed : null,
           highlightColor: Colors.transparent,
           borderRadius: BorderRadius.circular(borderRadius),
           child: Padding(
@@ -70,7 +68,7 @@ class StandardButton extends StatelessWidget {
                           size: prefixIconSize,
                           color: style == StandardButtonStyle.filled
                               ? Colors.white
-                              : enabled
+                              : enabled && !isLoading
                                   ? InterfaceColors.action.defaultColor
                                   : InterfaceColors.action.disabledColor,
                         ),
@@ -81,7 +79,7 @@ class StandardButton extends StatelessWidget {
                         style: textStyle.copyWith(
                           color: style == StandardButtonStyle.filled
                               ? Colors.white
-                              : enabled
+                              : enabled && !isLoading
                                   ? InterfaceColors.action.defaultColor
                                   : InterfaceColors.action.disabledColor,
                         ),
@@ -93,7 +91,7 @@ class StandardButton extends StatelessWidget {
                           size: suffixIconSize,
                           color: style == StandardButtonStyle.filled
                               ? Colors.white
-                              : enabled
+                              : enabled && !isLoading
                                   ? InterfaceColors.action.defaultColor
                                   : InterfaceColors.action.disabledColor,
                         ),
@@ -132,7 +130,7 @@ class StandardButton extends StatelessWidget {
   BoxDecoration get _outlinedDecoration => BoxDecoration(
       borderRadius: BorderRadius.circular(borderRadius),
       border: Border.all(
-        color: enabled
+        color: enabled && !isLoading
             ? InterfaceColors.action.defaultColor!
             : InterfaceColors.action.disabledColor!,
         width: 2,
