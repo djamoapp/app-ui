@@ -13,6 +13,7 @@ class AppAccountCard extends StatelessWidget {
     required this.title,
     this.color,
     this.borderRadius,
+    this.padding = const EdgeInsets.all(24),
   }) : super(key: key);
 
   final Widget leading;
@@ -27,9 +28,12 @@ class AppAccountCard extends StatelessWidget {
 
   final BorderRadius? borderRadius;
 
+  final EdgeInsetsGeometry? padding;
+
   @override
   Widget build(BuildContext context) {
     return AppContainer(
+      padding: padding != null ? padding : null,
       color: color,
       borderRadius: borderRadius,
       child: Row(
