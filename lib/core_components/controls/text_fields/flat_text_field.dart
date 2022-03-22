@@ -28,6 +28,9 @@ class AppFlatTextField extends StatefulWidget {
     this.labelStyle,
     this.padding,
     this.subTitle,
+    this.autofocus = false,
+    this.initialValue,
+    this.cursorHeight,
   }) : super(key: key);
 
   final String? label;
@@ -61,6 +64,12 @@ class AppFlatTextField extends StatefulWidget {
   final EdgeInsetsGeometry? padding;
 
   final Widget? subTitle;
+
+  final bool autofocus;
+
+  final String? initialValue;
+
+  final double? cursorHeight;
 
   @override
   State<AppFlatTextField> createState() => _AppFlatTextFieldState();
@@ -114,6 +123,7 @@ class _AppFlatTextFieldState extends State<AppFlatTextField> {
           Stack(
             children: [
               TextFormField(
+                autofocus: widget.autofocus,
                 keyboardType: widget.keyboardType,
                 maxLines: widget.maxLines,
                 maxLength: widget.maxLength,
@@ -129,8 +139,9 @@ class _AppFlatTextFieldState extends State<AppFlatTextField> {
                 controller: widget.controller,
                 onChanged: widget.onChanged,
                 cursorColor: InterfaceColors.action.defaultColor,
-                cursorHeight: 16,
+                cursorHeight: widget.cursorHeight ?? 18,
                 cursorWidth: 1,
+                initialValue: widget.initialValue,
                 decoration: InputDecoration(
                   //errorMaxLines: 0,
                   errorText: _errorText != null ? "" : null,
