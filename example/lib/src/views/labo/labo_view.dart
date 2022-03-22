@@ -2,10 +2,13 @@ import 'package:app_ui/core/constants/constants.dart';
 import 'package:app_ui/core_components/controls/basic_tag/basic_tag.dart';
 import 'package:app_ui/core_components/controls/transaction_type_switcher/transaction_type_switcher.dart';
 import 'package:app_ui/core_components/controls/transaction_type_switcher/transaction_type_switcher_item.dart';
+import 'package:app_ui/core_components/other_tokens/app_icon_label.dart';
 import 'package:app_ui/core_components/views/account/app_account_card.dart';
+import 'package:app_ui/core_components/views/title_with_switch/title_with_switch.dart';
 import 'package:app_ui/core_components/views/tool_tip/tool_tip.dart';
 import 'package:app_ui/design_tokens/colors/interface_colors.dart';
 import 'package:app_ui/design_tokens/iconography/colored_icons.dart';
+import 'package:app_ui/design_tokens/typography/typography.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -88,6 +91,19 @@ class LaboView extends StatelessWidget {
               onSelected: (value) {
                 print(value);
               },
+            ),
+            Gap(15),
+            AppIconLabel(
+              icon: Icon(
+                AppIcons.account,
+                size: 20,
+              ),
+              label: 'label',
+            ),
+            AppTitleWithSwitch(
+              onChanged: (bool value) {},
+              title: "This is a long title",
+              subTitle: "Hello This is a subtitle",
             )
           ],
         ),
