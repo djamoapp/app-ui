@@ -12,7 +12,6 @@ class AppTag extends StatelessWidget {
     this.textAndIconColor = NeutralColors.bordersHoverColor,
     this.padding,
     this.radius,
-    this.fontSize,
     this.textStyle,
   }) : super(key: key);
 
@@ -27,8 +26,6 @@ class AppTag extends StatelessWidget {
   final EdgeInsetsGeometry? padding;
 
   final double? radius;
-
-  final double? fontSize;
 
   final TextStyle? textStyle;
 
@@ -60,8 +57,12 @@ class AppTag extends StatelessWidget {
           Text(
             text,
             style: this.textStyle != null
-                ? this.textStyle
-                : AppTypography.body!.bSmall!,
+                ? this.textStyle?.copyWith(
+                      color: textAndIconColor,
+                    )
+                : AppTypography.body!.bSmall!.copyWith(
+                    color: textAndIconColor,
+                  ),
           ),
         ],
       ),

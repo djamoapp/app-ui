@@ -13,6 +13,7 @@ class AppBasicTag extends StatelessWidget {
     this.label = "Label",
     this.onSelected,
     this.labelStyle,
+    this.padding,
   }) : super(key: key);
 
   final Color? selectedColor;
@@ -31,6 +32,8 @@ class AppBasicTag extends StatelessWidget {
 
   final TextStyle? labelStyle;
 
+  final EdgeInsetsGeometry? padding;
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -42,14 +45,14 @@ class AppBasicTag extends StatelessWidget {
       child: AppTag(
         text: this.label,
         textStyle: labelStyle,
-        padding: const EdgeInsets.only(
-          top: 6,
-          bottom: 6,
-          left: 12,
-          right: 12,
-        ),
+        padding: this.padding ??
+            const EdgeInsets.only(
+              top: 6,
+              bottom: 6,
+              left: 12,
+              right: 12,
+            ),
         radius: 8,
-        fontSize: 12.5,
         textAndIconColor: this.selected
             ? (this.selectedTextColor ?? Colors.white)
             : (this.unselectedTextColor ??
