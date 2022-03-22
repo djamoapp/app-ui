@@ -7,7 +7,7 @@ class DjamoInline {
   DjamoInline._();
 
   static DjamoBasicInline error(String text) => DjamoBasicInline(
-        iconData: AppIcons.cross,
+        iconData: AppIcons.close,
         iconColor: InterfaceColors.error.defaultColor as Color,
         text: text,
         textColor: InterfaceColors.error.defaultColor as Color,

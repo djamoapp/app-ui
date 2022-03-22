@@ -37,7 +37,7 @@ void showAppPopUp(BuildContext context,
                   child: GestureDetector(
                     onTap: () => Navigator.of(context).pop(),
                     child: const Icon(
-                      AppIcons.cross,
+                      AppIcons.close,
                       size: 13.33,
                       color: Colors.black,
                     ),

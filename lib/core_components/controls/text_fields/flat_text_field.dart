@@ -10,22 +10,25 @@ import '../../../design_tokens/typography/typography.dart';
 import '../../views/system_messages/inline/basic_inline.dart';
 
 class AppFlatTextField extends StatefulWidget {
-  const AppFlatTextField(
-      {Key? key,
-      this.label,
-      required this.placeHolderText,
-      this.controller,
-      this.onChanged,
-      this.enabled = true,
-      this.prefixIcon,
-      this.suffixIcon,
-      this.maxLength,
-      this.inputFormatters,
-      this.keyboardType,
-      this.errorText,
-      this.maxLines = 1,
-      this.validator})
-      : super(key: key);
+  const AppFlatTextField({
+    Key? key,
+    this.label,
+    required this.placeHolderText,
+    this.controller,
+    this.onChanged,
+    this.enabled = true,
+    this.prefixIcon,
+    this.suffixIcon,
+    this.maxLength,
+    this.inputFormatters,
+    this.keyboardType,
+    this.errorText,
+    this.maxLines = 1,
+    this.validator,
+    this.labelStyle,
+    this.padding,
+    this.subTitle,
+  }) : super(key: key);
 
   final String? label;
 
@@ -53,6 +56,12 @@ class AppFlatTextField extends StatefulWidget {
 
   final String? Function(String?)? validator;
 
+  final TextStyle? labelStyle;
+
+  final EdgeInsetsGeometry? padding;
+
+  final Widget? subTitle;
+
   @override
   State<AppFlatTextField> createState() => _AppFlatTextFieldState();
 }
@@ -69,12 +78,13 @@ class _AppFlatTextFieldState extends State<AppFlatTextField> {
   @override
   Widget build(BuildContext context) {
     return AppContainer(
-      padding: const EdgeInsets.only(
-        top: 20,
-        bottom: 20,
-        left: 16,
-        right: 16,
-      ),
+      padding: widget.padding ??
+          const EdgeInsets.only(
+            top: 20,
+            bottom: 20,
+            left: 16,
+            right: 16,
+          ),
       color: widget.enabled ? Colors.white : NeutralColors.formBordersColor,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -85,10 +95,17 @@ class _AppFlatTextFieldState extends State<AppFlatTextField> {
                 AppGaps.xs,
                 Text(
                   widget.label!,
-                  style: AppTypography.label!.bSmall!.copyWith(
-                      color: widget.enabled
-                          ? null
-                          : NeutralColors.disabledBackGroundColor),
+                  style: widget.labelStyle != null
+                      ? widget.labelStyle?.copyWith(
+                          color: widget.enabled
+                              ? null
+                              : NeutralColors.disabledBackGroundColor,
+                        )
+                      : AppTypography.label!.bSmall!.copyWith(
+                          color: widget.enabled
+                              ? null
+                              : NeutralColors.disabledBackGroundColor,
+                        ),
                 ),
               ],
             ),
@@ -168,11 +185,11 @@ class _AppFlatTextFieldState extends State<AppFlatTextField> {
                   ),
                 ),
               ),
-              if (_errorText != null) ...[
-                Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Gap((widget.maxLines * 24) + 22 + 6),
+              Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Gap((widget.maxLines * 24) + 22 + 6),
+                  if (_errorText != null)
                     DjamoBasicInline(
                       iconData: AppIcons.alert,
                       textColor: InterfaceColors.error.defaultColor!,
@@ -180,9 +197,9 @@ class _AppFlatTextFieldState extends State<AppFlatTextField> {
                       text: _errorText!,
                       iconSize: 13.55,
                     ),
-                  ],
-                )
-              ]
+                  widget.subTitle ?? Container()
+                ],
+              )
             ],
           ),
         ],

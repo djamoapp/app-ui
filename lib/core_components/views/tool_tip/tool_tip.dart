@@ -65,7 +65,7 @@ class AppToolTip extends StatelessWidget {
             AppGaps.m,
             IconButton(
               icon: Icon(
-                AppIcons.cross,
+                AppIcons.close,
                 size: 10.67,
                 color: Colors.black,
               ),

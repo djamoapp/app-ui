@@ -2,7 +2,7 @@ import 'package:app_ui/core_components/views/tags/tag.dart';
 import 'package:flutter/material.dart';
 import 'package:app_ui/design_tokens/colors/interface_colors.dart';
 
-class AppBasicTag extends StatefulWidget {
+class AppBasicTag extends StatelessWidget {
   const AppBasicTag({
     Key? key,
     this.selectedColor,
@@ -12,6 +12,7 @@ class AppBasicTag extends StatefulWidget {
     this.unselectedTextColor,
     this.label = "Label",
     this.onSelected,
+    this.labelStyle,
   }) : super(key: key);
 
   final Color? selectedColor;
@@ -28,32 +29,19 @@ class AppBasicTag extends StatefulWidget {
 
   final Function(String)? onSelected;
 
-  @override
-  _AppBasicTagState createState() => _AppBasicTagState();
-}
-
-class _AppBasicTagState extends State<AppBasicTag> {
-  bool _selected = false;
-
-  @override
-  void initState() {
-    super.initState();
-    _selected = widget.selected;
-  }
+  final TextStyle? labelStyle;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        setState(() {
-          _selected = !_selected;
-        });
-        if (widget.onSelected != null && _selected == true) {
-          widget.onSelected!(widget.label);
+        if (this.onSelected != null) {
+          this.onSelected!(this.label);
         }
       },
       child: AppTag(
-        text: widget.label,
+        text: this.label,
+        textStyle: labelStyle,
         padding: const EdgeInsets.only(
           top: 6,
           bottom: 6,
@@ -62,13 +50,13 @@ class _AppBasicTagState extends State<AppBasicTag> {
         ),
         radius: 8,
         fontSize: 12.5,
-        textAndIconColor: _selected
-            ? (widget.selectedTextColor ?? Colors.white)
-            : (widget.unselectedTextColor ??
+        textAndIconColor: this.selected
+            ? (this.selectedTextColor ?? Colors.white)
+            : (this.unselectedTextColor ??
                 InterfaceColors.action.defaultColor!),
-        backGroundColor: _selected
-            ? (widget.selectedColor ?? InterfaceColors.action.defaultColor!)
-            : (widget.unselectedColor ?? InterfaceColors.action.specialColor!),
+        backGroundColor: this.selected
+            ? (this.selectedColor ?? InterfaceColors.action.defaultColor!)
+            : (this.unselectedColor ?? InterfaceColors.action.specialColor!),
       ),
     );
   }

@@ -1,19 +1,20 @@
+import 'package:app_ui/design_tokens/typography/typography.dart';
 import 'package:flutter/material.dart';
 import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
 import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
-import 'package:app_ui/design_tokens/typography/typography.dart' as t;
 
 class AppTag extends StatelessWidget {
-  const AppTag(
-      {Key? key,
-      this.backGroundColor = NeutralColors.neutral800,
-      this.text = "Djamo Tag",
-      this.icon,
-      this.textAndIconColor = NeutralColors.bordersHoverColor,
-      this.padding,
-      this.radius,
-      this.fontSize})
-      : super(key: key);
+  const AppTag({
+    Key? key,
+    this.backGroundColor = NeutralColors.neutral800,
+    this.text = "Djamo Tag",
+    this.icon,
+    this.textAndIconColor = NeutralColors.bordersHoverColor,
+    this.padding,
+    this.radius,
+    this.fontSize,
+    this.textStyle,
+  }) : super(key: key);
 
   final Color backGroundColor;
 
@@ -28,6 +29,8 @@ class AppTag extends StatelessWidget {
   final double? radius;
 
   final double? fontSize;
+
+  final TextStyle? textStyle;
 
   @override
   Widget build(BuildContext context) {
@@ -54,9 +57,12 @@ class AppTag extends StatelessWidget {
             ),
             AppGaps.xs,
           ],
-          Text(text,
-              style: t.AppTypography.body!.bSmall!.copyWith(
-                  color: textAndIconColor, fontSize: fontSize ?? 10.5)),
+          Text(
+            text,
+            style: this.textStyle != null
+                ? this.textStyle
+                : AppTypography.body!.bSmall!,
+          ),
         ],
       ),
     );

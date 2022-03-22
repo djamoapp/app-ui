@@ -7,7 +7,7 @@ class AppBox {
   AppBox._();
 
   static AppBasicBox error(String text) => AppBasicBox(
-        iconData: AppIcons.cross,
+        iconData: AppIcons.close,
         iconColor: InterfaceColors.error.defaultColor as Color,
         text: text,
         textColor: InterfaceColors.error.defaultColor as Color,
