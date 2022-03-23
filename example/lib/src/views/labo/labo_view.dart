@@ -1,5 +1,6 @@
 import 'package:app_ui/core/constants/constants.dart';
 import 'package:app_ui/core_components/controls/basic_tag/basic_tag.dart';
+import 'package:app_ui/core_components/controls/text_fields/amount_text_field.dart';
 import 'package:app_ui/core_components/controls/transaction_type_switcher/transaction_type_switcher.dart';
 import 'package:app_ui/core_components/controls/transaction_type_switcher/transaction_type_switcher_item.dart';
 import 'package:app_ui/core_components/other_tokens/app_icon_label.dart';
@@ -30,9 +31,8 @@ class LaboView extends StatelessWidget {
         padding: const EdgeInsets.all(24),
         child: Column(
           children: <Widget>[
-            Icon(
-              AppIcons.crown,
-            ),
+            AppAmountTextField(),
+            Gap(50),
             AppTransactionTypeSwitcher(
               items: [
                 AppTransactionTypeSwitcherItem(
