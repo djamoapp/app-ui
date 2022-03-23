@@ -14,8 +14,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
 import 'package:app_ui/core_components/views/vault_target_tracker/vault_target_tracker.dart';
-import 'package:app_ui/design_tokens/iconography/app_icons.dart';
 import 'package:app_ui/core_components/controls/vault_cta/app_vault_creation_cta.dart';
+import 'package:app_ui/design_tokens/iconography/app_icons.dart';
 
 class LaboView extends StatelessWidget {
   LaboView({Key? key}) : super(key: key);
@@ -30,6 +30,9 @@ class LaboView extends StatelessWidget {
         padding: const EdgeInsets.all(24),
         child: Column(
           children: <Widget>[
+            Icon(
+              AppIcons.crown,
+            ),
             AppTransactionTypeSwitcher(
               items: [
                 AppTransactionTypeSwitcherItem(
@@ -42,7 +45,7 @@ class LaboView extends StatelessWidget {
                 ),
                 AppTransactionTypeSwitcherItem(
                   value: 2,
-                  icon: AppIcons.arrowTopRight,
+                  icon: AppIcons.arrowDownRight,
                   text: "Transfert",
                   selectedColor: InterfaceColors.alert.defaultColor,
                   selectedBackgroundColor:

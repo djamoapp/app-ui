@@ -53,7 +53,7 @@ class _AppSearchBarState extends State<AppSearchBar> {
                     ? null
                     : IconButton(
                         icon: const Icon(
-                          AppIcons.close,
+                          AppIcons.cross,
                           color: NeutralColors.bordersHoverColor,
                           size: 14,
                         ),

@@ -293,7 +293,7 @@ class _AppStepperState extends State<AppStepper> {
                 borderRadius: BorderRadius.circular(16),
               ),
               child: Icon(
-                AppIcons.close,
+                AppIcons.cross,
                 color: InterfaceColors.error.defaultColor,
                 size: 11.76,
               ),

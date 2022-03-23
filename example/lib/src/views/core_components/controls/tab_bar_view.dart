@@ -32,22 +32,22 @@ class TabBarView extends GetView<TabBarController> {
           items: [
             AppTabBarItem(
               icon: const Icon(AppIcons.account),
-              activeIcon: const Icon(AppIcons.accountFill),
+              activeIcon: const Icon(AppIcons.accountFilled),
               label: "Compte",
             ),
             AppTabBarItem(
               icon: const Icon(AppIcons.stats),
-              activeIcon: const Icon(AppIcons.statsFill),
+              activeIcon: const Icon(AppIcons.starFilled),
               label: "Statistiques",
             ),
             AppTabBarItem(
               icon: const Icon(AppIcons.card),
-              activeIcon: const Icon(AppIcons.cardFill),
+              activeIcon: const Icon(AppIcons.cardFilled),
               label: "Cartes",
             ),
             AppTabBarItem(
               icon: const Icon(AppIcons.support),
-              activeIcon: const Icon(AppIcons.supportFill),
+              activeIcon: const Icon(AppIcons.supportFilled),
               label: "Aide",
             ),
           ],
