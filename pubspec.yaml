@@ -21,6 +21,7 @@ dependencies:
   percent_indicator:
   dotted_line:
   custom_sliding_segmented_control:
+  icon_font_generator:
 
 dev_dependencies:
   flutter_test:
@@ -95,9 +96,9 @@ flutter:
           weight: 500
           style: italic
 
-    - family: Djamo Icons
+    - family: App Icons
       fonts:
-        - asset: assets/fonts/app_icons/Djamo-icons-font.ttf
+        - asset: assets/fonts/app_icons/app-icons.ttf
 
     - family: OCRAStd
       fonts:

@@ -1,5 +1,5 @@
 const String kFontFamily = "Futura PT";
-const String kIconsFontFamily = "Djamo Icons";
+const String kIconsFontFamily = "App Icons";
 const String kDjamoCardFontFamily = "OCRAStd";
 const String kPackageName = "app_ui";
 const String kAssetPrefix = "packages/$kPackageName";

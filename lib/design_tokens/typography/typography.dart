@@ -126,4 +126,22 @@ class AppTypography {
       fontWeight: FontWeight.w700,
     ),
   );
+
+  static final TypographyTextStyle bigger = TypographyTextStyle(
+    thin: const AppTextStyle(
+      fontSize: 48,
+      lineHeight: 56 / 48,
+      fontWeight: FontWeight.w300,
+    ),
+    large: const AppTextStyle(
+      fontSize: 48,
+      lineHeight: 56 / 48,
+      fontWeight: FontWeight.w500,
+    ),
+    bLarge: const AppTextStyle(
+      fontSize: 48,
+      lineHeight: 56 / 48,
+      fontWeight: FontWeight.w700,
+    ),
+  );
 }
