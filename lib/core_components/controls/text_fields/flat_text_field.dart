@@ -98,6 +98,7 @@ class _AppFlatTextFieldState extends State<AppFlatTextField> {
 
   @override
   Widget build(BuildContext context) {
+    // Display errorText parameter on rebuild
     if (widget.errorText != null && widget.errorText!.isNotEmpty) {
       setState(() {
         _errorText = widget.errorText;
