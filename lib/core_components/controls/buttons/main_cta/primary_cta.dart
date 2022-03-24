@@ -43,23 +43,25 @@ class PrimaryCTA extends StatelessWidget {
       child: Material(
         color: Colors.transparent,
         child: InkWell(
-          onTap: isLoading ? null : onPressed,
+          onTap: enabled && !isLoading ? onPressed : null,
           highlightColor: Colors.transparent,
           borderRadius: BorderRadius.circular(24),
           child: isLoading
               ? const Center(
                   child: AppLoader(
-                  color: Colors.white,
-                ))
+                    color: Colors.white,
+                  ),
+                )
               : Row(
                   children: [
                     Expanded(
-                        child: Text(
-                      label,
-                      style: t.AppTypography.title!.small!
-                          .copyWith(color: Colors.white),
-                      textAlign: TextAlign.center,
-                    )),
+                      child: Text(
+                        label,
+                        style: t.AppTypography.title!.small!
+                            .copyWith(color: Colors.white),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
                   ],
                 ),
         ),

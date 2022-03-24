@@ -1,5 +1,9 @@
 import 'package:app_ui/core/constants/constants.dart';
+import 'package:app_ui/core/enums/standard_button_style.dart';
 import 'package:app_ui/core_components/controls/basic_tag/basic_tag.dart';
+import 'package:app_ui/core_components/controls/buttons/main_cta/primary_cta.dart';
+import 'package:app_ui/core_components/controls/buttons/main_cta/secondary_cta.dart';
+import 'package:app_ui/core_components/controls/buttons/standard_buttons/standard_buttons.dart';
 import 'package:app_ui/core_components/controls/text_fields/amount_text_field.dart';
 import 'package:app_ui/core_components/controls/transaction_type_switcher/transaction_type_switcher.dart';
 import 'package:app_ui/core_components/controls/transaction_type_switcher/transaction_type_switcher_item.dart';
@@ -31,8 +35,19 @@ class LaboView extends StatelessWidget {
         padding: const EdgeInsets.all(24),
         child: Column(
           children: <Widget>[
+            StandardButtons.medium(
+              //enabled: false,
+              //isLoading: true,
+              style: StandardButtonStyle.text,
+              onPressed: () {
+                print("#########");
+              },
+            ),
+
+            Gap(50),
             AppAmountTextField(),
             Gap(50),
+
             AppTransactionTypeSwitcher(
               items: [
                 AppTransactionTypeSwitcherItem(

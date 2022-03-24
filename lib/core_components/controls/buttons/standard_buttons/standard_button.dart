@@ -110,15 +110,17 @@ class StandardButton extends StatelessWidget {
             : InterfaceColors.action.disabledColor,
         borderRadius: BorderRadius.circular(borderRadius),
         boxShadow: enabled
-            ? List<BoxShadow>.from([
-                BoxShadow(
-                  color: InterfaceColors.action.defaultColor!
-                      .withAlpha(81.6.round()),
-                  offset: const Offset(0, 2),
-                  blurRadius: 4,
-                  spreadRadius: 0,
-                ),
-              ])
+            ? List<BoxShadow>.from(
+                [
+                  BoxShadow(
+                    color: InterfaceColors.action.defaultColor!
+                        .withAlpha(81.6.round()),
+                    offset: const Offset(0, 2),
+                    blurRadius: 4,
+                    spreadRadius: 0,
+                  ),
+                ],
+              )
             : null,
       );
 
@@ -128,11 +130,12 @@ class StandardButton extends StatelessWidget {
       );
 
   BoxDecoration get _outlinedDecoration => BoxDecoration(
-      borderRadius: BorderRadius.circular(borderRadius),
-      border: Border.all(
-        color: enabled && !isLoading
-            ? InterfaceColors.action.defaultColor!
-            : InterfaceColors.action.disabledColor!,
-        width: 2,
-      ));
+        borderRadius: BorderRadius.circular(borderRadius),
+        border: Border.all(
+          color: enabled && !isLoading
+              ? InterfaceColors.action.defaultColor!
+              : InterfaceColors.action.disabledColor!,
+          width: 2,
+        ),
+      );
 }
