@@ -156,7 +156,7 @@ class _AppFlatTextFieldState extends State<AppFlatTextField> {
                 cursorWidth: 1,
                 initialValue: widget.initialValue,
                 decoration: InputDecoration(
-                  errorText: _errorText != null ? _errorText : null,
+                  errorText: _errorText != null ? "" : null,
                   suffixText: widget.suffixText,
                   prefixText: widget.prefixText,
                   suffixIconConstraints: widget.suffixIconConstraints,
