@@ -94,11 +94,15 @@ class _AppFlatTextFieldState extends State<AppFlatTextField> {
   @override
   void initState() {
     super.initState();
-    _errorText = widget.errorText;
   }
 
   @override
   Widget build(BuildContext context) {
+    if (widget.errorText != null && widget.errorText!.isNotEmpty) {
+      setState(() {
+        _errorText = widget.errorText;
+      });
+    }
     return AppContainer(
       padding: widget.padding ??
           const EdgeInsets.only(
