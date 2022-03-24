@@ -31,6 +31,12 @@ class AppFlatTextField extends StatefulWidget {
     this.autofocus = false,
     this.initialValue,
     this.cursorHeight,
+    this.suffixText,
+    this.prefixText,
+    this.suffixIconConstraints,
+    this.prefixIconConstraints,
+    this.prefixStyle,
+    this.suffixStyle,
   }) : super(key: key);
 
   final String? label;
@@ -70,6 +76,13 @@ class AppFlatTextField extends StatefulWidget {
   final String? initialValue;
 
   final double? cursorHeight;
+
+  final String? suffixText;
+  final String? prefixText;
+  final BoxConstraints? suffixIconConstraints;
+  final BoxConstraints? prefixIconConstraints;
+  final TextStyle? prefixStyle;
+  final TextStyle? suffixStyle;
 
   @override
   State<AppFlatTextField> createState() => _AppFlatTextFieldState();
@@ -143,13 +156,17 @@ class _AppFlatTextFieldState extends State<AppFlatTextField> {
                 cursorWidth: 1,
                 initialValue: widget.initialValue,
                 decoration: InputDecoration(
-                  //errorMaxLines: 0,
-                  errorText: _errorText != null ? "" : null,
+                  errorText: _errorText != null ? _errorText : null,
+                  suffixText: widget.suffixText,
+                  prefixText: widget.prefixText,
+                  suffixIconConstraints: widget.suffixIconConstraints,
+                  prefixIconConstraints: widget.prefixIconConstraints,
+                  prefixStyle: widget.prefixStyle,
+                  suffixStyle: widget.suffixStyle,
                   prefixIcon: widget.prefixIcon,
                   suffixIcon: widget.suffixIcon,
                   enabled: widget.enabled,
                   filled: !widget.enabled,
-                  //errorText: "\u26A0 Une erreur est survenue",
                   fillColor:
                       widget.enabled ? null : NeutralColors.formBordersColor,
                   hintText: widget.placeHolderText,
