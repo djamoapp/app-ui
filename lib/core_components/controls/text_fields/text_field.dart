@@ -24,6 +24,9 @@ class AppTextField extends StatefulWidget {
     this.keyboardType,
     this.errorText,
     this.maxLines = 1,
+    this.autoValidateMode,
+    this.autocorrect,
+    this.cursorColor,
   }) : super(key: key);
 
   final String? Function(String? value)? validator;
@@ -51,6 +54,12 @@ class AppTextField extends StatefulWidget {
   final String? errorText;
 
   final int maxLines;
+
+  final AutovalidateMode? autoValidateMode;
+
+  final bool? autocorrect;
+
+  final Color? cursorColor;
 
   @override
   State<AppTextField> createState() => _AppTextFieldState();
@@ -80,6 +89,9 @@ class _AppTextFieldState extends State<AppTextField> {
         Stack(
           children: [
             TextFormField(
+              autovalidateMode:
+                  widget.autoValidateMode ?? AutovalidateMode.onUserInteraction,
+              autocorrect: widget.autocorrect ?? false,
               keyboardType: widget.keyboardType,
               maxLines: widget.maxLines,
               maxLength: widget.maxLength,
@@ -93,7 +105,8 @@ class _AppTextFieldState extends State<AppTextField> {
               },
               controller: widget.controller,
               onChanged: widget.onChanged,
-              cursorColor: InterfaceColors.action.defaultColor,
+              cursorColor:
+                  widget.cursorColor ?? InterfaceColors.action.defaultColor,
               cursorHeight: 16,
               cursorWidth: 1,
               decoration: InputDecoration(

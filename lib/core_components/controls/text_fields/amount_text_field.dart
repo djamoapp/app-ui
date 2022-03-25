@@ -6,8 +6,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class AppAmountTextField extends StatelessWidget {
+
   const AppAmountTextField(
-      {Key? key, this.controller, this.validator, this.formatters})
+      {Key? key, this.controller, this.validator, this.formatters, this.autoValidateMode, this.autocorrect, this.cursorColor})
       : super(key: key);
 
   final TextEditingController? controller;
@@ -16,18 +17,28 @@ class AppAmountTextField extends StatelessWidget {
 
   final List<TextInputFormatter>? formatters;
 
+  final AutovalidateMode? autoValidateMode;
+
+  final bool? autocorrect;
+
+  final Color? cursorColor;
+
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
         Expanded(
           child: TextFormField(
+            autovalidateMode: autoValidateMode ?? AutovalidateMode.onUserInteraction,
+            autocorrect: autocorrect ?? false,
             controller: controller,
             validator: validator,
+            keyboardType: const TextInputType.numberWithOptions(
+                signed: false, decimal: false),
             inputFormatters: formatters,
             decoration: InputDecoration(border: InputBorder.none),
             textAlign: TextAlign.end,
-            cursorColor: InterfaceColors.action.defaultColor,
+            cursorColor: cursorColor ?? InterfaceColors.action.defaultColor,
             style: AppTypography.bigger.large!
                 .copyWith(color: InterfaceColors.action.defaultColor),
           ),
