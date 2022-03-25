@@ -57,10 +57,12 @@ class AppBasicTag extends StatelessWidget {
               right: 12,
             ),
         radius: 8,
-        textAndIconColor: this.selected
+        textAndIconColor: this.selected && this.enable
             ? (this.selectedTextColor ?? Colors.white)
-            : (this.unselectedTextColor ??
-                InterfaceColors.action.defaultColor!),
+            : !this.selected && this.enable
+                ? (this.unselectedTextColor ??
+                    InterfaceColors.action.defaultColor!)
+                : Colors.white,
         backGroundColor: this.selected && this.enable
             ? (this.selectedColor ?? InterfaceColors.action.defaultColor!)
             : !this.selected && this.enable
