@@ -1,7 +1,9 @@
+import 'package:app_ui/core/constants/constants.dart';
 import 'package:app_ui/core_components/views/container/app_container.dart';
 import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
 import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
 import 'package:app_ui/design_tokens/typography/typography.dart';
+import 'package:countup/countup.dart';
 import 'package:flutter/material.dart';
 
 class AppAccountCard extends StatelessWidget {
@@ -14,6 +16,12 @@ class AppAccountCard extends StatelessWidget {
     this.color,
     this.borderRadius,
     this.padding = const EdgeInsets.all(24),
+    this.enableCountUp = false,
+    this.countUpBegin = 0.0,
+    this.counterUpEnd,
+    this.balanceTextStyle,
+    this.counterDuration = const Duration(seconds: 5),
+    this.counterSeparator = ' ',
   }) : super(key: key);
 
   final Widget leading;
@@ -29,6 +37,18 @@ class AppAccountCard extends StatelessWidget {
   final BorderRadius? borderRadius;
 
   final EdgeInsetsGeometry? padding;
+
+  final bool enableCountUp;
+
+  final double countUpBegin;
+
+  final double? counterUpEnd;
+
+  final Duration counterDuration;
+
+  final String counterSeparator;
+
+  final TextStyle? balanceTextStyle;
 
   @override
   Widget build(BuildContext context) {
@@ -51,10 +71,21 @@ class AppAccountCard extends StatelessWidget {
                   style: AppTypography.label!.bMedium100!
                       .copyWith(color: NeutralColors.disabledBackGroundColor),
                 ),
-                Text(
-                  balance,
-                  style: AppTypography.title!.bMedium200,
-                ),
+                this.enableCountUp
+                    ? Countup(
+                        begin: countUpBegin,
+                        end: counterUpEnd ?? double.parse(balance),
+                        duration: counterDuration,
+                        separator: counterSeparator,
+                        style:
+                            balanceTextStyle ?? AppTypography.title!.bMedium200,
+                        suffix: " $kDeviseSymbol",
+                      )
+                    : Text(
+                        balance,
+                        style:
+                            balanceTextStyle ?? AppTypography.title!.bMedium200,
+                      ),
               ],
             ),
           ),

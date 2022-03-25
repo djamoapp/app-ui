@@ -77,6 +77,7 @@ class LaboView extends StatelessWidget {
               trailing: Icon(AppIcons.add),
               balance: "2000000",
               title: "Principal",
+              enableCountUp: true,
             ),
             Gap(50),
             AppVaultCreationCTA(
