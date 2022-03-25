@@ -29,7 +29,7 @@ class AppAmountTextField extends StatelessWidget {
       children: [
         Expanded(
           child: TextFormField(
-            autovalidateMode: autoValidateMode ?? AutovalidateMode.onUserInteraction,
+            autovalidateMode: autoValidateMode,
             autocorrect: autocorrect ?? false,
             controller: controller,
             validator: validator,

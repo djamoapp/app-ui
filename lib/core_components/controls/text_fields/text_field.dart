@@ -90,7 +90,7 @@ class _AppTextFieldState extends State<AppTextField> {
           children: [
             TextFormField(
               autovalidateMode:
-                  widget.autoValidateMode ?? AutovalidateMode.onUserInteraction,
+                  widget.autoValidateMode,
               autocorrect: widget.autocorrect ?? false,
               keyboardType: widget.keyboardType,
               maxLines: widget.maxLines,
