@@ -1,4 +1,5 @@
 import 'package:app_ui/core_components/views/tags/tag.dart';
+import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:app_ui/design_tokens/colors/interface_colors.dart';
 
@@ -14,6 +15,7 @@ class AppBasicTag extends StatelessWidget {
     this.onSelected,
     this.labelStyle,
     this.padding,
+    this.enable = true,
   }) : super(key: key);
 
   final Color? selectedColor;
@@ -34,11 +36,13 @@ class AppBasicTag extends StatelessWidget {
 
   final EdgeInsetsGeometry? padding;
 
+  final bool enable;
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        if (this.onSelected != null) {
+        if (this.onSelected != null && enable) {
           this.onSelected!(this.label);
         }
       },
@@ -57,9 +61,11 @@ class AppBasicTag extends StatelessWidget {
             ? (this.selectedTextColor ?? Colors.white)
             : (this.unselectedTextColor ??
                 InterfaceColors.action.defaultColor!),
-        backGroundColor: this.selected
+        backGroundColor: this.selected && this.enable
             ? (this.selectedColor ?? InterfaceColors.action.defaultColor!)
-            : (this.unselectedColor ?? InterfaceColors.action.specialColor!),
+            : !this.selected && this.enable
+                ? (this.unselectedColor ?? InterfaceColors.action.specialColor!)
+                : NeutralColors.disabledBackGroundColor,
       ),
     );
   }

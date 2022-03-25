@@ -43,11 +43,9 @@ class LaboView extends StatelessWidget {
                 print("#########");
               },
             ),
-
             Gap(50),
             AppAmountTextField(),
             Gap(50),
-
             AppTransactionTypeSwitcher(
               items: [
                 AppTransactionTypeSwitcherItem(
