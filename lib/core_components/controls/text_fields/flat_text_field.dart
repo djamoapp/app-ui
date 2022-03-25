@@ -37,6 +37,9 @@ class AppFlatTextField extends StatefulWidget {
     this.prefixIconConstraints,
     this.prefixStyle,
     this.suffixStyle,
+    this.autoValidateMode,
+    this.autocorrect,
+    this.cursorColor,
   }) : super(key: key);
 
   final String? label;
@@ -83,6 +86,12 @@ class AppFlatTextField extends StatefulWidget {
   final BoxConstraints? prefixIconConstraints;
   final TextStyle? prefixStyle;
   final TextStyle? suffixStyle;
+
+  final AutovalidateMode? autoValidateMode;
+
+  final bool? autocorrect;
+
+  final Color? cursorColor;
 
   @override
   State<AppFlatTextField> createState() => _AppFlatTextFieldState();
@@ -141,6 +150,9 @@ class _AppFlatTextFieldState extends State<AppFlatTextField> {
           Stack(
             children: [
               TextFormField(
+                autovalidateMode: widget.autoValidateMode ??
+                    AutovalidateMode.onUserInteraction,
+                autocorrect: widget.autocorrect ?? false,
                 autofocus: widget.autofocus,
                 keyboardType: widget.keyboardType,
                 maxLines: widget.maxLines,
@@ -156,7 +168,8 @@ class _AppFlatTextFieldState extends State<AppFlatTextField> {
                 },
                 controller: widget.controller,
                 onChanged: widget.onChanged,
-                cursorColor: InterfaceColors.action.defaultColor,
+                cursorColor:
+                    widget.cursorColor ?? InterfaceColors.action.defaultColor,
                 cursorHeight: widget.cursorHeight ?? 18,
                 cursorWidth: 1,
                 initialValue: widget.initialValue,

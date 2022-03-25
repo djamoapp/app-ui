@@ -18,7 +18,10 @@ class AppPhoneNumberTextField extends StatefulWidget {
       this.onChanged,
       required this.controller,
       this.errorText,
-      this.validator})
+      this.validator,
+      this.autoValidateMode,
+      this.autocorrect,
+      this.cursorColor})
       : super(key: key);
 
   final bool enabled;
@@ -32,6 +35,12 @@ class AppPhoneNumberTextField extends StatefulWidget {
   final String? errorText;
 
   final String? Function(String? value)? validator;
+
+  final AutovalidateMode? autoValidateMode;
+
+  final bool? autocorrect;
+
+  final Color? cursorColor;
 
   @override
   State<AppPhoneNumberTextField> createState() =>
@@ -125,6 +134,9 @@ class _AppPhoneNumberTextFieldState extends State<AppPhoneNumberTextField> {
         AppGaps.xs,
         Expanded(
           child: AppTextField(
+            autoValidateMode:
+                widget.autoValidateMode ?? AutovalidateMode.onUserInteraction,
+            autocorrect: widget.autocorrect ?? false,
             keyboardType: const TextInputType.numberWithOptions(
                 signed: false, decimal: false),
             placeHolderText: "Enter your phone number here",
