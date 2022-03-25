@@ -3,8 +3,8 @@ import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
 import 'package:app_ui/design_tokens/typography/typography.dart';
 import 'package:flutter/material.dart';
 
-class HeroWidget extends StatelessWidget {
-  const HeroWidget(
+class AppHeroWidget extends StatelessWidget {
+  const AppHeroWidget(
       {Key? key,
       required this.icon,
       this.title,
