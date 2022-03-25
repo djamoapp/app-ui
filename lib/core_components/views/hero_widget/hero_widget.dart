@@ -13,7 +13,9 @@ class HeroWidget extends StatelessWidget {
       this.subtitleStyle,
       this.action,
       this.crossAxisAlignment,
-      this.mainAxisAlignment})
+      this.mainAxisAlignment,
+      this.titleTextAlign,
+      this.subtitleTextAlign})
       : super(key: key);
 
   final Widget icon;
@@ -22,9 +24,13 @@ class HeroWidget extends StatelessWidget {
 
   final TextStyle? titleStyle;
 
+  final TextAlign? titleTextAlign;
+
   final String? subTitle;
 
   final TextStyle? subtitleStyle;
+
+  final TextAlign? subtitleTextAlign;
 
   final Widget? action;
 
@@ -44,6 +50,7 @@ class HeroWidget extends StatelessWidget {
           Text(
             title!,
             style: titleStyle ?? AppTypography.title!.bMedium100,
+            textAlign: titleTextAlign ?? TextAlign.center,
           ),
         if (subTitle != null)
           Text(
@@ -51,7 +58,7 @@ class HeroWidget extends StatelessWidget {
             style: subtitleStyle ??
                 AppTypography.body!.small!
                     .copyWith(color: NeutralColors.disabledTextColor),
-            textAlign: TextAlign.center,
+            textAlign: subtitleTextAlign ?? TextAlign.center,
           ),
         if (action != null) ...[
           AppGaps.m,
