@@ -6,7 +6,7 @@ class AppSvgIcons {
   static String get pennies => "$kAssetPrefix/assets/icons/svg/pennies.svg";
   static String get star => "$kAssetPrefix/assets/icons/svg/star.svg";
   static String get notificationFilled =>
-      "$kAssetPrefix/assets/icons/svg/notificationFilled.svg.svg";
+      "$kAssetPrefix/assets/icons/svg/notificationFilled.svg";
   static String get textMessageFilled =>
       "$kAssetPrefix/assets/icons/svg/textMessageFilled.svg";
 }

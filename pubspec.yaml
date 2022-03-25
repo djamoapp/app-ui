@@ -40,6 +40,7 @@ flutter:
     # Icons
     - assets/icons/colored/
     - assets/icons/3d/
+    - assets/icons/svg/
 
     # GIF
     - assets/gif/
