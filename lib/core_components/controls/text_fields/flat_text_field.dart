@@ -150,8 +150,7 @@ class _AppFlatTextFieldState extends State<AppFlatTextField> {
           Stack(
             children: [
               TextFormField(
-                autovalidateMode: widget.autoValidateMode ??
-                    AutovalidateMode.onUserInteraction,
+                autovalidateMode: widget.autoValidateMode,
                 autocorrect: widget.autocorrect ?? false,
                 autofocus: widget.autofocus,
                 keyboardType: widget.keyboardType,
