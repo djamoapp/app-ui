@@ -40,6 +40,8 @@ class AppFlatTextField extends StatefulWidget {
     this.autoValidateMode,
     this.autocorrect,
     this.cursorColor,
+    this.helperText,
+    this.helperStyle,
   }) : super(key: key);
 
   final String? label;
@@ -92,6 +94,10 @@ class AppFlatTextField extends StatefulWidget {
   final bool? autocorrect;
 
   final Color? cursorColor;
+
+  final String? helperText;
+
+  final TextStyle? helperStyle;
 
   @override
   State<AppFlatTextField> createState() => _AppFlatTextFieldState();
@@ -173,6 +179,8 @@ class _AppFlatTextFieldState extends State<AppFlatTextField> {
                 cursorWidth: 1,
                 initialValue: widget.initialValue,
                 decoration: InputDecoration(
+                  helperText: widget.helperText,
+                  helperStyle: widget.helperStyle ?? AppTypography.body?.small,
                   errorText: _errorText != null ? "" : null,
                   suffixText: widget.suffixText,
                   prefixText: widget.prefixText,
