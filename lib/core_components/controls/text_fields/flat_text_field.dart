@@ -46,6 +46,9 @@ class AppFlatTextField extends StatefulWidget {
     this.textDirection,
     this.textInputAction,
     this.obscureText = false,
+    this.counterStyle,
+    this.buildCounter,
+    this.counterText,
   }) : super(key: key);
 
   final String? label;
@@ -82,6 +85,12 @@ class AppFlatTextField extends StatefulWidget {
   final TextDirection? textDirection;
   final TextInputAction? textInputAction;
   final bool obscureText;
+  final TextStyle? counterStyle;
+  final Widget? Function(BuildContext,
+      {required int currentLength,
+      required bool isFocused,
+      required int? maxLength})? buildCounter;
+  final String? counterText;
 
   @override
   State<AppFlatTextField> createState() => _AppFlatTextFieldState();
@@ -166,7 +175,10 @@ class _AppFlatTextFieldState extends State<AppFlatTextField> {
                 textDirection: widget.textDirection,
                 textInputAction: widget.textInputAction,
                 obscureText: widget.obscureText,
+                buildCounter: widget.buildCounter,
                 decoration: InputDecoration(
+                  counterStyle: widget.counterStyle,
+                  counterText: widget.counterText,
                   helperText: _errorText != null ? "" : widget.helperText,
                   helperStyle: widget.helperStyle ?? AppTypography.body?.small,
                   errorText: _errorText != null ? "" : null,
