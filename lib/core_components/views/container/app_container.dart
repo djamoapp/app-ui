@@ -3,24 +3,25 @@ import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
 import 'package:flutter/material.dart';
 
 class AppContainer extends StatelessWidget {
-  const AppContainer(
-      {Key? key,
-      this.boxDecoration,
-      this.padding,
-      this.height,
-      this.width = double.infinity,
-      this.margin,
-      this.child,
-      this.title,
-      this.titleText,
-      this.showTitleWidget = false,
-      this.actionButtonText,
-      this.onActionButtonTap,
-      this.color,
-      this.radiusAll,
-      this.borderRadius,
-      this.innerTitle = false})
-      : super(key: key);
+  const AppContainer({
+    Key? key,
+    this.boxDecoration,
+    this.padding,
+    this.height,
+    this.width,
+    this.margin,
+    this.child,
+    this.title,
+    this.titleText,
+    this.showTitleWidget = false,
+    this.actionButtonText,
+    this.onActionButtonTap,
+    this.color,
+    this.radiusAll,
+    this.borderRadius,
+    this.innerTitle = false,
+    this.fullWidth = false,
+  }) : super(key: key);
 
   final BoxDecoration? boxDecoration;
 
@@ -52,6 +53,8 @@ class AppContainer extends StatelessWidget {
 
   final bool innerTitle;
 
+  final bool fullWidth;
+
   @override
   Widget build(BuildContext context) {
     return showTitleWidget && !innerTitle
@@ -79,7 +82,7 @@ class AppContainer extends StatelessWidget {
   Widget _whiteBox() {
     return Container(
       height: height,
-      width: width,
+      width: fullWidth ? double.infinity : width,
       padding: padding ?? const EdgeInsets.all(16),
       margin: margin,
       decoration: boxDecoration ??
