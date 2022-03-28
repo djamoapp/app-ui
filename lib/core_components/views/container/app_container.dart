@@ -8,7 +8,7 @@ class AppContainer extends StatelessWidget {
       this.boxDecoration,
       this.padding,
       this.height,
-      this.width,
+      this.width = double.infinity,
       this.margin,
       this.child,
       this.title,
