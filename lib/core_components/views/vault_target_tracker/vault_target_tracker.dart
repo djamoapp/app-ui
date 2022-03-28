@@ -11,7 +11,10 @@ import '../../../design_tokens/typography/typography.dart';
 class AppVaultTargetTracker extends StatelessWidget {
   const AppVaultTargetTracker(
       {Key? key,
-    required this.title, required this.label, required this.level, required this.endDate})
+      required this.title,
+      required this.label,
+      required this.level,
+      required this.endDate})
       : super(key: key);
 
   final String title;
@@ -53,7 +56,7 @@ class AppVaultTargetTracker extends StatelessWidget {
           ),
           const Gap(16),
           AppTitleWithLabel(
-            title: "Echéance",
+            title: title,
             trailing: Row(
               children: [
                 const Icon(
