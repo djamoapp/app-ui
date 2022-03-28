@@ -42,62 +42,46 @@ class AppFlatTextField extends StatefulWidget {
     this.cursorColor,
     this.helperText,
     this.helperStyle,
+    this.textCapitalization = TextCapitalization.none,
+    this.textDirection,
+    this.textInputAction,
+    this.obscureText = false,
   }) : super(key: key);
 
   final String? label;
-
   final String placeHolderText;
-
   final TextEditingController? controller;
-
   final void Function(String value)? onChanged;
-
   final bool enabled;
-
   final Widget? prefixIcon;
-
   final Widget? suffixIcon;
-
   final int? maxLength;
-
   final List<TextInputFormatter>? inputFormatters;
-
   final TextInputType? keyboardType;
-
   final String? errorText;
-
   final int maxLines;
-
   final String? Function(String?)? validator;
-
   final TextStyle? labelStyle;
-
   final EdgeInsetsGeometry? padding;
-
   final Widget? subTitle;
-
   final bool autofocus;
-
   final String? initialValue;
-
   final double? cursorHeight;
-
   final String? suffixText;
   final String? prefixText;
   final BoxConstraints? suffixIconConstraints;
   final BoxConstraints? prefixIconConstraints;
   final TextStyle? prefixStyle;
   final TextStyle? suffixStyle;
-
   final AutovalidateMode? autoValidateMode;
-
   final bool? autocorrect;
-
   final Color? cursorColor;
-
   final String? helperText;
-
   final TextStyle? helperStyle;
+  final textCapitalization;
+  final TextDirection? textDirection;
+  final TextInputAction? textInputAction;
+  final bool obscureText;
 
   @override
   State<AppFlatTextField> createState() => _AppFlatTextFieldState();
@@ -178,8 +162,12 @@ class _AppFlatTextFieldState extends State<AppFlatTextField> {
                 cursorHeight: widget.cursorHeight ?? 18,
                 cursorWidth: 1,
                 initialValue: widget.initialValue,
+                textCapitalization: widget.textCapitalization,
+                textDirection: widget.textDirection,
+                textInputAction: widget.textInputAction,
+                obscureText: widget.obscureText,
                 decoration: InputDecoration(
-                  helperText: widget.helperText,
+                  helperText: _errorText != null ? "" : widget.helperText,
                   helperStyle: widget.helperStyle ?? AppTypography.body?.small,
                   errorText: _errorText != null ? "" : null,
                   suffixText: widget.suffixText,
