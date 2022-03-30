@@ -30,11 +30,10 @@ class AppBasicInline extends StatelessWidget {
           size: iconSize,
         ),
         const Gap(10),
-        Expanded(
-            child: Text(
+        Text(
           text,
           style: t.AppTypography.body!.small!.copyWith(color: textColor),
-        ))
+        )
       ],
     );
   }
