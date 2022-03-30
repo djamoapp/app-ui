@@ -10,7 +10,6 @@ class AppVaultLevel extends StatelessWidget {
   const AppVaultLevel({
     Key? key,
     this.title = "Label",
-    required this.balance,
     required this.amount,
     required this.leading,
     required this.level,
@@ -18,8 +17,6 @@ class AppVaultLevel extends StatelessWidget {
   }) : super(key: key);
 
   final String title;
-
-  final String balance;
 
   final String amount;
 

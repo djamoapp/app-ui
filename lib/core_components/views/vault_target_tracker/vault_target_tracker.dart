@@ -14,12 +14,15 @@ class AppVaultTargetTracker extends StatelessWidget {
       required this.title,
       required this.label,
       required this.level,
-      required this.endDate})
+      required this.endDate,
+      required this.endDateTitle})
       : super(key: key);
 
   final String title;
 
   final String label;
+
+  final String endDateTitle;
 
   final String endDate;
 
@@ -50,13 +53,14 @@ class AppVaultTargetTracker extends StatelessWidget {
                 value: level,
                 backgroundColor: Colors.transparent,
                 valueColor: AlwaysStoppedAnimation<Color>(
-                    InterfaceColors.action.defaultColor!),
+                  InterfaceColors.action.defaultColor!,
+                ),
               ),
             ),
           ),
           const Gap(16),
           AppTitleWithLabel(
-            title: title,
+            title: endDateTitle,
             trailing: Row(
               children: [
                 const Icon(
