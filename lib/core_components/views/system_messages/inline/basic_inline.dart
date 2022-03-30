@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:app_ui/design_tokens/typography/typography.dart' as t;
 
-class DjamoBasicInline extends StatelessWidget {
-  const DjamoBasicInline(
+class AppBasicInline extends StatelessWidget {
+  const AppBasicInline(
       {Key? key,
       required this.iconData,
       required this.textColor,
@@ -21,6 +21,8 @@ class DjamoBasicInline extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisSize: MainAxisSize.min,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Icon(
           iconData,

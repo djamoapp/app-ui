@@ -175,7 +175,7 @@ class _AppTextFieldState extends State<AppTextField> {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Gap((widget.maxLines * 24) + 22 + 6),
-                  DjamoBasicInline(
+                  AppBasicInline(
                     iconData: AppIcons.alert,
                     textColor: InterfaceColors.error.defaultColor!,
                     iconColor: InterfaceColors.error.defaultColor!,

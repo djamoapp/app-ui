@@ -76,6 +76,7 @@ class StandardButton extends StatelessWidget {
                       ],
                       Text(
                         label,
+                        overflow: TextOverflow.ellipsis,
                         style: textStyle.copyWith(
                           color: style == StandardButtonStyle.filled
                               ? Colors.white

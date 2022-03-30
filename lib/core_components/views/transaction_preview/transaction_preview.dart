@@ -89,7 +89,7 @@ class AppTransactionPreview extends StatelessWidget {
                     ),
                     if (errorMessage != null) ...[
                       AppGaps.xs,
-                      DjamoBasicInline(
+                      AppBasicInline(
                         iconData: AppIcons.alert,
                         textColor: InterfaceColors.error.defaultColor!,
                         iconColor: InterfaceColors.error.defaultColor!,

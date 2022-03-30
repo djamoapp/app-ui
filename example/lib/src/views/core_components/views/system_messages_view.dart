@@ -54,22 +54,22 @@ class SystemMessagesView extends StatelessWidget {
           AppGaps.m,
           Text("Error"),
           Divider(),
-          DjamoInline.error(
+          AppInline.error(
               "Ceci est un message d’erreur. Quelque chose n’a pas fonctionné correctement."),
           AppGaps.m,
           Text("Alert"),
           Divider(),
-          DjamoInline.alert(
+          AppInline.alert(
               "Ceci est un message d’alerte. Il faut y prêter beaucoup d’attention."),
           AppGaps.m,
           Text("Success"),
           Divider(),
-          DjamoInline.success(
+          AppInline.success(
               "Ceci est un message de succès. Tout a marché comme il se devait."),
           AppGaps.m,
           Text("Info"),
           Divider(),
-          DjamoInline.info(
+          AppInline.info(
               "Ceci est un message de succès. Tout a marché comme il se devait."),
         ],
       ),
