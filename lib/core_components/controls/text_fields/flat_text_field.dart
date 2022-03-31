@@ -244,6 +244,7 @@ class _AppFlatTextFieldState extends State<AppFlatTextField> {
                   Gap((widget.maxLines * 24) + 22 + 6),
                   if (_errorText != null)
                     AppBasicInline(
+                      mainAxisAlignment: MainAxisAlignment.start,
                       iconData: AppIcons.alert,
                       textColor: InterfaceColors.error.defaultColor!,
                       iconColor: InterfaceColors.error.defaultColor!,
