@@ -9,4 +9,6 @@ class AppSvgIcons {
       "$kAssetPrefix/assets/icons/svg/notificationFilled.svg";
   static String get textMessageFilled =>
       "$kAssetPrefix/assets/icons/svg/textMessageFilled.svg";
+  static String get reccurentWire =>
+      "$kAssetPrefix/assets/icons/svg/reccurentWire.svg";
 }
