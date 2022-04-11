@@ -51,7 +51,7 @@ class AppAmountTextField extends StatelessWidget {
         inputFormatters: formatters,
         decoration: InputDecoration(
           border: InputBorder.none,
-          suffixIcon: Text(
+          suffix: Text(
             kDeviseSymbol,
             style: AppTypography.headLine!.medium!.copyWith(
               color: NeutralColors.bordersHoverColor,
