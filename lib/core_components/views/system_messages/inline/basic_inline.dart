@@ -3,26 +3,30 @@ import 'package:gap/gap.dart';
 import 'package:app_ui/design_tokens/typography/typography.dart' as t;
 
 class AppBasicInline extends StatelessWidget {
-  const AppBasicInline(
-      {Key? key,
-      required this.iconData,
-      required this.textColor,
-      required this.iconColor,
-      required this.text,
-      this.iconSize = 18})
-      : super(key: key);
+  const AppBasicInline({
+    Key? key,
+    required this.iconData,
+    required this.textColor,
+    required this.iconColor,
+    required this.text,
+    this.iconSize = 18,
+    this.mainAxisSize = MainAxisSize.min,
+    this.mainAxisAlignment = MainAxisAlignment.center,
+  }) : super(key: key);
 
   final IconData iconData;
   final Color textColor;
   final Color iconColor;
   final String text;
   final double iconSize;
+  final MainAxisSize mainAxisSize;
+  final MainAxisAlignment mainAxisAlignment;
 
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisSize: MainAxisSize.min,
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisSize: mainAxisSize,
+      mainAxisAlignment: mainAxisAlignment,
       children: [
         Icon(
           iconData,
