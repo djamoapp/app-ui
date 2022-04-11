@@ -101,6 +101,7 @@ class LaboView extends StatelessWidget {
               endDate: '10/10/1999',
               level: 0.10,
               title: 'title',
+              endDateTitle: 'Echéance',
             ),
             Gap(50),
             AppBasicTag(

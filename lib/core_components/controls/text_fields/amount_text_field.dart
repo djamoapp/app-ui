@@ -36,36 +36,33 @@ class AppAmountTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Expanded(
-          child: TextFormField(
-            autofocus: autoFocus,
-            autovalidateMode: autoValidateMode,
-            autocorrect: autocorrect ?? false,
-            controller: controller,
-            validator: validator,
-            keyboardType: const TextInputType.numberWithOptions(
-              signed: false,
-              decimal: false,
+    return IntrinsicWidth(
+      child: TextFormField(
+        autofocus: autoFocus,
+        autovalidateMode: autoValidateMode,
+        autocorrect: autocorrect ?? false,
+        controller: controller,
+        validator: validator,
+        keyboardType: const TextInputType.numberWithOptions(
+          signed: false,
+          decimal: false,
+        ),
+        onChanged: onChanged,
+        inputFormatters: formatters,
+        decoration: InputDecoration(
+          border: InputBorder.none,
+          suffixIcon: Text(
+            kDeviseSymbol,
+            style: AppTypography.headLine!.medium!.copyWith(
+              color: NeutralColors.bordersHoverColor,
             ),
-            onChanged: onChanged,
-            inputFormatters: formatters,
-            decoration: InputDecoration(border: InputBorder.none),
-            textAlign: TextAlign.end,
-            cursorColor: cursorColor ?? InterfaceColors.action.defaultColor,
-            style: AppTypography.bigger.large!
-                .copyWith(color: InterfaceColors.action.defaultColor),
           ),
         ),
-        Expanded(
-          child: Text(
-            kDeviseSymbol,
-            style: AppTypography.headLine!.medium!
-                .copyWith(color: NeutralColors.bordersHoverColor),
-          ),
-        )
-      ],
+        textAlign: TextAlign.end,
+        cursorColor: cursorColor ?? InterfaceColors.action.defaultColor,
+        style: AppTypography.bigger.large!
+            .copyWith(color: InterfaceColors.action.defaultColor),
+      ),
     );
   }
 }
