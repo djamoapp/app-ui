@@ -172,10 +172,12 @@ class _AppTextFieldState extends State<AppTextField> {
             ),
             if (_errorText != null) ...[
               Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Gap((widget.maxLines * 24) + 22 + 6),
                   AppBasicInline(
+                    mainAxisAlignment: MainAxisAlignment.start,
                     iconData: AppIcons.alert,
                     textColor: InterfaceColors.error.defaultColor!,
                     iconColor: InterfaceColors.error.defaultColor!,

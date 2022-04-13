@@ -240,6 +240,7 @@ class _AppFlatTextFieldState extends State<AppFlatTextField> {
               ),
               Column(
                 mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Gap((widget.maxLines * 24) + 22 + 6),
                   if (_errorText != null)
