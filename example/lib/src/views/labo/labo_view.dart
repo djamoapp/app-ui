@@ -7,6 +7,7 @@ import 'package:app_ui/core_components/controls/buttons/standard_buttons/standar
 import 'package:app_ui/core_components/controls/text_fields/amount_text_field.dart';
 import 'package:app_ui/core_components/controls/transaction_type_switcher/transaction_type_switcher.dart';
 import 'package:app_ui/core_components/controls/transaction_type_switcher/transaction_type_switcher_item.dart';
+import 'package:app_ui/core_components/controls/vaults/vault_level.dart';
 import 'package:app_ui/core_components/other_tokens/app_icon_label.dart';
 import 'package:app_ui/core_components/views/account/app_account_card.dart';
 import 'package:app_ui/core_components/views/title_with_switch/title_with_switch.dart';
@@ -44,7 +45,18 @@ class LaboView extends StatelessWidget {
               },
             ),
             Gap(50),
-            AppAmountTextField(),
+            AppVaultLevel(
+              amount: "amount",
+              leading: Icon(
+                AppIcons.pennies,
+              ),
+              level: 0.1,
+              subTitle: "subTitle",
+              trailing: Icon(
+                AppIcons.account,
+              ),
+            ),
+            //AppAmountTextField(),
             Gap(50),
             AppTransactionTypeSwitcher(
               items: [

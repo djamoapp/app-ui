@@ -14,6 +14,7 @@ class AppVaultLevel extends StatelessWidget {
     required this.leading,
     required this.level,
     required this.subTitle,
+    this.trailing,
   }) : super(key: key);
 
   final String title;
@@ -25,6 +26,8 @@ class AppVaultLevel extends StatelessWidget {
   final double level;
 
   final String subTitle;
+
+  final Widget? trailing;
 
   @override
   Widget build(BuildContext context) {
@@ -44,18 +47,29 @@ class AppVaultLevel extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  title,
-                  style: AppTypography.label!.bSmall!.copyWith(
-                      fontSize: 14,
-                      color: NeutralColors.disabledBackGroundColor),
-                ),
-                AppGaps.xs,
-                Text(
-                  amount,
-                  style: AppTypography.label!.bMedium100!.copyWith(
-                    fontSize: 16,
-                  ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          title,
+                          style: AppTypography.label!.bSmall!.copyWith(
+                              fontSize: 14,
+                              color: NeutralColors.disabledBackGroundColor),
+                        ),
+                        AppGaps.xs,
+                        Text(
+                          amount,
+                          style: AppTypography.label!.bMedium100!.copyWith(
+                            fontSize: 16,
+                          ),
+                        ),
+                      ],
+                    ),
+                    trailing ?? Container(),
+                  ],
                 ),
                 AppGaps.s,
                 Container(
