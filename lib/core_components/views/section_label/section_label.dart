@@ -5,16 +5,24 @@ import 'package:app_ui/design_tokens/typography/typography.dart';
 import 'package:flutter/material.dart';
 
 class AppSectionLabel extends StatelessWidget {
-  const AppSectionLabel(
-      {Key? key,
-      this.label = "Label Name",
-      this.buttonLabel = "See all",
-      this.onButtonTap})
-      : super(key: key);
+  const AppSectionLabel({
+    Key? key,
+    this.label = "Label Name",
+    this.buttonLabel = "See all",
+    this.onButtonTap,
+    this.buttonPadding = const EdgeInsets.only(
+      left: 16,
+      right: 16,
+      top: 7,
+      bottom: 7,
+    ),
+  }) : super(key: key);
 
   final String label;
 
   final String buttonLabel;
+
+  final EdgeInsets buttonPadding;
 
   final Function()? onButtonTap;
 
@@ -32,7 +40,7 @@ class AppSectionLabel extends StatelessWidget {
         ),
         if (onButtonTap != null)
           StandardButtons.medium(
-            padding: EdgeInsets.all(5),
+            padding: buttonPadding,
             style: StandardButtonStyle.text,
             label: buttonLabel,
             onPressed: onButtonTap,

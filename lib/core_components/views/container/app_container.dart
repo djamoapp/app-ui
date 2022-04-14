@@ -21,6 +21,12 @@ class AppContainer extends StatelessWidget {
     this.borderRadius,
     this.innerTitle = false,
     this.fullWidth = false,
+    this.actionButtonPadding = const EdgeInsets.only(
+      left: 16,
+      right: 16,
+      top: 7,
+      bottom: 7,
+    ),
   }) : super(key: key);
 
   final BoxDecoration? boxDecoration;
@@ -40,6 +46,8 @@ class AppContainer extends StatelessWidget {
   final String? titleText;
 
   final String? actionButtonText;
+
+  final EdgeInsets actionButtonPadding;
 
   final bool showTitleWidget;
 
@@ -70,6 +78,7 @@ class AppContainer extends StatelessWidget {
                       label: titleText ?? "",
                       buttonLabel: actionButtonText ?? "",
                       onButtonTap: onActionButtonTap,
+                      buttonPadding: actionButtonPadding,
                     ),
               ),
               AppGaps.s,
@@ -102,6 +111,7 @@ class AppContainer extends StatelessWidget {
                       label: titleText ?? "",
                       buttonLabel: actionButtonText ?? "",
                       onButtonTap: onActionButtonTap,
+                      buttonPadding: actionButtonPadding,
                     ),
                 AppGaps.s,
                 if (child != null) child!,
