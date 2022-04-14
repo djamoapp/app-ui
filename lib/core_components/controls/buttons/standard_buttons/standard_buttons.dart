@@ -6,13 +6,16 @@ import 'package:app_ui/design_tokens/typography/typography.dart' as t;
 class StandardButtons {
   StandardButtons._();
 
-  static StandardButton large(
-          {StandardButtonStyle style = StandardButtonStyle.filled,
-          IconData? prefixIcon,
-          IconData? suffixIcon,
-          String label = "Button",
-          bool enabled = true,
-          Function()? onPressed}) =>
+  static StandardButton large({
+    StandardButtonStyle style = StandardButtonStyle.filled,
+    IconData? prefixIcon,
+    IconData? suffixIcon,
+    String label = "Button",
+    bool enabled = true,
+    double prefixIconSize = 20,
+    double suffixIconSize = 12,
+    Function()? onPressed,
+  }) =>
       StandardButton(
         label: label,
         enabled: enabled,
@@ -20,8 +23,8 @@ class StandardButtons {
         style: style,
         suffixIcon: suffixIcon,
         textStyle: t.AppTypography.title!.small!,
-        prefixIconSize: 20,
-        suffixIconSize: 12,
+        prefixIconSize: prefixIconSize,
+        suffixIconSize: suffixIconSize,
         onPressed: onPressed,
         borderRadius: 24,
         padding: const EdgeInsets.only(
@@ -32,13 +35,16 @@ class StandardButtons {
         ),
       );
 
-  static StandardButton medium(
-          {StandardButtonStyle style = StandardButtonStyle.filled,
-          IconData? prefixIcon,
-          IconData? suffixIcon,
-          String label = "Button",
-          bool enabled = true,
-          Function()? onPressed}) =>
+  static StandardButton medium({
+    StandardButtonStyle style = StandardButtonStyle.filled,
+    IconData? prefixIcon,
+    IconData? suffixIcon,
+    String label = "Button",
+    bool enabled = true,
+    double prefixIconSize = 13.33,
+    double suffixIconSize = 8,
+    Function()? onPressed,
+  }) =>
       StandardButton(
         label: label,
         enabled: enabled,
@@ -46,8 +52,8 @@ class StandardButtons {
         style: style,
         suffixIcon: suffixIcon,
         textStyle: t.AppTypography.label!.bSmall!,
-        prefixIconSize: 13.33,
-        suffixIconSize: 8,
+        prefixIconSize: prefixIconSize,
+        suffixIconSize: prefixIconSize,
         onPressed: onPressed,
         borderRadius: 16,
         padding: const EdgeInsets.only(
@@ -58,13 +64,16 @@ class StandardButtons {
         ),
       );
 
-  static StandardButton small(
-          {StandardButtonStyle style = StandardButtonStyle.filled,
-          IconData? prefixIcon,
-          IconData? suffixIcon,
-          String label = "Button",
-          bool enabled = true,
-          Function()? onPressed}) =>
+  static StandardButton small({
+    StandardButtonStyle style = StandardButtonStyle.filled,
+    IconData? prefixIcon,
+    IconData? suffixIcon,
+    String label = "Button",
+    bool enabled = true,
+    double prefixIconSize = 11.67,
+    double suffixIconSize = 6,
+    Function()? onPressed,
+  }) =>
       StandardButton(
         label: label,
         enabled: enabled,
@@ -74,8 +83,8 @@ class StandardButtons {
         textStyle: style != StandardButtonStyle.text
             ? t.AppTypography.body!.bTiny!
             : t.AppTypography.label!.small!,
-        prefixIconSize: 11.67,
-        suffixIconSize: 6,
+        prefixIconSize: prefixIconSize,
+        suffixIconSize: suffixIconSize,
         onPressed: onPressed,
         borderRadius: 16,
         padding: const EdgeInsets.only(
