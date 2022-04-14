@@ -14,6 +14,7 @@ class StandardButtons {
     bool enabled = true,
     double prefixIconSize = 20,
     double suffixIconSize = 12,
+    double borderRadius = 24,
     Function()? onPressed,
   }) =>
       StandardButton(
@@ -26,7 +27,7 @@ class StandardButtons {
         prefixIconSize: prefixIconSize,
         suffixIconSize: suffixIconSize,
         onPressed: onPressed,
-        borderRadius: 24,
+        borderRadius: borderRadius,
         padding: const EdgeInsets.only(
           left: 16,
           right: 16,
@@ -43,6 +44,7 @@ class StandardButtons {
     bool enabled = true,
     double prefixIconSize = 13.33,
     double suffixIconSize = 8,
+    double borderRadius = 16,
     Function()? onPressed,
   }) =>
       StandardButton(
@@ -55,7 +57,7 @@ class StandardButtons {
         prefixIconSize: prefixIconSize,
         suffixIconSize: prefixIconSize,
         onPressed: onPressed,
-        borderRadius: 16,
+        borderRadius: borderRadius,
         padding: const EdgeInsets.only(
           left: 16,
           right: 16,
@@ -72,6 +74,7 @@ class StandardButtons {
     bool enabled = true,
     double prefixIconSize = 11.67,
     double suffixIconSize = 6,
+    double borderRadius = 16,
     Function()? onPressed,
   }) =>
       StandardButton(
@@ -86,7 +89,7 @@ class StandardButtons {
         prefixIconSize: prefixIconSize,
         suffixIconSize: suffixIconSize,
         onPressed: onPressed,
-        borderRadius: 16,
+        borderRadius: borderRadius,
         padding: const EdgeInsets.only(
           left: 16,
           right: 16,
