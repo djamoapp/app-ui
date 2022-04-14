@@ -15,6 +15,12 @@ class StandardButtons {
     double prefixIconSize = 20,
     double suffixIconSize = 12,
     double borderRadius = 24,
+    EdgeInsets padding = const EdgeInsets.only(
+      left: 16,
+      right: 16,
+      top: 8.5,
+      bottom: 8.5,
+    ),
     Function()? onPressed,
   }) =>
       StandardButton(
@@ -28,12 +34,7 @@ class StandardButtons {
         suffixIconSize: suffixIconSize,
         onPressed: onPressed,
         borderRadius: borderRadius,
-        padding: const EdgeInsets.only(
-          left: 16,
-          right: 16,
-          top: 8.5,
-          bottom: 8.5,
-        ),
+        padding: padding,
       );
 
   static StandardButton medium({
@@ -45,6 +46,12 @@ class StandardButtons {
     double prefixIconSize = 13.33,
     double suffixIconSize = 8,
     double borderRadius = 16,
+    EdgeInsets padding = const EdgeInsets.only(
+      left: 16,
+      right: 16,
+      top: 7,
+      bottom: 7,
+    ),
     Function()? onPressed,
   }) =>
       StandardButton(
@@ -58,12 +65,7 @@ class StandardButtons {
         suffixIconSize: prefixIconSize,
         onPressed: onPressed,
         borderRadius: borderRadius,
-        padding: const EdgeInsets.only(
-          left: 16,
-          right: 16,
-          top: 7,
-          bottom: 7,
-        ),
+        padding: padding,
       );
 
   static StandardButton small({
@@ -75,6 +77,12 @@ class StandardButtons {
     double prefixIconSize = 11.67,
     double suffixIconSize = 6,
     double borderRadius = 16,
+    EdgeInsets padding = const EdgeInsets.only(
+      left: 16,
+      right: 16,
+      top: 4,
+      bottom: 4,
+    ),
     Function()? onPressed,
   }) =>
       StandardButton(
@@ -90,11 +98,6 @@ class StandardButtons {
         suffixIconSize: suffixIconSize,
         onPressed: onPressed,
         borderRadius: borderRadius,
-        padding: const EdgeInsets.only(
-          left: 16,
-          right: 16,
-          top: 4,
-          bottom: 4,
-        ),
+        padding: padding,
       );
 }
