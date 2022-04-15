@@ -83,7 +83,7 @@ class LaboView extends StatelessWidget {
             ),
             Gap(50),
             AppAccountCard(
-              leading: SvgPicture.asset(
+              icon: SvgPicture.asset(
                 AppColoredIcons.book,
               ),
               trailing: Icon(AppIcons.add),

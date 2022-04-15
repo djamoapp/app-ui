@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 class AppAccountCard extends StatelessWidget {
   const AppAccountCard({
     Key? key,
-    required this.leading,
+    required this.icon,
     required this.trailing,
     required this.balance,
     required this.title,
@@ -24,7 +24,7 @@ class AppAccountCard extends StatelessWidget {
     this.counterSeparator = ' ',
   }) : super(key: key);
 
-  final Widget leading;
+  final Widget icon;
 
   final Widget trailing;
 
@@ -56,42 +56,46 @@ class AppAccountCard extends StatelessWidget {
       padding: padding != null ? padding : null,
       color: color,
       borderRadius: borderRadius,
-      child: Row(
-        //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      child: Column(
         children: [
-          Expanded(
-            flex: 3,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                leading,
-                AppGaps.m,
-                Text(
-                  title,
-                  style: AppTypography.label!.bMedium100!
-                      .copyWith(color: NeutralColors.disabledBackGroundColor),
+          Row(
+            //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Expanded(
+                flex: 3,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      title,
+                      style: AppTypography.label!.bMedium100!.copyWith(
+                          color: NeutralColors.disabledBackGroundColor),
+                    ),
+                    this.enableCountUp
+                        ? Countup(
+                            begin: countUpBegin,
+                            end: counterUpEnd ?? double.parse(balance),
+                            duration: counterDuration,
+                            separator: counterSeparator,
+                            style: balanceTextStyle ??
+                                AppTypography.title!.bMedium200,
+                            suffix: " $kDeviseSymbol",
+                          )
+                        : Text(
+                            balance,
+                            style: balanceTextStyle ??
+                                AppTypography.title!.bMedium200,
+                          ),
+                  ],
                 ),
-                this.enableCountUp
-                    ? Countup(
-                        begin: countUpBegin,
-                        end: counterUpEnd ?? double.parse(balance),
-                        duration: counterDuration,
-                        separator: counterSeparator,
-                        style:
-                            balanceTextStyle ?? AppTypography.title!.bMedium200,
-                        suffix: " $kDeviseSymbol",
-                      )
-                    : Text(
-                        balance,
-                        style:
-                            balanceTextStyle ?? AppTypography.title!.bMedium200,
-                      ),
-              ],
-            ),
+              ),
+              Expanded(
+                child: icon,
+              )
+            ],
           ),
-          Expanded(
-            child: trailing,
-          )
+          AppGaps.m,
+          trailing,
         ],
       ),
     );
