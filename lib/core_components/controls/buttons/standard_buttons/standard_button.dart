@@ -51,7 +51,7 @@ class StandardButton extends StatelessWidget {
           highlightColor: Colors.transparent,
           borderRadius: BorderRadius.circular(borderRadius),
           child: Padding(
-            padding: padding ?? const EdgeInsets.all(8),
+            padding: padding ?? EdgeInsets.all(style == StandardButtonStyle.filled ? 6 : 8),
             child: isLoading
                 ? AppLoader(
                     color: style == StandardButtonStyle.filled
