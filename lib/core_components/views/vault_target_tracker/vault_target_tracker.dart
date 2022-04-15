@@ -3,20 +3,20 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:app_ui/core_components/views/title_label/title_with_label.dart';
 import 'package:app_ui/design_tokens/iconography/app_icons.dart';
-
 import '../../../design_tokens/colors/interface_colors.dart';
 import '../../../design_tokens/colors/neutral_colors.dart';
 import '../../../design_tokens/typography/typography.dart';
 
 class AppVaultTargetTracker extends StatelessWidget {
-  const AppVaultTargetTracker(
-      {Key? key,
-      required this.title,
-      required this.label,
-      required this.level,
-      required this.endDate,
-      required this.endDateTitle})
-      : super(key: key);
+  const AppVaultTargetTracker({
+    Key? key,
+    required this.title,
+    required this.label,
+    required this.level,
+    required this.endDate,
+    required this.endDateTitle,
+    this.progressbarColor,
+  }) : super(key: key);
 
   final String title;
 
@@ -27,6 +27,8 @@ class AppVaultTargetTracker extends StatelessWidget {
   final String endDate;
 
   final double level;
+
+  final Color? progressbarColor;
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +55,7 @@ class AppVaultTargetTracker extends StatelessWidget {
                 value: level,
                 backgroundColor: Colors.transparent,
                 valueColor: AlwaysStoppedAnimation<Color>(
-                  InterfaceColors.action.defaultColor!,
+                  progressbarColor ?? InterfaceColors.action.defaultColor!,
                 ),
               ),
             ),

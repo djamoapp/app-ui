@@ -15,6 +15,7 @@ class AppVaultLevel extends StatelessWidget {
     required this.level,
     required this.subTitle,
     this.trailing,
+    this.progressbarColor,
   }) : super(key: key);
 
   final String title;
@@ -28,6 +29,8 @@ class AppVaultLevel extends StatelessWidget {
   final String subTitle;
 
   final Widget? trailing;
+
+  final Color? progressbarColor;
 
   @override
   Widget build(BuildContext context) {
@@ -87,7 +90,9 @@ class AppVaultLevel extends StatelessWidget {
                       value: level,
                       backgroundColor: Colors.transparent,
                       valueColor: AlwaysStoppedAnimation<Color>(
-                          InterfaceColors.action.defaultColor!),
+                        progressbarColor ??
+                            InterfaceColors.action.defaultColor!,
+                      ),
                     ),
                   ),
                 ),
