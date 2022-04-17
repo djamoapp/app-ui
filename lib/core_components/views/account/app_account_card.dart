@@ -74,10 +74,7 @@ class AppAccountCard extends StatelessWidget {
                     this.enableCountUp
                         ? Countup(
                             begin: countUpBegin,
-                            end: counterUpEnd ??
-                                double.parse(
-                                  balance.replaceAll(".", ""),
-                                ),
+                            end: counterUpEnd ?? double.parse(balance),
                             duration: counterDuration,
                             separator: counterSeparator,
                             style: balanceTextStyle ??
