@@ -55,7 +55,8 @@ class SystemMessagesView extends StatelessWidget {
           Text("Error"),
           Divider(),
           AppInline.error(
-              "Ceci est un message d’erreur. Quelque chose n’a pas fonctionné correctement."),
+            "Ceci est un message d’erreur. Il faut y prêter beaucoup d’attention.",
+          ),
           AppGaps.m,
           Text("Alert"),
           Divider(),
