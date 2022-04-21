@@ -30,7 +30,7 @@ class AppTitleWithLabel extends StatelessWidget {
             Flexible(
               child: Text(
                 label ?? "Label",
-                style: AppTypography.label!.small!.copyWith(
+                style: AppTypography.body!.bTiny!.copyWith(
                     fontSize: 14, color: NeutralColors.disabledTextColor),
               ),
             ),
