@@ -16,6 +16,7 @@ class AppVaultTargetTracker extends StatelessWidget {
     required this.endDate,
     required this.endDateTitle,
     this.progressbarColor,
+    this.bottom,
   }) : super(key: key);
 
   final String title;
@@ -29,6 +30,8 @@ class AppVaultTargetTracker extends StatelessWidget {
   final double level;
 
   final Color? progressbarColor;
+
+  final Widget? bottom;
 
   @override
   Widget build(BuildContext context) {
@@ -79,6 +82,7 @@ class AppVaultTargetTracker extends StatelessWidget {
               ],
             ),
           ),
+          if (bottom != null) bottom!,
         ],
       ),
     );
