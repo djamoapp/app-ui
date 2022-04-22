@@ -49,14 +49,16 @@ class AppHeroWidget extends StatelessWidget {
         if (title != null)
           Text(
             title!,
-            style: titleStyle ?? AppTypography.title!.bMedium100,
+            style: titleStyle ?? AppTypography.headLine!.medium,
             textAlign: titleTextAlign ?? TextAlign.center,
           ),
+        if (title != null && subTitle != null)
+          AppGaps.s,
         if (subTitle != null)
           Text(
             subTitle!,
             style: subtitleStyle ??
-                AppTypography.body!.small!
+                AppTypography.body!.large!
                     .copyWith(color: NeutralColors.disabledTextColor),
             textAlign: subtitleTextAlign ?? TextAlign.center,
           ),
