@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:app_ui/core_components/views/system_messages/box/basic_box.dart';
 import 'package:app_ui/design_tokens/colors/interface_colors.dart';
@@ -7,7 +8,7 @@ class AppBox {
   AppBox._();
 
   static AppBasicBox error(String text) => AppBasicBox(
-        iconData: AppIcons.cross,
+        iconData: CupertinoIcons.exclamationmark_circle,
         iconColor: InterfaceColors.error.defaultColor as Color,
         text: text,
         textColor: InterfaceColors.error.defaultColor as Color,

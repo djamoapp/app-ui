@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:app_ui/core_components/views/system_messages/inline/basic_inline.dart';
 import 'package:app_ui/design_tokens/colors/interface_colors.dart';
@@ -15,7 +16,7 @@ class AppInline {
           MainAxisSize mainAxisSize = _mainAxisSize,
           MainAxisAlignment mainAxisAlignment = _mainAxisAlignment}) =>
       AppBasicInline(
-        iconData: AppIcons.cross,
+        iconData: CupertinoIcons.exclamationmark_circle,
         iconColor: InterfaceColors.error.defaultColor as Color,
         text: text,
         iconSize: iconSize,
