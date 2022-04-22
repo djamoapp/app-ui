@@ -50,27 +50,30 @@ class AppToolTip extends StatelessWidget {
                   children: [
                     Text(
                       title,
-                      style: AppTypography.title!.bMedium100,
+                      style: AppTypography.label!.bSmall,
                     ),
                     AppGaps.xs,
                     Text(
                       subTitle,
-                      style: AppTypography.body!.bSmall!
-                          .copyWith(color: NeutralColors.disabledTextColor),
+                      style: AppTypography.body!.small!.copyWith(
+                        color: NeutralColors.disabledTextColor,
+                      ),
                     )
                   ],
                 ),
               ),
             ),
-            AppGaps.m,
-            IconButton(
-              icon: Icon(
-                AppIcons.cross,
-                size: 10.67,
-                color: Colors.black,
+            if (onClose != null) ...[
+              AppGaps.m,
+              IconButton(
+                icon: Icon(
+                  AppIcons.cross,
+                  size: 10.67,
+                  color: Colors.black,
+                ),
+                onPressed: onClose,
               ),
-              onPressed: onClose,
-            ),
+            ]
           ],
         ),
       ),
