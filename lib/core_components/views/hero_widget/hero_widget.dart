@@ -45,11 +45,11 @@ class AppHeroWidget extends StatelessWidget {
       crossAxisAlignment: crossAxisAlignment ?? CrossAxisAlignment.center,
       children: [
         icon,
-        if (title != null || subTitle != null) AppGaps.ul,
+        if (title != null || subTitle != null) AppGaps.m,
         if (title != null)
           Text(
             title!,
-            style: titleStyle ?? AppTypography.headLine!.medium,
+            style: titleStyle ?? AppTypography.title!.bMedium100,
             textAlign: titleTextAlign ?? TextAlign.center,
           ),
         if (title != null && subTitle != null) AppGaps.s,
@@ -57,7 +57,7 @@ class AppHeroWidget extends StatelessWidget {
           Text(
             subTitle!,
             style: subtitleStyle ??
-                AppTypography.body!.large!
+                AppTypography.body!.small!
                     .copyWith(color: NeutralColors.disabledTextColor),
             textAlign: subtitleTextAlign ?? TextAlign.center,
           ),
