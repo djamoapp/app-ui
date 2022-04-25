@@ -80,7 +80,6 @@ class AppAccountCard extends StatelessWidget {
       //mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Expanded(
-          flex: 3,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -107,9 +106,7 @@ class AppAccountCard extends StatelessWidget {
             ],
           ),
         ),
-        Expanded(
-          child: icon,
-        )
+        icon,
       ],
     );
   }
