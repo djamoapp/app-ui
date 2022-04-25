@@ -22,7 +22,6 @@ class AppAccountCard extends StatelessWidget {
     this.balanceTextStyle,
     this.counterDuration = const Duration(seconds: 5),
     this.counterSeparator = ' ',
-    this.expandLeading = true,
   }) : super(key: key);
 
   final Widget icon;
@@ -51,8 +50,6 @@ class AppAccountCard extends StatelessWidget {
 
   final TextStyle? balanceTextStyle;
 
-  final bool expandLeading;
-
   @override
   Widget build(BuildContext context) {
     return AppContainer(
@@ -61,13 +58,7 @@ class AppAccountCard extends StatelessWidget {
       borderRadius: borderRadius,
       child: Column(
         children: [
-          expandLeading
-              ? Flexible(
-                  child: Expanded(
-                    child: _leading(),
-                  ),
-                )
-              : _leading(),
+          _leading(),
           AppGaps.m,
           trailing,
         ],
