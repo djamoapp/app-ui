@@ -22,6 +22,7 @@ class AppAccountCard extends StatelessWidget {
     this.balanceTextStyle,
     this.counterDuration = const Duration(seconds: 5),
     this.counterSeparator = ' ',
+    this.expandLeading = true,
   }) : super(key: key);
 
   final Widget icon;
@@ -50,6 +51,8 @@ class AppAccountCard extends StatelessWidget {
 
   final TextStyle? balanceTextStyle;
 
+  final bool expandLeading;
+
   @override
   Widget build(BuildContext context) {
     return AppContainer(
@@ -58,46 +61,54 @@ class AppAccountCard extends StatelessWidget {
       borderRadius: borderRadius,
       child: Column(
         children: [
-          Row(
-            //mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Expanded(
-                flex: 3,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      title,
-                      style: AppTypography.label!.bMedium100!.copyWith(
-                          color: NeutralColors.disabledBackGroundColor),
-                    ),
-                    this.enableCountUp
-                        ? Countup(
-                            begin: countUpBegin,
-                            end: counterUpEnd ?? double.parse(balance),
-                            duration: counterDuration,
-                            separator: counterSeparator,
-                            style: balanceTextStyle ??
-                                AppTypography.title!.bMedium200,
-                            suffix: " $kDeviseSymbol",
-                          )
-                        : Text(
-                            balance,
-                            style: balanceTextStyle ??
-                                AppTypography.title!.bMedium200,
-                          ),
-                  ],
-                ),
-              ),
-              Expanded(
-                child: icon,
-              )
-            ],
-          ),
+          expandLeading
+              ? Expanded(
+                  child: _leading(),
+                )
+              : _leading(),
           AppGaps.m,
           trailing,
         ],
       ),
+    );
+  }
+
+  Widget _leading() {
+    return Row(
+      //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Expanded(
+          flex: 3,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                title,
+                style: AppTypography.label!.bMedium100!
+                    .copyWith(color: NeutralColors.disabledBackGroundColor),
+              ),
+              this.enableCountUp
+                  ? Countup(
+                      begin: countUpBegin,
+                      end: counterUpEnd ?? double.parse(balance),
+                      duration: counterDuration,
+                      separator: counterSeparator,
+                      style:
+                          balanceTextStyle ?? AppTypography.title!.bMedium200,
+                      suffix: " $kDeviseSymbol",
+                    )
+                  : Text(
+                      balance,
+                      style:
+                          balanceTextStyle ?? AppTypography.title!.bMedium200,
+                    ),
+            ],
+          ),
+        ),
+        Expanded(
+          child: icon,
+        )
+      ],
     );
   }
 }
