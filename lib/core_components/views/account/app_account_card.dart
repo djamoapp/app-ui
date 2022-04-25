@@ -62,8 +62,10 @@ class AppAccountCard extends StatelessWidget {
       child: Column(
         children: [
           expandLeading
-              ? Expanded(
-                  child: _leading(),
+              ? Flexible(
+                  child: Expanded(
+                    child: _leading(),
+                  ),
                 )
               : _leading(),
           AppGaps.m,
