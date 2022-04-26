@@ -19,6 +19,12 @@ class StandardButton extends StatelessWidget {
     this.borderRadius = 0,
     this.padding,
     this.isLoading = false,
+    this.enabledColor,
+    this.enabledLabelColor,
+    this.disabledColor,
+    this.disabledLabelColor,
+    this.enabledIconColor,
+    this.disabledIconColor,
   }) : super(key: key);
 
   final StandardButtonStyle style;
@@ -33,6 +39,12 @@ class StandardButton extends StatelessWidget {
   final Function()? onPressed;
   final EdgeInsets? padding;
   final bool isLoading;
+  final Color? enabledColor;
+  final Color? enabledLabelColor;
+  final Color? disabledColor;
+  final Color? disabledLabelColor;
+  final Color? enabledIconColor;
+  final Color? disabledIconColor;
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +63,8 @@ class StandardButton extends StatelessWidget {
           highlightColor: Colors.transparent,
           borderRadius: BorderRadius.circular(borderRadius),
           child: Padding(
-            padding: padding ?? EdgeInsets.all(style == StandardButtonStyle.filled ? 6 : 8),
+            padding: padding ??
+                EdgeInsets.all(style == StandardButtonStyle.filled ? 6 : 8),
             child: isLoading
                 ? AppLoader(
                     color: style == StandardButtonStyle.filled
@@ -69,8 +82,10 @@ class StandardButton extends StatelessWidget {
                           color: style == StandardButtonStyle.filled
                               ? Colors.white
                               : enabled && !isLoading
-                                  ? InterfaceColors.action.defaultColor
-                                  : InterfaceColors.action.disabledColor,
+                                  ? enabledIconColor ??
+                                      InterfaceColors.action.defaultColor
+                                  : disabledIconColor ??
+                                      InterfaceColors.action.disabledColor,
                         ),
                         AppGaps.xs,
                       ],
@@ -81,8 +96,10 @@ class StandardButton extends StatelessWidget {
                           color: style == StandardButtonStyle.filled
                               ? Colors.white
                               : enabled && !isLoading
-                                  ? InterfaceColors.action.defaultColor
-                                  : InterfaceColors.action.disabledColor,
+                                  ? enabledLabelColor ??
+                                      InterfaceColors.action.defaultColor
+                                  : disabledLabelColor ??
+                                      InterfaceColors.action.disabledColor,
                         ),
                       ),
                       if (suffixIcon != null) ...[
@@ -107,8 +124,8 @@ class StandardButton extends StatelessWidget {
 
   BoxDecoration get _filledDecoration => BoxDecoration(
         color: enabled
-            ? InterfaceColors.action.defaultColor
-            : InterfaceColors.action.disabledColor,
+            ? enabledColor ?? InterfaceColors.action.defaultColor
+            : disabledColor ?? InterfaceColors.action.disabledColor,
         borderRadius: BorderRadius.circular(borderRadius),
         boxShadow: enabled
             ? List<BoxShadow>.from(
@@ -134,8 +151,8 @@ class StandardButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(borderRadius),
         border: Border.all(
           color: enabled && !isLoading
-              ? InterfaceColors.action.defaultColor!
-              : InterfaceColors.action.disabledColor!,
+              ? enabledColor ?? InterfaceColors.action.defaultColor!
+              : disabledColor ?? InterfaceColors.action.disabledColor!,
           width: 2,
         ),
       );

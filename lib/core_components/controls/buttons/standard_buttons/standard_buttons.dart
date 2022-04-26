@@ -22,6 +22,12 @@ class StandardButtons {
       bottom: 8.5,
     ),
     Function()? onPressed,
+    Color? enabledColor,
+    Color? enabledLabelColor,
+    Color? disabledColor,
+    Color? disabledLabelColor,
+    Color? enabledIconColor,
+    Color? disabledIconColor,
   }) =>
       StandardButton(
         label: label,
@@ -35,6 +41,12 @@ class StandardButtons {
         onPressed: onPressed,
         borderRadius: borderRadius,
         padding: padding,
+        enabledColor: enabledColor,
+        enabledLabelColor: enabledLabelColor,
+        disabledColor: disabledColor,
+        disabledLabelColor: disabledLabelColor,
+        enabledIconColor: enabledIconColor,
+        disabledIconColor: disabledIconColor,
       );
 
   static StandardButton medium({
@@ -53,6 +65,12 @@ class StandardButtons {
       bottom: 7,
     ),
     Function()? onPressed,
+    Color? enabledColor,
+    Color? enabledLabelColor,
+    Color? disabledColor,
+    Color? disabledLabelColor,
+    Color? enabledIconColor,
+    Color? disabledIconColor,
   }) =>
       StandardButton(
         label: label,
@@ -66,6 +84,12 @@ class StandardButtons {
         onPressed: onPressed,
         borderRadius: borderRadius,
         padding: padding,
+        enabledColor: enabledColor,
+        enabledLabelColor: enabledLabelColor,
+        disabledColor: disabledColor,
+        disabledLabelColor: disabledLabelColor,
+        enabledIconColor: enabledIconColor,
+        disabledIconColor: disabledIconColor,
       );
 
   static StandardButton small({
@@ -84,6 +108,12 @@ class StandardButtons {
       bottom: 4,
     ),
     Function()? onPressed,
+    Color? enabledColor,
+    Color? enabledLabelColor,
+    Color? disabledColor,
+    Color? disabledLabelColor,
+    Color? enabledIconColor,
+    Color? disabledIconColor,
   }) =>
       StandardButton(
         label: label,
@@ -99,5 +129,11 @@ class StandardButtons {
         onPressed: onPressed,
         borderRadius: borderRadius,
         padding: padding,
+        enabledColor: enabledColor,
+        enabledLabelColor: enabledLabelColor,
+        disabledColor: disabledColor,
+        disabledLabelColor: disabledLabelColor,
+        enabledIconColor: enabledIconColor,
+        disabledIconColor: disabledIconColor,
       );
 }
