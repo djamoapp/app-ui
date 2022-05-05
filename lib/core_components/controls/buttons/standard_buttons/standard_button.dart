@@ -143,7 +143,7 @@ class StandardButton extends StatelessWidget {
       );
 
   BoxDecoration get _filledLightDecoration => BoxDecoration(
-        color: InterfaceColors.action.specialColor,
+        color: enabled ? enabledColor ?? InterfaceColors.action.specialColor : disabledColor ?? InterfaceColors.action.specialColor,
         borderRadius: BorderRadius.circular(borderRadius),
       );
 
