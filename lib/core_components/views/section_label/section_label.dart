@@ -43,7 +43,7 @@ class AppSectionLabel extends StatelessWidget {
           ),
         ),
         if (onButtonTap != null)
-          StandardButton(style: StandardButtonStyle.text, textStyle: buttonLabelStyle ?? AppTypography.label!.bSmall!, padding: buttonPadding, label: buttonLabel, onPressed: onButtonTap,),
+          StandardButton(style: StandardButtonStyle.text, textStyle: buttonLabelStyle ?? AppTypography.label!.bSmall!, padding: buttonPadding, label: buttonLabel, onPressed: onButtonTap, borderRadius: 16,),
       ],
     );
   }
