@@ -67,26 +67,29 @@ class AppContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return showTitleWidget && !innerTitle
-        ? Column(
-            mainAxisSize: MainAxisSize.min,
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 8.0),
-                child: title ??
-                    AppSectionLabel(
-                      label: titleText ?? "",
-                    labelStyle: AppTypography.label!.bMedium100,
-                      buttonLabel: actionButtonText ?? "",
-                      onButtonTap: onActionButtonTap,
-                      buttonPadding: actionButtonPadding,
-                    ),
-              ),
-              AppGaps.s,
-              _whiteBox(),
-            ],
-          )
+        ? Container(
+      margin: margin,
+          child: Column(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 8.0),
+                  child: title ??
+                      AppSectionLabel(
+                        label: titleText ?? "",
+                      labelStyle: AppTypography.label!.bMedium100,
+                        buttonLabel: actionButtonText ?? "",
+                        onButtonTap: onActionButtonTap,
+                        buttonPadding: actionButtonPadding,
+                      ),
+                ),
+                AppGaps.s,
+                _whiteBox(),
+              ],
+            ),
+        )
         : _whiteBox();
   }
 
@@ -95,7 +98,7 @@ class AppContainer extends StatelessWidget {
       height: height,
       width: fullWidth ? double.infinity : width,
       padding: padding ?? const EdgeInsets.all(16),
-      margin: margin,
+      margin: showTitleWidget && !innerTitle ? null : margin,
       decoration: boxDecoration ??
           BoxDecoration(
             color: color ?? Colors.white,
