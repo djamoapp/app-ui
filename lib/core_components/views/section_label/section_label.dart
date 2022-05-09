@@ -1,5 +1,5 @@
 import 'package:app_ui/core/enums/standard_button_style.dart';
-import 'package:app_ui/core_components/controls/buttons/standard_buttons/standard_buttons.dart';
+import 'package:app_ui/core_components/controls/buttons/standard_buttons/standard_button.dart';
 import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
 import 'package:app_ui/design_tokens/typography/typography.dart';
 import 'package:flutter/material.dart';
@@ -15,7 +15,7 @@ class AppSectionLabel extends StatelessWidget {
       right: 16,
       top: 7,
       bottom: 7,
-    ), this.labelStyle,
+    ), this.labelStyle, this.buttonLabelStyle,
   }) : super(key: key);
 
   final String label;
@@ -27,6 +27,8 @@ class AppSectionLabel extends StatelessWidget {
   final Function()? onButtonTap;
 
   final TextStyle? labelStyle;
+
+  final TextStyle? buttonLabelStyle;
 
   @override
   Widget build(BuildContext context) {
@@ -41,12 +43,7 @@ class AppSectionLabel extends StatelessWidget {
           ),
         ),
         if (onButtonTap != null)
-          StandardButtons.medium(
-            padding: buttonPadding,
-            style: StandardButtonStyle.text,
-            label: buttonLabel,
-            onPressed: onButtonTap,
-          ),
+          StandardButton(style: StandardButtonStyle.text, textStyle: buttonLabelStyle ?? AppTypography.label!.bSmall!, padding: buttonPadding, label: buttonLabel, onPressed: onButtonTap,),
       ],
     );
   }

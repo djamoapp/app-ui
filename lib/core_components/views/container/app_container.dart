@@ -76,14 +76,7 @@ class AppContainer extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.only(left: 8.0),
-                  child: title ??
-                      AppSectionLabel(
-                        label: titleText ?? "",
-                      labelStyle: AppTypography.label!.bMedium100,
-                        buttonLabel: actionButtonText ?? "",
-                        onButtonTap: onActionButtonTap,
-                        buttonPadding: actionButtonPadding,
-                      ),
+                  child: _title(),
                 ),
                 AppGaps.s,
                 _whiteBox(),
@@ -111,18 +104,24 @@ class AppContainer extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                title ??
-                    AppSectionLabel(
-                      label: titleText ?? "",
-                      buttonLabel: actionButtonText ?? "",
-                      onButtonTap: onActionButtonTap,
-                      buttonPadding: actionButtonPadding,
-                    ),
+                _title(),
                 AppGaps.s,
                 if (child != null) child!,
               ],
             )
           : child,
     );
+  }
+
+  Widget _title() {
+    return title ??
+        AppSectionLabel(
+          label: titleText ?? "",
+          labelStyle: AppTypography.label!.bMedium100,
+          buttonLabel: actionButtonText ?? "",
+          onButtonTap: onActionButtonTap,
+          buttonPadding: actionButtonPadding,
+          buttonLabelStyle: AppTypography.body!.bSmall,
+        );
   }
 }
