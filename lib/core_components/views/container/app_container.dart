@@ -1,5 +1,6 @@
 import 'package:app_ui/core_components/views/section_label/section_label.dart';
 import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
+import 'package:app_ui/design_tokens/typography/typography.dart';
 import 'package:flutter/material.dart';
 
 class AppContainer extends StatelessWidget {
@@ -76,6 +77,7 @@ class AppContainer extends StatelessWidget {
                 child: title ??
                     AppSectionLabel(
                       label: titleText ?? "",
+                    labelStyle: AppTypography.label!.bMedium100,
                       buttonLabel: actionButtonText ?? "",
                       onButtonTap: onActionButtonTap,
                       buttonPadding: actionButtonPadding,

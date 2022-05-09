@@ -15,7 +15,7 @@ class AppSectionLabel extends StatelessWidget {
       right: 16,
       top: 7,
       bottom: 7,
-    ),
+    ), this.labelStyle,
   }) : super(key: key);
 
   final String label;
@@ -26,6 +26,8 @@ class AppSectionLabel extends StatelessWidget {
 
   final Function()? onButtonTap;
 
+  final TextStyle? labelStyle;
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -33,7 +35,7 @@ class AppSectionLabel extends StatelessWidget {
       children: [
         Text(
           label,
-          style: AppTypography.title!.bMedium100!.copyWith(
+          style: (labelStyle ?? AppTypography.title!.bMedium100)!.copyWith(
             color: NeutralColors.disabledBackGroundColor,
             fontSize: 16,
           ),
