@@ -48,6 +48,7 @@ class AppVaultCreationCTA extends StatelessWidget {
                     style: AppTypography.label!.bSmall!.copyWith(
                       color: InterfaceColors.action.defaultColor,
                     ),
+                    textScaleFactor: 1.0,
                   ),
                   AppGaps.xs,
                   Text(
@@ -55,6 +56,7 @@ class AppVaultCreationCTA extends StatelessWidget {
                     style: AppTypography.body!.small!.copyWith(
                       color: NeutralColors.neutral700,
                     ),
+                    textScaleFactor: 1.0,
                   ),
                 ],
               ),

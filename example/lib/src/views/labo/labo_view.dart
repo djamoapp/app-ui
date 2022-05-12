@@ -101,8 +101,9 @@ class LaboView extends StatelessWidget {
             ),
             Gap(50),
             AppToolTip(
-              title: "Créez-vous un coffre",
-              subTitle: "Épargner simplement et rapidement",
+              title: "Créez-vous un coffr dsfsfd sdfsdf sdf",
+              subTitle:
+                  "Épargner simplement et rapidement Épargner simplement et rapidement Épargner.",
               leading: SvgPicture.asset(
                 AppColoredIcons.car,
               ),
