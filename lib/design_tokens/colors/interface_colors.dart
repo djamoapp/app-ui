@@ -16,7 +16,7 @@ class InterfaceColors {
       backGroundColor: const Color(0xffEBFAF3));
 
   static final InterfaceColor alert = InterfaceColor(
-      defaultColor: const Color(0xffFFBC01),
+      defaultColor: const Color(0xffDDC25A),
       disabledColor: const Color(0xffFFEFC2),
       backGroundColor: const Color(0xffFFFAEB));
 
