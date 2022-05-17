@@ -22,7 +22,7 @@ class TransactionPreviewView extends StatelessWidget {
             amount: "-5000",
             leading: const AppAvatar(
               image: kProfile3,
-              isDjamoAvatar: true,
+              showBadge: true,
             ),
             hasGif: true,
             title: 'A Malick Aziz',

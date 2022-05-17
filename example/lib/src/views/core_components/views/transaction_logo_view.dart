@@ -105,22 +105,22 @@ class TransactionLogoView extends StatelessWidget {
               children: [
                 AppAvatar(
                   image: kProfile1,
-                  isDjamoAvatar: true,
+                  showBadge: true,
                 ),
                 AppGaps.m,
                 AppAvatar(
                   image: kProfile2,
-                  isDjamoAvatar: true,
+                  showBadge: true,
                 ),
                 AppGaps.m,
                 AppAvatar(
                   image: kProfile3,
-                  isDjamoAvatar: true,
+                  showBadge: true,
                 ),
                 AppGaps.m,
                 AppAvatar(
                   image: kProfile4,
-                  isDjamoAvatar: true,
+                  showBadge: true,
                 ),
               ],
             ),

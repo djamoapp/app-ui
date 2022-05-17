@@ -1,16 +1,19 @@
 import 'package:app_ui/core/constants/constants.dart';
+import 'package:app_ui/design_tokens/layout_and_spacing/app_spacings.dart';
 import 'package:app_ui/design_tokens/typography/typography.dart';
 import 'package:flutter/material.dart';
 import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
 
 import '../cached_network_image/app_cached_network_image.dart';
 
-void showAppNoActionPopover(BuildContext context,
-    {String image = "assets/gif/lock.gif",
-    bool localImage = true,
-    String body =
-        "Lorem ipsum dolor sit amet, consectetur. Gravida in purus mi, dignissim dignissim.",
-    String package = kPackageName}) {
+void showAppNoActionPopover(
+  BuildContext context, {
+  String image = "assets/gif/lock.gif",
+  bool localImage = true,
+  String body =
+      "Lorem ipsum dolor sit amet, consectetur. Gravida in purus mi, dignissim dignissim.",
+  String package = kPackageName,
+}) {
   showDialog(
     barrierDismissible: false,
     context: context,
@@ -23,10 +26,10 @@ void showAppNoActionPopover(BuildContext context,
         ),
         child: Container(
           padding: const EdgeInsets.only(
-            top: 16,
-            left: 24,
-            right: 24,
-            bottom: 32,
+            top: kDefaultPadding,
+            left: AppSpacings.l,
+            right: AppSpacings.l,
+            bottom: AppSpacings.xl,
           ),
           child: Column(
             mainAxisSize: MainAxisSize.min,

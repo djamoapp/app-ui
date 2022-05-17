@@ -1,7 +1,7 @@
-import 'package:app_ui/core_components/views/stepper/app_step.dart';
 import 'package:app_ui/core_components/views/stepper/app_stepper.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:app_ui/core/models/app_step.dart';
 
 class StepperView extends StatelessWidget {
   const StepperView({Key? key}) : super(key: key);
@@ -37,10 +37,11 @@ class StepperView extends StatelessWidget {
               ),
             ),
             AppStep(
-                content: Container(
-                  color: Colors.yellow,
-                ),
-                validator: () => true),
+              content: Container(
+                color: Colors.yellow,
+              ),
+              validator: () => true,
+            ),
           ],
         ),
       ),

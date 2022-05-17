@@ -14,7 +14,7 @@ class KeyBoardView extends StatelessWidget {
         padding: const EdgeInsets.all(20),
         child: Center(
           child: AppPinCodeKeyBoard(
-            showFingerPrint: true,
+            showBiometry: true,
             onDeletePress: () {
               print("delete");
             },

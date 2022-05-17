@@ -4,4 +4,6 @@ const String kDjamoCardFontFamily = "OCRAStd";
 const String kPackageName = "app_ui";
 const String kAssetPrefix = "packages/$kPackageName";
 const String kDeviseSymbol = "F CFA";
-const double defaultHorisontalMargin = 16;
+const double kDefaultPadding = 16;
+const double kDefaultMargin = 16;
+const double kDefaultBorderRadius = 16;

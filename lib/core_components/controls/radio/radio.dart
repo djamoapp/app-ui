@@ -3,9 +3,13 @@ import 'package:app_ui/design_tokens/colors/interface_colors.dart';
 import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
 
 class AppRadio<T> extends StatelessWidget {
-  const AppRadio(
-      {Key? key, required this.value, this.groupValue, this.onChanged})
-      : super(key: key);
+  const AppRadio({
+    Key? key,
+    required this.value,
+    this.groupValue,
+    this.onChanged,
+    this.enabled = true,
+  }) : super(key: key);
 
   final T value;
 
@@ -13,11 +17,13 @@ class AppRadio<T> extends StatelessWidget {
 
   final Function(T value)? onChanged;
 
+  final bool enabled;
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        if (onChanged != null) onChanged!(value);
+        if (enabled == true && onChanged != null) onChanged!(value);
       },
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 300),
@@ -31,7 +37,7 @@ class AppRadio<T> extends StatelessWidget {
               ? null
               : Border.all(
                   width: 1,
-                  color: NeutralColors.bordersHoverColor,
+                  color: enabled ? NeutralColors.bordersHoverColor : NeutralColors.neutral200,
                 ),
         ),
         child: value == groupValue

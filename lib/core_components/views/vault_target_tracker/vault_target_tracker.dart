@@ -1,4 +1,5 @@
 import 'package:app_ui/core_components/views/container/app_container.dart';
+import 'package:app_ui/core_components/views/progress_indicator/progress_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:app_ui/core_components/views/title_label/title_with_label.dart';
@@ -43,25 +44,10 @@ class AppVaultTargetTracker extends StatelessWidget {
             label: label,
           ),
           const Gap(16),
-          Container(
+          AppProgressIndicator(
             height: 8,
-            decoration: BoxDecoration(
-              border: Border.all(
-                color: NeutralColors.formBordersColor,
-                width: 1,
-              ),
-              borderRadius: BorderRadius.circular(6),
-            ),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(6),
-              child: LinearProgressIndicator(
-                value: level,
-                backgroundColor: Colors.transparent,
-                valueColor: AlwaysStoppedAnimation<Color>(
-                  progressbarColor ?? InterfaceColors.action.defaultColor!,
-                ),
-              ),
-            ),
+            level: level,
+            progressColor: progressbarColor,
           ),
           const Gap(16),
           AppTitleWithLabel(
@@ -76,8 +62,9 @@ class AppVaultTargetTracker extends StatelessWidget {
                 const Gap(5),
                 Text(
                   endDate,
-                  style: AppTypography.body!.bTiny!
-                      .copyWith(color: NeutralColors.disabledTextColor),
+                  style: AppTypography.body!.bTiny!.copyWith(
+                    color: NeutralColors.disabledTextColor,
+                  ),
                 ),
               ],
             ),
