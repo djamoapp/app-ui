@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 
 class TypographyTextStyle {
-  TypographyTextStyle(
-      {this.large,
-      this.bLarge,
-      this.medium,
-      this.small,
-      this.bMedium100,
-      this.bMedium200,
-      this.bSmall,
-      this.bTiny,
-      this.tiny,
-      this.thin});
+  TypographyTextStyle({
+    this.large,
+    this.bLarge,
+    this.medium,
+    this.small,
+    this.bMedium100,
+    this.bMedium200,
+    this.bSmall,
+    this.bTiny,
+    this.tiny,
+    this.thin,
+  });
 
   late final TextStyle? large;
 
