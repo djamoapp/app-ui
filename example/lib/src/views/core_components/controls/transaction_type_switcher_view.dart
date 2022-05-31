@@ -1,5 +1,5 @@
+import 'package:app_ui/core/models/transaction_type_switcher_item.dart';
 import 'package:app_ui/core_components/controls/transaction_type_switcher/transaction_type_switcher.dart';
-import 'package:app_ui/core_components/controls/transaction_type_switcher/transaction_type_switcher_item.dart';
 import 'package:app_ui/design_tokens/colors/interface_colors.dart';
 import 'package:app_ui/design_tokens/iconography/app_icons.dart';
 import 'package:flutter/material.dart';

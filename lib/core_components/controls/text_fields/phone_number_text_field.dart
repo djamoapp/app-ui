@@ -11,18 +11,21 @@ import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
 import 'package:app_ui/design_tokens/typography/typography.dart' as t;
 
 class AppPhoneNumberTextField extends StatefulWidget {
-  const AppPhoneNumberTextField(
-      {Key? key,
-      this.enabled = true,
-      this.onCountryChanged,
-      this.onChanged,
-      required this.controller,
-      this.errorText,
-      this.validator,
-      this.autoValidateMode,
-      this.autocorrect,
-      this.cursorColor})
-      : super(key: key);
+  const AppPhoneNumberTextField({
+    Key? key,
+    this.enabled = true,
+    this.onCountryChanged,
+    this.onChanged,
+    required this.controller,
+    this.errorText,
+    this.validator,
+    this.autoValidateMode,
+    this.autocorrect,
+    this.cursorColor,
+    this.placeHolder = "Enter your phone number here",
+    this.phoneNumberMask = "## ## ## ## ##",
+    this.inputFormatters = const [],
+  }) : super(key: key);
 
   final bool enabled;
 
@@ -41,6 +44,12 @@ class AppPhoneNumberTextField extends StatefulWidget {
   final bool? autocorrect;
 
   final Color? cursorColor;
+
+  final String placeHolder;
+
+  final String phoneNumberMask;
+
+  final List<TextInputFormatter>? inputFormatters;
 
   @override
   State<AppPhoneNumberTextField> createState() =>
@@ -62,8 +71,6 @@ class _AppPhoneNumberTextFieldState extends State<AppPhoneNumberTextField> {
       country = c;
     });
   }
-
-  final String _mask = "## ## ## ## ##";
 
   @override
   Widget build(BuildContext context) {
@@ -134,12 +141,11 @@ class _AppPhoneNumberTextFieldState extends State<AppPhoneNumberTextField> {
         AppGaps.xs,
         Expanded(
           child: AppTextField(
-            autoValidateMode:
-                widget.autoValidateMode,
+            autoValidateMode: widget.autoValidateMode,
             autocorrect: widget.autocorrect ?? false,
             keyboardType: const TextInputType.numberWithOptions(
                 signed: false, decimal: false),
-            placeHolderText: "Enter your phone number here",
+            placeHolderText: widget.placeHolder,
             enabled: widget.enabled,
             controller: widget.controller,
             onChanged: widget.onChanged,
@@ -147,11 +153,12 @@ class _AppPhoneNumberTextFieldState extends State<AppPhoneNumberTextField> {
             errorText: widget.errorText,
             inputFormatters: [
               MaskTextInputFormatter(
-                mask: _mask,
+                mask: widget.phoneNumberMask,
                 filter: {"#": RegExp(r'[0-9]')},
                 type: MaskAutoCompletionType.lazy,
               ),
-              LengthLimitingTextInputFormatter(_mask.length),
+              LengthLimitingTextInputFormatter(widget.phoneNumberMask.length),
+              ...?widget.inputFormatters
             ],
           ),
         ),

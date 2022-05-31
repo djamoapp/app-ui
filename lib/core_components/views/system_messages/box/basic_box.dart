@@ -35,10 +35,11 @@ class AppBasicBox extends StatelessWidget {
           ),
           const Gap(20),
           Expanded(
-              child: Text(
-            text,
-            style: t.AppTypography.body!.small!.copyWith(color: textColor),
-          ))
+            child: Text(
+              text,
+              style: t.AppTypography.body!.small!.copyWith(color: textColor),
+            ),
+          )
         ],
       ),
     );

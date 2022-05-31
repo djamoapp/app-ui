@@ -9,18 +9,19 @@ class AppPageHeader extends AppBar {
     String? title,
     bool? withDrawer,
   }) : super(
-            key: key,
-            backgroundColor: InterfaceColors.action.backGroundColor,
-            centerTitle: true,
-            title: title != null
-                ? Text(
-                    title,
-                    style: AppTypography.title!.bMedium100,
-                  )
-                : Image.asset(
-                    "assets/images/djamo-logo-black.png",
-                    package: kPackageName,
-                    height: 28,
-                    width: 93.69,
-                  ));
+          key: key,
+          backgroundColor: InterfaceColors.action.backGroundColor,
+          centerTitle: true,
+          title: title != null
+              ? Text(
+                  title,
+                  style: AppTypography.title!.bMedium100,
+                )
+              : Image.asset(
+                  "assets/images/djamo-logo-black.png",
+                  package: kPackageName,
+                  height: 28,
+                  width: 93.69,
+                ),
+        );
 }

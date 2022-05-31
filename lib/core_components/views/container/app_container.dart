@@ -1,3 +1,4 @@
+import 'package:app_ui/core/constants/constants.dart';
 import 'package:app_ui/core_components/views/section_label/section_label.dart';
 import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
 import 'package:app_ui/design_tokens/typography/typography.dart';
@@ -68,8 +69,8 @@ class AppContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return showTitleWidget && !innerTitle
         ? Container(
-      margin: margin,
-          child: Column(
+            margin: margin,
+            child: Column(
               mainAxisSize: MainAxisSize.min,
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -82,7 +83,7 @@ class AppContainer extends StatelessWidget {
                 _whiteBox(),
               ],
             ),
-        )
+          )
         : _whiteBox();
   }
 
@@ -90,13 +91,13 @@ class AppContainer extends StatelessWidget {
     return Container(
       height: height,
       width: fullWidth ? double.infinity : width,
-      padding: padding ?? const EdgeInsets.all(16),
+      padding: padding ?? const EdgeInsets.all(kDefaultPadding),
       margin: showTitleWidget && !innerTitle ? null : margin,
       decoration: boxDecoration ??
           BoxDecoration(
             color: color ?? Colors.white,
             borderRadius:
-                borderRadius ?? BorderRadius.circular(radiusAll ?? 16),
+                borderRadius ?? BorderRadius.circular(radiusAll ?? kDefaultBorderRadius),
           ),
       child: showTitleWidget && innerTitle
           ? Column(

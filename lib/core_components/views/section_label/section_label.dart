@@ -1,3 +1,4 @@
+import 'package:app_ui/core/constants/constants.dart';
 import 'package:app_ui/core/enums/standard_button_style.dart';
 import 'package:app_ui/core_components/controls/buttons/standard_buttons/standard_button.dart';
 import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
@@ -11,11 +12,13 @@ class AppSectionLabel extends StatelessWidget {
     this.buttonLabel = "See all",
     this.onButtonTap,
     this.buttonPadding = const EdgeInsets.only(
-      left: 16,
-      right: 16,
+      left: kDefaultPadding,
+      right: kDefaultPadding,
       top: 7,
       bottom: 7,
-    ), this.labelStyle, this.buttonLabelStyle,
+    ),
+    this.labelStyle,
+    this.buttonLabelStyle,
   }) : super(key: key);
 
   final String label;
@@ -43,7 +46,14 @@ class AppSectionLabel extends StatelessWidget {
           ),
         ),
         if (onButtonTap != null)
-          StandardButton(style: StandardButtonStyle.text, textStyle: buttonLabelStyle ?? AppTypography.label!.bSmall!, padding: buttonPadding, label: buttonLabel, onPressed: onButtonTap, borderRadius: 16,),
+          StandardButton(
+            style: StandardButtonStyle.text,
+            textStyle: buttonLabelStyle ?? AppTypography.label!.bSmall!,
+            padding: buttonPadding,
+            label: buttonLabel,
+            onPressed: onButtonTap,
+            borderRadius: kDefaultBorderRadius,
+          ),
       ],
     );
   }

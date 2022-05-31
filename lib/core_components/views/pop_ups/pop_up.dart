@@ -1,3 +1,4 @@
+import 'package:app_ui/core/constants/constants.dart';
 import 'package:app_ui/core/enums/standard_button_style.dart';
 import 'package:app_ui/core_components/controls/buttons/standard_buttons/standard_buttons.dart';
 import 'package:app_ui/design_tokens/colors/interface_colors.dart';
@@ -7,22 +8,24 @@ import 'package:app_ui/design_tokens/typography/typography.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
-void showAppPopUp(BuildContext context,
-    {IconData? icon,
-    String? title,
-    String body =
-        "Lorem ipsum dolor sit amet, consectetur. Gravida in purus mi, dignissim dignissim.",
-    void Function(BuildContext ctx)? onYes,
-    void Function(BuildContext ctx)? onNo}) {
+void showAppPopUp(
+  BuildContext context, {
+  IconData? icon,
+  String? title,
+  String body =
+      "Lorem ipsum dolor sit amet, consectetur. Gravida in purus mi, dignissim dignissim.",
+  void Function(BuildContext ctx)? onYes,
+  void Function(BuildContext ctx)? onNo,
+}) {
   showDialog(
     context: context,
     barrierDismissible: false,
     builder: (context) => Dialog(
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(kDefaultBorderRadius),
       ),
       child: Container(
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.all(kDefaultPadding),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [

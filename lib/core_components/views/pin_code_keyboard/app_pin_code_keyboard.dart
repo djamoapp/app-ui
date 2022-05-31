@@ -7,14 +7,14 @@ class AppPinCodeKeyBoard extends StatelessWidget {
       {Key? key,
       this.onDeletePress,
       this.onFingerPrintPress,
-      this.showFingerPrint = false,
+      this.showBiometry = false,
       this.onKeyPress})
       : super(key: key);
 
   final void Function()? onDeletePress;
   final void Function()? onFingerPrintPress;
   final void Function(Keyboard keyValue)? onKeyPress;
-  final bool showFingerPrint;
+  final bool showBiometry;
 
   @override
   Widget build(BuildContext context) {
@@ -77,7 +77,7 @@ class AppPinCodeKeyBoard extends StatelessWidget {
           }
 
           if (shuffledList[index] == Keyboard.fingerprint) {
-            return !showFingerPrint
+            return !showBiometry
                 ? Container(
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.only(

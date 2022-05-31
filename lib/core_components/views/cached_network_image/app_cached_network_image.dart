@@ -6,7 +6,14 @@ import '../../../design_tokens/iconography/app_icons.dart';
 import '../loader/loader.dart';
 
 class AppCachedNetworkImage extends StatelessWidget {
-  const AppCachedNetworkImage({Key? key, required this.imageUrl, this.height, this.width, this.fit}) : super(key: key);
+  const AppCachedNetworkImage({
+    Key? key,
+    required this.imageUrl,
+    this.height,
+    this.width,
+    this.fit,
+    this.placeHolder,
+  }) : super(key: key);
 
   final String imageUrl;
 
@@ -16,6 +23,8 @@ class AppCachedNetworkImage extends StatelessWidget {
 
   final BoxFit? fit;
 
+  final Widget? placeHolder;
+
   @override
   Widget build(BuildContext context) {
     return CachedNetworkImage(
@@ -23,8 +32,14 @@ class AppCachedNetworkImage extends StatelessWidget {
       fit: fit ?? BoxFit.cover,
       height: height,
       width: width,
-      errorWidget: (ctx, img, _) => Center(child: Icon(AppIcons.alert, color: InterfaceColors.error.defaultColor!, size: 20,),),
-      placeholder: (ctx, img) => const AppLoader(),
+      errorWidget: (ctx, img, _) => Center(
+        child: Icon(
+          AppIcons.alert,
+          color: InterfaceColors.error.defaultColor!,
+          size: 20,
+        ),
+      ),
+      placeholder: (ctx, img) => placeHolder ?? const AppLoader(),
     );
   }
 }

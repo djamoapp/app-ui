@@ -6,16 +6,19 @@ import '../../cached_network_image/app_cached_network_image.dart';
 class AppAvatar extends StatelessWidget {
   const AppAvatar({
     Key? key,
-    this.isDjamoAvatar = false,
+    this.showBadge = false,
     required this.image,
     this.isLocalImage = false,
+    this.badge,
   }) : super(key: key);
 
-  final bool isDjamoAvatar;
+  final bool showBadge;
 
   final String image;
 
   final bool isLocalImage;
+
+  final Widget? badge;
 
   @override
   Widget build(BuildContext context) {
@@ -44,10 +47,10 @@ class AppAvatar extends StatelessWidget {
                     ),
                   ),
           ),
-          if (isDjamoAvatar)
+          if (showBadge)
             Align(
               alignment: Alignment.bottomRight,
-              child: _djamoBadge,
+              child: badge ?? _djamoBadge,
             ),
         ],
       ),

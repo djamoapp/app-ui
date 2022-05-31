@@ -7,7 +7,7 @@ import 'package:app_ui/design_tokens/colors/interface_colors.dart';
 import 'package:app_ui/design_tokens/iconography/app_icons.dart';
 import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
 
-import 'app_step.dart';
+import '../../../core/models/app_step.dart';
 
 class AppStepper extends StatefulWidget {
   const AppStepper(

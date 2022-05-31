@@ -7,14 +7,13 @@ import '../../../design_tokens/typography/typography.dart';
 import '../../views/cached_network_image/app_cached_network_image.dart';
 
 class AppVaultOverview extends StatelessWidget {
-  const AppVaultOverview(
-      {Key? key,
-      this.label = "Label",
-      required this.balance,
-      required this.image,
-      this.isLocalImage = false,
-  })
-      : super(key: key);
+  const AppVaultOverview({
+    Key? key,
+    this.label = "Label",
+    required this.balance,
+    required this.image,
+    this.isLocalImage = false,
+  }) : super(key: key);
 
   final String label;
 
@@ -56,8 +55,9 @@ class AppVaultOverview extends StatelessWidget {
                 Text(
                   label,
                   style: AppTypography.label!.bSmall!.copyWith(
-                      fontSize: 14,
-                      color: NeutralColors.disabledBackGroundColor),
+                    fontSize: 14,
+                    color: NeutralColors.disabledBackGroundColor,
+                  ),
                 ),
                 AppGaps.xs,
                 Text(

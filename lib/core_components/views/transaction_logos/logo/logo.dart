@@ -60,26 +60,27 @@ class AppLogo extends StatelessWidget {
   }
 
   Widget get _unavailableOverlay => Container(
-      height: 56,
-      width: 56,
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        color: Colors.transparent,
-        border: Border.all(
-          color: NeutralColors.disabledTextColor,
-          width: 6,
+        height: 56,
+        width: 56,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          color: Colors.transparent,
+          border: Border.all(
+            color: NeutralColors.disabledTextColor,
+            width: 6,
+          ),
         ),
-      ),
-      child: Center(
-        child: Transform.rotate(
-          angle: pi / 4,
-          child: Container(
-            width: 12,
-            height: 52,
-            decoration: BoxDecoration(
-              color: NeutralColors.disabledTextColor.withOpacity(0.8),
+        child: Center(
+          child: Transform.rotate(
+            angle: pi / 4,
+            child: Container(
+              width: 12,
+              height: 52,
+              decoration: BoxDecoration(
+                color: NeutralColors.disabledTextColor.withOpacity(0.8),
+              ),
             ),
           ),
         ),
-      ));
+      );
 }

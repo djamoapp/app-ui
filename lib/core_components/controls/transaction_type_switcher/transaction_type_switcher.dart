@@ -1,7 +1,7 @@
 import 'package:custom_sliding_segmented_control/custom_sliding_segmented_control.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:app_ui/core_components/controls/transaction_type_switcher/transaction_type_switcher_item.dart';
+import 'package:app_ui/core/models/transaction_type_switcher_item.dart';
 import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
 import 'package:app_ui/design_tokens/typography/typography.dart';
 

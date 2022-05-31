@@ -86,10 +86,12 @@ class AppFlatTextField extends StatefulWidget {
   final TextInputAction? textInputAction;
   final bool obscureText;
   final TextStyle? counterStyle;
-  final Widget? Function(BuildContext,
-      {required int currentLength,
-      required bool isFocused,
-      required int? maxLength})? buildCounter;
+  final Widget? Function(
+    BuildContext, {
+    required int currentLength,
+    required bool isFocused,
+    required int? maxLength,
+  })? buildCounter;
   final String? counterText;
 
   @override

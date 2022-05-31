@@ -11,10 +11,12 @@ const MainAxisSize _mainAxisSize = MainAxisSize.max;
 class AppInline {
   AppInline._();
 
-  static AppBasicInline error(String text,
-          {double iconSize = _iconSize,
-          MainAxisSize mainAxisSize = _mainAxisSize,
-          MainAxisAlignment mainAxisAlignment = _mainAxisAlignment}) =>
+  static AppBasicInline error(
+    String text, {
+    double iconSize = _iconSize,
+    MainAxisSize mainAxisSize = _mainAxisSize,
+    MainAxisAlignment mainAxisAlignment = _mainAxisAlignment,
+  }) =>
       AppBasicInline(
         iconData: CupertinoIcons.exclamationmark_circle,
         iconColor: InterfaceColors.error.defaultColor as Color,
