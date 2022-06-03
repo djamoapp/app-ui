@@ -62,10 +62,7 @@ class _AppTransactionTypeSwitcherState<T>
           });
           widget.onValueChanged.call(value);
         },
-        radius: 24,
-        innerPadding: 0,
-        //padding: 0,
-        elevation: 0,
+        innerPadding: EdgeInsets.all(0),
         decoration: const BoxDecoration(
           color: Colors.transparent,
         ),
@@ -93,36 +90,32 @@ class _AppTransactionTypeSwitcherState<T>
                       Text(
                         item.text!,
                         style: AppTypography.label!.bSmall!.copyWith(
-                            fontSize: 14,
-                            color: item.value == _currentValue
-                                ? widget.items
-                                        .singleWhere(
-                                          (element) =>
-                                              element.value == _currentValue,
-                                        )
-                                        .selectedColor ??
-                                    NeutralColors.neutral900
-                                : NeutralColors.neutral900),
+                          fontSize: 14,
+                          color: item.value == _currentValue
+                              ? widget.items
+                                      .singleWhere(
+                                        (element) =>
+                                            element.value == _currentValue,
+                                      )
+                                      .selectedColor ??
+                                  NeutralColors.neutral900
+                              : NeutralColors.neutral900,
+                        ),
                         overflow: TextOverflow.ellipsis,
                       )
                     ],
                   ),
                 )
         },
-        thumbColor: widget.items
-                .singleWhere(
-                  (element) => element.value == _currentValue,
-                )
-                .selectedBackgroundColor ??
-            Colors.white,
-        // thumbDecoration: BoxDecoration(
-        //   color: widget.items
-        //           .singleWhere(
-        //             (element) => element.value == _currentValue,
-        //           )
-        //           .selectedBackgroundColor ??
-        //       Colors.white,
-        // ),
+        thumbDecoration: BoxDecoration(
+          color: widget.items
+                  .singleWhere(
+                    (element) => element.value == _currentValue,
+                  )
+                  .selectedBackgroundColor ??
+              Colors.white,
+          borderRadius: BorderRadius.circular(24),
+        ),
       ),
     );
   }
