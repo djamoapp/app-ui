@@ -1,7 +1,6 @@
 import 'package:app_ui/core_components/controls/radio/radio.dart';
 import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
 import 'package:app_ui_example/src/controllers/core_components/controls/radio_controller.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

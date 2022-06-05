@@ -27,6 +27,10 @@ class AppTextField extends StatefulWidget {
     this.autoValidateMode,
     this.autocorrect,
     this.cursorColor,
+    this.readOnly = false,
+    this.showCursor,
+    this.focusNode,
+    this.onTap,
   }) : super(key: key);
 
   final String? Function(String? value)? validator;
@@ -61,6 +65,14 @@ class AppTextField extends StatefulWidget {
 
   final Color? cursorColor;
 
+  final bool readOnly;
+
+  final bool? showCursor;
+
+  final FocusNode? focusNode;
+
+  final void Function()? onTap;
+
   @override
   State<AppTextField> createState() => _AppTextFieldState();
 }
@@ -89,13 +101,19 @@ class _AppTextFieldState extends State<AppTextField> {
         Stack(
           children: [
             TextFormField(
+              onTap: widget.onTap,
+              focusNode: widget.focusNode,
+              showCursor: widget.showCursor,
+              readOnly: widget.readOnly,
               autovalidateMode: widget.autoValidateMode,
               autocorrect: widget.autocorrect ?? false,
               keyboardType: widget.keyboardType,
               maxLines: widget.maxLines,
               maxLength: widget.maxLength,
               inputFormatters: widget.inputFormatters,
-              style: t.AppTypography.label!.large,
+              style: t.AppTypography.body!.medium!.copyWith(
+                color: NeutralColors.neutral900,
+              ),
               validator: (value) {
                 setState(() {
                   _errorText = widget.validator?.call(value);
@@ -114,11 +132,16 @@ class _AppTextFieldState extends State<AppTextField> {
                 prefixIcon: widget.prefixIcon,
                 suffixIcon: widget.suffixIcon,
                 enabled: widget.enabled,
-                filled: !widget.enabled,
+                filled: true,
                 //errorText: "\u26A0 Une erreur est survenue",
-                fillColor:
-                    widget.enabled ? null : NeutralColors.formBordersColor,
+                fillColor: widget.enabled
+                    ? Colors.white
+                    : NeutralColors.formBordersColor,
+
                 hintText: widget.placeHolderText,
+                hintStyle: t.AppTypography.body!.medium!.copyWith(
+                  color: NeutralColors.disabledTextColor,
+                ),
                 contentPadding: const EdgeInsets.only(
                   left: 16,
                   right: 16,

@@ -1,6 +1,5 @@
 import 'package:app_ui/core_components/controls/switcher/switcher.dart';
 import 'package:app_ui_example/src/controllers/core_components/controls/switcher_controller.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

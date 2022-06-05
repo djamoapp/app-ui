@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:app_ui/core_components/views/title_label/title_with_label.dart';
 import 'package:app_ui/design_tokens/iconography/app_icons.dart';
-import '../../../design_tokens/colors/interface_colors.dart';
 import '../../../design_tokens/colors/neutral_colors.dart';
 import '../../../design_tokens/typography/typography.dart';
 

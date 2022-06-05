@@ -1,6 +1,4 @@
-import 'package:app_ui/core/models/interface_color.dart';
 import 'package:app_ui/core_components/views/container/app_container.dart';
-import 'package:app_ui/design_tokens/colors/gradients.dart';
 import 'package:app_ui/design_tokens/colors/interface_colors.dart';
 import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
 import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';

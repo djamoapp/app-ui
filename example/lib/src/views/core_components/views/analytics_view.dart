@@ -1,5 +1,4 @@
 import 'package:app_ui/core_components/views/analytics_widget/analytics_widget.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class AnalyticsView extends StatelessWidget {

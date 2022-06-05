@@ -1,7 +1,6 @@
 import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
 import 'package:app_ui_example/src/controllers/design_tokens/design_tokens_controller.dart';
 import 'package:app_ui_example/src/widgets/system_design_item.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
