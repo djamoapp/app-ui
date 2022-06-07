@@ -23,13 +23,32 @@ dependencies:
   custom_sliding_segmented_control:
   icon_font_generator:
   countup:
+  flutter_svg: 
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
+  build_runner:
+  flutter_gen_runner:
+
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
+
+flutter_gen:
+  output: lib/design_tokens/iconography/
+  integrations:
+    flutter_svg: true
+    flare_flutter: false
+    rive: false
+  asset:
+    enabled: true
+    style: snake-case
+  fonts:
+    enabled: false
+    style: snake-case
+  colors:
+    enabled: true
 
 # The following section is specific to Flutter.
 flutter:
