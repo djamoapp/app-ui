@@ -425,7 +425,7 @@ class SvgGenImage {
     bool excludeFromSemantics = false,
     Clip clipBehavior = Clip.hardEdge,
     bool cacheColorFilter = false,
-    SvgTheme? theme,
+    //SvgTheme? theme,
   }) {
     return SvgPicture.asset(
       _assetName,
@@ -445,7 +445,7 @@ class SvgGenImage {
       excludeFromSemantics: excludeFromSemantics,
       clipBehavior: clipBehavior,
       cacheColorFilter: cacheColorFilter,
-      theme: theme,
+      //theme: theme,
     );
   }
 
