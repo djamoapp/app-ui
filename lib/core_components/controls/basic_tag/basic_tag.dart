@@ -16,6 +16,7 @@ class AppBasicTag extends StatelessWidget {
     this.labelStyle,
     this.padding,
     this.enable = true,
+    this.radius = 8,
   }) : super(key: key);
 
   final Color? selectedColor;
@@ -38,6 +39,8 @@ class AppBasicTag extends StatelessWidget {
 
   final bool enable;
 
+  final double? radius;
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -56,7 +59,7 @@ class AppBasicTag extends StatelessWidget {
               left: 12,
               right: 12,
             ),
-        radius: 8,
+        radius: radius,
         textAndIconColor: this.selected && this.enable
             ? (this.selectedTextColor ?? Colors.white)
             : !this.selected && this.enable
