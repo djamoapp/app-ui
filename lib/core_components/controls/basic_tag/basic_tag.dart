@@ -16,7 +16,7 @@ class AppBasicTag extends StatelessWidget {
     this.labelStyle,
     this.padding,
     this.enable = true,
-    this.radius = 8,
+    this.radius = 40,
   }) : super(key: key);
 
   final Color? selectedColor;
