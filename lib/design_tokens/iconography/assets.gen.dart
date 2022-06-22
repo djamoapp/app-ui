@@ -235,6 +235,10 @@ class $AssetsIconsSvgGen {
   SvgGenImage get fingerprint =>
       const SvgGenImage('assets/icons/svg/fingerprint.svg');
 
+  /// File path: assets/icons/svg/fiveStars.svg
+  SvgGenImage get fiveStars =>
+      const SvgGenImage('assets/icons/svg/fiveStars.svg');
+
   /// File path: assets/icons/svg/gear.svg
   SvgGenImage get gear => const SvgGenImage('assets/icons/svg/gear.svg');
 
@@ -354,7 +358,7 @@ class AssetGenImage {
     ImageErrorWidgetBuilder? errorBuilder,
     String? semanticLabel,
     bool excludeFromSemantics = false,
-    double? scale = 1.0,
+    double? scale,
     double? width,
     double? height,
     Color? color,
@@ -401,6 +405,8 @@ class AssetGenImage {
   }
 
   String get path => _assetName;
+
+  String get keyName => _assetName;
 }
 
 class SvgGenImage {
@@ -425,7 +431,7 @@ class SvgGenImage {
     bool excludeFromSemantics = false,
     Clip clipBehavior = Clip.hardEdge,
     bool cacheColorFilter = false,
-    //SvgTheme? theme,
+    // SvgTheme? theme,
   }) {
     return SvgPicture.asset(
       _assetName,
@@ -445,7 +451,7 @@ class SvgGenImage {
       excludeFromSemantics: excludeFromSemantics,
       clipBehavior: clipBehavior,
       cacheColorFilter: cacheColorFilter,
-      //theme: theme,
+      // theme: theme,
     );
   }
 
