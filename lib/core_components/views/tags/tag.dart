@@ -60,7 +60,7 @@ class AppTag extends StatelessWidget {
                 ? this.textStyle?.copyWith(
                       color: textAndIconColor,
                     )
-                : AppTypography.body!.bSmall!.copyWith(
+                : AppTypography.body!.bTiny!.copyWith(
                     color: textAndIconColor,
                   ),
           ),

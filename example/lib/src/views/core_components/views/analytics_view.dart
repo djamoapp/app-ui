@@ -7,14 +7,15 @@ class AnalyticsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('Analytics Widget'),
-        ),
-        body: ListView(
-          padding: const EdgeInsets.all(20),
-          children: [
-            AppAnalyticsWidget.withSampleData(),
-          ],
-        ));
+      appBar: AppBar(
+        title: const Text('Analytics Widget'),
+      ),
+      body: ListView(
+        padding: const EdgeInsets.all(20),
+        children: [
+          AppAnalyticsWidget.withSampleData(),
+        ],
+      ),
+    );
   }
 }

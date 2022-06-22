@@ -1,14 +1,12 @@
 import 'dart:math';
+import 'package:app_ui/core_components/views/container/app_container.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
-import 'package:app_ui/core_components/views/tags/tag.dart';
-import 'package:app_ui/design_tokens/colors/brand_colors.dart';
 import 'package:app_ui/design_tokens/colors/interface_colors.dart';
 import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
 import 'package:app_ui/design_tokens/iconography/app_icons.dart';
 import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:app_ui/design_tokens/typography/typography.dart' as t;
 
 class AppAnalyticsWidget extends StatefulWidget {
@@ -17,12 +15,11 @@ class AppAnalyticsWidget extends StatefulWidget {
     Key? key,
     this.dataDomainKey = "day",
     this.dataMeasureFnKey = "sales",
-    this.momoTotalAmount = 20000,
-    this.paymentsTotalAmount = 14000,
-    this.expensesTotalAmount = 60000,
+    this.expensesTotalAmount = "60.000 F CFA",
     this.initialMonth,
     this.monthLabels,
     this.onCurrentMonthChanged,
+    this.bottom,
   }) : super(key: key);
 
   final List<List<Map<String, dynamic>>> data;
@@ -33,13 +30,11 @@ class AppAnalyticsWidget extends StatefulWidget {
 
   final String dataMeasureFnKey;
 
-  final double momoTotalAmount;
-
-  final double paymentsTotalAmount;
-
-  final double expensesTotalAmount;
+  final String expensesTotalAmount;
 
   final int? initialMonth;
+
+  final Widget? bottom;
 
   final void Function(int currentMonth)? onCurrentMonthChanged;
 
@@ -58,18 +53,18 @@ class AppAnalyticsWidget extends StatefulWidget {
                     "sales": Random().nextInt(1000) + 1,
                   })),
       monthLabels: const [
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July",
-        "August",
-        "September",
-        "October",
-        "November",
-        "December"
+        "Janvier",
+        "Février",
+        "Mars",
+        "Avril",
+        "Mai",
+        "Juin",
+        "Juillet",
+        "Août",
+        "Septembre",
+        "Octobre",
+        "Novembre",
+        "Ce mois",
       ],
     );
   }
@@ -103,12 +98,7 @@ class _AppAnalyticsWidgetState extends State<AppAnalyticsWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(16),
-      ),
+    return AppContainer(
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -222,20 +212,21 @@ class _AppAnalyticsWidgetState extends State<AppAnalyticsWidget> {
           ),
           AppGaps.m,
           Text(
-            "${widget.expensesTotalAmount}F CFA",
+            "${widget.expensesTotalAmount}",
             style: t.AppTypography.headLine!.bLarge,
           ),
           Text(
             "Total de vos dépenses du mois",
-            style: t.AppTypography.label!.small!
-                .copyWith(color: NeutralColors.disabledTextColor),
+            style: t.AppTypography.label!.small!.copyWith(
+              color: NeutralColors.disabledTextColor,
+            ),
           ),
           SizedBox(
             height: 100,
             child: charts.BarChart(
               [
                 charts.Series<Map<String, dynamic>, String>(
-                  id: 'Djamo',
+                  id: 'app_chart',
                   colorFn: (_, __) => charts.Color(
                       r: InterfaceColors.action.defaultColor!.red,
                       g: InterfaceColors.action.defaultColor!.green,
@@ -246,7 +237,9 @@ class _AppAnalyticsWidgetState extends State<AppAnalyticsWidget> {
                   measureFn: (data, _) => data[widget.dataMeasureFnKey],
                   data: widget.data[_currentMonth],
                 )..setAttribute(
-                    charts.measureAxisIdKey, _secondaryMeasureAxisId),
+                    charts.measureAxisIdKey,
+                    _secondaryMeasureAxisId,
+                  ),
               ],
               animate: true,
               defaultRenderer: charts.BarRendererConfig(
@@ -272,105 +265,9 @@ class _AppAnalyticsWidgetState extends State<AppAnalyticsWidget> {
               ],
             ),
           ),
-          if (_showGauges) ...[
+          if (_showGauges && widget.bottom != null) ...[
             AppGaps.m,
-            Row(
-              children: [
-                Expanded(
-                  child: Container(
-                    padding: const EdgeInsets.all(8),
-                    decoration: BoxDecoration(
-                      color: InterfaceColors.action.backGroundColor,
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: Row(
-                      children: [
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              AppTag(
-                                icon: AppIcons.arrowTopRight,
-                                text: "Mobile Money",
-                                textAndIconColor:
-                                    BrandColors.yellow.primary as Color,
-                                backGroundColor:
-                                    BrandColors.yellow.light100 as Color,
-                              ),
-                              AppGaps.xs,
-                              Text(
-                                  "${widget.momoTotalAmount}F CFA")
-                            ],
-                          ),
-                        ),
-                        CircularPercentIndicator(
-                          radius: 20,
-                          lineWidth: 4,
-                          percent: widget.momoTotalAmount /
-                              widget.expensesTotalAmount,
-                          backgroundColor: NeutralColors.neutral200,
-                          animation: true,
-                          reverse: true,
-                          progressColor: BrandColors.yellow.primary,
-                          center: Text(
-                            "${((widget.momoTotalAmount / widget.expensesTotalAmount) * 100).round()}%",
-                            style: t.AppTypography.body!.bSmall!
-                                .copyWith(color: BrandColors.yellow.primary),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-                AppGaps.s,
-                Expanded(
-                  child: Container(
-                    padding: const EdgeInsets.all(8),
-                    decoration: BoxDecoration(
-                      color: InterfaceColors.action.backGroundColor,
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                    child: Row(
-                      children: [
-                        Expanded(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              AppTag(
-                                text: "Paiement",
-                                textAndIconColor:
-                                    BrandColors.pink.primary as Color,
-                                backGroundColor:
-                                    BrandColors.pink.light as Color,
-                              ),
-                              AppGaps.xs,
-                              Text(
-                                  "${widget.paymentsTotalAmount}F CFA")
-                            ],
-                          ),
-                        ),
-                        CircularPercentIndicator(
-                          radius: 20,
-                          lineWidth: 4,
-                          percent: widget.paymentsTotalAmount /
-                              widget.expensesTotalAmount,
-                          backgroundColor: NeutralColors.neutral200,
-                          animation: true,
-                          reverse: true,
-                          progressColor: BrandColors.pink.primary,
-                          center: Text(
-                            "${((widget.paymentsTotalAmount / widget.expensesTotalAmount) * 100).round()}%",
-                            style: t.AppTypography.body!.bSmall!.copyWith(
-                              color: BrandColors.pink.primary,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ],
-            ),
+            widget.bottom!,
           ]
         ],
       ),
