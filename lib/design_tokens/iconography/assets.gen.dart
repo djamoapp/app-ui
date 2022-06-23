@@ -95,6 +95,9 @@ class $AssetsIconsColoredGen {
   SvgGenImage get guitar2 =>
       const SvgGenImage('assets/icons/colored/Guitar2.svg');
 
+  /// File path: assets/icons/colored/IBAN.svg
+  SvgGenImage get iban => const SvgGenImage('assets/icons/colored/IBAN.svg');
+
   /// File path: assets/icons/colored/POS.svg
   SvgGenImage get pos => const SvgGenImage('assets/icons/colored/POS.svg');
 
@@ -136,10 +139,46 @@ class $AssetsIconsColoredGen {
 
   /// File path: assets/icons/colored/Vault.svg
   SvgGenImage get vault => const SvgGenImage('assets/icons/colored/Vault.svg');
+
+  /// File path: assets/icons/colored/bankToDjamo.svg
+  SvgGenImage get bankToDjamo =>
+      const SvgGenImage('assets/icons/colored/bankToDjamo.svg');
+
+  /// File path: assets/icons/colored/crown.svg
+  SvgGenImage get crown => const SvgGenImage('assets/icons/colored/crown.svg');
+
+  /// File path: assets/icons/colored/donation.svg
+  SvgGenImage get donation =>
+      const SvgGenImage('assets/icons/colored/donation.svg');
+
+  /// File path: assets/icons/colored/free.svg
+  SvgGenImage get free => const SvgGenImage('assets/icons/colored/free.svg');
+
+  /// File path: assets/icons/colored/ligthning.svg
+  SvgGenImage get ligthning =>
+      const SvgGenImage('assets/icons/colored/ligthning.svg');
+
+  /// File path: assets/icons/colored/notAbank.svg
+  SvgGenImage get notAbank =>
+      const SvgGenImage('assets/icons/colored/notAbank.svg');
+
+  /// File path: assets/icons/colored/oklm.svg
+  SvgGenImage get oklm => const SvgGenImage('assets/icons/colored/oklm.svg');
+
+  /// File path: assets/icons/colored/trophy.svg
+  SvgGenImage get trophy =>
+      const SvgGenImage('assets/icons/colored/trophy.svg');
+
+  /// File path: assets/icons/colored/woakBag.svg
+  SvgGenImage get woakBag =>
+      const SvgGenImage('assets/icons/colored/woakBag.svg');
 }
 
 class $AssetsIconsSvgGen {
   const $AssetsIconsSvgGen();
+
+  /// File path: assets/icons/svg/IBAN.svg
+  SvgGenImage get iban => const SvgGenImage('assets/icons/svg/IBAN.svg');
 
   /// File path: assets/icons/svg/account.svg
   SvgGenImage get account => const SvgGenImage('assets/icons/svg/account.svg');
@@ -291,6 +330,10 @@ class $AssetsIconsSvgGen {
   SvgGenImage get resetPassword =>
       const SvgGenImage('assets/icons/svg/resetPassword.svg');
 
+  /// File path: assets/icons/svg/roundedCheck.svg
+  SvgGenImage get roundedCheck =>
+      const SvgGenImage('assets/icons/svg/roundedCheck.svg');
+
   /// File path: assets/icons/svg/smartphone.svg
   SvgGenImage get smartphone =>
       const SvgGenImage('assets/icons/svg/smartphone.svg');
@@ -329,6 +372,9 @@ class $AssetsIconsSvgGen {
 
   /// File path: assets/icons/svg/trash.svg
   SvgGenImage get trash => const SvgGenImage('assets/icons/svg/trash.svg');
+
+  /// File path: assets/icons/svg/trophy.svg
+  SvgGenImage get trophy => const SvgGenImage('assets/icons/svg/trophy.svg');
 
   /// File path: assets/icons/svg/vault.svg
   SvgGenImage get vault => const SvgGenImage('assets/icons/svg/vault.svg');
@@ -431,7 +477,7 @@ class SvgGenImage {
     bool excludeFromSemantics = false,
     Clip clipBehavior = Clip.hardEdge,
     bool cacheColorFilter = false,
-    // SvgTheme? theme,
+    //SvgTheme? theme,
   }) {
     return SvgPicture.asset(
       _assetName,
@@ -451,7 +497,7 @@ class SvgGenImage {
       excludeFromSemantics: excludeFromSemantics,
       clipBehavior: clipBehavior,
       cacheColorFilter: cacheColorFilter,
-      // theme: theme,
+      //theme: theme,
     );
   }
 

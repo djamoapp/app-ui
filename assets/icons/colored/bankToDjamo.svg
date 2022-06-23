@@ -1,0 +1,14 @@
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 12C0 5.37258 5.37258 0 12 0H36C42.6274 0 48 5.37258 48 12V36C48 42.6274 42.6274 48 36 48H12C5.37258 48 0 42.6274 0 36V12Z" fill="#EBFAF3"/>
+<path d="M22 21H26V33C26 34.1046 25.1046 35 24 35C22.8954 35 22 34.1046 22 33V21Z" fill="#F6F7FB" stroke="#2F2F33" stroke-width="2" stroke-linejoin="round"/>
+<path d="M14 21H18V33C18 34.1046 17.1046 35 16 35C14.8954 35 14 34.1046 14 33V21Z" fill="#F6F7FB" stroke="#2F2F33" stroke-width="2" stroke-linejoin="round"/>
+<path d="M30 21H34V33C34 34.1046 33.1046 35 32 35C30.8954 35 30 34.1046 30 33V21Z" fill="#F6F7FB" stroke="#2F2F33" stroke-width="2" stroke-linejoin="round"/>
+<path d="M17.6 8.2C18.1666 7.44458 19.0557 7 20 7H28C28.9443 7 29.8334 7.44458 30.4 8.2L38.8 19.4C39.2944 20.0592 38.824 21 38 21H10C9.17595 21 8.70557 20.0592 9.2 19.4L17.6 8.2Z" fill="#31B67A" stroke="#2F2F33" stroke-width="2" stroke-linejoin="round"/>
+<rect x="21" y="11" width="6" height="6" rx="3" fill="#F6F7FB" stroke="#2F2F33" stroke-width="2" stroke-linejoin="round"/>
+<rect x="23" y="27" width="14" height="14" rx="7" fill="#EBFAF3" stroke="#2F2F33" stroke-width="2" stroke-linejoin="round"/>
+<path d="M32.0401 35.7416H33.5L32.58 37.3994H30.9528C30.238 37.3994 29.9301 37.2429 29.9225 36.781C29.4967 37.2653 28.9568 37.5 28.2953 37.5C27.6832 37.5 27.208 37.2541 26.862 36.7624C26.5274 36.2632 26.4248 35.6336 26.554 34.8773C26.8696 33.0817 28.052 32.1913 30.105 32.1913H30.1886L29.8464 33.7932H29.7438C29.1849 33.7932 28.8047 34.203 28.6945 34.9332C28.6108 35.451 28.8351 35.79 29.2724 35.79C29.7172 35.79 29.9605 35.4697 30.1354 34.6613L31.0288 30.5H33.1768L32.0401 35.7416Z" fill="#2F2F33"/>
+<rect x="11" y="27" width="14" height="14" rx="7" fill="#EBFAF3" stroke="#2F2F33" stroke-width="2" stroke-linejoin="round"/>
+<path d="M15 34L21 34" stroke="#31B67A" stroke-width="2" stroke-linecap="round"/>
+<path d="M19 32L21 34" stroke="#31B67A" stroke-width="2" stroke-linecap="round"/>
+<path d="M19 36L21 34" stroke="#31B67A" stroke-width="2" stroke-linecap="round"/>
+</svg>
