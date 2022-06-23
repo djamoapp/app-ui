@@ -154,6 +154,10 @@ class $AssetsIconsColoredGen {
   /// File path: assets/icons/colored/free.svg
   SvgGenImage get free => const SvgGenImage('assets/icons/colored/free.svg');
 
+  /// File path: assets/icons/colored/freeTicket.svg
+  SvgGenImage get freeTicket =>
+      const SvgGenImage('assets/icons/colored/freeTicket.svg');
+
   /// File path: assets/icons/colored/ligthning.svg
   SvgGenImage get ligthning =>
       const SvgGenImage('assets/icons/colored/ligthning.svg');
@@ -477,7 +481,7 @@ class SvgGenImage {
     bool excludeFromSemantics = false,
     Clip clipBehavior = Clip.hardEdge,
     bool cacheColorFilter = false,
-    //SvgTheme? theme,
+    // SvgTheme? theme,
   }) {
     return SvgPicture.asset(
       _assetName,
