@@ -1,4 +1,6 @@
 import 'dart:math';
+import 'package:app_ui/core/models/chart_coodinate.dart';
+import 'package:app_ui/core_components/views/analytics_widget/app_time_chart.dart';
 import 'package:app_ui/core_components/views/container/app_container.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
 import 'package:app_ui/design_tokens/colors/interface_colors.dart';
@@ -221,48 +223,14 @@ class _AppAnalyticsWidgetState extends State<AppAnalyticsWidget> {
               color: NeutralColors.disabledTextColor,
             ),
           ),
-          SizedBox(
-            height: 100,
-            child: charts.BarChart(
-              [
-                charts.Series<Map<String, dynamic>, String>(
-                  id: 'app_chart',
-                  colorFn: (_, __) => charts.Color(
-                      r: InterfaceColors.action.defaultColor!.red,
-                      g: InterfaceColors.action.defaultColor!.green,
-                      b: InterfaceColors.action.defaultColor!.blue),
-                  domainFn: (data, _) => data[widget.dataDomainKey] == null
-                      ? ' ' * _!
-                      : data[widget.dataDomainKey].toString(),
-                  measureFn: (data, _) => data[widget.dataMeasureFnKey],
-                  data: widget.data[_currentMonth],
-                )..setAttribute(
-                    charts.measureAxisIdKey,
-                    _secondaryMeasureAxisId,
-                  ),
-              ],
-              animate: true,
-              defaultRenderer: charts.BarRendererConfig(
-                maxBarWidthPx: 2,
+          AppTimeChart(
+            height: 70,
+            data: List.generate(
+              31,
+              (index) => ChartCoordinates(
+                DateTime(2022, 10, index + 1),
+                Random().nextDouble() * 500,
               ),
-              domainAxis: const charts.AxisSpec<String>(
-                showAxisLine: false,
-              ),
-              behaviors: [
-                charts.LinePointHighlighter(
-                  showHorizontalFollowLine:
-                      charts.LinePointHighlighterFollowLineType.none,
-                  showVerticalFollowLine:
-                      charts.LinePointHighlighterFollowLineType.nearest,
-                ),
-                charts.SelectNearest(
-                    eventTrigger: charts.SelectionTrigger.tapAndDrag),
-                charts.InitialSelection(selectedDataConfig: [
-                  charts.SeriesDatumConfig<String>(
-                      chartSeriesId, "${DateTime.now().day}")
-                ]),
-                //charts.LinePointHighlighter(symbolRenderer: _CustomCircleSymbolRenderer(pointerValue: 12))
-              ],
             ),
           ),
           if (_showGauges && widget.bottom != null) ...[
