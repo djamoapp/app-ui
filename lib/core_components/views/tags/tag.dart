@@ -1,3 +1,4 @@
+import 'package:app_ui/design_tokens/layout_and_spacing/app_spacings.dart';
 import 'package:app_ui/design_tokens/typography/typography.dart';
 import 'package:flutter/material.dart';
 import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
@@ -34,8 +35,8 @@ class AppTag extends StatelessWidget {
     return Container(
       padding: padding ??
           const EdgeInsets.only(
-            left: 4,
-            right: 4,
+            left: AppSpacings.xs,
+            right: AppSpacings.xs,
             top: 2,
             bottom: 2,
           ),

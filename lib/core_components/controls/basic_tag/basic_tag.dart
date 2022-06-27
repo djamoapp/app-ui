@@ -1,5 +1,6 @@
 import 'package:app_ui/core_components/views/tags/tag.dart';
 import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
+import 'package:app_ui/design_tokens/layout_and_spacing/app_spacings.dart';
 import 'package:app_ui/design_tokens/typography/typography.dart';
 import 'package:flutter/material.dart';
 import 'package:app_ui/design_tokens/colors/interface_colors.dart';
@@ -55,10 +56,10 @@ class AppBasicTag extends StatelessWidget {
         textStyle: labelStyle ?? AppTypography.body?.bSmall,
         padding: this.padding ??
             const EdgeInsets.only(
-              top: 6,
-              bottom: 6,
-              left: 12,
-              right: 12,
+              top: AppSpacings.s,
+              bottom: AppSpacings.s,
+              left: AppSpacings.m,
+              right: AppSpacings.m,
             ),
         radius: radius,
         textAndIconColor: this.selected && this.enable
