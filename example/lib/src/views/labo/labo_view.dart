@@ -1,4 +1,5 @@
 import 'package:app_ui/core/models/transaction_type_switcher_item.dart';
+import 'package:app_ui/core_components/controls/basic_tag/basic_tag.dart';
 import 'package:app_ui/core_components/controls/text_fields/app_date_picker.dart';
 import 'package:app_ui/core_components/controls/transaction_type_switcher/transaction_type_switcher.dart';
 import 'package:app_ui/core_components/views/tool_tip/tool_tip.dart';
@@ -23,6 +24,17 @@ class LaboView extends StatelessWidget {
         padding: EdgeInsets.all(20),
         child: Column(
           children: <Widget>[
+            Row(
+              children: [
+                Expanded(
+                  child: AppBasicTag(
+                    selected: false,
+                    enable: false,
+                  ),
+                ),
+              ],
+            ),
+            Gap(50),
             AppDatePicker(),
             Gap(50),
             AppTransactionTypeSwitcher(
