@@ -1,5 +1,6 @@
 import 'package:app_ui/core_components/views/tags/tag.dart';
 import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
+import 'package:app_ui/design_tokens/typography/typography.dart';
 import 'package:flutter/material.dart';
 import 'package:app_ui/design_tokens/colors/interface_colors.dart';
 
@@ -51,7 +52,7 @@ class AppBasicTag extends StatelessWidget {
       },
       child: AppTag(
         text: this.label,
-        textStyle: labelStyle,
+        textStyle: labelStyle ?? AppTypography.body?.bSmall,
         padding: this.padding ??
             const EdgeInsets.only(
               top: 6,
