@@ -2,7 +2,6 @@ import 'dart:math';
 import 'package:app_ui/core/models/chart_coodinate.dart';
 import 'package:app_ui/core_components/views/analytics_widget/app_time_chart.dart';
 import 'package:app_ui/core_components/views/container/app_container.dart';
-import 'package:charts_flutter/flutter.dart' as charts;
 import 'package:app_ui/design_tokens/colors/interface_colors.dart';
 import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
 import 'package:app_ui/design_tokens/iconography/app_icons.dart';
@@ -79,8 +78,6 @@ class _AppAnalyticsWidgetState extends State<AppAnalyticsWidget> {
   bool _showGauges = false;
 
   late int _currentMonth;
-
-  final String _secondaryMeasureAxisId = 'secondaryMeasureAxisId';
 
   final String chartSeriesId = "transactions";
 
