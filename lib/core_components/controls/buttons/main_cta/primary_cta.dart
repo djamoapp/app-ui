@@ -4,24 +4,25 @@ import 'package:app_ui/design_tokens/colors/interface_colors.dart';
 import 'package:app_ui/design_tokens/typography/typography.dart' as t;
 
 class PrimaryCTA extends StatelessWidget {
-  const PrimaryCTA(
-      {Key? key,
-      this.onPressed,
-      this.label = "Confirmer",
-      this.isLoading = false,
-      this.enabled = true})
-      : super(key: key);
+  const PrimaryCTA({
+    Key? key,
+    this.onPressed,
+    this.label = "Confirmer",
+    this.isLoading = false,
+    this.enabled = true,
+    this.labelOverflow = TextOverflow.ellipsis,
+  }) : super(key: key);
 
   final Function()? onPressed;
-
   final String label;
-
+  final TextOverflow labelOverflow;
   final bool isLoading;
   final bool enabled;
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 40,
       decoration: BoxDecoration(
         color: enabled && !isLoading
             ? InterfaceColors.action.defaultColor
@@ -39,7 +40,6 @@ class PrimaryCTA extends StatelessWidget {
               ]
             : null,
       ),
-      height: 40,
       child: Material(
         color: Colors.transparent,
         child: InkWell(
@@ -49,6 +49,7 @@ class PrimaryCTA extends StatelessWidget {
           child: isLoading
               ? const Center(
                   child: AppLoader(
+                    size: 20,
                     color: Colors.white,
                   ),
                 )
@@ -60,6 +61,7 @@ class PrimaryCTA extends StatelessWidget {
                         style: t.AppTypography.title!.small!
                             .copyWith(color: Colors.white),
                         textAlign: TextAlign.center,
+                        overflow: labelOverflow,
                       ),
                     ),
                   ],
