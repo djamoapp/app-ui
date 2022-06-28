@@ -23,28 +23,33 @@ class AppRadio<T> extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        if (enabled == true && onChanged != null) onChanged!(value);
+        if (enabled && onChanged != null) onChanged!(value);
       },
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 300),
-        height: 16,
-        width: 16,
+        height: 20,
+        width: 20,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(24),
-          color:
-              value == groupValue ? InterfaceColors.action.defaultColor : null,
+          color: value == groupValue
+              ? (enabled
+                  ? InterfaceColors.action.defaultColor
+                  : InterfaceColors.action.disabledColor)
+              : null,
           border: value == groupValue
               ? null
               : Border.all(
                   width: 1,
-                  color: enabled ? NeutralColors.bordersHoverColor : NeutralColors.neutral200,
+                  color: enabled
+                      ? NeutralColors.bordersHoverColor
+                      : NeutralColors.neutral200,
                 ),
         ),
         child: value == groupValue
             ? Center(
                 child: Container(
-                  height: 8,
-                  width: 8,
+                  height: 10,
+                  width: 10,
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(24),
