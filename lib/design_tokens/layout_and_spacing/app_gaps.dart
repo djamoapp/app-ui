@@ -1,23 +1,24 @@
+import 'package:app_ui/design_tokens/layout_and_spacing/app_spacings.dart';
 import 'package:gap/gap.dart';
 
 class AppGaps {
-
   AppGaps._();
 
-  static const Gap xs = Gap(4);
+  static const Gap none = Gap(AppSpacings.none);
 
-  static const Gap s = Gap(8);
+  static const Gap xs = Gap(AppSpacings.xs);
 
-  static const Gap m = Gap(16);
+  static const Gap s = Gap(AppSpacings.s);
 
-  static const Gap l = Gap(24);
+  static const Gap m = Gap(AppSpacings.m);
 
-  static const Gap xl = Gap(32);
+  static const Gap l = Gap(AppSpacings.l);
 
-  static const Gap xxl = Gap(40);
+  static const Gap xl = Gap(AppSpacings.xl);
 
-  static const Gap xxxL = Gap(56);
+  static const Gap xxl = Gap(AppSpacings.xxl);
 
-  static const Gap ul = Gap(80);
+  static const Gap xxxL = Gap(AppSpacings.xxxL);
 
+  static const Gap ul = Gap(AppSpacings.ul);
 }
