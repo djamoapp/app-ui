@@ -1,5 +1,5 @@
 import 'package:app_ui/core_components/views/container/app_container.dart';
-import 'package:app_ui/core_components/views/tags/tag.dart';
+import 'package:app_ui/core_components/views/system_messages/inline/inline.dart';
 import 'package:app_ui/design_tokens/colors/interface_colors.dart';
 import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
 import 'package:app_ui/design_tokens/iconography/app_icons.dart';
@@ -13,11 +13,11 @@ import 'package:app_ui/design_tokens/typography/typography.dart' as t;
 class AppTransactionPreview extends StatelessWidget {
   const AppTransactionPreview({
     Key? key,
-    required this.title,
+    this.title,
     required this.date,
     required this.leading,
     required this.tag,
-    required this.hasGif,
+    this.hasGif = false,
     this.gifMessage,
     required this.amount,
     this.onTap,
@@ -25,16 +25,15 @@ class AppTransactionPreview extends StatelessWidget {
     required this.amountColor,
     this.onGifTap,
     this.errorMessage,
-    this.isFirst = false,
-    this.isLast = false,
     required this.time,
+    this.borderRadius,
   }) : super(key: key);
 
-  final String title;
+  final String? title;
   final String date;
   final String time;
   final Widget leading;
-  final AppTag tag;
+  final Widget tag;
   final bool hasGif;
   final String? gifMessage;
   final String amount;
@@ -43,44 +42,73 @@ class AppTransactionPreview extends StatelessWidget {
   final Color titleColor;
   final Color amountColor;
   final void Function()? onGifTap;
-  final bool isFirst;
-  final bool isLast;
+  final BorderRadiusGeometry? borderRadius;
 
   @override
   Widget build(BuildContext context) {
     return AppContainer(
-      borderRadius: BorderRadius.only(
-        topRight: Radius.circular(isFirst ? 16 : 0),
-        topLeft: Radius.circular(isFirst ? 16 : 0),
-        bottomLeft: Radius.circular(isLast ? 16 : 0),
-        bottomRight: Radius.circular(isLast ? 16 : 0),
-      ),
+      borderRadius: borderRadius ?? BorderRadius.circular(0),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             date,
-            style: t.AppTypography.label!.small!
-                .copyWith(color: NeutralColors.disabledTextColor),
+            style: t.AppTypography.label!.small!.copyWith(
+              color: NeutralColors.disabledTextColor,
+            ),
           ),
           AppGaps.m,
           Row(
             children: [
               leading,
-              const Gap(11.5),
+              const Gap(10),
               Expanded(
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      title,
-                      style: t.AppTypography.label!.small!
-                          .copyWith(color: titleColor),
+                    if (title != null) ...[
+                      Text(
+                        title!,
+                        style: t.AppTypography.label!.small!.copyWith(
+                          color: titleColor,
+                        ),
+                      ),
+                      AppGaps.xs,
+                    ],
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        tag,
+                        Row(
+                          children: [
+                            Text(
+                              amount,
+                              style: t.AppTypography.label!.small!.copyWith(
+                                color: amountColor,
+                              ),
+                            ),
+                            AppGaps.s,
+                            Container(
+                              height: 20,
+                              width: 20,
+                              decoration: BoxDecoration(
+                                color: InterfaceColors.action.backGroundColor,
+                                shape: BoxShape.circle,
+                              ),
+                              child: Center(
+                                child: Icon(
+                                  CupertinoIcons.chevron_forward,
+                                  size: 10,
+                                  color: InterfaceColors.action.defaultColor,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
                     ),
-                    AppGaps.xs,
-                    tag,
                     AppGaps.xs,
                     Text(
                       time,
@@ -89,40 +117,15 @@ class AppTransactionPreview extends StatelessWidget {
                     ),
                     if (errorMessage != null) ...[
                       AppGaps.xs,
-                      AppBasicInline(
-                        iconData: AppIcons.alert,
-                        textColor: InterfaceColors.error.defaultColor!,
-                        iconColor: InterfaceColors.error.defaultColor!,
-                        text: errorMessage!,
-                        iconSize: 12.95,
-                      ),
-                    ]
+                      AppInline.error(errorMessage!),
+                    ],
                   ],
-                ),
-              ),
-              Text(amount,
-                  style: t.AppTypography.label!.small!
-                      .copyWith(color: amountColor)),
-              AppGaps.xs,
-              Container(
-                height: 20,
-                width: 20,
-                decoration: BoxDecoration(
-                  color: InterfaceColors.action.backGroundColor,
-                  shape: BoxShape.circle,
-                ),
-                child: Center(
-                  child: Icon(
-                    CupertinoIcons.chevron_forward,
-                    size: 10,
-                    color: InterfaceColors.action.defaultColor,
-                  ),
                 ),
               ),
             ],
           ),
           if (hasGif) ...[
-            AppGaps.s,
+            AppGaps.xs,
             GestureDetector(
               onTap: onGifTap,
               child: Container(
@@ -134,26 +137,31 @@ class AppTransactionPreview extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text(
-                      gifMessage!,
-                      style: t.AppTypography.body!.medium,
+                    Expanded(
+                      child: Text(
+                        gifMessage!,
+                        style: t.AppTypography.body!.medium,
+                        overflow: TextOverflow.ellipsis,
+                      ),
                     ),
+                    AppGaps.xs,
                     Container(
                       padding: const EdgeInsets.all(4),
                       decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(4),
-                          border: Border.all(
-                            color: NeutralColors.disabledTextColor,
-                          )),
+                        borderRadius: BorderRadius.circular(4),
+                        border: Border.all(
+                          color: NeutralColors.disabledTextColor,
+                        ),
+                      ),
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           const Icon(
-                            Icons.gif,
-                            size: 10.67,
+                            Icons.gif_box,
+                            size: 15,
                             color: NeutralColors.disabledTextColor,
                           ),
-                          AppGaps.xs,
+                          Gap(2.6),
                           Text(
                             "GIF",
                             style: t.AppTypography.body!.bTiny!.copyWith(
