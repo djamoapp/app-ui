@@ -24,12 +24,13 @@ class LaboView extends StatelessWidget {
         padding: EdgeInsets.all(20),
         child: Column(
           children: <Widget>[
+            //Assets.icons.colored.trophy.svg(),
+            Gap(50),
             Row(
               children: [
                 Expanded(
                   child: AppBasicTag(
                     selected: false,
-                    enable: false,
                   ),
                 ),
               ],

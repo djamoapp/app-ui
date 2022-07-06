@@ -70,34 +70,6 @@ class _AppDatePickerState extends State<AppDatePicker> {
     });
   }
 
-  int get _numberOfDays {
-    if (_monthController.text.trim().isEmpty &&
-        _yearController.text.trim().isEmpty) {
-      return 31;
-    } else if (_monthController.text.trim().isNotEmpty &&
-        _yearController.text.trim().isEmpty) {
-      if (_date.month == 2) {
-        return 29;
-      } else if (_date.month % 2 == 0) {
-        return 30;
-      } else {
-        return 31;
-      }
-    } else if (_monthController.text.trim().isEmpty &&
-        _yearController.text.trim().isNotEmpty) {
-      return 31;
-    } else {
-      return _daysInMonth(_date);
-    }
-  }
-
-  int _daysInMonth(DateTime date) {
-    var firstDayThisMonth = new DateTime(date.year, date.month, date.day);
-    var firstDayNextMonth = new DateTime(firstDayThisMonth.year,
-        firstDayThisMonth.month + 1, firstDayThisMonth.day);
-    return firstDayNextMonth.difference(firstDayThisMonth).inDays;
-  }
-
   @override
   Widget build(BuildContext context) {
     return Row(

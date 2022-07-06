@@ -1,4 +1,5 @@
 import 'package:app_ui/core/enums/standard_button_style.dart';
+import 'package:app_ui/design_tokens/layout_and_spacing/app_spacings.dart';
 import 'package:flutter/material.dart';
 import 'package:app_ui/core_components/views/loader/loader.dart';
 import 'package:app_ui/design_tokens/colors/interface_colors.dart';
@@ -17,7 +18,6 @@ class StandardButton extends StatelessWidget {
     this.suffixIconSize = 24,
     this.onPressed,
     this.borderRadius = 0,
-    this.padding,
     this.isLoading = false,
     this.enabledColor,
     this.enabledLabelColor,
@@ -37,7 +37,6 @@ class StandardButton extends StatelessWidget {
   final double suffixIconSize;
   final double borderRadius;
   final Function()? onPressed;
-  final EdgeInsets? padding;
   final bool isLoading;
   final Color? enabledColor;
   final Color? enabledLabelColor;
@@ -49,6 +48,12 @@ class StandardButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: EdgeInsets.only(
+        left: AppSpacings.m - (style == StandardButtonStyle.outlined ? 2 : 0),
+        right: AppSpacings.m - (style == StandardButtonStyle.outlined ? 2 : 0),
+        top: AppSpacings.s - (style == StandardButtonStyle.outlined ? 2 : 0),
+        bottom: AppSpacings.s - (style == StandardButtonStyle.outlined ? 2 : 0),
+      ),
       decoration: style == StandardButtonStyle.filled
           ? _filledDecoration
           : style == StandardButtonStyle.filledLight
@@ -62,61 +67,61 @@ class StandardButton extends StatelessWidget {
           onTap: enabled && !isLoading ? onPressed : null,
           highlightColor: Colors.transparent,
           borderRadius: BorderRadius.circular(borderRadius),
-          child: Padding(
-            padding: padding ??
-                EdgeInsets.all(style == StandardButtonStyle.filled ? 6 : 8),
-            child: isLoading
-                ? AppLoader(
+          child: isLoading
+              ? Center(
+                  child: AppLoader(
+                    size: 20,
                     color: style == StandardButtonStyle.filled
                         ? Colors.white
                         : null,
-                  )
-                : Row(
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      if (prefixIcon != null) ...[
-                        Icon(
-                          prefixIcon,
-                          size: prefixIconSize,
-                          color: style == StandardButtonStyle.filled
-                              ? Colors.white
-                              : enabled && !isLoading
-                                  ? enabledIconColor ??
-                                      InterfaceColors.action.defaultColor
-                                  : disabledIconColor ??
-                                      InterfaceColors.action.disabledColor,
-                        ),
-                        AppGaps.xs,
-                      ],
-                      Text(
-                        label,
-                        overflow: TextOverflow.ellipsis,
-                        style: textStyle.copyWith(
-                          color: style == StandardButtonStyle.filled
-                              ? Colors.white
-                              : enabled && !isLoading
-                                  ? enabledLabelColor ??
-                                      InterfaceColors.action.defaultColor
-                                  : disabledLabelColor ??
-                                      InterfaceColors.action.disabledColor,
-                        ),
-                      ),
-                      if (suffixIcon != null) ...[
-                        AppGaps.xs,
-                        Icon(
-                          suffixIcon,
-                          size: suffixIconSize,
-                          color: style == StandardButtonStyle.filled
-                              ? Colors.white
-                              : enabled && !isLoading
-                                  ? InterfaceColors.action.defaultColor
-                                  : InterfaceColors.action.disabledColor,
-                        ),
-                      ]
-                    ],
                   ),
-          ),
+                )
+              : Row(
+                  mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    if (prefixIcon != null) ...[
+                      Icon(
+                        prefixIcon,
+                        size: prefixIconSize,
+                        color: style == StandardButtonStyle.filled
+                            ? Colors.white
+                            : enabled && !isLoading
+                                ? enabledIconColor ??
+                                    InterfaceColors.action.defaultColor
+                                : disabledIconColor ??
+                                    InterfaceColors.action.disabledColor,
+                      ),
+                      AppGaps.xs,
+                    ],
+                    Text(
+                      label,
+                      textAlign: TextAlign.center,
+                      overflow: TextOverflow.ellipsis,
+                      style: textStyle.copyWith(
+                        color: style == StandardButtonStyle.filled
+                            ? Colors.white
+                            : enabled && !isLoading
+                                ? enabledLabelColor ??
+                                    InterfaceColors.action.defaultColor
+                                : disabledLabelColor ??
+                                    InterfaceColors.action.disabledColor,
+                      ),
+                    ),
+                    if (suffixIcon != null) ...[
+                      AppGaps.xs,
+                      Icon(
+                        suffixIcon,
+                        size: suffixIconSize,
+                        color: style == StandardButtonStyle.filled
+                            ? Colors.white
+                            : enabled && !isLoading
+                                ? InterfaceColors.action.defaultColor
+                                : InterfaceColors.action.disabledColor,
+                      ),
+                    ]
+                  ],
+                ),
         ),
       ),
     );
@@ -143,7 +148,9 @@ class StandardButton extends StatelessWidget {
       );
 
   BoxDecoration get _filledLightDecoration => BoxDecoration(
-        color: enabled ? enabledColor ?? InterfaceColors.action.specialColor : disabledColor ?? InterfaceColors.action.specialColor,
+        color: enabled
+            ? enabledColor ?? InterfaceColors.action.specialColor
+            : disabledColor ?? InterfaceColors.action.specialColor,
         borderRadius: BorderRadius.circular(borderRadius),
       );
 
