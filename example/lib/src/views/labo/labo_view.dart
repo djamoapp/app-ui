@@ -4,6 +4,7 @@ import 'package:app_ui/core_components/controls/text_fields/app_date_picker.dart
 import 'package:app_ui/core_components/controls/transaction_type_switcher/transaction_type_switcher.dart';
 import 'package:app_ui/core_components/views/tool_tip/tool_tip.dart';
 import 'package:app_ui/design_tokens/colors/interface_colors.dart';
+import 'package:app_ui/design_tokens/iconography/assets.gen.dart';
 import 'package:app_ui/design_tokens/iconography/colored_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -24,6 +25,8 @@ class LaboView extends StatelessWidget {
         padding: EdgeInsets.all(20),
         child: Column(
           children: <Widget>[
+            Assets.icons.colored.trophy.svg(),
+            Gap(50),
             Row(
               children: [
                 Expanded(
