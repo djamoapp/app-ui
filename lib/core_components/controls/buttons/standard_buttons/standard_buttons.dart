@@ -7,6 +7,7 @@ class StandardButtons {
   StandardButtons._();
 
   static StandardButton large({
+    Key? key,
     StandardButtonStyle style = StandardButtonStyle.filled,
     IconData? prefixIcon,
     IconData? suffixIcon,
@@ -30,6 +31,7 @@ class StandardButtons {
     Color? disabledIconColor,
   }) =>
       StandardButton(
+        key: key,
         label: label,
         enabled: enabled,
         prefixIcon: prefixIcon,
@@ -50,6 +52,7 @@ class StandardButtons {
       );
 
   static StandardButton medium({
+    Key? key,
     StandardButtonStyle style = StandardButtonStyle.filled,
     IconData? prefixIcon,
     IconData? suffixIcon,
@@ -73,6 +76,7 @@ class StandardButtons {
     Color? disabledIconColor,
   }) =>
       StandardButton(
+        key: key,
         label: label,
         enabled: enabled,
         prefixIcon: prefixIcon,
@@ -93,6 +97,7 @@ class StandardButtons {
       );
 
   static StandardButton small({
+    Key? key,
     StandardButtonStyle style = StandardButtonStyle.filled,
     IconData? prefixIcon,
     IconData? suffixIcon,
@@ -116,6 +121,7 @@ class StandardButtons {
     Color? disabledIconColor,
   }) =>
       StandardButton(
+        key: key,
         label: label,
         enabled: enabled,
         prefixIcon: prefixIcon,
