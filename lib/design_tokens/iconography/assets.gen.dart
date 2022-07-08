@@ -271,6 +271,9 @@ class $AssetsIconsSvgGen {
   SvgGenImage get download =>
       const SvgGenImage('assets/icons/svg/download.svg');
 
+  /// File path: assets/icons/svg/exit.svg
+  SvgGenImage get exit => const SvgGenImage('assets/icons/svg/exit.svg');
+
   /// File path: assets/icons/svg/eye.svg
   SvgGenImage get eye => const SvgGenImage('assets/icons/svg/eye.svg');
 
@@ -501,7 +504,7 @@ class SvgGenImage {
       excludeFromSemantics: excludeFromSemantics,
       clipBehavior: clipBehavior,
       cacheColorFilter: cacheColorFilter,
-      //theme: theme,
+      // theme: theme,
     );
   }
 
