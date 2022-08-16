@@ -13,6 +13,7 @@ class SecondaryCTA extends StatelessWidget {
     this.labelOverflow = TextOverflow.ellipsis,
     this.withBorder = true,
     this.padding = EdgeInsets.zero,
+    this.labelStyle,
   }) : super(key: key);
 
   final Function()? onPressed;
@@ -28,6 +29,8 @@ class SecondaryCTA extends StatelessWidget {
   final bool withBorder;
 
   final EdgeInsetsGeometry padding;
+
+  final TextStyle? labelStyle;
 
   @override
   Widget build(BuildContext context) {
@@ -73,7 +76,7 @@ class SecondaryCTA extends StatelessWidget {
             )
           : Text(
               label,
-              style: t.AppTypography.title!.small!.copyWith(
+              style: (labelStyle ?? t.AppTypography.title!.small)!.copyWith(
                 color: enabled && !isLoading
                     ? InterfaceColors.action.defaultColor
                     : InterfaceColors.action.disabledColor,
