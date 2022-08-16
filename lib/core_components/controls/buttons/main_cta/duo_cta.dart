@@ -1,5 +1,6 @@
 import 'package:app_ui/core_components/controls/buttons/main_cta/primary_cta.dart';
 import 'package:app_ui/core_components/controls/buttons/main_cta/secondary_cta.dart';
+import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
 import 'package:flutter/material.dart';
 
 class DuoCTA extends StatelessWidget {
@@ -39,6 +40,7 @@ class DuoCTA extends StatelessWidget {
           isLoading: isPrimaryCTAloading,
           onPressed: onPrimaryCTApressed,
         ),
+        AppGaps.xs,
         SecondaryCTA(
           withBorder: false,
           enabled: isSecondaryCTAenabled,
