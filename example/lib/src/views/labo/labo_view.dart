@@ -1,5 +1,7 @@
 import 'package:app_ui/core/models/transaction_type_switcher_item.dart';
-import 'package:app_ui/core_components/controls/basic_tag/basic_tag.dart';
+import 'package:app_ui/core_components/controls/buttons/main_cta/duo_cta.dart';
+import 'package:app_ui/core_components/controls/buttons/main_cta/primary_cta.dart';
+import 'package:app_ui/core_components/controls/buttons/main_cta/secondary_cta.dart';
 import 'package:app_ui/core_components/controls/text_fields/app_date_picker.dart';
 import 'package:app_ui/core_components/controls/transaction_type_switcher/transaction_type_switcher.dart';
 import 'package:app_ui/core_components/views/tool_tip/tool_tip.dart';
@@ -24,17 +26,13 @@ class LaboView extends StatelessWidget {
         padding: EdgeInsets.all(20),
         child: Column(
           children: <Widget>[
-            //Assets.icons.colored.trophy.svg(),
-            Gap(50),
-            Row(
-              children: [
-                Expanded(
-                  child: AppBasicTag(
-                    selected: false,
-                  ),
-                ),
-              ],
+            DuoCTA(
+              isPrimaryCTAloading: true,
             ),
+            Gap(50),
+            PrimaryCTA(),
+            Gap(50),
+            SecondaryCTA(),
             Gap(50),
             AppDatePicker(),
             Gap(50),

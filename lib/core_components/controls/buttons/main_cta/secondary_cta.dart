@@ -11,6 +11,8 @@ class SecondaryCTA extends StatelessWidget {
     this.isLoading = false,
     this.enabled = true,
     this.labelOverflow = TextOverflow.ellipsis,
+    this.withBorder = true,
+    this.padding = EdgeInsets.zero,
   }) : super(key: key);
 
   final Function()? onPressed;
@@ -23,45 +25,62 @@ class SecondaryCTA extends StatelessWidget {
 
   final bool enabled;
 
+  final bool withBorder;
+
+  final EdgeInsetsGeometry padding;
+
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      highlightColor: Colors.transparent,
-      onTap: enabled && !isLoading ? onPressed : null,
-      borderRadius: BorderRadius.circular(24),
-      child: Container(
-        decoration: BoxDecoration(
-          border: Border.all(
-            width: 2,
-            color: enabled
-                ? InterfaceColors.action.specialColor!
-                : InterfaceColors.action.defaultColor!,
+    return OutlinedButton(
+      onPressed: enabled && !isLoading ? onPressed ?? () {} : null,
+      style: ButtonStyle(
+        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+        minimumSize: MaterialStateProperty.resolveWith(
+          (states) => Size(
+            double.infinity,
+            40,
           ),
         ),
-        height: 40,
-        child: isLoading
-            ? const Center(
-                child: AppLoader(
-                  size: 20,
-                ),
-              )
-            : Row(
-                children: [
-                  Expanded(
-                    child: Text(
-                      label,
-                      style: t.AppTypography.title!.small!.copyWith(
-                        color: enabled && !isLoading
-                            ? InterfaceColors.action.defaultColor
-                            : InterfaceColors.action.disabledColor,
-                      ),
-                      textAlign: TextAlign.center,
-                      overflow: labelOverflow,
-                    ),
-                  ),
-                ],
-              ),
+        overlayColor: MaterialStateProperty.resolveWith(
+          (states) => InterfaceColors.action.specialColor!.withOpacity(0.5),
+        ),
+        shape: MaterialStateProperty.resolveWith(
+          (states) => RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(24),
+          ),
+        ),
+        elevation: MaterialStateProperty.resolveWith(
+          (states) => 0,
+        ),
+        side: MaterialStateProperty.resolveWith(
+          (states) => withBorder
+              ? BorderSide(
+                  color: enabled && !isLoading
+                      ? InterfaceColors.action.specialColor!
+                      : InterfaceColors.action.disabledColor!,
+                  width: 2,
+                )
+              : BorderSide.none,
+        ),
+        padding: MaterialStateProperty.resolveWith(
+          (states) => padding,
+        ),
       ),
+      child: isLoading
+          ? AppLoader(
+              size: 20,
+              color: InterfaceColors.action.disabledColor,
+            )
+          : Text(
+              label,
+              style: t.AppTypography.title!.small!.copyWith(
+                color: enabled && !isLoading
+                    ? InterfaceColors.action.defaultColor
+                    : InterfaceColors.action.disabledColor,
+              ),
+              textAlign: TextAlign.center,
+              overflow: labelOverflow,
+            ),
     );
   }
 }
