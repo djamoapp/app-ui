@@ -1,4 +1,3 @@
-import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
 import 'package:app_ui/design_tokens/layout_and_spacing/app_spacings.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';

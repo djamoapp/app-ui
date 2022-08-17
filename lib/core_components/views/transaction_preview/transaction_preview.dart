@@ -2,12 +2,10 @@ import 'package:app_ui/core_components/views/container/app_container.dart';
 import 'package:app_ui/core_components/views/system_messages/inline/inline.dart';
 import 'package:app_ui/design_tokens/colors/interface_colors.dart';
 import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
-import 'package:app_ui/design_tokens/iconography/app_icons.dart';
 import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:app_ui/core_components/views/system_messages/inline/basic_inline.dart';
 import 'package:app_ui/design_tokens/typography/typography.dart' as t;
 
 class AppTransactionPreview extends StatelessWidget {
