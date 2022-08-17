@@ -6,6 +6,8 @@ import 'package:app_ui/core_components/controls/buttons/main_cta/secondary_cta.d
 import 'package:app_ui/core_components/controls/buttons/standard_buttons/standard_buttons.dart';
 import 'package:app_ui/core_components/controls/text_fields/app_date_picker.dart';
 import 'package:app_ui/core_components/controls/transaction_type_switcher/transaction_type_switcher.dart';
+import 'package:app_ui/core_components/controls/vaults/vault_level.dart';
+import 'package:app_ui/core_components/controls/vaults/vault_overview.dart';
 import 'package:app_ui/core_components/views/tool_tip/tool_tip.dart';
 import 'package:app_ui/design_tokens/colors/interface_colors.dart';
 import 'package:app_ui/design_tokens/iconography/colored_icons.dart';
@@ -33,7 +35,6 @@ class LaboView extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: [
-                  
                   StandardButtons.small(),
                   AppGaps.s,
                   StandardButtons.medium(),

@@ -52,9 +52,10 @@ class SystemMessagesView extends StatelessWidget {
           const Text(
             "Inline",
             style: TextStyle(
-                color: NeutralColors.neutral900,
-                fontWeight: FontWeight.bold,
-                fontSize: 30),
+              color: NeutralColors.neutral900,
+              fontWeight: FontWeight.bold,
+              fontSize: 30,
+            ),
           ),
           AppGaps.m,
           Text("Error"),
@@ -89,11 +90,8 @@ class SystemMessagesView extends StatelessWidget {
           PrimaryCTA(
             onPressed: () {
               ScaffoldMessenger.of(context).showSnackBar(
-                AppSnackBar.info(
+                AppSnackBar.error(
                   "label",
-                  trailing: StandardButtons.medium(
-                    style: StandardButtonStyle.text,
-                  ),
                 ),
               );
             },
