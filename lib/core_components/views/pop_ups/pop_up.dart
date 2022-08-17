@@ -85,7 +85,7 @@ void showAppPopUp(
                     },
                   ),
                 ),
-                const Gap(24),
+                AppGaps.m,
                 Expanded(
                   child: StandardButtons.large(
                     label: "Oui",

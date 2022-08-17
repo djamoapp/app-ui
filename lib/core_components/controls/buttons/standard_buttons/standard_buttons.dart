@@ -16,12 +16,6 @@ class StandardButtons {
     double prefixIconSize = 20,
     double suffixIconSize = 12,
     double borderRadius = 24,
-    EdgeInsets padding = const EdgeInsets.only(
-      left: 16,
-      right: 16,
-      top: 8.5,
-      bottom: 8.5,
-    ),
     Function()? onPressed,
     Color? enabledColor,
     Color? enabledLabelColor,
@@ -29,6 +23,8 @@ class StandardButtons {
     Color? disabledLabelColor,
     Color? enabledIconColor,
     Color? disabledIconColor,
+    bool isLoading = false,
+    EdgeInsetsGeometry? padding,
   }) =>
       StandardButton(
         key: key,
@@ -42,13 +38,16 @@ class StandardButtons {
         suffixIconSize: suffixIconSize,
         onPressed: onPressed,
         borderRadius: borderRadius,
-        padding: padding,
         enabledColor: enabledColor,
         enabledLabelColor: enabledLabelColor,
         disabledColor: disabledColor,
         disabledLabelColor: disabledLabelColor,
         enabledIconColor: enabledIconColor,
         disabledIconColor: disabledIconColor,
+        isLoading: isLoading,
+        height: 40,
+        width: double.minPositive,
+        padding: padding,
       );
 
   static StandardButton medium({
@@ -61,12 +60,6 @@ class StandardButtons {
     double prefixIconSize = 13.33,
     double suffixIconSize = 8,
     double borderRadius = 16,
-    EdgeInsets padding = const EdgeInsets.only(
-      left: 16,
-      right: 16,
-      top: 7,
-      bottom: 7,
-    ),
     Function()? onPressed,
     Color? enabledColor,
     Color? enabledLabelColor,
@@ -74,6 +67,8 @@ class StandardButtons {
     Color? disabledLabelColor,
     Color? enabledIconColor,
     Color? disabledIconColor,
+    bool isLoading = false,
+    EdgeInsetsGeometry? padding,
   }) =>
       StandardButton(
         key: key,
@@ -87,13 +82,16 @@ class StandardButtons {
         suffixIconSize: prefixIconSize,
         onPressed: onPressed,
         borderRadius: borderRadius,
-        padding: padding,
         enabledColor: enabledColor,
         enabledLabelColor: enabledLabelColor,
         disabledColor: disabledColor,
         disabledLabelColor: disabledLabelColor,
         enabledIconColor: enabledIconColor,
         disabledIconColor: disabledIconColor,
+        isLoading: isLoading,
+        height: 32,
+        width: double.minPositive,
+        padding: padding,
       );
 
   static StandardButton small({
@@ -106,12 +104,6 @@ class StandardButtons {
     double prefixIconSize = 11.67,
     double suffixIconSize = 6,
     double borderRadius = 16,
-    EdgeInsets padding = const EdgeInsets.only(
-      left: 16,
-      right: 16,
-      top: 4,
-      bottom: 4,
-    ),
     Function()? onPressed,
     Color? enabledColor,
     Color? enabledLabelColor,
@@ -119,6 +111,8 @@ class StandardButtons {
     Color? disabledLabelColor,
     Color? enabledIconColor,
     Color? disabledIconColor,
+    bool isLoading = false,
+    EdgeInsetsGeometry? padding,
   }) =>
       StandardButton(
         key: key,
@@ -127,19 +121,20 @@ class StandardButtons {
         prefixIcon: prefixIcon,
         style: style,
         suffixIcon: suffixIcon,
-        textStyle: style != StandardButtonStyle.text
-            ? t.AppTypography.body!.bTiny!
-            : t.AppTypography.label!.small!,
+        textStyle: t.AppTypography.body!.bTiny!,
         prefixIconSize: prefixIconSize,
         suffixIconSize: suffixIconSize,
         onPressed: onPressed,
         borderRadius: borderRadius,
-        padding: padding,
         enabledColor: enabledColor,
         enabledLabelColor: enabledLabelColor,
         disabledColor: disabledColor,
         disabledLabelColor: disabledLabelColor,
         enabledIconColor: enabledIconColor,
         disabledIconColor: disabledIconColor,
+        isLoading: isLoading,
+        height: 22,
+        width: double.minPositive,
+        padding: padding,
       );
 }

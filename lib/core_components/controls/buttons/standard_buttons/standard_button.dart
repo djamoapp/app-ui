@@ -17,7 +17,6 @@ class StandardButton extends StatelessWidget {
     this.suffixIconSize = 24,
     this.onPressed,
     this.borderRadius = 0,
-    this.padding,
     this.isLoading = false,
     this.enabledColor,
     this.enabledLabelColor,
@@ -25,9 +24,16 @@ class StandardButton extends StatelessWidget {
     this.disabledLabelColor,
     this.enabledIconColor,
     this.disabledIconColor,
+    this.height,
+    this.width,
+    this.padding,
+    this.progressColor,
   }) : super(key: key);
 
   final StandardButtonStyle style;
+  final double? height;
+  final double? width;
+  final EdgeInsetsGeometry? padding;
   final IconData? prefixIcon;
   final IconData? suffixIcon;
   final String label;
@@ -37,7 +43,6 @@ class StandardButton extends StatelessWidget {
   final double suffixIconSize;
   final double borderRadius;
   final Function()? onPressed;
-  final EdgeInsets? padding;
   final bool isLoading;
   final Color? enabledColor;
   final Color? enabledLabelColor;
@@ -45,115 +50,188 @@ class StandardButton extends StatelessWidget {
   final Color? disabledLabelColor;
   final Color? enabledIconColor;
   final Color? disabledIconColor;
+  final Color? progressColor;
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: style == StandardButtonStyle.filled
-          ? _filledDecoration
-          : style == StandardButtonStyle.filledLight
-              ? _filledLightDecoration
-              : style == StandardButtonStyle.outlined
-                  ? _outlinedDecoration
-                  : null,
-      child: Material(
-        color: Colors.transparent,
-        child: InkWell(
-          onTap: enabled && !isLoading ? onPressed : null,
-          highlightColor: Colors.transparent,
-          borderRadius: BorderRadius.circular(borderRadius),
-          child: Padding(
-            padding: padding ??
-                EdgeInsets.all(style == StandardButtonStyle.filled ? 6 : 8),
-            child: isLoading
-                ? AppLoader(
-                    color: style == StandardButtonStyle.filled
-                        ? Colors.white
-                        : null,
-                  )
-                : Row(
-                    mainAxisSize: MainAxisSize.min,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      if (prefixIcon != null) ...[
-                        Icon(
-                          prefixIcon,
-                          size: prefixIconSize,
-                          color: style == StandardButtonStyle.filled
-                              ? Colors.white
-                              : enabled && !isLoading
-                                  ? enabledIconColor ??
-                                      InterfaceColors.action.defaultColor
-                                  : disabledIconColor ??
-                                      InterfaceColors.action.disabledColor,
-                        ),
-                        AppGaps.xs,
-                      ],
-                      Text(
-                        label,
-                        overflow: TextOverflow.ellipsis,
-                        style: textStyle.copyWith(
-                          color: style == StandardButtonStyle.filled
-                              ? Colors.white
-                              : enabled && !isLoading
-                                  ? enabledLabelColor ??
-                                      InterfaceColors.action.defaultColor
-                                  : disabledLabelColor ??
-                                      InterfaceColors.action.disabledColor,
-                        ),
-                      ),
-                      if (suffixIcon != null) ...[
-                        AppGaps.xs,
-                        Icon(
-                          suffixIcon,
-                          size: suffixIconSize,
-                          color: style == StandardButtonStyle.filled
-                              ? Colors.white
-                              : enabled && !isLoading
-                                  ? InterfaceColors.action.defaultColor
-                                  : InterfaceColors.action.disabledColor,
-                        ),
-                      ]
-                    ],
-                  ),
-          ),
-        ),
-      ),
-    );
+    return style == StandardButtonStyle.outlined ||
+            style == StandardButtonStyle.outlinedLight
+        ? OutlinedButton(
+            onPressed: enabled && !isLoading ? onPressed ?? () {} : null,
+            child: _getChild(),
+            style: ButtonStyle(
+              tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+              side: MaterialStateProperty.resolveWith(
+                (states) => BorderSide(
+                  width: 2,
+                  color: enabled && !isLoading
+                      ? _getEnabledColor
+                      : _getDisabledColor,
+                ),
+              ),
+              elevation: MaterialStateProperty.resolveWith(
+                (states) => 0,
+              ),
+              padding: MaterialStateProperty.resolveWith((states) => padding),
+              shape: MaterialStateProperty.resolveWith(
+                (states) => RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(borderRadius),
+                ),
+              ),
+              minimumSize: MaterialStateProperty.resolveWith(
+                (states) => Size(width!, height!),
+              ),
+              overlayColor: MaterialStateProperty.resolveWith(
+                (states) => InterfaceColors.action.specialColor!.withOpacity(
+                  0.5,
+                ),
+              ),
+            ),
+          )
+        : Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(24),
+              boxShadow:
+                  enabled && !isLoading && style == StandardButtonStyle.filled
+                      ? [
+                          BoxShadow(
+                            color: InterfaceColors.action.defaultColor!
+                                .withOpacity(0.32),
+                            offset: const Offset(0, 2),
+                            blurRadius: 4,
+                            spreadRadius: 0,
+                          ),
+                        ]
+                      : null,
+            ),
+            child: MaterialButton(
+              padding: padding,
+              height: height,
+              minWidth: width,
+              elevation: 0,
+              highlightElevation: 0,
+              materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+              onPressed: enabled && !isLoading ? onPressed ?? () {} : null,
+              color: _getEnabledColor,
+              disabledColor: _getDisabledColor,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(borderRadius),
+              ),
+              child: _getChild(),
+            ),
+          );
   }
 
-  BoxDecoration get _filledDecoration => BoxDecoration(
-        color: enabled
-            ? enabledColor ?? InterfaceColors.action.defaultColor
-            : disabledColor ?? InterfaceColors.action.disabledColor,
-        borderRadius: BorderRadius.circular(borderRadius),
-        boxShadow: enabled
-            ? List<BoxShadow>.from(
-                [
-                  BoxShadow(
-                    color: InterfaceColors.action.defaultColor!
-                        .withAlpha(81.6.round()),
-                    offset: const Offset(0, 2),
-                    blurRadius: 4,
-                    spreadRadius: 0,
-                  ),
-                ],
-              )
-            : null,
-      );
+  Widget _getChild() => isLoading
+      ? AppLoader(
+          size: 20,
+          color: progressColor ?? _getDisabledIconColor,
+        )
+      : Row(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            if (prefixIcon != null) ...[
+              Icon(
+                prefixIcon,
+                size: prefixIconSize,
+                color: enabled && !isLoading
+                    ? _getEnabledIconColor
+                    : _getDisabledIconColor,
+              ),
+              AppGaps.xs,
+            ],
+            Text(
+              label,
+              textAlign: TextAlign.center,
+              overflow: TextOverflow.ellipsis,
+              style: textStyle.copyWith(
+                color: enabled && !isLoading
+                    ? _getEnabledLabelColor
+                    : _getDisabledLabelColor,
+              ),
+            ),
+            if (suffixIcon != null) ...[
+              AppGaps.xs,
+              Icon(
+                suffixIcon,
+                size: suffixIconSize,
+                color: enabled && !isLoading
+                    ? _getEnabledIconColor
+                    : _getDisabledIconColor,
+              ),
+            ]
+          ],
+        );
 
-  BoxDecoration get _filledLightDecoration => BoxDecoration(
-        color: enabled ? enabledColor ?? InterfaceColors.action.specialColor : disabledColor ?? InterfaceColors.action.specialColor,
-        borderRadius: BorderRadius.circular(borderRadius),
-      );
+  Color get _getEnabledColor {
+    if (enabledColor != null) {
+      return enabledColor!;
+    }
+    if (style == StandardButtonStyle.filled ||
+        style == StandardButtonStyle.outlined) {
+      return InterfaceColors.action.defaultColor!;
+    } else if (style == StandardButtonStyle.text) {
+      return Colors.transparent;
+    } else {
+      return InterfaceColors.action.specialColor!;
+    }
+  }
 
-  BoxDecoration get _outlinedDecoration => BoxDecoration(
-        borderRadius: BorderRadius.circular(borderRadius),
-        border: Border.all(
-          color: enabled && !isLoading
-              ? enabledColor ?? InterfaceColors.action.defaultColor!
-              : disabledColor ?? InterfaceColors.action.disabledColor!,
-          width: 2,
-        ),
-      );
+  Color get _getDisabledColor {
+    if (disabledColor != null) {
+      return disabledColor!;
+    }
+    if (style == StandardButtonStyle.filledLight) {
+      return InterfaceColors.action.specialColor!;
+    } else if (style == StandardButtonStyle.text) {
+      return Colors.transparent;
+    } else {
+      return InterfaceColors.action.disabledColor!;
+    }
+  }
+
+  Color get _getEnabledLabelColor {
+    if (enabledLabelColor != null) {
+      return enabledLabelColor!;
+    }
+    if (style == StandardButtonStyle.filled) {
+      return Colors.white;
+    } else {
+      return InterfaceColors.action.defaultColor!;
+    }
+  }
+
+  Color get _getDisabledLabelColor {
+    if (disabledLabelColor != null) {
+      return disabledLabelColor!;
+    }
+    if (style == StandardButtonStyle.filled) {
+      return Colors.white;
+    } else {
+      return InterfaceColors.action.disabledColor!;
+    }
+  }
+
+  Color get _getEnabledIconColor {
+    if (enabledIconColor != null) {
+      return enabledIconColor!;
+    }
+    if (style == StandardButtonStyle.filled) {
+      return Colors.white;
+    } else {
+      return InterfaceColors.action.defaultColor!;
+    }
+  }
+
+  Color get _getDisabledIconColor {
+    if (disabledIconColor != null) {
+      return disabledIconColor!;
+    }
+    if (style == StandardButtonStyle.filled) {
+      return Colors.white;
+    } else {
+      return InterfaceColors.action.disabledColor!;
+    }
+  }
 }

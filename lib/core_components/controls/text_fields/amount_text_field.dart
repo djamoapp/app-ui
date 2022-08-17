@@ -60,8 +60,9 @@ class AppAmountTextField extends StatelessWidget {
         ),
         textAlign: TextAlign.end,
         cursorColor: cursorColor ?? InterfaceColors.action.defaultColor,
-        style: AppTypography.bigger.large!
-            .copyWith(color: InterfaceColors.action.defaultColor),
+        style: AppTypography.bigger.large!.copyWith(
+          color: InterfaceColors.action.defaultColor,
+        ),
       ),
     );
   }

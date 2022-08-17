@@ -1,4 +1,5 @@
 import 'package:app_ui/core_components/views/container/app_container.dart';
+import 'package:app_ui/design_tokens/layout_and_spacing/app_spacings.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import '../../../design_tokens/colors/neutral_colors.dart';
@@ -27,10 +28,10 @@ class AppVaultOverview extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppContainer(
       padding: const EdgeInsets.only(
-        top: 8,
-        bottom: 8,
-        left: 16,
-        right: 16,
+        top: AppSpacings.s,
+        bottom: AppSpacings.s,
+        left: AppSpacings.m,
+        right: AppSpacings.m,
       ),
       child: Row(
         children: [

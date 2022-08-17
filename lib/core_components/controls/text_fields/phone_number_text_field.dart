@@ -144,7 +144,9 @@ class _AppPhoneNumberTextFieldState extends State<AppPhoneNumberTextField> {
             autoValidateMode: widget.autoValidateMode,
             autocorrect: widget.autocorrect ?? false,
             keyboardType: const TextInputType.numberWithOptions(
-                signed: false, decimal: false),
+              signed: false,
+              decimal: false,
+            ),
             placeHolderText: widget.placeHolder,
             enabled: widget.enabled,
             controller: widget.controller,

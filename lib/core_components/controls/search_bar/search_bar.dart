@@ -3,14 +3,21 @@ import 'package:app_ui/design_tokens/colors/interface_colors.dart';
 import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
 import 'package:app_ui/design_tokens/iconography/app_icons.dart';
 import 'package:app_ui/design_tokens/typography/typography.dart' as t;
+import 'package:flutter/services.dart';
 
 class AppSearchBar extends StatefulWidget {
-  const AppSearchBar({Key? key, required this.controller, this.onChanged})
-      : super(key: key);
+  const AppSearchBar({
+    Key? key,
+    required this.controller,
+    this.onChanged,
+    this.inputFormatters,
+  }) : super(key: key);
 
   final TextEditingController controller;
 
   final Function(String value)? onChanged;
+
+  final List<TextInputFormatter>? inputFormatters;
 
   @override
   State<AppSearchBar> createState() => _AppSearchBarState();
@@ -43,6 +50,7 @@ class _AppSearchBarState extends State<AppSearchBar> {
               cursorColor: InterfaceColors.action.defaultColor,
               cursorHeight: 16,
               cursorWidth: 1,
+              inputFormatters: widget.inputFormatters,
               decoration: InputDecoration(
                 hintText: "Nom, Numéro de téléphone",
                 prefixIcon: const Icon(

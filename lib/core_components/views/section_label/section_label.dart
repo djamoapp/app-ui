@@ -49,7 +49,6 @@ class AppSectionLabel extends StatelessWidget {
           StandardButton(
             style: StandardButtonStyle.text,
             textStyle: buttonLabelStyle ?? AppTypography.label!.bSmall!,
-            padding: buttonPadding,
             label: buttonLabel,
             onPressed: onButtonTap,
             borderRadius: kDefaultBorderRadius,

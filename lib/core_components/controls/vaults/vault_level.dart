@@ -6,6 +6,14 @@ import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
 import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
 import 'package:app_ui/design_tokens/typography/typography.dart';
 
+///
+/// if you use titleBuilder instead of title parameter,
+/// the default typo of title is :
+/// AppTypography.label!.bSmall!.copyWith(
+///    fontSize: 14,
+///    color: NeutralColors.disabledBackGroundColor,
+/// )
+///
 class AppVaultLevel extends StatelessWidget {
   const AppVaultLevel({
     Key? key,
@@ -16,6 +24,7 @@ class AppVaultLevel extends StatelessWidget {
     required this.subTitle,
     this.trailing,
     this.progressbarColor,
+    this.titleBuilder,
   }) : super(key: key);
 
   final String title;
@@ -31,6 +40,8 @@ class AppVaultLevel extends StatelessWidget {
   final Widget? trailing;
 
   final Color? progressbarColor;
+
+  final Widget? titleBuilder;
 
   @override
   Widget build(BuildContext context) {
@@ -53,23 +64,29 @@ class AppVaultLevel extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          title,
-                          style: AppTypography.label!.bSmall!.copyWith(
-                              fontSize: 14,
-                              color: NeutralColors.disabledBackGroundColor),
-                        ),
-                        AppGaps.xs,
-                        Text(
-                          amount,
-                          style: AppTypography.label!.bMedium100!.copyWith(
-                            fontSize: 16,
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          if (titleBuilder != null)
+                            titleBuilder!
+                          else
+                            Text(
+                              title,
+                              style: AppTypography.label!.bSmall!.copyWith(
+                                fontSize: 14,
+                                color: NeutralColors.disabledBackGroundColor,
+                              ),
+                            ),
+                          AppGaps.xs,
+                          Text(
+                            amount,
+                            style: AppTypography.label!.bMedium100!.copyWith(
+                              fontSize: 16,
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                     trailing ?? Container(),
                   ],
@@ -87,8 +104,9 @@ class AppVaultLevel extends StatelessWidget {
                     Text(
                       subTitle,
                       style: AppTypography.label!.bSmall!.copyWith(
-                          fontSize: 10.5,
-                          color: NeutralColors.bordersHoverColor),
+                        fontSize: 10.5,
+                        color: NeutralColors.bordersHoverColor,
+                      ),
                     ),
                   ],
                 ),
