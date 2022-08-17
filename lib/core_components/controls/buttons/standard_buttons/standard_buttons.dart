@@ -23,7 +23,8 @@ class StandardButtons {
     Color? disabledLabelColor,
     Color? enabledIconColor,
     Color? disabledIconColor,
-    final bool isLoading = false,
+    bool isLoading = false,
+    EdgeInsetsGeometry? padding,
   }) =>
       StandardButton(
         key: key,
@@ -46,7 +47,7 @@ class StandardButtons {
         isLoading: isLoading,
         height: 40,
         width: double.minPositive,
-        //padding: ,
+        padding: padding,
       );
 
   static StandardButton medium({
@@ -66,7 +67,8 @@ class StandardButtons {
     Color? disabledLabelColor,
     Color? enabledIconColor,
     Color? disabledIconColor,
-    final bool isLoading = false,
+    bool isLoading = false,
+    EdgeInsetsGeometry? padding,
   }) =>
       StandardButton(
         key: key,
@@ -89,7 +91,7 @@ class StandardButtons {
         isLoading: isLoading,
         height: 32,
         width: double.minPositive,
-        //padding: ,
+        padding: padding,
       );
 
   static StandardButton small({
@@ -109,7 +111,8 @@ class StandardButtons {
     Color? disabledLabelColor,
     Color? enabledIconColor,
     Color? disabledIconColor,
-    final bool isLoading = false,
+    bool isLoading = false,
+    EdgeInsetsGeometry? padding,
   }) =>
       StandardButton(
         key: key,
@@ -132,6 +135,6 @@ class StandardButtons {
         isLoading: isLoading,
         height: 22,
         width: double.minPositive,
-        //padding: ,
+        padding: padding,
       );
 }

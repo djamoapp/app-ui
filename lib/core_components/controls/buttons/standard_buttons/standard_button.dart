@@ -72,6 +72,7 @@ class StandardButton extends StatelessWidget {
               elevation: MaterialStateProperty.resolveWith(
                 (states) => 0,
               ),
+              padding: MaterialStateProperty.resolveWith((states) => padding),
               shape: MaterialStateProperty.resolveWith(
                 (states) => RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(borderRadius),
@@ -104,6 +105,7 @@ class StandardButton extends StatelessWidget {
                       : null,
             ),
             child: MaterialButton(
+              padding: padding,
               height: height,
               minWidth: width,
               elevation: 0,
