@@ -33,7 +33,7 @@ class AppBasicBox extends StatelessWidget {
             color: iconColor,
             size: 16,
           ),
-          const Gap(20),
+          const Gap(10),
           Expanded(
             child: Text(
               text,

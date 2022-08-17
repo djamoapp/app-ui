@@ -19,9 +19,10 @@ class SystemMessagesView extends StatelessWidget {
           const Text(
             "Box",
             style: TextStyle(
-                color: NeutralColors.neutral900,
-                fontWeight: FontWeight.bold,
-                fontSize: 30),
+              color: NeutralColors.neutral900,
+              fontWeight: FontWeight.bold,
+              fontSize: 30,
+            ),
           ),
           AppGaps.m,
           Text("Error"),

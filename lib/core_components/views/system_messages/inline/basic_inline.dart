@@ -33,7 +33,7 @@ class AppBasicInline extends StatelessWidget {
           color: iconColor,
           size: iconSize,
         ),
-        const Gap(5.33),
+        const Gap(10),
         Flexible(
           child: Text(
             text,
