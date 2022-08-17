@@ -12,6 +12,11 @@ class PrimaryCTA extends StatelessWidget {
     this.enabled = true,
     this.labelOverflow = TextOverflow.ellipsis,
     this.padding = EdgeInsets.zero,
+    this.enabledColor,
+    this.disabledColor,
+    this.enabledLabelColor,
+    this.disabledLabelColor,
+    this.progressColor,
   }) : super(key: key);
 
   final Function()? onPressed;
@@ -25,6 +30,16 @@ class PrimaryCTA extends StatelessWidget {
   final bool enabled;
 
   final EdgeInsetsGeometry padding;
+
+  final Color? enabledColor;
+
+  final Color? disabledColor;
+
+  final Color? enabledLabelColor;
+
+  final Color? disabledLabelColor;
+
+  final Color? progressColor;
 
   @override
   Widget build(BuildContext context) {
@@ -50,23 +65,24 @@ class PrimaryCTA extends StatelessWidget {
         highlightElevation: 0,
         materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
         padding: padding,
-        color: InterfaceColors.action.defaultColor,
-        disabledColor: InterfaceColors.action.disabledColor,
+        color: enabledColor ?? InterfaceColors.action.defaultColor,
+        disabledColor: disabledColor ?? InterfaceColors.action.disabledColor,
         minWidth: double.infinity,
         onPressed: enabled && !isLoading ? onPressed ?? () {} : null,
-        highlightColor: Colors.transparent,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(24),
         ),
         child: isLoading
             ? AppLoader(
                 size: 20,
-                color: Colors.white,
+                color: progressColor ?? Colors.white,
               )
             : Text(
                 label,
                 style: t.AppTypography.title!.small!.copyWith(
-                  color: Colors.white,
+                  color: enabled && !isLoading
+                      ? enabledLabelColor ?? Colors.white
+                      : disabledLabelColor ?? Colors.white,
                 ),
                 textAlign: TextAlign.center,
                 overflow: labelOverflow,

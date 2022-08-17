@@ -7,6 +7,7 @@ class StandardButtons {
   StandardButtons._();
 
   static StandardButton large({
+    Key? key,
     StandardButtonStyle style = StandardButtonStyle.filled,
     IconData? prefixIcon,
     IconData? suffixIcon,
@@ -22,8 +23,10 @@ class StandardButtons {
     Color? disabledLabelColor,
     Color? enabledIconColor,
     Color? disabledIconColor,
+    final bool isLoading = false,
   }) =>
       StandardButton(
+        key: key,
         label: label,
         enabled: enabled,
         prefixIcon: prefixIcon,
@@ -40,9 +43,14 @@ class StandardButtons {
         disabledLabelColor: disabledLabelColor,
         enabledIconColor: enabledIconColor,
         disabledIconColor: disabledIconColor,
+        isLoading: isLoading,
+        height: 40,
+        width: double.minPositive,
+        //padding: ,
       );
 
   static StandardButton medium({
+    Key? key,
     StandardButtonStyle style = StandardButtonStyle.filled,
     IconData? prefixIcon,
     IconData? suffixIcon,
@@ -50,7 +58,7 @@ class StandardButtons {
     bool enabled = true,
     double prefixIconSize = 13.33,
     double suffixIconSize = 8,
-    double borderRadius = 20,
+    double borderRadius = 16,
     Function()? onPressed,
     Color? enabledColor,
     Color? enabledLabelColor,
@@ -58,8 +66,10 @@ class StandardButtons {
     Color? disabledLabelColor,
     Color? enabledIconColor,
     Color? disabledIconColor,
+    final bool isLoading = false,
   }) =>
       StandardButton(
+        key: key,
         label: label,
         enabled: enabled,
         prefixIcon: prefixIcon,
@@ -76,9 +86,14 @@ class StandardButtons {
         disabledLabelColor: disabledLabelColor,
         enabledIconColor: enabledIconColor,
         disabledIconColor: disabledIconColor,
+        isLoading: isLoading,
+        height: 32,
+        width: double.minPositive,
+        //padding: ,
       );
 
   static StandardButton small({
+    Key? key,
     StandardButtonStyle style = StandardButtonStyle.filled,
     IconData? prefixIcon,
     IconData? suffixIcon,
@@ -94,8 +109,10 @@ class StandardButtons {
     Color? disabledLabelColor,
     Color? enabledIconColor,
     Color? disabledIconColor,
+    final bool isLoading = false,
   }) =>
       StandardButton(
+        key: key,
         label: label,
         enabled: enabled,
         prefixIcon: prefixIcon,
@@ -112,5 +129,9 @@ class StandardButtons {
         disabledLabelColor: disabledLabelColor,
         enabledIconColor: enabledIconColor,
         disabledIconColor: disabledIconColor,
+        isLoading: isLoading,
+        height: 22,
+        width: double.minPositive,
+        //padding: ,
       );
 }

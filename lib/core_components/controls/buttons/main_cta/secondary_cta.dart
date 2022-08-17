@@ -14,6 +14,11 @@ class SecondaryCTA extends StatelessWidget {
     this.withBorder = true,
     this.padding = EdgeInsets.zero,
     this.labelStyle,
+    this.enabledColor,
+    this.disabledColor,
+    this.enabledLabelColor,
+    this.disabledLabelColor,
+    this.progressColor,
   }) : super(key: key);
 
   final Function()? onPressed;
@@ -31,6 +36,16 @@ class SecondaryCTA extends StatelessWidget {
   final EdgeInsetsGeometry padding;
 
   final TextStyle? labelStyle;
+
+  final Color? enabledColor;
+
+  final Color? disabledColor;
+
+  final Color? enabledLabelColor;
+
+  final Color? disabledLabelColor;
+
+  final Color? progressColor;
 
   @override
   Widget build(BuildContext context) {
@@ -59,8 +74,8 @@ class SecondaryCTA extends StatelessWidget {
           (states) => withBorder
               ? BorderSide(
                   color: enabled && !isLoading
-                      ? InterfaceColors.action.specialColor!
-                      : InterfaceColors.action.disabledColor!,
+                      ? enabledColor ?? InterfaceColors.action.specialColor!
+                      : disabledColor ?? InterfaceColors.action.disabledColor!,
                   width: 2,
                 )
               : BorderSide.none,
@@ -72,14 +87,15 @@ class SecondaryCTA extends StatelessWidget {
       child: isLoading
           ? AppLoader(
               size: 20,
-              color: InterfaceColors.action.disabledColor,
+              color: progressColor ?? InterfaceColors.action.disabledColor,
             )
           : Text(
               label,
               style: (labelStyle ?? t.AppTypography.title!.small)!.copyWith(
                 color: enabled && !isLoading
-                    ? InterfaceColors.action.defaultColor
-                    : InterfaceColors.action.disabledColor,
+                    ? enabledLabelColor ?? InterfaceColors.action.defaultColor
+                    : disabledLabelColor ??
+                        InterfaceColors.action.disabledColor,
               ),
               textAlign: TextAlign.center,
               overflow: labelOverflow,
