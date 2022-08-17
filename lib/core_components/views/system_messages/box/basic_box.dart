@@ -1,3 +1,5 @@
+import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
+import 'package:app_ui/design_tokens/layout_and_spacing/app_spacings.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:app_ui/design_tokens/typography/typography.dart' as t;
@@ -25,7 +27,7 @@ class AppBasicBox extends StatelessWidget {
         color: backGroundColor,
         borderRadius: BorderRadius.circular(8),
       ),
-      padding: const EdgeInsets.all(10),
+      padding: const EdgeInsets.all(AppSpacings.s),
       child: Row(
         children: [
           Icon(
