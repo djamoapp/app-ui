@@ -20,6 +20,8 @@ dependencies:
     # the parent directory to use the current plugin's version.
     path: ../
 
+  shimmer: 
+
   get: 4.1.4
   flutter_svg: ^0.22.0
 

@@ -1,7 +1,6 @@
-import 'package:country_calling_code_picker/country.dart';
-import 'package:country_calling_code_picker/country_code_picker.dart';
-import 'package:country_calling_code_picker/functions.dart';
+import 'package:app_ui/design_tokens/layout_and_spacing/app_spacings.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:gap/gap.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
@@ -10,13 +9,12 @@ import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
 import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
 import 'package:app_ui/design_tokens/typography/typography.dart' as t;
 
-class AppPhoneNumberTextField extends StatefulWidget {
+class AppPhoneNumberTextField extends StatelessWidget {
   const AppPhoneNumberTextField({
     Key? key,
     this.enabled = true,
-    this.onCountryChanged,
     this.onChanged,
-    required this.controller,
+    this.controller,
     this.errorText,
     this.validator,
     this.autoValidateMode,
@@ -25,15 +23,16 @@ class AppPhoneNumberTextField extends StatefulWidget {
     this.placeHolder = "Enter your phone number here",
     this.phoneNumberMask = "## ## ## ## ##",
     this.inputFormatters = const [],
+    required this.countryCode,
+    required this.countryflag,
+    this.onCountryTap,
   }) : super(key: key);
 
   final bool enabled;
 
-  final Function(Country? country)? onCountryChanged;
-
   final Function(String value)? onChanged;
 
-  final TextEditingController controller;
+  final TextEditingController? controller;
 
   final String? errorText;
 
@@ -49,63 +48,39 @@ class AppPhoneNumberTextField extends StatefulWidget {
 
   final String phoneNumberMask;
 
+  final String countryCode;
+
+  final Widget countryflag;
+
+  final void Function()? onCountryTap;
+
   final List<TextInputFormatter>? inputFormatters;
-
-  @override
-  State<AppPhoneNumberTextField> createState() =>
-      _AppPhoneNumberTextFieldState();
-}
-
-class _AppPhoneNumberTextFieldState extends State<AppPhoneNumberTextField> {
-  Country? country;
-
-  @override
-  void initState() {
-    super.initState();
-    _getDefaultCountry();
-  }
-
-  void _getDefaultCountry() async {
-    Country? c = await getCountryByCountryCode(context, "CI");
-    setState(() {
-      country = c;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
     return Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        GestureDetector(
-          onTap: () async {
-            if (!widget.enabled) return;
-            Country? c = await showCountryPickerDialog(context);
-            if (c != null) {
-              setState(() {
-                country = c;
-              });
-            }
-            if (widget.onCountryChanged != null) {
-              widget.onCountryChanged!(country);
-            }
-          },
+        InkWell(
+          borderRadius: BorderRadius.circular(8),
+          onTap: enabled ? onCountryTap : null,
           child: Container(
             padding: const EdgeInsets.only(
-              top: 13,
-              bottom: 13,
-              left: 8,
-              right: 8,
+              left: AppSpacings.s,
+              right: AppSpacings.s,
             ),
-            foregroundDecoration: widget.enabled
+            height: 49,
+            foregroundDecoration: enabled
                 ? null
-                : const BoxDecoration(
+                : BoxDecoration(
                     color: NeutralColors.formBordersColor,
                     backgroundBlendMode: BlendMode.saturation,
+                    borderRadius: BorderRadius.circular(8),
                   ),
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8),
-              color: widget.enabled ? null : NeutralColors.formBordersColor,
-              border: widget.enabled
+              color: enabled ? Colors.white : NeutralColors.formBordersColor,
+              border: enabled
                   ? Border.all(
                       color: NeutralColors.formBordersColor,
                     )
@@ -113,20 +88,15 @@ class _AppPhoneNumberTextFieldState extends State<AppPhoneNumberTextField> {
             ),
             child: Center(
               child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Text(
-                    country == null ? "225" : country!.callingCode,
-                    style: t.AppTypography.label!.large,
+                    countryCode,
+                    style: t.AppTypography.body!.medium,
                   ),
                   const Gap(2),
-                  if (country != null)
-                    Image.asset(
-                      country!.flag,
-                      package: countryCodePackageName,
-                      height: 10,
-                      width: 15,
-                    ),
+                  countryflag,
                   const Gap(2),
                   const Icon(
                     CupertinoIcons.chevron_down,
@@ -141,26 +111,27 @@ class _AppPhoneNumberTextFieldState extends State<AppPhoneNumberTextField> {
         AppGaps.xs,
         Expanded(
           child: AppTextField(
-            autoValidateMode: widget.autoValidateMode,
-            autocorrect: widget.autocorrect ?? false,
+            autoValidateMode: autoValidateMode,
+            autocorrect: autocorrect ?? false,
             keyboardType: const TextInputType.numberWithOptions(
               signed: false,
               decimal: false,
             ),
-            placeHolderText: widget.placeHolder,
-            enabled: widget.enabled,
-            controller: widget.controller,
-            onChanged: widget.onChanged,
-            validator: widget.validator,
-            errorText: widget.errorText,
+            placeHolderText: placeHolder,
+            enabled: enabled,
+            controller: controller,
+            onChanged: onChanged,
+            validator: validator,
+            errorText: errorText,
             inputFormatters: [
               MaskTextInputFormatter(
-                mask: widget.phoneNumberMask,
-                filter: {"#": RegExp(r'[0-9]')},
+                mask: phoneNumberMask,
+                filter: {
+                  "#": RegExp(r'[0-9]'),
+                },
                 type: MaskAutoCompletionType.lazy,
               ),
-              LengthLimitingTextInputFormatter(widget.phoneNumberMask.length),
-              ...?widget.inputFormatters
+              ...?inputFormatters
             ],
           ),
         ),

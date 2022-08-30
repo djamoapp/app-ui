@@ -1,10 +1,9 @@
+import 'package:app_ui/core_components/views/system_messages/inline/inline.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:gap/gap.dart';
-import 'package:app_ui/core_components/views/system_messages/inline/basic_inline.dart';
 import 'package:app_ui/design_tokens/colors/interface_colors.dart';
 import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
-import 'package:app_ui/design_tokens/iconography/app_icons.dart';
 import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
 import 'package:app_ui/design_tokens/typography/typography.dart' as t;
 
@@ -198,14 +197,7 @@ class _AppTextFieldState extends State<AppTextField> {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Gap((widget.maxLines * 24) + 22 + 6),
-                  AppBasicInline(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    iconData: AppIcons.alert,
-                    textColor: InterfaceColors.error.defaultColor!,
-                    iconColor: InterfaceColors.error.defaultColor!,
-                    text: _errorText!,
-                    iconSize: 13.55,
-                  ),
+                  AppInline.error(_errorText!),
                 ],
               )
             ]

@@ -14,7 +14,6 @@ dependencies:
   gap:
   shimmer:
   expansion_tile_card:
-  country_calling_code_picker:
   mask_text_input_formatter:
   cached_network_image:
   charts_flutter:

@@ -5,6 +5,7 @@ import 'package:app_ui/core_components/controls/buttons/main_cta/primary_cta.dar
 import 'package:app_ui/core_components/controls/buttons/main_cta/secondary_cta.dart';
 import 'package:app_ui/core_components/controls/buttons/standard_buttons/standard_buttons.dart';
 import 'package:app_ui/core_components/controls/text_fields/app_date_picker.dart';
+import 'package:app_ui/core_components/controls/text_fields/phone_number_text_field.dart';
 import 'package:app_ui/core_components/controls/transaction_type_switcher/transaction_type_switcher.dart';
 import 'package:app_ui/core_components/views/tool_tip/tool_tip.dart';
 import 'package:app_ui/design_tokens/colors/interface_colors.dart';
@@ -29,6 +30,15 @@ class LaboView extends StatelessWidget {
         padding: EdgeInsets.all(20),
         child: Column(
           children: <Widget>[
+            AppPhoneNumberTextField(
+              countryCode: '+225',
+              countryflag: Container(),
+              onCountryTap: () {
+                print("object");
+              },
+              enabled: false,
+            ),
+            Gap(50),
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(

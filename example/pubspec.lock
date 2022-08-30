@@ -92,13 +92,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.16.0"
-  country_calling_code_picker:
-    dependency: transitive
-    description:
-      name: country_calling_code_picker
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "2.0.1"
   countup:
     dependency: transitive
     description:
@@ -181,13 +174,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.3.0"
-  flutter_sim_country_code:
-    dependency: transitive
-    description:
-      name: flutter_sim_country_code
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.1.2"
   flutter_svg:
     dependency: "direct main"
     description:
@@ -411,7 +397,7 @@ packages:
     source: hosted
     version: "0.27.4"
   shimmer:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: shimmer
       url: "https://pub.dartlang.org"
