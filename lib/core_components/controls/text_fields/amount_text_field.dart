@@ -16,7 +16,7 @@ class AppAmountTextField extends StatelessWidget {
     this.cursorColor,
     this.autoFocus = false,
     this.onChanged,
-    this.keyboardType,
+    this.keyboardType, this.initialValue,
   }) : super(key: key);
 
   final TextEditingController? controller;
@@ -37,10 +37,13 @@ class AppAmountTextField extends StatelessWidget {
 
   final TextInputType? keyboardType;
 
+  final String? initialValue;
+
   @override
   Widget build(BuildContext context) {
     return IntrinsicWidth(
       child: TextFormField(
+        initialValue: initialValue,
         autofocus: autoFocus,
         autovalidateMode: autoValidateMode,
         autocorrect: autocorrect ?? false,

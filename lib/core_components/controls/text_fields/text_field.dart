@@ -34,6 +34,7 @@ class AppTextField extends StatefulWidget {
     this.counterWidget,
     this.counterText,
     this.buildCounter,
+    this.initialValue,
   }) : super(key: key);
 
   final String? Function(String? value)? validator;
@@ -89,6 +90,8 @@ class AppTextField extends StatefulWidget {
     required int? maxLength,
   })? buildCounter;
 
+  final String? initialValue;
+
   @override
   State<AppTextField> createState() => _AppTextFieldState();
 }
@@ -117,6 +120,7 @@ class _AppTextFieldState extends State<AppTextField> {
         Stack(
           children: [
             TextFormField(
+              initialValue: widget.initialValue,
               autofocus: widget.autoFocus,
               onTap: widget.onTap,
               focusNode: widget.focusNode,
