@@ -32,7 +32,10 @@ class LaboView extends StatelessWidget {
         padding: EdgeInsets.all(20),
         child: Column(
           children: <Widget>[
-            AppAmountTextField(),
+            AppTextField(
+              maxLength: 5,
+              counterText: "",
+            ),
             Gap(50),
             AppPhoneNumberTextField(
               countryCode: '+225',

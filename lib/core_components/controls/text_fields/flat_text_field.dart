@@ -49,6 +49,7 @@ class AppFlatTextField extends StatefulWidget {
     this.counterStyle,
     this.buildCounter,
     this.counterText,
+    this.counterWidget,
   }) : super(key: key);
 
   final String? label;
@@ -93,6 +94,7 @@ class AppFlatTextField extends StatefulWidget {
     required int? maxLength,
   })? buildCounter;
   final String? counterText;
+  final Widget? counterWidget;
 
   @override
   State<AppFlatTextField> createState() => _AppFlatTextFieldState();

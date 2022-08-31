@@ -31,6 +31,9 @@ class AppTextField extends StatefulWidget {
     this.focusNode,
     this.onTap,
     this.autoFocus = false,
+    this.counterWidget,
+    this.counterText,
+    this.buildCounter,
   }) : super(key: key);
 
   final String? Function(String? value)? validator;
@@ -74,6 +77,17 @@ class AppTextField extends StatefulWidget {
   final void Function()? onTap;
 
   final bool autoFocus;
+
+  final Widget? counterWidget;
+
+  final String? counterText;
+
+  final Widget? Function(
+    BuildContext, {
+    required int currentLength,
+    required bool isFocused,
+    required int? maxLength,
+  })? buildCounter;
 
   @override
   State<AppTextField> createState() => _AppTextFieldState();
@@ -129,6 +143,7 @@ class _AppTextFieldState extends State<AppTextField> {
                   widget.cursorColor ?? InterfaceColors.action.defaultColor,
               cursorHeight: 16,
               cursorWidth: 1,
+              buildCounter: widget.buildCounter,
               decoration: InputDecoration(
                 //errorMaxLines: 0,
                 errorText: _errorText != null ? "" : null,
@@ -140,11 +155,12 @@ class _AppTextFieldState extends State<AppTextField> {
                 fillColor: widget.enabled
                     ? Colors.white
                     : NeutralColors.formBordersColor,
-
                 hintText: widget.placeHolderText,
                 hintStyle: t.AppTypography.body!.medium!.copyWith(
                   color: NeutralColors.disabledTextColor,
                 ),
+                counter: widget.counterWidget,
+                counterText: widget.counterText,
                 contentPadding: const EdgeInsets.only(
                   left: 16,
                   right: 16,
