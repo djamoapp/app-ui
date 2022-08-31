@@ -30,6 +30,7 @@ class AppTextField extends StatefulWidget {
     this.showCursor,
     this.focusNode,
     this.onTap,
+    this.autoFocus = false,
   }) : super(key: key);
 
   final String? Function(String? value)? validator;
@@ -72,6 +73,8 @@ class AppTextField extends StatefulWidget {
 
   final void Function()? onTap;
 
+  final bool autoFocus;
+
   @override
   State<AppTextField> createState() => _AppTextFieldState();
 }
@@ -100,6 +103,7 @@ class _AppTextFieldState extends State<AppTextField> {
         Stack(
           children: [
             TextFormField(
+              autofocus: widget.autoFocus,
               onTap: widget.onTap,
               focusNode: widget.focusNode,
               showCursor: widget.showCursor,

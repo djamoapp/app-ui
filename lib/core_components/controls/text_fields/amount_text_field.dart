@@ -6,17 +6,18 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class AppAmountTextField extends StatelessWidget {
-  const AppAmountTextField(
-      {Key? key,
-      this.controller,
-      this.validator,
-      this.formatters,
-      this.autoValidateMode,
-      this.autocorrect,
-      this.cursorColor,
-      this.autoFocus = false,
-      this.onChanged})
-      : super(key: key);
+  const AppAmountTextField({
+    Key? key,
+    this.controller,
+    this.validator,
+    this.formatters,
+    this.autoValidateMode,
+    this.autocorrect,
+    this.cursorColor,
+    this.autoFocus = false,
+    this.onChanged,
+    this.keyboardType,
+  }) : super(key: key);
 
   final TextEditingController? controller;
 
@@ -34,6 +35,8 @@ class AppAmountTextField extends StatelessWidget {
 
   final void Function(String value)? onChanged;
 
+  final TextInputType? keyboardType;
+
   @override
   Widget build(BuildContext context) {
     return IntrinsicWidth(
@@ -43,19 +46,25 @@ class AppAmountTextField extends StatelessWidget {
         autocorrect: autocorrect ?? false,
         controller: controller,
         validator: validator,
-        keyboardType: const TextInputType.numberWithOptions(
-          signed: false,
-          decimal: false,
-        ),
+        keyboardType: keyboardType ??
+            const TextInputType.numberWithOptions(
+              signed: false,
+              decimal: false,
+            ),
         onChanged: onChanged,
         inputFormatters: formatters,
         decoration: InputDecoration(
           border: InputBorder.none,
-          suffix: Text(
-            kDeviseSymbol,
-            style: AppTypography.headLine!.medium!.copyWith(
-              color: NeutralColors.bordersHoverColor,
-            ),
+          suffixIcon: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Text(
+                kDeviseSymbol,
+                style: AppTypography.headLine!.medium!.copyWith(
+                  color: NeutralColors.bordersHoverColor,
+                ),
+              ),
+            ],
           ),
         ),
         textAlign: TextAlign.end,
