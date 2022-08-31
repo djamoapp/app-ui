@@ -3,7 +3,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:gap/gap.dart';
-import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
 import 'package:app_ui/core_components/controls/text_fields/text_field.dart';
 import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
 import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
@@ -21,7 +20,6 @@ class AppPhoneNumberTextField extends StatelessWidget {
     this.autocorrect,
     this.cursorColor,
     this.placeHolder = "Enter your phone number here",
-    this.phoneNumberMask = "## ## ## ## ##",
     this.inputFormatters = const [],
     required this.countryCode,
     required this.countryflag,
@@ -47,8 +45,6 @@ class AppPhoneNumberTextField extends StatelessWidget {
   final Color? cursorColor;
 
   final String placeHolder;
-
-  final String phoneNumberMask;
 
   final String countryCode;
 
@@ -131,16 +127,7 @@ class AppPhoneNumberTextField extends StatelessWidget {
             onChanged: onChanged,
             validator: validator,
             errorText: errorText,
-            inputFormatters: [
-              MaskTextInputFormatter(
-                mask: phoneNumberMask,
-                filter: {
-                  "#": RegExp(r'[0-9]'),
-                },
-                type: MaskAutoCompletionType.lazy,
-              ),
-              ...?inputFormatters
-            ],
+            inputFormatters: inputFormatters,
           ),
         ),
       ],

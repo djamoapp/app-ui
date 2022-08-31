@@ -4,7 +4,6 @@ import 'package:app_ui/core_components/controls/buttons/main_cta/duo_cta.dart';
 import 'package:app_ui/core_components/controls/buttons/main_cta/primary_cta.dart';
 import 'package:app_ui/core_components/controls/buttons/main_cta/secondary_cta.dart';
 import 'package:app_ui/core_components/controls/buttons/standard_buttons/standard_buttons.dart';
-import 'package:app_ui/core_components/controls/text_fields/amount_text_field.dart';
 import 'package:app_ui/core_components/controls/text_fields/app_date_picker.dart';
 import 'package:app_ui/core_components/controls/text_fields/phone_number_text_field.dart';
 import 'package:app_ui/core_components/controls/text_fields/text_field.dart';
