@@ -32,8 +32,9 @@ class LaboView extends StatelessWidget {
         child: Column(
           children: <Widget>[
             AppTextField(
-              maxLength: 5,
               counterText: "",
+              validator: (value) =>
+                  value == "aziz" ? null : "Mais npourquoi t'es comme ça ?",
             ),
             Gap(50),
             AppPhoneNumberTextField(

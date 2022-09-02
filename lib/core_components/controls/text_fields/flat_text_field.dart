@@ -160,12 +160,19 @@ class _AppFlatTextFieldState extends State<AppFlatTextField> {
                 maxLines: widget.maxLines,
                 maxLength: widget.maxLength,
                 inputFormatters: widget.inputFormatters,
-                style: AppTypography.title!.bMedium200!
-                    .copyWith(color: NeutralColors.neutral900),
+                style: AppTypography.title!.bMedium200!.copyWith(
+                  color: NeutralColors.neutral900,
+                ),
                 validator: (value) {
-                  setState(() {
-                    _errorText = widget.validator?.call(value);
-                  });
+                  Future.delayed(
+                    Duration(seconds: 0),
+                    () {
+                      setState(() {
+                        _errorText = widget.validator?.call(value);
+                      });
+                    },
+                  );
+
                   return _errorText == null ? null : "";
                 },
                 controller: widget.controller,

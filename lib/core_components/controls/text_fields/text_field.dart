@@ -136,9 +136,15 @@ class _AppTextFieldState extends State<AppTextField> {
                 color: NeutralColors.neutral900,
               ),
               validator: (value) {
-                setState(() {
-                  _errorText = widget.validator?.call(value);
-                });
+                Future.delayed(
+                  Duration(seconds: 0),
+                  () {
+                    setState(() {
+                      _errorText = widget.validator?.call(value);
+                    });
+                  },
+                );
+
                 return _errorText == null ? null : "";
               },
               controller: widget.controller,
@@ -224,7 +230,7 @@ class _AppTextFieldState extends State<AppTextField> {
                   AppInline.error(_errorText!),
                 ],
               )
-            ]
+            ],
           ],
         ),
       ],
