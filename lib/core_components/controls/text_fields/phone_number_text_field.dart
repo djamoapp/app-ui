@@ -27,6 +27,7 @@ class AppPhoneNumberTextField extends StatelessWidget {
     this.autoFocus = false,
     this.keyboardType,
     this.initialValue,
+    this.textCapitalization = TextCapitalization.none,
   }) : super(key: key);
 
   final bool enabled;
@@ -60,6 +61,8 @@ class AppPhoneNumberTextField extends StatelessWidget {
   final TextInputType? keyboardType;
 
   final String? initialValue;
+
+  final TextCapitalization textCapitalization;
 
   @override
   Widget build(BuildContext context) {
@@ -116,6 +119,7 @@ class AppPhoneNumberTextField extends StatelessWidget {
         AppGaps.xs,
         Expanded(
           child: AppTextField(
+            textCapitalization: textCapitalization,
             initialValue: initialValue,
             autoFocus: autoFocus,
             autoValidateMode: autoValidateMode,

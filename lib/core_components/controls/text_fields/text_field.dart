@@ -34,7 +34,7 @@ class AppTextField extends StatefulWidget {
     this.counterWidget,
     this.counterText,
     this.buildCounter,
-    this.initialValue,
+    this.initialValue, this.textCapitalization = TextCapitalization.none,
   }) : super(key: key);
 
   final String? Function(String? value)? validator;
@@ -83,6 +83,8 @@ class AppTextField extends StatefulWidget {
 
   final String? counterText;
 
+  final TextCapitalization textCapitalization;
+
   final Widget? Function(
     BuildContext, {
     required int currentLength,
@@ -120,6 +122,7 @@ class _AppTextFieldState extends State<AppTextField> {
         Stack(
           children: [
             TextFormField(
+              textCapitalization: widget.textCapitalization,
               initialValue: widget.initialValue,
               autofocus: widget.autoFocus,
               onTap: widget.onTap,
