@@ -11,6 +11,8 @@ class AppSearchBar extends StatefulWidget {
     required this.controller,
     this.onChanged,
     this.inputFormatters,
+    this.placeHolderText = "",
+    this.autoFocus = false,
   }) : super(key: key);
 
   final TextEditingController controller;
@@ -18,6 +20,10 @@ class AppSearchBar extends StatefulWidget {
   final Function(String value)? onChanged;
 
   final List<TextInputFormatter>? inputFormatters;
+
+  final String placeHolderText;
+
+  final bool autoFocus;
 
   @override
   State<AppSearchBar> createState() => _AppSearchBarState();
@@ -37,6 +43,7 @@ class _AppSearchBarState extends State<AppSearchBar> {
         children: [
           Expanded(
             child: TextFormField(
+              autofocus: widget.autoFocus,
               onChanged: (value) {
                 setState(() {
                   _isEmpty = value.isEmpty;
@@ -52,7 +59,7 @@ class _AppSearchBarState extends State<AppSearchBar> {
               cursorWidth: 1,
               inputFormatters: widget.inputFormatters,
               decoration: InputDecoration(
-                hintText: "Nom, Numéro de téléphone",
+                hintText: widget.placeHolderText,
                 prefixIcon: const Icon(
                   Icons.search,
                   color: NeutralColors.bordersHoverColor,
