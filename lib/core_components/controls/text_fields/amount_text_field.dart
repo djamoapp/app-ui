@@ -19,6 +19,9 @@ class AppAmountTextField extends StatelessWidget {
     this.keyboardType,
     this.initialValue,
     this.textCapitalization = TextCapitalization.none,
+    this.placeHolderText,
+    this.placeHolderStyle,
+    this.currency,
   }) : super(key: key);
 
   final TextEditingController? controller;
@@ -43,6 +46,12 @@ class AppAmountTextField extends StatelessWidget {
 
   final TextCapitalization textCapitalization;
 
+  final String? placeHolderText;
+
+  final TextStyle? placeHolderStyle;
+
+  final String? currency;
+
   @override
   Widget build(BuildContext context) {
     return IntrinsicWidth(
@@ -62,12 +71,17 @@ class AppAmountTextField extends StatelessWidget {
         onChanged: onChanged,
         inputFormatters: formatters,
         decoration: InputDecoration(
+          hintText: placeHolderText,
+          hintStyle: placeHolderStyle ??
+              AppTypography.bigger.large!.copyWith(
+                color: NeutralColors.bordersHoverColor,
+              ),
           border: InputBorder.none,
           suffixIcon: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               Text(
-                kDeviseSymbol,
+                currency ?? kDeviseSymbol,
                 style: AppTypography.headLine!.medium!.copyWith(
                   color: NeutralColors.bordersHoverColor,
                 ),

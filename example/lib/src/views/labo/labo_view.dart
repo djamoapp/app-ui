@@ -4,6 +4,7 @@ import 'package:app_ui/core_components/controls/buttons/main_cta/duo_cta.dart';
 import 'package:app_ui/core_components/controls/buttons/main_cta/primary_cta.dart';
 import 'package:app_ui/core_components/controls/buttons/main_cta/secondary_cta.dart';
 import 'package:app_ui/core_components/controls/buttons/standard_buttons/standard_buttons.dart';
+import 'package:app_ui/core_components/controls/text_fields/amount_text_field.dart';
 import 'package:app_ui/core_components/controls/text_fields/app_date_picker.dart';
 import 'package:app_ui/core_components/controls/text_fields/phone_number_text_field.dart';
 import 'package:app_ui/core_components/controls/text_fields/text_field.dart';
@@ -31,6 +32,10 @@ class LaboView extends StatelessWidget {
         padding: EdgeInsets.all(20),
         child: Column(
           children: <Widget>[
+            AppAmountTextField(
+              placeHolderText: "0",
+            ),
+            Gap(50),
             AppTextField(
               counterText: "",
               validator: (value) =>
