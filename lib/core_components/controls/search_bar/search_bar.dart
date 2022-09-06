@@ -13,6 +13,7 @@ class AppSearchBar extends StatefulWidget {
     this.inputFormatters,
     this.placeHolderText = "",
     this.autoFocus = false,
+    this.enabled = true,
   }) : super(key: key);
 
   final TextEditingController controller;
@@ -24,6 +25,8 @@ class AppSearchBar extends StatefulWidget {
   final String placeHolderText;
 
   final bool autoFocus;
+
+  final bool enabled;
 
   @override
   State<AppSearchBar> createState() => _AppSearchBarState();
@@ -59,6 +62,7 @@ class _AppSearchBarState extends State<AppSearchBar> {
               cursorWidth: 1,
               inputFormatters: widget.inputFormatters,
               decoration: InputDecoration(
+                enabled: widget.enabled,
                 hintText: widget.placeHolderText,
                 prefixIcon: const Icon(
                   Icons.search,
