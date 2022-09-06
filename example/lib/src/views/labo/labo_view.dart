@@ -34,6 +34,7 @@ class LaboView extends StatelessWidget {
           children: <Widget>[
             AppAmountTextField(
               placeHolderText: "0",
+              enabled: false,
             ),
             Gap(50),
             AppTextField(

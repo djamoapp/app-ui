@@ -22,6 +22,8 @@ class AppAmountTextField extends StatelessWidget {
     this.placeHolderText,
     this.placeHolderStyle,
     this.currency,
+    this.focusNode,
+    this.enabled = true,
   }) : super(key: key);
 
   final TextEditingController? controller;
@@ -52,10 +54,15 @@ class AppAmountTextField extends StatelessWidget {
 
   final String? currency;
 
+  final FocusNode? focusNode;
+
+  final bool enabled;
+
   @override
   Widget build(BuildContext context) {
     return IntrinsicWidth(
       child: TextFormField(
+        focusNode: focusNode,
         textCapitalization: textCapitalization,
         initialValue: initialValue,
         autofocus: autoFocus,
@@ -71,6 +78,7 @@ class AppAmountTextField extends StatelessWidget {
         onChanged: onChanged,
         inputFormatters: formatters,
         decoration: InputDecoration(
+          enabled: enabled,
           hintText: placeHolderText,
           hintStyle: placeHolderStyle ??
               AppTypography.bigger.large!.copyWith(
