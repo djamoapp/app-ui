@@ -87,11 +87,9 @@ class SystemMessagesView extends StatelessWidget {
           ),
           PrimaryCTA(
             onPressed: () {
-              ScaffoldMessenger.of(context).showSnackBar(
-                AppSnackBar.error(
-                  "label",
-                ),
-              );
+              AppSnackBar.error("label")
+                ..hide(context)
+                ..show(context);
             },
           )
           // AppGaps.m,

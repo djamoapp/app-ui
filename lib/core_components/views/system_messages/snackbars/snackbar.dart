@@ -149,3 +149,13 @@ class AppSnackBar {
     );
   }
 }
+
+extension SnackBarExtention on SnackBar {
+  void hide(BuildContext context) {
+    ScaffoldMessenger.of(context).hideCurrentSnackBar();
+  }
+
+  void show(BuildContext context) {
+    ScaffoldMessenger.of(context).showSnackBar(this);
+  }
+}
