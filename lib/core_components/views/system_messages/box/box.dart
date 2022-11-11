@@ -1,7 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:app_ui/core_components/views/system_messages/box/basic_box.dart';
 import 'package:app_ui/design_tokens/colors/interface_colors.dart';
+import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
 import 'package:app_ui/design_tokens/iconography/app_icons.dart';
+import 'package:flutter/cupertino.dart';
 
 class AppBox {
   AppBox._();
@@ -16,10 +17,10 @@ class AppBox {
 
   static AppBasicBox alert(String text) => AppBasicBox(
         iconData: AppIcons.alert,
-        iconColor: InterfaceColors.alert.defaultColor as Color,
+        iconColor: NeutralColors.neutral900,
         text: text,
-        textColor: InterfaceColors.alert.defaultColor as Color,
-        backGroundColor: InterfaceColors.alert.backGroundColor as Color,
+        textColor: NeutralColors.neutral900,
+        backGroundColor: InterfaceColors.alert.specialColor as Color,
       );
 
   static AppBasicBox success(String text) => AppBasicBox(
@@ -35,6 +36,6 @@ class AppBox {
         iconColor: InterfaceColors.action.defaultColor as Color,
         text: text,
         textColor: InterfaceColors.action.defaultColor as Color,
-        backGroundColor: InterfaceColors.action.backGroundColor as Color,
+        backGroundColor: InterfaceColors.action.specialColor as Color,
       );
 }

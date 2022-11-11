@@ -21,6 +21,7 @@ class InterfaceColors {
     defaultColor: const Color(0xffDDC25A),
     disabledColor: const Color(0xffFFEFC2),
     backGroundColor: const Color(0xffFFFAEB),
+    specialColor: const Color(0xffFAF6EB),
   );
 
   static final InterfaceColor error = InterfaceColor(
