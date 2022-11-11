@@ -4,6 +4,7 @@ import 'package:app_ui/core_components/controls/buttons/main_cta/duo_cta.dart';
 import 'package:app_ui/core_components/controls/buttons/main_cta/primary_cta.dart';
 import 'package:app_ui/core_components/controls/buttons/main_cta/secondary_cta.dart';
 import 'package:app_ui/core_components/controls/buttons/standard_buttons/standard_buttons.dart';
+import 'package:app_ui/core_components/controls/list_tile/app_list_tile.dart';
 import 'package:app_ui/core_components/controls/text_fields/amount_text_field.dart';
 import 'package:app_ui/core_components/controls/text_fields/app_date_picker.dart';
 import 'package:app_ui/core_components/controls/text_fields/phone_number_text_field.dart';
@@ -11,13 +12,13 @@ import 'package:app_ui/core_components/controls/text_fields/text_field.dart';
 import 'package:app_ui/core_components/controls/transaction_type_switcher/transaction_type_switcher.dart';
 import 'package:app_ui/core_components/views/tool_tip/tool_tip.dart';
 import 'package:app_ui/design_tokens/colors/interface_colors.dart';
+import 'package:app_ui/design_tokens/iconography/app_icons.dart';
 import 'package:app_ui/design_tokens/iconography/colored_icons.dart';
 import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
-import 'package:app_ui/core_components/controls/vault_cta/app_vault_creation_cta.dart';
-import 'package:app_ui/design_tokens/iconography/app_icons.dart';
 
 class LaboView extends StatelessWidget {
   LaboView({Key? key}) : super(key: key);
@@ -144,12 +145,29 @@ class LaboView extends StatelessWidget {
               },
             ),
             Gap(50),
-            AppVaultCreationCTA(
+            AppListTile(
               leading: SvgPicture.asset(
-                AppColoredIcons.book,
+                AppColoredIcons.vaultCashInColorFull,
               ),
+              trailing: Container(
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Colors.white,
+                ),
+                padding: EdgeInsets.all(4),
+                child: Center(
+                  child: Icon(
+                    CupertinoIcons.chevron_right,
+                    color: InterfaceColors.action.defaultColor,
+                    size: 12,
+                  ),
+                ),
+              ),
+              backgroundColor: InterfaceColors.action.specialColor,
               title: "Créez-vous un coffre",
-              subTitle: "Épargner simplement et rapidement",
+              titleColor: InterfaceColors.action.defaultColor,
+              subTitle:
+                  "Mettez de l'argent de côté simplement et rapidement avec Djamo",
             ),
             Gap(50),
             AppToolTip(
