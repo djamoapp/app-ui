@@ -24,6 +24,7 @@ class AppVaultLevel extends StatelessWidget {
     required this.subTitle,
     this.trailing,
     this.progressbarColor,
+    this.titleColor,
     this.titleBuilder,
     this.subTitleBuilder,
   }) : super(key: key);
@@ -41,6 +42,8 @@ class AppVaultLevel extends StatelessWidget {
   final Widget? trailing;
 
   final Color? progressbarColor;
+
+  final Color? titleColor;
 
   final Widget? titleBuilder;
 
@@ -78,7 +81,7 @@ class AppVaultLevel extends StatelessWidget {
                               title,
                               style: AppTypography.label!.bSmall!.copyWith(
                                 fontSize: 14,
-                                color: NeutralColors.disabledBackGroundColor,
+                                color: titleColor ?? NeutralColors.disabledBackGroundColor,
                               ),
                             ),
                           AppGaps.xs,
