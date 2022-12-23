@@ -1,10 +1,10 @@
 import 'package:app_ui/core_components/views/container/app_container.dart';
 import 'package:app_ui/core_components/views/progress_indicator/progress_indicator.dart';
-import 'package:flutter/material.dart';
-import 'package:gap/gap.dart';
 import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
 import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
 import 'package:app_ui/design_tokens/typography/typography.dart';
+import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
 
 ///
 /// if you use titleBuilder instead of title parameter,
@@ -24,7 +24,9 @@ class AppVaultLevel extends StatelessWidget {
     required this.subTitle,
     this.trailing,
     this.progressbarColor,
+    this.titleColor,
     this.titleBuilder,
+    this.subTitleBuilder,
   }) : super(key: key);
 
   final String title;
@@ -41,7 +43,11 @@ class AppVaultLevel extends StatelessWidget {
 
   final Color? progressbarColor;
 
+  final Color? titleColor;
+
   final Widget? titleBuilder;
+
+  final Widget Function(BuildContext)? subTitleBuilder;
 
   @override
   Widget build(BuildContext context) {
@@ -75,7 +81,7 @@ class AppVaultLevel extends StatelessWidget {
                               title,
                               style: AppTypography.label!.bSmall!.copyWith(
                                 fontSize: 14,
-                                color: NeutralColors.disabledBackGroundColor,
+                                color: titleColor ?? NeutralColors.disabledBackGroundColor,
                               ),
                             ),
                           AppGaps.xs,
@@ -98,18 +104,22 @@ class AppVaultLevel extends StatelessWidget {
                   height: 4,
                 ),
                 AppGaps.xs,
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Text(
-                      subTitle,
-                      style: AppTypography.label!.bSmall!.copyWith(
-                        fontSize: 10.5,
-                        color: NeutralColors.bordersHoverColor,
+                if (subTitleBuilder != null) ...[
+                  subTitleBuilder!.call(context),
+                ] else ...[
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Text(
+                        subTitle,
+                        style: AppTypography.label!.bSmall!.copyWith(
+                          fontSize: 10.5,
+                          color: NeutralColors.bordersHoverColor,
+                        ),
                       ),
-                    ),
-                  ],
-                ),
+                    ],
+                  )
+                ],
               ],
             ),
           )
