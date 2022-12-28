@@ -30,6 +30,7 @@ class AppListTile extends StatelessWidget {
     this.afterTitleGap,
     this.titleWidget,
     this.subTitleWidget,
+    this.columnCrossAxisAlignment,
   }) : super(key: key);
 
   final Color? backgroundColor;
@@ -76,6 +77,8 @@ class AppListTile extends StatelessWidget {
 
   final Widget? subTitleWidget;
 
+  final CrossAxisAlignment? columnCrossAxisAlignment;
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -105,7 +108,8 @@ class AppListTile extends StatelessWidget {
             ],
             Expanded(
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment:
+                    columnCrossAxisAlignment ?? CrossAxisAlignment.center,
                 children: [
                   titleWidget ??
                       Text(
