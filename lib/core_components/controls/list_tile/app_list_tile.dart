@@ -30,7 +30,7 @@ class AppListTile extends StatelessWidget {
     this.afterTitleGap,
     this.titleWidget,
     this.subTitleWidget,
-    this.columnCrossAxisAlignment,
+    this.columnMainAxisAlignment,
   }) : super(key: key);
 
   final Color? backgroundColor;
@@ -77,7 +77,7 @@ class AppListTile extends StatelessWidget {
 
   final Widget? subTitleWidget;
 
-  final CrossAxisAlignment? columnCrossAxisAlignment;
+  final MainAxisAlignment? columnMainAxisAlignment;
 
   @override
   Widget build(BuildContext context) {
@@ -108,8 +108,9 @@ class AppListTile extends StatelessWidget {
             ],
             Expanded(
               child: Column(
-                crossAxisAlignment:
-                    columnCrossAxisAlignment ?? CrossAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment:
+                    columnMainAxisAlignment ?? MainAxisAlignment.center,
                 children: [
                   titleWidget ??
                       Text(
