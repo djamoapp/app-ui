@@ -13,7 +13,7 @@ class AppTag extends StatelessWidget {
     this.textAndIconColor = NeutralColors.bordersHoverColor,
     this.padding,
     this.radius,
-    this.textStyle,
+    this.textStyle, this.border,
   }) : super(key: key);
 
   final Color backGroundColor;
@@ -30,6 +30,8 @@ class AppTag extends StatelessWidget {
 
   final TextStyle? textStyle;
 
+  final Border? border;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -43,6 +45,7 @@ class AppTag extends StatelessWidget {
       decoration: BoxDecoration(
         color: backGroundColor,
         borderRadius: BorderRadius.circular(radius ?? 4),
+        border: border,
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
