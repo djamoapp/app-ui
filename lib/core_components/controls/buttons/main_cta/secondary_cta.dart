@@ -19,9 +19,12 @@ class SecondaryCTA extends StatelessWidget {
     this.enabledLabelColor,
     this.disabledLabelColor,
     this.progressColor,
+    this.childBuilder,
   }) : super(key: key);
 
   final Function()? onPressed;
+
+  final Widget Function()? childBuilder;
 
   final String label;
 
@@ -73,9 +76,7 @@ class SecondaryCTA extends StatelessWidget {
         side: MaterialStateProperty.resolveWith(
           (states) => withBorder
               ? BorderSide(
-                  color: enabled && !isLoading
-                      ? enabledColor ?? InterfaceColors.action.specialColor!
-                      : disabledColor ?? InterfaceColors.action.disabledColor!,
+                  color: enabled && !isLoading ? enabledColor ?? InterfaceColors.action.specialColor! : disabledColor ?? InterfaceColors.action.disabledColor!,
                   width: 2,
                 )
               : BorderSide.none,
@@ -89,17 +90,15 @@ class SecondaryCTA extends StatelessWidget {
               size: 20,
               color: progressColor ?? InterfaceColors.action.disabledColor,
             )
-          : Text(
-              label,
-              style: (labelStyle ?? t.AppTypography.title!.small)!.copyWith(
-                color: enabled && !isLoading
-                    ? enabledLabelColor ?? InterfaceColors.action.defaultColor
-                    : disabledLabelColor ??
-                        InterfaceColors.action.disabledColor,
+          : childBuilder?.call() ??
+              Text(
+                label,
+                style: (labelStyle ?? t.AppTypography.title!.small)!.copyWith(
+                  color: enabled && !isLoading ? enabledLabelColor ?? InterfaceColors.action.defaultColor : disabledLabelColor ?? InterfaceColors.action.disabledColor,
+                ),
+                textAlign: TextAlign.center,
+                overflow: labelOverflow,
               ),
-              textAlign: TextAlign.center,
-              overflow: labelOverflow,
-            ),
     );
   }
 }
