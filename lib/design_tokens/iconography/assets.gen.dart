@@ -7,7 +7,6 @@
 // ignore_for_file: type=lint
 // ignore_for_file: directives_ordering,unnecessary_import
 
-import 'package:app_ui/core/constants/constants.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/services.dart';
@@ -341,6 +340,13 @@ class $AssetsIconsSvgGen {
   SvgGenImage get roundedCheck =>
       const SvgGenImage('assets/icons/svg/roundedCheck.svg');
 
+  /// File path: assets/icons/svg/roundedEmptyCheck.svg
+  SvgGenImage get roundedEmptyCheck =>
+      const SvgGenImage('assets/icons/svg/roundedEmptyCheck.svg');
+
+  /// File path: assets/icons/svg/share.svg
+  SvgGenImage get share => const SvgGenImage('assets/icons/svg/share.svg');
+
   /// File path: assets/icons/svg/smartphone.svg
   SvgGenImage get smartphone =>
       const SvgGenImage('assets/icons/svg/smartphone.svg');
@@ -376,6 +382,9 @@ class $AssetsIconsSvgGen {
   /// File path: assets/icons/svg/textMessageFilled.svg
   SvgGenImage get textMessageFilled =>
       const SvgGenImage('assets/icons/svg/textMessageFilled.svg');
+
+  /// File path: assets/icons/svg/ticket.svg
+  SvgGenImage get ticket => const SvgGenImage('assets/icons/svg/ticket.svg');
 
   /// File path: assets/icons/svg/trash.svg
   SvgGenImage get trash => const SvgGenImage('assets/icons/svg/trash.svg');
@@ -424,7 +433,7 @@ class AssetGenImage {
     bool matchTextDirection = false,
     bool gaplessPlayback = false,
     bool isAntiAlias = false,
-    String? package = kPackageName,
+    String? package,
     FilterQuality filterQuality = FilterQuality.low,
     int? cacheWidth,
     int? cacheHeight,
@@ -471,7 +480,7 @@ class SvgGenImage {
     Key? key,
     bool matchTextDirection = false,
     AssetBundle? bundle,
-    String? package = kPackageName,
+    String? package,
     double? width,
     double? height,
     BoxFit fit = BoxFit.contain,
@@ -484,7 +493,7 @@ class SvgGenImage {
     bool excludeFromSemantics = false,
     Clip clipBehavior = Clip.hardEdge,
     bool cacheColorFilter = false,
-    // SvgTheme? theme,
+    SvgTheme? theme,
   }) {
     return SvgPicture.asset(
       _assetName,
@@ -504,7 +513,7 @@ class SvgGenImage {
       excludeFromSemantics: excludeFromSemantics,
       clipBehavior: clipBehavior,
       cacheColorFilter: cacheColorFilter,
-      // theme: theme,
+      theme: theme,
     );
   }
 
