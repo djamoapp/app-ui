@@ -9,6 +9,7 @@ class StandardButton extends StatelessWidget {
     Key? key,
     this.label = "Button",
     this.enabled = true,
+    this.enabledShadow = true,
     this.prefixIcon,
     required this.style,
     this.suffixIcon,
@@ -38,6 +39,7 @@ class StandardButton extends StatelessWidget {
   final IconData? suffixIcon;
   final String label;
   final bool enabled;
+  final bool enabledShadow;
   final TextStyle textStyle;
   final double prefixIconSize;
   final double suffixIconSize;
@@ -54,8 +56,7 @@ class StandardButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return style == StandardButtonStyle.outlined ||
-            style == StandardButtonStyle.outlinedLight
+    return style == StandardButtonStyle.outlined || style == StandardButtonStyle.outlinedLight
         ? OutlinedButton(
             onPressed: enabled && !isLoading ? onPressed ?? () {} : null,
             child: _getChild(),
@@ -64,9 +65,7 @@ class StandardButton extends StatelessWidget {
               side: MaterialStateProperty.resolveWith(
                 (states) => BorderSide(
                   width: 2,
-                  color: enabled && !isLoading
-                      ? _getEnabledColor
-                      : _getDisabledColor,
+                  color: enabled && !isLoading ? _getEnabledColor : _getDisabledColor,
                 ),
               ),
               elevation: MaterialStateProperty.resolveWith(
@@ -91,18 +90,16 @@ class StandardButton extends StatelessWidget {
         : Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(24),
-              boxShadow:
-                  enabled && !isLoading && style == StandardButtonStyle.filled
-                      ? [
-                          BoxShadow(
-                            color: InterfaceColors.action.defaultColor!
-                                .withOpacity(0.32),
-                            offset: const Offset(0, 2),
-                            blurRadius: 4,
-                            spreadRadius: 0,
-                          ),
-                        ]
-                      : null,
+              boxShadow: enabled && enabledShadow && !isLoading && style == StandardButtonStyle.filled
+                  ? [
+                      BoxShadow(
+                        color: InterfaceColors.action.defaultColor!.withOpacity(0.32),
+                        offset: const Offset(0, 2),
+                        blurRadius: 4,
+                        spreadRadius: 0,
+                      ),
+                    ]
+                  : null,
             ),
             child: MaterialButton(
               padding: padding,
@@ -135,9 +132,7 @@ class StandardButton extends StatelessWidget {
               Icon(
                 prefixIcon,
                 size: prefixIconSize,
-                color: enabled && !isLoading
-                    ? _getEnabledIconColor
-                    : _getDisabledIconColor,
+                color: enabled && !isLoading ? _getEnabledIconColor : _getDisabledIconColor,
               ),
               AppGaps.xs,
             ],
@@ -146,9 +141,7 @@ class StandardButton extends StatelessWidget {
               textAlign: TextAlign.center,
               overflow: TextOverflow.ellipsis,
               style: textStyle.copyWith(
-                color: enabled && !isLoading
-                    ? _getEnabledLabelColor
-                    : _getDisabledLabelColor,
+                color: enabled && !isLoading ? _getEnabledLabelColor : _getDisabledLabelColor,
               ),
             ),
             if (suffixIcon != null) ...[
@@ -156,9 +149,7 @@ class StandardButton extends StatelessWidget {
               Icon(
                 suffixIcon,
                 size: suffixIconSize,
-                color: enabled && !isLoading
-                    ? _getEnabledIconColor
-                    : _getDisabledIconColor,
+                color: enabled && !isLoading ? _getEnabledIconColor : _getDisabledIconColor,
               ),
             ]
           ],
@@ -168,8 +159,7 @@ class StandardButton extends StatelessWidget {
     if (enabledColor != null) {
       return enabledColor!;
     }
-    if (style == StandardButtonStyle.filled ||
-        style == StandardButtonStyle.outlined) {
+    if (style == StandardButtonStyle.filled || style == StandardButtonStyle.outlined) {
       return InterfaceColors.action.defaultColor!;
     } else if (style == StandardButtonStyle.text) {
       return Colors.transparent;

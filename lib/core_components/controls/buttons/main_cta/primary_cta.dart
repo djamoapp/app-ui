@@ -10,6 +10,7 @@ class PrimaryCTA extends StatelessWidget {
     this.label = "Confirmer",
     this.isLoading = false,
     this.enabled = true,
+    this.enabledShadow = true,
     this.labelOverflow = TextOverflow.ellipsis,
     this.padding = EdgeInsets.zero,
     this.enabledColor,
@@ -17,9 +18,12 @@ class PrimaryCTA extends StatelessWidget {
     this.enabledLabelColor,
     this.disabledLabelColor,
     this.progressColor,
+    this.childBuilder,
   }) : super(key: key);
 
   final Function()? onPressed;
+
+  final Widget Function()? childBuilder;
 
   final String label;
 
@@ -28,6 +32,8 @@ class PrimaryCTA extends StatelessWidget {
   final bool isLoading;
 
   final bool enabled;
+
+  final bool enabledShadow;
 
   final EdgeInsetsGeometry padding;
 
@@ -46,7 +52,7 @@ class PrimaryCTA extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(24),
-        boxShadow: enabled && !isLoading
+        boxShadow: enabled && enabledShadow && !isLoading
             ? [
                 BoxShadow(
                   color: InterfaceColors.action.defaultColor!.withOpacity(
@@ -77,16 +83,15 @@ class PrimaryCTA extends StatelessWidget {
                 size: 20,
                 color: progressColor ?? Colors.white,
               )
-            : Text(
-                label,
-                style: t.AppTypography.title!.small!.copyWith(
-                  color: enabled && !isLoading
-                      ? enabledLabelColor ?? Colors.white
-                      : disabledLabelColor ?? Colors.white,
+            : childBuilder?.call() ??
+                Text(
+                  label,
+                  style: t.AppTypography.title!.small!.copyWith(
+                    color: enabled && !isLoading ? enabledLabelColor ?? Colors.white : disabledLabelColor ?? Colors.white,
+                  ),
+                  textAlign: TextAlign.center,
+                  overflow: labelOverflow,
                 ),
-                textAlign: TextAlign.center,
-                overflow: labelOverflow,
-              ),
       ),
     );
   }
