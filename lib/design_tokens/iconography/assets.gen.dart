@@ -424,7 +424,7 @@ class SvgGenImage {
     Key? key,
     bool matchTextDirection = false,
     AssetBundle? bundle,
-    String? package,
+    String? package = kPackageName,
     double? width,
     double? height,
     BoxFit fit = BoxFit.contain,
