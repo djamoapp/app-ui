@@ -61,7 +61,6 @@ flutter:
     - assets/icons/colored/
     - assets/icons/3d/
     - assets/icons/svg/
-
     # GIF
     - assets/gif/
 
