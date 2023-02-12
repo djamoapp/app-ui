@@ -15,8 +15,7 @@ class AppColoredIcons {
 
   static String get chest => "$kAssetPrefix/assets/icons/colored/Chest.svg";
 
-  static String get chestDesaturated =>
-      "$kAssetPrefix/assets/icons/colored/Chest - Desaturated.svg";
+  static String get chestDesaturated => "$kAssetPrefix/assets/icons/colored/Chest - Desaturated.svg";
 
   static String get confettis => "$kAssetPrefix/assets/icons/colored/Confettis.svg";
 
@@ -34,12 +33,13 @@ class AppColoredIcons {
 
   static String get pos => "$kAssetPrefix/assets/icons/colored/POS.svg";
 
-  static String get reloadingIssue =>
-      "$kAssetPrefix/assets/icons/colored/Reloading Issue.svg";
+  static String get reloadingIssue => "$kAssetPrefix/assets/icons/colored/Reloading Issue.svg";
 
   static String get schoolStuff1 => "$kAssetPrefix/assets/icons/colored/School Stuff 1.svg";
 
   static String get schoolStuff2 => "$kAssetPrefix/assets/icons/colored/School Stuff 2.svg";
+
+  static String get share => "$kAssetPrefix/assets/icons/colored/share.svg";
 
   static String get suitcase => "$kAssetPrefix/assets/icons/colored/Suitcase.svg";
 
@@ -51,6 +51,5 @@ class AppColoredIcons {
 
   static String get vaultCashIn => "$kAssetPrefix/assets/icons/colored/Vault Cash In.svg";
 
-  static String get vaultCashInColorFull =>
-      "$kAssetPrefix/assets/icons/colored/Vault Cash In - Colorful.svg";
+  static String get vaultCashInColorFull => "$kAssetPrefix/assets/icons/colored/Vault Cash In - Colorful.svg";
 }

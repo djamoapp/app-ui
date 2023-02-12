@@ -2,15 +2,10 @@
 /// *****************************************************
 ///  FlutterGen
 /// *****************************************************
-
-// coverage:ignore-file
-// ignore_for_file: type=lint
-// ignore_for_file: directives_ordering,unnecessary_import
-
 import 'package:app_ui/core/constants/constants.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flutter/services.dart';
 
 class $AssetsGifGen {
   const $AssetsGifGen();
@@ -143,6 +138,9 @@ class $AssetsIconsColoredGen {
 
   /// File path: assets/icons/colored/oklm.svg
   SvgGenImage get oklm => const SvgGenImage('assets/icons/colored/oklm.svg');
+
+  /// File path: assets/icons/colored/share.svg
+  SvgGenImage get share => const SvgGenImage('assets/icons/colored/share.svg');
 
   /// File path: assets/icons/colored/trophy.svg
   SvgGenImage get trophy => const SvgGenImage('assets/icons/colored/trophy.svg');
