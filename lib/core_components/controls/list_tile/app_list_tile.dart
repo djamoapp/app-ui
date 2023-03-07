@@ -31,6 +31,8 @@ class AppListTile extends StatelessWidget {
     this.titleWidget,
     this.subTitleWidget,
     this.columnMainAxisAlignment,
+    this.padding,
+    this.margin,
   }) : super(key: key);
 
   final Color? backgroundColor;
@@ -79,11 +81,17 @@ class AppListTile extends StatelessWidget {
 
   final MainAxisAlignment? columnMainAxisAlignment;
 
+  final EdgeInsetsGeometry? padding;
+
+  final EdgeInsetsGeometry? margin;
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
       child: AppContainer(
+        padding: padding,
+        margin: margin,
         boxDecoration: decoration ??
             BoxDecoration(
               color: backgroundColor ??
