@@ -139,6 +139,9 @@ class $AssetsIconsColoredGen {
   /// File path: assets/icons/colored/oklm.svg
   SvgGenImage get oklm => const SvgGenImage('assets/icons/colored/oklm.svg');
 
+  /// File path: assets/icons/colored/save_money.svg
+  SvgGenImage get saveMoney => const SvgGenImage('assets/icons/colored/save_money.svg');
+
   /// File path: assets/icons/colored/share.svg
   SvgGenImage get share => const SvgGenImage('assets/icons/colored/share.svg');
 
