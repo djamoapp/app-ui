@@ -34,7 +34,8 @@ class AppTextField extends StatefulWidget {
     this.counterWidget,
     this.counterText,
     this.buildCounter,
-    this.initialValue, this.textCapitalization = TextCapitalization.none,
+    this.initialValue,
+    this.textCapitalization = TextCapitalization.none,
   }) : super(key: key);
 
   final String? Function(String? value)? validator;
@@ -152,8 +153,7 @@ class _AppTextFieldState extends State<AppTextField> {
               },
               controller: widget.controller,
               onChanged: widget.onChanged,
-              cursorColor:
-                  widget.cursorColor ?? InterfaceColors.action.defaultColor,
+              cursorColor: widget.cursorColor ?? InterfaceColors.action.defaultColor,
               cursorHeight: 16,
               cursorWidth: 1,
               buildCounter: widget.buildCounter,
@@ -165,9 +165,7 @@ class _AppTextFieldState extends State<AppTextField> {
                 enabled: widget.enabled,
                 filled: true,
                 //errorText: "\u26A0 Une erreur est survenue",
-                fillColor: widget.enabled
-                    ? Colors.white
-                    : NeutralColors.formBordersColor,
+                fillColor: widget.enabled ? Colors.white : NeutralColors.formBordersColor,
                 hintText: widget.placeHolderText,
                 hintStyle: t.AppTypography.body!.medium!.copyWith(
                   color: NeutralColors.disabledTextColor,
@@ -224,7 +222,7 @@ class _AppTextFieldState extends State<AppTextField> {
                 ),
               ),
             ),
-            if (_errorText != null) ...[
+            if (_errorText != null && _errorText!.isNotEmpty) ...[
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisSize: MainAxisSize.min,
