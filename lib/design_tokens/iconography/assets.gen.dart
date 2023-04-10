@@ -82,6 +82,9 @@ class $AssetsIconsColoredGen {
   /// File path: assets/icons/colored/IBAN.svg
   SvgGenImage get iban => const SvgGenImage('assets/icons/colored/IBAN.svg');
 
+  /// File path: assets/icons/colored/invest_fund.svg
+  SvgGenImage get investFund => const SvgGenImage('assets/icons/colored/invest_fund.svg');
+
   /// File path: assets/icons/colored/POS.svg
   SvgGenImage get pos => const SvgGenImage('assets/icons/colored/POS.svg');
 
