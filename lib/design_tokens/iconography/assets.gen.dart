@@ -218,6 +218,9 @@ class $AssetsIconsSvgGen {
   /// File path: assets/icons/svg/clickingIndex.svg
   SvgGenImage get clickingIndex => const SvgGenImage('assets/icons/svg/clickingIndex.svg');
 
+  /// File path: assets/icons/svg/clickingIndex.svg
+  SvgGenImage get clock => const SvgGenImage('assets/icons/svg/clock.svg');
+
   /// File path: assets/icons/svg/copy.svg
   SvgGenImage get copy => const SvgGenImage('assets/icons/svg/copy.svg');
 
