@@ -2,6 +2,7 @@ import 'package:app_ui/core_components/views/container/app_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:gap/gap.dart';
+
 import '../../../design_tokens/colors/interface_colors.dart';
 import '../../../design_tokens/colors/neutral_colors.dart';
 import '../../../design_tokens/iconography/app_icons.dart';
@@ -50,6 +51,8 @@ class AppFlatTextField extends StatefulWidget {
     this.buildCounter,
     this.counterText,
     this.counterWidget,
+    this.enabledBackgroundColor,
+    this.disabledBackgroundColor,
   }) : super(key: key);
 
   final String? label;
@@ -95,6 +98,8 @@ class AppFlatTextField extends StatefulWidget {
   })? buildCounter;
   final String? counterText;
   final Widget? counterWidget;
+  final Color? enabledBackgroundColor;
+  final Color? disabledBackgroundColor;
 
   @override
   State<AppFlatTextField> createState() => _AppFlatTextFieldState();
@@ -124,7 +129,9 @@ class _AppFlatTextFieldState extends State<AppFlatTextField> {
             left: 16,
             right: 16,
           ),
-      color: widget.enabled ? Colors.white : NeutralColors.formBordersColor,
+      color: widget.enabled
+          ? widget.enabledBackgroundColor ?? Colors.white
+          : widget.disabledBackgroundColor ?? NeutralColors.formBordersColor,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
