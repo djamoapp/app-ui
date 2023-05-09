@@ -4,6 +4,8 @@ import 'package:gap/gap.dart';
 class AppGaps {
   AppGaps._();
 
+  static Gap custom(double value) => Gap(value);
+
   static const Gap none = Gap(AppSpacings.none);
 
   static const Gap xs = Gap(AppSpacings.xs);
