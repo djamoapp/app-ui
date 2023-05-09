@@ -29,4 +29,9 @@ class InterfaceColors {
     disabledColor: const Color(0xffFAC2BE),
     backGroundColor: const Color(0xffFFECEB),
   );
+
+  static final InterfaceColor grape = InterfaceColor(
+    defaultColor: const Color(0xffAD0AFF),
+    backGroundColor: const Color(0xffF1D6FF),
+  );
 }
