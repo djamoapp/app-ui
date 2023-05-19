@@ -11,6 +11,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../../core/constants/constants.dart';
+
 class $AssetsGifGen {
   const $AssetsGifGen();
 
@@ -569,7 +571,7 @@ class AssetGenImage {
     bool matchTextDirection = false,
     bool gaplessPlayback = false,
     bool isAntiAlias = false,
-    String? package,
+    String package = kPackageName,
     FilterQuality filterQuality = FilterQuality.low,
     int? cacheWidth,
     int? cacheHeight,
@@ -602,10 +604,7 @@ class AssetGenImage {
     );
   }
 
-  ImageProvider provider({
-    AssetBundle? bundle,
-    String? package,
-  }) {
+  ImageProvider provider({AssetBundle? bundle, String package = kPackageName}) {
     return AssetImage(
       _assetName,
       bundle: bundle,
@@ -627,7 +626,7 @@ class SvgGenImage {
     Key? key,
     bool matchTextDirection = false,
     AssetBundle? bundle,
-    String? package,
+    String package = kPackageName,
     double? width,
     double? height,
     BoxFit fit = BoxFit.contain,
