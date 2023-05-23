@@ -260,6 +260,9 @@ class $AssetsIconsSvgGen {
   /// File path: assets/icons/svg/calendar.svg
   SvgGenImage get calendar => const SvgGenImage('assets/icons/svg/calendar.svg');
 
+  /// File path: assets/icons/svg/calendar.svg
+  SvgGenImage get calendarBlank => const SvgGenImage('assets/icons/svg/calendar_blank.svg');
+
   /// File path: assets/icons/svg/calendarRefresh.svg
   SvgGenImage get calendarRefresh => const SvgGenImage('assets/icons/svg/calendarRefresh.svg');
 
