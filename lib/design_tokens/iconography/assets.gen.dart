@@ -416,6 +416,9 @@ class $AssetsIconsSvgGen {
   /// File path: assets/icons/svg/trophy_rewards.svg
   SvgGenImage get trophyRewards => const SvgGenImage('assets/icons/svg/trophy_rewards.svg');
 
+  /// File path: assets/icons/svg/user_group.svg
+  SvgGenImage get userGroup => const SvgGenImage('assets/icons/svg/user_group.svg');
+
   /// File path: assets/icons/svg/vault.svg
   SvgGenImage get vault => const SvgGenImage('assets/icons/svg/vault.svg');
 
