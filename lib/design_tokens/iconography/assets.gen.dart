@@ -49,6 +49,30 @@ class $AssetsImagesGen {
   List<AssetGenImage> get values => [appIcon, djamoLogoBlack, djamoCardEmpty, djamoCardEmptyLock];
 }
 
+class $AssetsIllustrationsGen {
+  const $AssetsIllustrationsGen();
+
+  /// File path: assets/illustrations/link_card_illustration.svg
+  SvgGenImage get linkCardIllustration => const SvgGenImage('assets/illustrations/link_card_illustration.svg');
+
+  /// File path: assets/illustrations/make_deposit_illustration.svg
+  SvgGenImage get makeDepositIllustration => const SvgGenImage('assets/illustrations/make_deposit_illustration.svg');
+
+  /// File path: assets/illustrations/make_first_transaction_illustration.svg
+  SvgGenImage get makeFirstTransactionIllustration => const SvgGenImage('assets/illustrations/make_first_transaction_illustration.svg');
+
+  /// File path: assets/illustrations/your_card_is_ready_illustration.svg
+  SvgGenImage get yourCardIsReadyIllustration => const SvgGenImage('assets/illustrations/your_card_is_ready_illustration.svg');
+
+  /// List of all assets
+  List<SvgGenImage> get values => [
+        linkCardIllustration,
+        makeDepositIllustration,
+        makeFirstTransactionIllustration,
+        yourCardIsReadyIllustration,
+      ];
+}
+
 class $AssetsIconsColoredGen {
   const $AssetsIconsColoredGen();
 
@@ -500,6 +524,7 @@ class Assets {
 
   static const $AssetsGifGen gif = $AssetsGifGen();
   static const $AssetsIconsGen icons = $AssetsIconsGen();
+  static const $AssetsIllustrationsGen illustrations = $AssetsIllustrationsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
 }
 
