@@ -344,6 +344,9 @@ class $AssetsIconsSvgGen {
   /// File path: assets/icons/svg/hand_coins.svg
   SvgGenImage get handCoins => const SvgGenImage('assets/icons/svg/hand_coins.svg');
 
+  /// File path: assets/icons/svg/houseLine.svg
+  SvgGenImage get houseLine => const SvgGenImage('assets/icons/svg/houseLine.svg');
+
   /// File path: assets/icons/svg/info.svg
   SvgGenImage get info => const SvgGenImage('assets/icons/svg/info.svg');
 
@@ -415,6 +418,9 @@ class $AssetsIconsSvgGen {
 
   /// File path: assets/icons/svg/statsFilled.svg
   SvgGenImage get statsFilled => const SvgGenImage('assets/icons/svg/statsFilled.svg');
+
+  /// File path: assets/icons/svg/storefront.svg
+  SvgGenImage get storefront => const SvgGenImage('assets/icons/svg/storefront.svg');
 
   /// File path: assets/icons/svg/support.svg
   SvgGenImage get support => const SvgGenImage('assets/icons/svg/support.svg');
