@@ -350,6 +350,9 @@ class $AssetsIconsSvgGen {
   /// File path: assets/icons/svg/info.svg
   SvgGenImage get info => const SvgGenImage('assets/icons/svg/info.svg');
 
+  /// File path: assets/icons/svg/identificationCard.svg
+  SvgGenImage get identificationCard => const SvgGenImage('assets/icons/svg/identificationCard.svg');
+
   /// File path: assets/icons/svg/money.svg
   SvgGenImage get money => const SvgGenImage('assets/icons/svg/money.svg');
 
