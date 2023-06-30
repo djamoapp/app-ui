@@ -329,8 +329,14 @@ class $AssetsIconsSvgGen {
   /// File path: assets/icons/svg/eye.svg
   SvgGenImage get eye => const SvgGenImage('assets/icons/svg/eye.svg');
 
+  /// File path: assets/icons/svg/face_id.svg
+  SvgGenImage get faceId => const SvgGenImage('assets/icons/svg/face_id.svg');
+
   /// File path: assets/icons/svg/fingerprint.svg
   SvgGenImage get fingerprint => const SvgGenImage('assets/icons/svg/fingerprint.svg');
+
+  /// File path: assets/icons/svg/finger_print_v2.svg
+  SvgGenImage get fingerprintV2 => const SvgGenImage('assets/icons/svg/finger_print_v2.svg');
 
   /// File path: assets/icons/svg/fiveStars.svg
   SvgGenImage get fiveStars => const SvgGenImage('assets/icons/svg/fiveStars.svg');
