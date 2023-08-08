@@ -224,6 +224,10 @@ class $AssetsIconsColoredGen {
   SvgGenImage get woakBag =>
       const SvgGenImage('assets/icons/colored/woakBag.svg');
 
+  /// File path: assets/icons/colored/No-Card.svg
+  SvgGenImage get noCard =>
+      const SvgGenImage('assets/icons/colored/No-Card.svg');
+
   /// List of all assets
   List<SvgGenImage> get values => [
         atm,
@@ -263,7 +267,8 @@ class $AssetsIconsColoredGen {
         saveMoney,
         share,
         trophy,
-        woakBag
+        woakBag,
+        noCard,
       ];
 }
 
