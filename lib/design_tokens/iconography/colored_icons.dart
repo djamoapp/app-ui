@@ -13,6 +13,8 @@ class AppColoredIcons {
 
   static String get car => "$kAssetPrefix/assets/icons/colored/Car.svg";
 
+  static String get celebration => "$kAssetPrefix/assets/icons/colored/celebration.svg";
+
   static String get chest => "$kAssetPrefix/assets/icons/colored/Chest.svg";
 
   static String get chestDesaturated => "$kAssetPrefix/assets/icons/colored/Chest - Desaturated.svg";
