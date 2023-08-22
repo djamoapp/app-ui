@@ -45,6 +45,9 @@ class $AssetsImagesGen {
   /// File path: assets/images/djamo_card_empty_lock.png
   AssetGenImage get djamoCardEmptyLock => const AssetGenImage('assets/images/djamo_card_empty_lock.png');
 
+  /// assets/images/heart_broken_bro.png
+  AssetGenImage get heartBrokenBro => const AssetGenImage('assets/images/heart_broken_bro.png');
+
   /// File path: assets/images/we_sent_you_email.png
   AssetGenImage get weSentYouEmail => const AssetGenImage('assets/images/we_sent_you_email.png');
 
