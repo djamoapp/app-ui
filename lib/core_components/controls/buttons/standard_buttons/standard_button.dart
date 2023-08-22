@@ -29,6 +29,7 @@ class StandardButton extends StatelessWidget {
     this.width,
     this.padding,
     this.progressColor,
+    this.childBuilder,
   }) : super(key: key);
 
   final StandardButtonStyle style;
@@ -53,13 +54,14 @@ class StandardButton extends StatelessWidget {
   final Color? enabledIconColor;
   final Color? disabledIconColor;
   final Color? progressColor;
+  final Widget Function(BuildContext)? childBuilder;
 
   @override
   Widget build(BuildContext context) {
     return style == StandardButtonStyle.outlined || style == StandardButtonStyle.outlinedLight
         ? OutlinedButton(
             onPressed: enabled && !isLoading ? onPressed ?? () {} : null,
-            child: _getChild(),
+            child: _getChild(context),
             style: ButtonStyle(
               tapTargetSize: MaterialTapTargetSize.shrinkWrap,
               side: MaterialStateProperty.resolveWith(
@@ -114,46 +116,47 @@ class StandardButton extends StatelessWidget {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(borderRadius),
               ),
-              child: _getChild(),
+              child: _getChild(context),
             ),
           );
   }
 
-  Widget _getChild() => isLoading
+  Widget _getChild(BuildContext context) => isLoading
       ? AppLoader(
           size: 20,
           color: progressColor ?? _getDisabledIconColor,
         )
-      : Row(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            if (prefixIcon != null) ...[
-              Icon(
-                prefixIcon,
-                size: prefixIconSize,
-                color: enabled && !isLoading ? _getEnabledIconColor : _getDisabledIconColor,
+      : childBuilder?.call(context) ??
+          Row(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              if (prefixIcon != null) ...[
+                Icon(
+                  prefixIcon,
+                  size: prefixIconSize,
+                  color: enabled && !isLoading ? _getEnabledIconColor : _getDisabledIconColor,
+                ),
+                AppGaps.xs,
+              ],
+              Text(
+                label,
+                textAlign: TextAlign.center,
+                overflow: TextOverflow.ellipsis,
+                style: textStyle.copyWith(
+                  color: enabled && !isLoading ? _getEnabledLabelColor : _getDisabledLabelColor,
+                ),
               ),
-              AppGaps.xs,
+              if (suffixIcon != null) ...[
+                AppGaps.xs,
+                Icon(
+                  suffixIcon,
+                  size: suffixIconSize,
+                  color: enabled && !isLoading ? _getEnabledIconColor : _getDisabledIconColor,
+                ),
+              ]
             ],
-            Text(
-              label,
-              textAlign: TextAlign.center,
-              overflow: TextOverflow.ellipsis,
-              style: textStyle.copyWith(
-                color: enabled && !isLoading ? _getEnabledLabelColor : _getDisabledLabelColor,
-              ),
-            ),
-            if (suffixIcon != null) ...[
-              AppGaps.xs,
-              Icon(
-                suffixIcon,
-                size: suffixIconSize,
-                color: enabled && !isLoading ? _getEnabledIconColor : _getDisabledIconColor,
-              ),
-            ]
-          ],
-        );
+          );
 
   Color get _getEnabledColor {
     if (enabledColor != null) {

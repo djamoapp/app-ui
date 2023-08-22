@@ -14,6 +14,7 @@ class StandardButtons {
     String label = "Button",
     bool enabled = true,
     bool enabledShadow = true,
+    double? labelSize,
     double prefixIconSize = 20,
     double suffixIconSize = 12,
     double borderRadius = 24,
@@ -26,6 +27,7 @@ class StandardButtons {
     Color? disabledIconColor,
     bool isLoading = false,
     EdgeInsetsGeometry? padding,
+    Widget Function(BuildContext)? childBuilder,
   }) =>
       StandardButton(
         key: key,
@@ -34,7 +36,9 @@ class StandardButtons {
         prefixIcon: prefixIcon,
         style: style,
         suffixIcon: suffixIcon,
-        textStyle: t.AppTypography.title!.small!,
+        textStyle: t.AppTypography.title!.small!.copyWith(
+          fontSize: labelSize,
+        ),
         prefixIconSize: prefixIconSize,
         suffixIconSize: suffixIconSize,
         onPressed: onPressed,
@@ -50,6 +54,7 @@ class StandardButtons {
         height: 40,
         width: double.minPositive,
         padding: padding,
+        childBuilder: childBuilder,
       );
 
   static StandardButton medium({
@@ -60,6 +65,7 @@ class StandardButtons {
     String label = "Button",
     bool enabled = true,
     bool enabledShadow = true,
+    double? labelSize,
     double prefixIconSize = 13.33,
     double suffixIconSize = 8,
     double borderRadius = 16,
@@ -72,6 +78,7 @@ class StandardButtons {
     Color? disabledIconColor,
     bool isLoading = false,
     EdgeInsetsGeometry? padding,
+    Widget Function(BuildContext)? childBuilder,
   }) =>
       StandardButton(
         key: key,
@@ -80,7 +87,9 @@ class StandardButtons {
         prefixIcon: prefixIcon,
         style: style,
         suffixIcon: suffixIcon,
-        textStyle: t.AppTypography.label!.bSmall!,
+        textStyle: t.AppTypography.label!.bSmall!.copyWith(
+          fontSize: labelSize,
+        ),
         prefixIconSize: prefixIconSize,
         suffixIconSize: prefixIconSize,
         onPressed: onPressed,
@@ -96,6 +105,7 @@ class StandardButtons {
         height: 32,
         width: double.minPositive,
         padding: padding,
+        childBuilder: childBuilder,
       );
 
   static StandardButton small({
@@ -107,6 +117,7 @@ class StandardButtons {
     bool enabled = true,
     bool enabledShadow = true,
     double prefixIconSize = 11.67,
+    double? labelSize,
     double suffixIconSize = 6,
     double borderRadius = 16,
     Function()? onPressed,
@@ -118,6 +129,7 @@ class StandardButtons {
     Color? disabledIconColor,
     bool isLoading = false,
     EdgeInsetsGeometry? padding,
+    Widget Function(BuildContext)? childBuilder,
   }) =>
       StandardButton(
         key: key,
@@ -126,7 +138,7 @@ class StandardButtons {
         prefixIcon: prefixIcon,
         style: style,
         suffixIcon: suffixIcon,
-        textStyle: t.AppTypography.body!.bTiny!,
+        textStyle: t.AppTypography.body!.bTiny!.copyWith(fontSize: labelSize),
         prefixIconSize: prefixIconSize,
         suffixIconSize: suffixIconSize,
         onPressed: onPressed,
@@ -142,5 +154,6 @@ class StandardButtons {
         height: 22,
         width: double.minPositive,
         padding: padding,
+        childBuilder: childBuilder,
       );
 }
