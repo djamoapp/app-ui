@@ -130,6 +130,9 @@ class $AssetsIconsColoredGen {
   /// File path: assets/icons/colored/POS.svg
   SvgGenImage get pos => const SvgGenImage('assets/icons/colored/POS.svg');
 
+  /// File path: assets/icons/colored/receipt.svg
+  SvgGenImage get receipt => const SvgGenImage('assets/icons/colored/receipt.svg');
+
   /// File path: assets/icons/colored/Personal Bank.svg
   SvgGenImage get personalBank => const SvgGenImage('assets/icons/colored/Personal Bank.svg');
 
@@ -141,6 +144,9 @@ class $AssetsIconsColoredGen {
 
   /// File path: assets/icons/colored/School Stuff 2.svg
   SvgGenImage get schoolStuff2 => const SvgGenImage('assets/icons/colored/School Stuff 2.svg');
+
+  /// File path: assets/icons/colored/shopping_bag.svg
+  SvgGenImage get shoppingBag => const SvgGenImage('assets/icons/colored/shopping_bag.svg');
 
   /// File path: assets/icons/colored/Suitcase.svg
   SvgGenImage get suitcase => const SvgGenImage('assets/icons/colored/Suitcase.svg');
