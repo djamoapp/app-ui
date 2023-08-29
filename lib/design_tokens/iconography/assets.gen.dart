@@ -611,6 +611,9 @@ class $AssetsIconsSvgGen {
   /// File path: assets/icons/svg/stars.svg
   SvgGenImage get stars => const SvgGenImage('assets/icons/svg/stars.svg');
 
+  /// File path: assets/icons/svg/error.svg
+  SvgGenImage get error => const SvgGenImage('assets/icons/svg/error.svg');
+
   /// List of all assets
   List<SvgGenImage> get values => [
         iban,
