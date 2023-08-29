@@ -604,6 +604,13 @@ class $AssetsIconsSvgGen {
   /// File path: assets/icons/svg/upload.svg
   SvgGenImage get upload => const SvgGenImage('assets/icons/svg/upload.svg');
 
+  /// File path: assets/icons/svg/lightning.svg
+  SvgGenImage get lightning =>
+      const SvgGenImage('assets/icons/svg/lightning.svg');
+
+  /// File path: assets/icons/svg/stars.svg
+  SvgGenImage get stars => const SvgGenImage('assets/icons/svg/stars.svg');
+
   /// List of all assets
   List<SvgGenImage> get values => [
         iban,
@@ -682,6 +689,8 @@ class $AssetsIconsSvgGen {
         threeDots,
         transfer,
         upload,
+        lightning,
+        stars,
       ];
 }
 
