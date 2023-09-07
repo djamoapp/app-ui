@@ -5,9 +5,6 @@ import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
 import 'package:app_ui/design_tokens/typography/typography.dart';
 import 'package:flutter/material.dart';
 
-import '../../../core/enums/standard_button_style.dart';
-import '../../controls/buttons/standard_buttons/standard_button.dart';
-
 class AppContainer extends StatelessWidget {
   const AppContainer({
     Key? key,
@@ -118,22 +115,6 @@ class AppContainer extends StatelessWidget {
   }
 
   Widget _title() {
-    if (title != null && actionButtonText != null) {
-      return Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          title!,
-          StandardButton(
-            style: StandardButtonStyle.text,
-            textStyle: AppTypography.body!.bSmall!,
-            label: actionButtonText ?? "",
-            onPressed: onActionButtonTap,
-            borderRadius: kDefaultBorderRadius,
-          ),
-        ],
-      );
-    }
-
     return title ??
         AppSectionLabel(
           label: titleText ?? "",
