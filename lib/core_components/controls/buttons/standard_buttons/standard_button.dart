@@ -1,8 +1,8 @@
 import 'package:app_ui/core/enums/standard_button_style.dart';
-import 'package:flutter/material.dart';
 import 'package:app_ui/core_components/views/loader/loader.dart';
 import 'package:app_ui/design_tokens/colors/interface_colors.dart';
 import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
+import 'package:flutter/material.dart';
 
 class StandardButton extends StatelessWidget {
   const StandardButton({
@@ -92,16 +92,6 @@ class StandardButton extends StatelessWidget {
         : Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(24),
-              boxShadow: enabled && enabledShadow && !isLoading && style == StandardButtonStyle.filled
-                  ? [
-                      BoxShadow(
-                        color: InterfaceColors.action.defaultColor!.withOpacity(0.32),
-                        offset: const Offset(0, 2),
-                        blurRadius: 4,
-                        spreadRadius: 0,
-                      ),
-                    ]
-                  : null,
             ),
             child: MaterialButton(
               padding: padding,
