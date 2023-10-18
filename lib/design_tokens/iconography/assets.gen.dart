@@ -535,6 +535,9 @@ class $AssetsIconsSvgGen {
   /// File path: assets/icons/svg/phoneOutgoing.svg
   SvgGenImage get phoneOutgoing => const SvgGenImage('assets/icons/svg/phoneOutgoing.svg');
 
+  /// File path: assets/icons/svg/CoinVertical.svg
+  SvgGenImage get coinVertical => const SvgGenImage('assets/icons/svg/CoinVertical.svg');
+
   /// List of all assets
   List<SvgGenImage> get values => [
         iban,
@@ -618,6 +621,7 @@ class $AssetsIconsSvgGen {
         error,
         deviceMobileCamera,
         phoneOutgoing,
+        coinVertical,
       ];
 }
 
