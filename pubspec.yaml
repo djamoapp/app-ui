@@ -15,7 +15,6 @@ dependencies:
   shimmer:
   expansion_tile_card:
   cached_network_image:
-  charts_flutter:
   percent_indicator:
   dotted_line:
   custom_sliding_segmented_control:

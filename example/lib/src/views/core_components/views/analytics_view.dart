@@ -1,4 +1,3 @@
-import 'package:app_ui/core_components/views/analytics_widget/analytics_widget.dart';
 import 'package:flutter/material.dart';
 
 class AnalyticsView extends StatelessWidget {
@@ -12,9 +11,7 @@ class AnalyticsView extends StatelessWidget {
       ),
       body: ListView(
         padding: const EdgeInsets.all(20),
-        children: [
-          AppAnalyticsWidget.withSampleData(),
-        ],
+        children: [],
       ),
     );
   }
