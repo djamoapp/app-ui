@@ -208,6 +208,9 @@ class $AssetsIconsColoredGen {
   /// File path: assets/icons/colored/No-Card.svg
   SvgGenImage get noCard => const SvgGenImage('assets/icons/colored/No-Card.svg');
 
+  /// File path: assets/icons/colored/subscription.svg
+  SvgGenImage get subscription => const SvgGenImage('assets/icons/colored/subscription.svg');
+
   /// List of all assets
   List<SvgGenImage> get values => [
         atm,
@@ -249,6 +252,7 @@ class $AssetsIconsColoredGen {
         trophy,
         woakBag,
         noCard,
+        subscription,
       ];
 }
 
@@ -492,6 +496,57 @@ class $AssetsIconsSvgGen {
   /// File path: assets/icons/svg/vaultFilled.svg
   SvgGenImage get vaultFilled => const SvgGenImage('assets/icons/svg/vaultFilled.svg');
 
+  /// File path: assets/icons/svg/atm.svg
+  SvgGenImage get atm => const SvgGenImage('assets/icons/svg/atm.svg');
+
+  /// File path: assets/icons/svg/civ.svg
+  SvgGenImage get civ => const SvgGenImage('assets/icons/svg/civ.svg');
+
+  /// File path: assets/icons/svg/grayRoundedCheck.svg
+  SvgGenImage get grayRoundedCheck => const SvgGenImage('assets/icons/svg/grayRoundedCheck.svg');
+
+  /// File path: assets/icons/svg/prohibit.svg
+  SvgGenImage get prohibit => const SvgGenImage('assets/icons/svg/prohibit.svg');
+
+  /// File path: assets/icons/svg/roundedChevronRight.svg
+  SvgGenImage get roundedChevronRight => const SvgGenImage('assets/icons/svg/roundedChevronRight.svg');
+
+  /// File path: assets/icons/svg/roundedCross.svg
+  SvgGenImage get roundedCross => const SvgGenImage('assets/icons/svg/roundedCross.svg');
+
+  /// File path: assets/icons/svg/roundedInfo.svg
+  SvgGenImage get roundedInfo => const SvgGenImage('assets/icons/svg/roundedInfo.svg');
+
+  /// File path: assets/icons/svg/sen.svg
+  SvgGenImage get sen => const SvgGenImage('assets/icons/svg/sen.svg');
+
+  /// File path: assets/icons/svg/threeDots.svg
+  SvgGenImage get threeDots => const SvgGenImage('assets/icons/svg/threeDots.svg');
+
+  /// File path: assets/icons/svg/transfer.svg
+  SvgGenImage get transfer => const SvgGenImage('assets/icons/svg/transfer.svg');
+
+  /// File path: assets/icons/svg/upload.svg
+  SvgGenImage get upload => const SvgGenImage('assets/icons/svg/upload.svg');
+
+  /// File path: assets/icons/svg/lightning.svg
+  SvgGenImage get lightning => const SvgGenImage('assets/icons/svg/lightning.svg');
+
+  /// File path: assets/icons/svg/stars.svg
+  SvgGenImage get stars => const SvgGenImage('assets/icons/svg/stars.svg');
+
+  /// File path: assets/icons/svg/error.svg
+  SvgGenImage get error => const SvgGenImage('assets/icons/svg/error.svg');
+
+  /// File path: assets/icons/svg/deviceMobileCamera.svg
+  SvgGenImage get deviceMobileCamera => const SvgGenImage('assets/icons/svg/deviceMobileCamera.svg');
+
+  /// File path: assets/icons/svg/phoneOutgoing.svg
+  SvgGenImage get phoneOutgoing => const SvgGenImage('assets/icons/svg/phoneOutgoing.svg');
+
+  /// File path: assets/icons/svg/CoinVertical.svg
+  SvgGenImage get coinVertical => const SvgGenImage('assets/icons/svg/CoinVertical.svg');
+
   /// List of all assets
   List<SvgGenImage> get values => [
         iban,
@@ -558,7 +613,24 @@ class $AssetsIconsSvgGen {
         trash,
         trophy,
         vault,
-        vaultFilled
+        vaultFilled,
+        atm,
+        civ,
+        grayRoundedCheck,
+        prohibit,
+        roundedChevronRight,
+        roundedCross,
+        roundedInfo,
+        sen,
+        threeDots,
+        transfer,
+        upload,
+        lightning,
+        stars,
+        error,
+        deviceMobileCamera,
+        phoneOutgoing,
+        coinVertical,
       ];
 }
 
