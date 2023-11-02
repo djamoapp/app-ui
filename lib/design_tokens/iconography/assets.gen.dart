@@ -381,6 +381,9 @@ class $AssetsIconsSvgGen {
   /// File path: assets/icons/svg/money.svg
   SvgGenImage get money => const SvgGenImage('assets/icons/svg/money.svg');
 
+  /// File path: assets/icons/svg/money_2.svg
+  SvgGenImage get money2 => const SvgGenImage('assets/icons/svg/money_2.svg');
+
   /// File path: assets/icons/svg/moneyBag.svg
   SvgGenImage get moneyBag => const SvgGenImage('assets/icons/svg/moneyBag.svg');
 
@@ -411,6 +414,9 @@ class $AssetsIconsSvgGen {
   /// File path: assets/icons/svg/profile.svg
   SvgGenImage get profile => const SvgGenImage('assets/icons/svg/profile.svg');
 
+  /// File path: assets/icons/svg/qr_code.svg
+  SvgGenImage get qrCode => const SvgGenImage('assets/icons/svg/qr_code.svg');
+
   /// File path: assets/icons/svg/reccurentWire.svg
   SvgGenImage get reccurentWire => const SvgGenImage('assets/icons/svg/reccurentWire.svg');
 
@@ -425,6 +431,9 @@ class $AssetsIconsSvgGen {
 
   /// File path: assets/icons/svg/roundedEmptyCheck.svg
   SvgGenImage get roundedEmptyCheck => const SvgGenImage('assets/icons/svg/roundedEmptyCheck.svg');
+
+  /// File path: assets/icons/svg/scan.svg
+  SvgGenImage get scan => const SvgGenImage('assets/icons/svg/scan.svg');
 
   /// File path: assets/icons/svg/share.svg
   SvgGenImage get share => const SvgGenImage('assets/icons/svg/share.svg');
