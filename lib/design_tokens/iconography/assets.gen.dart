@@ -421,6 +421,9 @@ class $AssetsIconsSvgGen {
   /// File path: assets/icons/svg/qr_code.svg
   SvgGenImage get qrCode => const SvgGenImage('assets/icons/svg/qr_code.svg');
 
+  /// File path: assets/icons/svg/qr_code_full.svg
+  SvgGenImage get qrCodeFull => const SvgGenImage('assets/icons/svg/qr_code_full.svg');
+
   /// File path: assets/icons/svg/reccurentWire.svg
   SvgGenImage get reccurentWire => const SvgGenImage('assets/icons/svg/reccurentWire.svg');
 
