@@ -14,6 +14,11 @@ class AppSnackBar {
     String label, {
     Key? key,
     Duration duration = const Duration(seconds: 5),
+    EdgeInsets margin = const EdgeInsets.only(
+      bottom: AppSpacings.m,
+      left: AppSpacings.m,
+      right: AppSpacings.m,
+    ),
     bool withIcon = true,
     Widget? trailing,
   }) {
@@ -21,6 +26,7 @@ class AppSnackBar {
       key: key,
       backgroundColor: NeutralColors.neutral200,
       label: label,
+      margin: margin,
       duration: duration,
       leading: withIcon
           ? Icon(
@@ -39,11 +45,17 @@ class AppSnackBar {
     Duration duration = const Duration(seconds: 5),
     bool withIcon = true,
     Widget? trailing,
+    EdgeInsets margin = const EdgeInsets.only(
+      bottom: AppSpacings.m,
+      left: AppSpacings.m,
+      right: AppSpacings.m,
+    ),
   }) {
     return basic(
       key: key,
       backgroundColor: InterfaceColors.alert.backGroundColor!,
       label: label,
+      margin: margin,
       duration: duration,
       leading: withIcon
           ? Icon(
@@ -61,10 +73,16 @@ class AppSnackBar {
     Key? key,
     Duration duration = const Duration(seconds: 5),
     bool withIcon = true,
+    EdgeInsets margin = const EdgeInsets.only(
+      bottom: AppSpacings.m,
+      left: AppSpacings.m,
+      right: AppSpacings.m,
+    ),
     Widget? trailing,
   }) {
     return basic(
       key: key,
+      margin: margin,
       backgroundColor: InterfaceColors.success.backGroundColor!,
       label: label,
       duration: duration,
@@ -84,12 +102,18 @@ class AppSnackBar {
     Key? key,
     Duration duration = const Duration(seconds: 5),
     bool withIcon = true,
+    EdgeInsets margin = const EdgeInsets.only(
+      bottom: AppSpacings.m,
+      left: AppSpacings.m,
+      right: AppSpacings.m,
+    ),
     Widget? trailing,
   }) {
     return basic(
       key: key,
       backgroundColor: InterfaceColors.error.backGroundColor!,
       label: label,
+      margin: margin,
       duration: duration,
       leading: withIcon
           ? Icon(
@@ -108,17 +132,18 @@ class AppSnackBar {
     Widget? trailing,
     required String label,
     required Color backgroundColor,
+    EdgeInsets margin = const EdgeInsets.only(
+      bottom: AppSpacings.m,
+      left: AppSpacings.m,
+      right: AppSpacings.m,
+    ),
     Duration duration = const Duration(
       seconds: 5,
     ),
   }) {
     return SnackBar(
       key: key,
-      margin: EdgeInsets.only(
-        bottom: AppSpacings.m,
-        left: AppSpacings.m,
-        right: AppSpacings.m,
-      ),
+      margin: margin,
       padding: EdgeInsets.all(AppSpacings.m),
       elevation: 5,
       duration: duration,
