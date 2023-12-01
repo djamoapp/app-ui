@@ -10,6 +10,8 @@ class AppTag extends StatelessWidget {
     this.backGroundColor = NeutralColors.neutral800,
     this.text = "Djamo Tag",
     this.icon,
+    this.iconSize = 8,
+    this.suffixIconSize = 8,
     this.suffixIcon,
     this.textAndIconColor = NeutralColors.bordersHoverColor,
     this.padding,
@@ -22,7 +24,11 @@ class AppTag extends StatelessWidget {
 
   final Color textAndIconColor;
 
+  final double iconSize;
+
   final IconData? icon;
+
+  final double suffixIconSize;
 
   final IconData? suffixIcon;
 
@@ -58,7 +64,7 @@ class AppTag extends StatelessWidget {
           if (icon != null) ...[
             Icon(
               icon,
-              size: 8,
+              size: iconSize,
               color: textAndIconColor,
             ),
             AppGaps.xs,
@@ -78,7 +84,7 @@ class AppTag extends StatelessWidget {
             AppGaps.xs,
             Icon(
               suffixIcon,
-              size: 8,
+              size: suffixIconSize,
               color: textAndIconColor,
             ),
           ],
