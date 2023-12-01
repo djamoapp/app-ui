@@ -1,8 +1,8 @@
+import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
+import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
 import 'package:app_ui/design_tokens/layout_and_spacing/app_spacings.dart';
 import 'package:app_ui/design_tokens/typography/typography.dart';
 import 'package:flutter/material.dart';
-import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
-import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
 
 class AppTag extends StatelessWidget {
   const AppTag({
@@ -10,10 +10,12 @@ class AppTag extends StatelessWidget {
     this.backGroundColor = NeutralColors.neutral800,
     this.text = "Djamo Tag",
     this.icon,
+    this.suffixIcon,
     this.textAndIconColor = NeutralColors.bordersHoverColor,
     this.padding,
     this.radius,
-    this.textStyle, this.border,
+    this.textStyle,
+    this.border,
   }) : super(key: key);
 
   final Color backGroundColor;
@@ -21,6 +23,8 @@ class AppTag extends StatelessWidget {
   final Color textAndIconColor;
 
   final IconData? icon;
+
+  final IconData? suffixIcon;
 
   final String text;
 
@@ -70,6 +74,14 @@ class AppTag extends StatelessWidget {
                   ),
             textAlign: TextAlign.center,
           ),
+          if (suffixIcon != null) ...[
+            AppGaps.xs,
+            Icon(
+              suffixIcon,
+              size: 8,
+              color: textAndIconColor,
+            ),
+          ],
         ],
       ),
     );
