@@ -385,6 +385,9 @@ class $AssetsIconsSvgGen {
   /// File path: assets/icons/svg/map_pin_line.svg
   SvgGenImage get mapPinLine => const SvgGenImage('assets/icons/svg/map_pin_line.svg');
 
+  /// File path: assets/icons/svg/map_pin_line_outlined.svg
+  SvgGenImage get mapPinLineOutlined => const SvgGenImage('assets/icons/svg/map_pin_line_outlined.svg');
+
   /// File path: assets/icons/svg/money.svg
   SvgGenImage get money => const SvgGenImage('assets/icons/svg/money.svg');
 
