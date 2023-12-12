@@ -14,6 +14,7 @@ class AppSnackBar {
     String label, {
     Key? key,
     Duration duration = const Duration(seconds: 5),
+    DismissDirection dismissDirection = DismissDirection.down,
     EdgeInsets margin = const EdgeInsets.only(
       bottom: AppSpacings.m,
       left: AppSpacings.m,
@@ -25,6 +26,7 @@ class AppSnackBar {
     return basic(
       key: key,
       backgroundColor: NeutralColors.neutral200,
+      dismissDirection: dismissDirection,
       label: label,
       margin: margin,
       duration: duration,
@@ -43,6 +45,7 @@ class AppSnackBar {
     String label, {
     Key? key,
     Duration duration = const Duration(seconds: 5),
+    DismissDirection dismissDirection = DismissDirection.down,
     bool withIcon = true,
     Widget? trailing,
     EdgeInsets margin = const EdgeInsets.only(
@@ -54,6 +57,7 @@ class AppSnackBar {
     return basic(
       key: key,
       backgroundColor: InterfaceColors.alert.backGroundColor!,
+      dismissDirection: dismissDirection,
       label: label,
       margin: margin,
       duration: duration,
@@ -72,6 +76,7 @@ class AppSnackBar {
     String label, {
     Key? key,
     Duration duration = const Duration(seconds: 5),
+    DismissDirection dismissDirection = DismissDirection.down,
     bool withIcon = true,
     EdgeInsets margin = const EdgeInsets.only(
       bottom: AppSpacings.m,
@@ -82,6 +87,7 @@ class AppSnackBar {
   }) {
     return basic(
       key: key,
+      dismissDirection: dismissDirection,
       margin: margin,
       backgroundColor: InterfaceColors.success.backGroundColor!,
       label: label,
@@ -102,6 +108,7 @@ class AppSnackBar {
     Key? key,
     Duration duration = const Duration(seconds: 5),
     bool withIcon = true,
+    DismissDirection dismissDirection = DismissDirection.down,
     EdgeInsets margin = const EdgeInsets.only(
       bottom: AppSpacings.m,
       left: AppSpacings.m,
@@ -112,6 +119,7 @@ class AppSnackBar {
     return basic(
       key: key,
       backgroundColor: InterfaceColors.error.backGroundColor!,
+      dismissDirection: dismissDirection,
       label: label,
       margin: margin,
       duration: duration,
@@ -132,6 +140,7 @@ class AppSnackBar {
     Widget? trailing,
     required String label,
     required Color backgroundColor,
+    DismissDirection dismissDirection = DismissDirection.down,
     EdgeInsets margin = const EdgeInsets.only(
       bottom: AppSpacings.m,
       left: AppSpacings.m,
@@ -144,6 +153,7 @@ class AppSnackBar {
     return SnackBar(
       key: key,
       margin: margin,
+      dismissDirection: dismissDirection,
       padding: EdgeInsets.all(AppSpacings.m),
       elevation: 5,
       duration: duration,
