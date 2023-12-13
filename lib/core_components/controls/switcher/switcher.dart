@@ -10,6 +10,7 @@ class AppSwitcher extends StatelessWidget {
     required this.value,
     this.scale = 0.8,
     this.enabled = true,
+    this.activeSwitcherColor,
   }) : super(key: key);
 
   final Function(bool value)? onChanged;
@@ -18,19 +19,17 @@ class AppSwitcher extends StatelessWidget {
   final double? scale;
   final bool enabled;
 
+  final Color? activeSwitcherColor;
+
   @override
   Widget build(BuildContext context) {
     return Transform.scale(
-      scale: 0.8,
+      scale: scale ?? 0.8,
       child: CupertinoSwitch(
         value: value,
         thumbColor: Colors.white,
-        activeColor: enabled
-            ? InterfaceColors.action.defaultColor
-            : InterfaceColors.action.disabledColor,
-        trackColor: enabled
-            ? NeutralColors.bordersHoverColor
-            : NeutralColors.neutral200,
+        activeColor: enabled ? activeSwitcherColor ?? InterfaceColors.action.defaultColor : InterfaceColors.action.disabledColor,
+        trackColor: enabled ? NeutralColors.bordersHoverColor : NeutralColors.neutral200,
         onChanged: enabled ? onChanged : null,
       ),
     );

@@ -16,6 +16,7 @@ class AppTitleWithSwitch extends StatelessWidget {
     this.titleStyle,
     this.subTitleStyle,
     this.switcherScale,
+    this.activeSwitcherColor,
   }) : super(key: key);
 
   final String title;
@@ -34,6 +35,7 @@ class AppTitleWithSwitch extends StatelessWidget {
 
   final double? switcherScale;
 
+  final Color? activeSwitcherColor;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -74,6 +76,7 @@ class AppTitleWithSwitch extends StatelessWidget {
           onChanged: onChanged,
           value: selected,
           scale: switcherScale != null ? switcherScale : null,
+          activeSwitcherColor: activeSwitcherColor,
         )
       ],
     );
