@@ -598,6 +598,9 @@ class $AssetsIconsSvgGen {
   /// File path: assets/icons/svg/web.svg
   SvgGenImage get web => const SvgGenImage('assets/icons/svg/web.svg');
 
+  /// File path: assets/icons/svg/prohibit_normal.svg
+  SvgGenImage get prohibitNormal => const SvgGenImage('assets/icons/svg/prohibit_normal.svg');
+
   /// List of all assets
   List<SvgGenImage> get values => [
         iban,
@@ -696,6 +699,13 @@ class $AssetsIconsSvgGen {
         squares,
         vaultRemastered,
         web,
+        calendarBlank,
+        mapPinLine,
+        mapPinLineOutlined,
+        qrCode,
+        qrCodeFull,
+        vaultFilled,
+        prohibitNormal,
       ];
 }
 
