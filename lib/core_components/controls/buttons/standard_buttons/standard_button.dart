@@ -30,6 +30,7 @@ class StandardButton extends StatelessWidget {
     this.padding,
     this.progressColor,
     this.childBuilder,
+    this.borderWidth,
   }) : super(key: key);
 
   final StandardButtonStyle style;
@@ -54,11 +55,13 @@ class StandardButton extends StatelessWidget {
   final Color? enabledIconColor;
   final Color? disabledIconColor;
   final Color? progressColor;
+  final double? borderWidth;
   final Widget Function(BuildContext)? childBuilder;
 
   @override
   Widget build(BuildContext context) {
-    return style == StandardButtonStyle.outlined || style == StandardButtonStyle.outlinedLight
+    return style == StandardButtonStyle.outlined ||
+            style == StandardButtonStyle.outlinedLight
         ? OutlinedButton(
             onPressed: enabled && !isLoading ? onPressed ?? () {} : null,
             child: _getChild(context),
@@ -66,8 +69,10 @@ class StandardButton extends StatelessWidget {
               tapTargetSize: MaterialTapTargetSize.shrinkWrap,
               side: MaterialStateProperty.resolveWith(
                 (states) => BorderSide(
-                  width: 2,
-                  color: enabled && !isLoading ? _getEnabledColor : _getDisabledColor,
+                  width: this.borderWidth ?? 2,
+                  color: enabled && !isLoading
+                      ? _getEnabledColor
+                      : _getDisabledColor,
                 ),
               ),
               elevation: MaterialStateProperty.resolveWith(
@@ -125,7 +130,9 @@ class StandardButton extends StatelessWidget {
                 Icon(
                   prefixIcon,
                   size: prefixIconSize,
-                  color: enabled && !isLoading ? _getEnabledIconColor : _getDisabledIconColor,
+                  color: enabled && !isLoading
+                      ? _getEnabledIconColor
+                      : _getDisabledIconColor,
                 ),
                 AppGaps.xs,
               ],
@@ -134,7 +141,9 @@ class StandardButton extends StatelessWidget {
                 textAlign: TextAlign.center,
                 overflow: TextOverflow.ellipsis,
                 style: textStyle.copyWith(
-                  color: enabled && !isLoading ? _getEnabledLabelColor : _getDisabledLabelColor,
+                  color: enabled && !isLoading
+                      ? _getEnabledLabelColor
+                      : _getDisabledLabelColor,
                 ),
               ),
               if (suffixIcon != null) ...[
@@ -142,7 +151,9 @@ class StandardButton extends StatelessWidget {
                 Icon(
                   suffixIcon,
                   size: suffixIconSize,
-                  color: enabled && !isLoading ? _getEnabledIconColor : _getDisabledIconColor,
+                  color: enabled && !isLoading
+                      ? _getEnabledIconColor
+                      : _getDisabledIconColor,
                 ),
               ]
             ],
@@ -152,7 +163,8 @@ class StandardButton extends StatelessWidget {
     if (enabledColor != null) {
       return enabledColor!;
     }
-    if (style == StandardButtonStyle.filled || style == StandardButtonStyle.outlined) {
+    if (style == StandardButtonStyle.filled ||
+        style == StandardButtonStyle.outlined) {
       return InterfaceColors.action.defaultColor!;
     } else if (style == StandardButtonStyle.text) {
       return Colors.transparent;

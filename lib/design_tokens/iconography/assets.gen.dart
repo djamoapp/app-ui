@@ -563,6 +563,51 @@ class $AssetsIconsSvgGen {
   /// File path: assets/icons/svg/CoinVertical.svg
   SvgGenImage get coinVertical => const SvgGenImage('assets/icons/svg/CoinVertical.svg');
 
+  /// File path: assets/icons/svg/add_expense_category.svg
+  SvgGenImage get addExpenseCategory => const SvgGenImage('assets/icons/svg/add_expense_category.svg');
+
+  /// File path: assets/icons/svg/borrow.svg
+  SvgGenImage get borrow => const SvgGenImage('assets/icons/svg/borrow.svg');
+
+  /// File path: assets/icons/svg/chevron_right.svg
+  SvgGenImage get chevronRight => const SvgGenImage('assets/icons/svg/chevron_right.svg');
+
+  /// File path: assets/icons/svg/dots.svg
+  SvgGenImage get dots => const SvgGenImage('assets/icons/svg/dots.svg');
+
+  /// File path: assets/icons/svg/home.svg
+  SvgGenImage get home => const SvgGenImage('assets/icons/svg/home.svg');
+
+  /// File path: assets/icons/svg/minus.svg
+  SvgGenImage get minus => const SvgGenImage('assets/icons/svg/minus.svg');
+
+  /// File path: assets/icons/svg/pay_back.svg
+  SvgGenImage get payBack => const SvgGenImage('assets/icons/svg/pay_back.svg');
+
+  /// File path: assets/icons/svg/phone_plus.svg
+  SvgGenImage get phonePlus => const SvgGenImage('assets/icons/svg/phone_plus.svg');
+
+  /// File path: assets/icons/svg/reset.svg
+  SvgGenImage get reset => const SvgGenImage('assets/icons/svg/reset.svg');
+
+  /// File path: assets/icons/svg/rounded_check.svg
+  SvgGenImage get roundedCheckNormal => const SvgGenImage('assets/icons/svg/rounded_check.svg');
+
+  /// File path: assets/icons/svg/rounded_cross.svg
+  SvgGenImage get roundedCrossNormal => const SvgGenImage('assets/icons/svg/rounded_cross.svg');
+
+  /// File path: assets/icons/svg/squares.svg
+  SvgGenImage get squares => const SvgGenImage('assets/icons/svg/squares.svg');
+
+  /// File path: assets/icons/svg/vault_remastered.svg
+  SvgGenImage get vaultRemastered => const SvgGenImage('assets/icons/svg/vault_remastered.svg');
+
+  /// File path: assets/icons/svg/web.svg
+  SvgGenImage get web => const SvgGenImage('assets/icons/svg/web.svg');
+
+  /// File path: assets/icons/svg/prohibit_normal.svg
+  SvgGenImage get prohibitNormal => const SvgGenImage('assets/icons/svg/prohibit_normal.svg');
+
   /// List of all assets
   List<SvgGenImage> get values => [
         iban,
@@ -648,6 +693,27 @@ class $AssetsIconsSvgGen {
         deviceMobileCamera,
         phoneOutgoing,
         coinVertical,
+        addExpenseCategory,
+        borrow,
+        chevronRight,
+        dots,
+        home,
+        minus,
+        payBack,
+        phonePlus,
+        reset,
+        roundedCheckNormal,
+        roundedCrossNormal,
+        squares,
+        vaultRemastered,
+        web,
+        calendarBlank,
+        mapPinLine,
+        mapPinLineOutlined,
+        qrCode,
+        qrCodeFull,
+        vaultFilled,
+        prohibitNormal,
       ];
 }
 
