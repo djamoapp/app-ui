@@ -55,6 +55,7 @@ flutter:
   assets:
     # Images
     - assets/images/
+    - assets/illustrations/
 
     # Icons
     - assets/icons/colored/

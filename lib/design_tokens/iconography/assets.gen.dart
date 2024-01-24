@@ -71,7 +71,7 @@ class $AssetsIllustrationsGen {
   SvgGenImage get yourCardIsReadyIllustration => const SvgGenImage('assets/illustrations/your_card_is_ready_illustration.svg');
 
   /// File path: assets/illustrations/your_card_is_ready_illustration.svg
-  SvgGenImage get emptyBox => const SvgGenImage('${kAssetPrefix}/assets/illustrations/empty_box.svg');
+  SvgGenImage get emptyBox => const SvgGenImage('assets/illustrations/empty_box.svg');
 
   /// List of all assets
   List<SvgGenImage> get values => [
