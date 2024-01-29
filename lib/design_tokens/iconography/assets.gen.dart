@@ -70,12 +70,16 @@ class $AssetsIllustrationsGen {
   /// File path: assets/illustrations/your_card_is_ready_illustration.svg
   SvgGenImage get yourCardIsReadyIllustration => const SvgGenImage('assets/illustrations/your_card_is_ready_illustration.svg');
 
+  /// File path: assets/illustrations/your_card_is_ready_illustration.svg
+  SvgGenImage get emptyBox => const SvgGenImage('assets/illustrations/empty_box.svg');
+
   /// List of all assets
   List<SvgGenImage> get values => [
         linkCardIllustration,
         makeDepositIllustration,
         makeFirstTransactionIllustration,
         yourCardIsReadyIllustration,
+        emptyBox,
       ];
 }
 
@@ -276,6 +280,9 @@ class $AssetsIconsSvgGen {
 
   /// File path: assets/icons/svg/addMoney.svg
   SvgGenImage get addMoney => const SvgGenImage('assets/icons/svg/addMoney.svg');
+
+  /// File path: assets/icons/svg/address_book.svg
+  SvgGenImage get addressBook => const SvgGenImage('assets/icons/svg/address_book.svg');
 
   /// File path: assets/icons/svg/alert.svg
   SvgGenImage get alert => const SvgGenImage('assets/icons/svg/alert.svg');
@@ -609,6 +616,7 @@ class $AssetsIconsSvgGen {
         add,
         addCircularGraph,
         addMoney,
+        addressBook,
         alert,
         arrowDownLeft,
         arrowDownRight,
