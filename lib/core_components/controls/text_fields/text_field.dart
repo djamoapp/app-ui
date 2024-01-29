@@ -1,11 +1,11 @@
 import 'package:app_ui/core_components/views/system_messages/inline/inline.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:gap/gap.dart';
 import 'package:app_ui/design_tokens/colors/interface_colors.dart';
 import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
 import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
 import 'package:app_ui/design_tokens/typography/typography.dart' as t;
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:gap/gap.dart';
 
 class AppTextField extends StatefulWidget {
   const AppTextField({
@@ -30,6 +30,7 @@ class AppTextField extends StatefulWidget {
     this.showCursor,
     this.focusNode,
     this.onTap,
+    this.onTapOutside,
     this.autoFocus = false,
     this.counterWidget,
     this.counterText,
@@ -77,6 +78,8 @@ class AppTextField extends StatefulWidget {
   final FocusNode? focusNode;
 
   final void Function()? onTap;
+
+  final void Function(PointerDownEvent)? onTapOutside;
 
   final bool autoFocus;
 
@@ -127,6 +130,7 @@ class _AppTextFieldState extends State<AppTextField> {
               initialValue: widget.initialValue,
               autofocus: widget.autoFocus,
               onTap: widget.onTap,
+              onTapOutside: widget.onTapOutside,
               focusNode: widget.focusNode,
               showCursor: widget.showCursor,
               readOnly: widget.readOnly,

@@ -1,12 +1,12 @@
+import 'package:app_ui/core_components/controls/text_fields/text_field.dart';
+import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
+import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
 import 'package:app_ui/design_tokens/layout_and_spacing/app_spacings.dart';
+import 'package:app_ui/design_tokens/typography/typography.dart' as t;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:gap/gap.dart';
-import 'package:app_ui/core_components/controls/text_fields/text_field.dart';
-import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
-import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
-import 'package:app_ui/design_tokens/typography/typography.dart' as t;
 
 class AppPhoneNumberTextField extends StatelessWidget {
   const AppPhoneNumberTextField({
@@ -28,6 +28,8 @@ class AppPhoneNumberTextField extends StatelessWidget {
     this.keyboardType,
     this.initialValue,
     this.textCapitalization = TextCapitalization.none,
+    this.onTap,
+    this.onTapOutside,
   }) : super(key: key);
 
   final bool enabled;
@@ -63,6 +65,10 @@ class AppPhoneNumberTextField extends StatelessWidget {
   final String? initialValue;
 
   final TextCapitalization textCapitalization;
+
+  final void Function()? onTap;
+
+  final void Function(PointerDownEvent)? onTapOutside;
 
   @override
   Widget build(BuildContext context) {
@@ -119,6 +125,8 @@ class AppPhoneNumberTextField extends StatelessWidget {
         AppGaps.xs,
         Expanded(
           child: AppTextField(
+            onTap: onTap,
+            onTapOutside: onTapOutside,
             textCapitalization: textCapitalization,
             initialValue: initialValue,
             autoFocus: autoFocus,

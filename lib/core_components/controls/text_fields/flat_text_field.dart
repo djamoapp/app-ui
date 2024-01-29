@@ -53,6 +53,8 @@ class AppFlatTextField extends StatefulWidget {
     this.counterWidget,
     this.enabledBackgroundColor,
     this.disabledBackgroundColor,
+    this.onTap,
+    this.onTapOutside,
   }) : super(key: key);
 
   final String? label;
@@ -100,6 +102,8 @@ class AppFlatTextField extends StatefulWidget {
   final Widget? counterWidget;
   final Color? enabledBackgroundColor;
   final Color? disabledBackgroundColor;
+  final void Function()? onTap;
+  final void Function(PointerDownEvent)? onTapOutside;
 
   @override
   State<AppFlatTextField> createState() => _AppFlatTextFieldState();
@@ -129,9 +133,7 @@ class _AppFlatTextFieldState extends State<AppFlatTextField> {
             left: 16,
             right: 16,
           ),
-      color: widget.enabled
-          ? widget.enabledBackgroundColor ?? Colors.white
-          : widget.disabledBackgroundColor ?? NeutralColors.formBordersColor,
+      color: widget.enabled ? widget.enabledBackgroundColor ?? Colors.white : widget.disabledBackgroundColor ?? NeutralColors.formBordersColor,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -143,14 +145,10 @@ class _AppFlatTextFieldState extends State<AppFlatTextField> {
                   widget.label!,
                   style: widget.labelStyle != null
                       ? widget.labelStyle?.copyWith(
-                          color: widget.enabled
-                              ? null
-                              : NeutralColors.disabledBackGroundColor,
+                          color: widget.enabled ? null : NeutralColors.disabledBackGroundColor,
                         )
                       : AppTypography.label!.bSmall!.copyWith(
-                          color: widget.enabled
-                              ? null
-                              : NeutralColors.disabledBackGroundColor,
+                          color: widget.enabled ? null : NeutralColors.disabledBackGroundColor,
                         ),
                 ),
               ],
@@ -160,6 +158,8 @@ class _AppFlatTextFieldState extends State<AppFlatTextField> {
           Stack(
             children: [
               TextFormField(
+                onTap: widget.onTap,
+                onTapOutside: widget.onTapOutside,
                 autovalidateMode: widget.autoValidateMode,
                 autocorrect: widget.autocorrect ?? false,
                 autofocus: widget.autofocus,
@@ -184,8 +184,7 @@ class _AppFlatTextFieldState extends State<AppFlatTextField> {
                 },
                 controller: widget.controller,
                 onChanged: widget.onChanged,
-                cursorColor:
-                    widget.cursorColor ?? InterfaceColors.action.defaultColor,
+                cursorColor: widget.cursorColor ?? InterfaceColors.action.defaultColor,
                 cursorHeight: widget.cursorHeight ?? 18,
                 cursorWidth: 1,
                 initialValue: widget.initialValue,
@@ -210,13 +209,9 @@ class _AppFlatTextFieldState extends State<AppFlatTextField> {
                   suffixIcon: widget.suffixIcon,
                   enabled: widget.enabled,
                   filled: !widget.enabled,
-                  fillColor:
-                      widget.enabled ? null : NeutralColors.formBordersColor,
+                  fillColor: widget.enabled ? null : NeutralColors.formBordersColor,
                   hintText: widget.placeHolderText,
-                  hintStyle: AppTypography.title!.bMedium200!.copyWith(
-                      color: widget.enabled
-                          ? NeutralColors.neutral200
-                          : NeutralColors.bordersHoverColor),
+                  hintStyle: AppTypography.title!.bMedium200!.copyWith(color: widget.enabled ? NeutralColors.neutral200 : NeutralColors.bordersHoverColor),
                   contentPadding: const EdgeInsets.all(0),
                   border: const UnderlineInputBorder(
                     borderSide: BorderSide(

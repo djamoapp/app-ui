@@ -24,6 +24,8 @@ class AppAmountTextField extends StatelessWidget {
     this.currency,
     this.focusNode,
     this.enabled = true,
+    this.onTap,
+    this.onTapOutside,
   }) : super(key: key);
 
   final TextEditingController? controller;
@@ -58,10 +60,16 @@ class AppAmountTextField extends StatelessWidget {
 
   final bool enabled;
 
+  final void Function()? onTap;
+
+  final void Function(PointerDownEvent)? onTapOutside;
+
   @override
   Widget build(BuildContext context) {
     return IntrinsicWidth(
       child: TextFormField(
+        onTap: onTap,
+        onTapOutside: onTapOutside,
         focusNode: focusNode,
         textCapitalization: textCapitalization,
         initialValue: initialValue,
