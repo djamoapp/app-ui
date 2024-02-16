@@ -27,6 +27,7 @@ class AppAmountTextField extends StatelessWidget {
     this.onTap,
     this.onTapOutside,
     this.hideCurrency = false,
+    this.textAlign = TextAlign.end,
     this.textStyle,
   }) : super(key: key);
 
@@ -61,6 +62,8 @@ class AppAmountTextField extends StatelessWidget {
   final String? currency;
 
   final FocusNode? focusNode;
+
+  final TextAlign textAlign;
 
   final bool enabled;
 
@@ -112,7 +115,7 @@ class AppAmountTextField extends StatelessWidget {
                   ],
                 ),
         ),
-        textAlign: TextAlign.end,
+        textAlign: textAlign,
         cursorColor: cursorColor ?? InterfaceColors.action.defaultColor,
         style: textStyle ??
             AppTypography.bigger.large!.copyWith(
