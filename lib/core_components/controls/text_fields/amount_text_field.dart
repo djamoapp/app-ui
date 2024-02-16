@@ -26,6 +26,8 @@ class AppAmountTextField extends StatelessWidget {
     this.enabled = true,
     this.onTap,
     this.onTapOutside,
+    this.hideCurrency = false,
+    this.textStyle,
   }) : super(key: key);
 
   final TextEditingController? controller;
@@ -54,6 +56,8 @@ class AppAmountTextField extends StatelessWidget {
 
   final TextStyle? placeHolderStyle;
 
+  final TextStyle? textStyle;
+
   final String? currency;
 
   final FocusNode? focusNode;
@@ -63,6 +67,7 @@ class AppAmountTextField extends StatelessWidget {
   final void Function()? onTap;
 
   final void Function(PointerDownEvent)? onTapOutside;
+  final bool hideCurrency;
 
   @override
   Widget build(BuildContext context) {
@@ -93,23 +98,26 @@ class AppAmountTextField extends StatelessWidget {
                 color: NeutralColors.bordersHoverColor,
               ),
           border: InputBorder.none,
-          suffixIcon: Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Text(
-                currency ?? kDeviseSymbol,
-                style: AppTypography.headLine!.medium!.copyWith(
-                  color: NeutralColors.bordersHoverColor,
+          suffixIcon: hideCurrency
+              ? SizedBox.shrink()
+              : Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Text(
+                      currency ?? kDeviseSymbol,
+                      style: AppTypography.headLine!.medium!.copyWith(
+                        color: NeutralColors.bordersHoverColor,
+                      ),
+                    ),
+                  ],
                 ),
-              ),
-            ],
-          ),
         ),
         textAlign: TextAlign.end,
         cursorColor: cursorColor ?? InterfaceColors.action.defaultColor,
-        style: AppTypography.bigger.large!.copyWith(
-          color: InterfaceColors.action.defaultColor,
-        ),
+        style: textStyle ??
+            AppTypography.bigger.large!.copyWith(
+              color: InterfaceColors.action.defaultColor,
+            ),
       ),
     );
   }
