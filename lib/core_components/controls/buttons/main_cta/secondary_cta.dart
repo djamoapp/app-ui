@@ -1,6 +1,8 @@
+import 'package:app_ui/app_ui.dart';
 import 'package:app_ui_m2/core_components/views/loader/loader.dart';
 import 'package:app_ui_m2/design_tokens/colors/interface_colors.dart';
 import 'package:app_ui_m2/design_tokens/typography/typography.dart' as t;
+import 'package:app_ui_m2/migration/app_ui_migration_builder.dart';
 import 'package:flutter/material.dart';
 
 class SecondaryCTA extends StatelessWidget {
@@ -52,58 +54,69 @@ class SecondaryCTA extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return OutlinedButton(
-      onPressed: enabled && !isLoading ? onPressed ?? () {} : null,
-      style: ButtonStyle(
-        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-        minimumSize: MaterialStateProperty.resolveWith(
-          (states) => Size(
-            double.infinity,
-            40,
+    return AppUIMigrationBuilder(
+      M2: OutlinedButton(
+        onPressed: enabled && !isLoading ? onPressed ?? () {} : null,
+        style: ButtonStyle(
+          tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+          minimumSize: MaterialStateProperty.resolveWith(
+            (states) => Size(
+              double.infinity,
+              40,
+            ),
+          ),
+          overlayColor: MaterialStateProperty.resolveWith(
+            (states) => InterfaceColors.action.specialColor!.withOpacity(0.5),
+          ),
+          shape: MaterialStateProperty.resolveWith(
+            (states) => RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(24),
+            ),
+          ),
+          elevation: MaterialStateProperty.resolveWith(
+            (states) => 0,
+          ),
+          side: MaterialStateProperty.resolveWith(
+            (states) => withBorder
+                ? BorderSide(
+                    color: enabled && !isLoading
+                        ? enabledColor ?? InterfaceColors.action.specialColor!
+                        : disabledColor ??
+                            InterfaceColors.action.disabledColor!,
+                    width: 2,
+                  )
+                : BorderSide.none,
+          ),
+          padding: MaterialStateProperty.resolveWith(
+            (states) => padding,
           ),
         ),
-        overlayColor: MaterialStateProperty.resolveWith(
-          (states) => InterfaceColors.action.specialColor!.withOpacity(0.5),
-        ),
-        shape: MaterialStateProperty.resolveWith(
-          (states) => RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(24),
-          ),
-        ),
-        elevation: MaterialStateProperty.resolveWith(
-          (states) => 0,
-        ),
-        side: MaterialStateProperty.resolveWith(
-          (states) => withBorder
-              ? BorderSide(
-                  color: enabled && !isLoading
-                      ? enabledColor ?? InterfaceColors.action.specialColor!
-                      : disabledColor ?? InterfaceColors.action.disabledColor!,
-                  width: 2,
-                )
-              : BorderSide.none,
-        ),
-        padding: MaterialStateProperty.resolveWith(
-          (states) => padding,
-        ),
-      ),
-      child: isLoading
-          ? AppLoader(
-              size: 20,
-              color: progressColor ?? InterfaceColors.action.disabledColor,
-            )
-          : childBuilder?.call() ??
-              Text(
-                label,
-                style: (labelStyle ?? t.AppTypography.title!.small)!.copyWith(
-                  color: enabled && !isLoading
-                      ? enabledLabelColor ?? InterfaceColors.action.defaultColor
-                      : disabledLabelColor ??
-                          InterfaceColors.action.disabledColor,
+        child: isLoading
+            ? AppLoader(
+                size: 20,
+                color: progressColor ?? InterfaceColors.action.disabledColor,
+              )
+            : childBuilder?.call() ??
+                Text(
+                  label,
+                  style: (labelStyle ?? t.AppTypography.title!.small)!.copyWith(
+                    color: enabled && !isLoading
+                        ? enabledLabelColor ??
+                            InterfaceColors.action.defaultColor
+                        : disabledLabelColor ??
+                            InterfaceColors.action.disabledColor,
+                  ),
+                  textAlign: TextAlign.center,
+                  overflow: labelOverflow,
                 ),
-                textAlign: TextAlign.center,
-                overflow: labelOverflow,
-              ),
+      ),
+      M3: AppButtonWidget.secondary(
+        label: label,
+        isLoading: isLoading,
+        enable: enabled,
+        onPressed: onPressed,
+        backgroundColor: enabledColor ?? InterfaceColors.action.defaultColor,
+      ),
     );
   }
 }
