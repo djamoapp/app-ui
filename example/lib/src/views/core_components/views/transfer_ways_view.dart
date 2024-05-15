@@ -1,7 +1,7 @@
-import 'package:app_ui/core_components/views/pop_ups/pop_up.dart';
-import 'package:app_ui/core_components/views/transfer_way/transfer_way.dart';
-import 'package:app_ui/core_components/views/transfer_way/transfer_ways_widget.dart';
 import 'package:app_ui_example/src/utils/constants.dart';
+import 'package:app_ui_m2/core_components/views/pop_ups/pop_up.dart';
+import 'package:app_ui_m2/core_components/views/transfer_way/transfer_way.dart';
+import 'package:app_ui_m2/core_components/views/transfer_way/transfer_ways_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

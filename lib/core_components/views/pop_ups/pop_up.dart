@@ -1,10 +1,10 @@
-import 'package:app_ui/core/constants/constants.dart';
-import 'package:app_ui/core/enums/standard_button_style.dart';
-import 'package:app_ui/core_components/controls/buttons/standard_buttons/standard_buttons.dart';
-import 'package:app_ui/design_tokens/colors/interface_colors.dart';
-import 'package:app_ui/design_tokens/iconography/app_icons.dart';
-import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
-import 'package:app_ui/design_tokens/typography/typography.dart';
+import 'package:app_ui_m2/core/constants/constants.dart';
+import 'package:app_ui_m2/core/enums/standard_button_style.dart';
+import 'package:app_ui_m2/core_components/controls/buttons/standard_buttons/standard_buttons.dart';
+import 'package:app_ui_m2/design_tokens/colors/interface_colors.dart';
+import 'package:app_ui_m2/design_tokens/iconography/app_icons.dart';
+import 'package:app_ui_m2/design_tokens/layout_and_spacing/app_gaps.dart';
+import 'package:app_ui_m2/design_tokens/typography/typography.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 

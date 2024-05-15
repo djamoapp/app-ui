@@ -1,8 +1,8 @@
-import 'package:app_ui/core/constants/constants.dart';
-import 'package:app_ui/design_tokens/layout_and_spacing/app_spacings.dart';
-import 'package:app_ui/design_tokens/typography/typography.dart';
+import 'package:app_ui_m2/core/constants/constants.dart';
+import 'package:app_ui_m2/design_tokens/layout_and_spacing/app_gaps.dart';
+import 'package:app_ui_m2/design_tokens/layout_and_spacing/app_spacings.dart';
+import 'package:app_ui_m2/design_tokens/typography/typography.dart';
 import 'package:flutter/material.dart';
-import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
 
 import '../cached_network_image/app_cached_network_image.dart';
 

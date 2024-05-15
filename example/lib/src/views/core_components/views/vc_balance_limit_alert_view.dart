@@ -1,5 +1,5 @@
-import 'package:app_ui/core_components/views/vc_balance_limit_alert/vc_balance_limit_alert.dart';
-import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
+import 'package:app_ui_m2/core_components/views/vc_balance_limit_alert/vc_balance_limit_alert.dart';
+import 'package:app_ui_m2/design_tokens/layout_and_spacing/app_gaps.dart';
 import 'package:flutter/material.dart';
 
 class VCBalanceLimitAlertView extends StatelessWidget {

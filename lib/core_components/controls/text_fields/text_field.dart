@@ -1,8 +1,8 @@
-import 'package:app_ui/core_components/views/system_messages/inline/inline.dart';
-import 'package:app_ui/design_tokens/colors/interface_colors.dart';
-import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
-import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
-import 'package:app_ui/design_tokens/typography/typography.dart' as t;
+import 'package:app_ui_m2/core_components/views/system_messages/inline/inline.dart';
+import 'package:app_ui_m2/design_tokens/colors/interface_colors.dart';
+import 'package:app_ui_m2/design_tokens/colors/neutral_colors.dart';
+import 'package:app_ui_m2/design_tokens/layout_and_spacing/app_gaps.dart';
+import 'package:app_ui_m2/design_tokens/typography/typography.dart' as t;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:gap/gap.dart';
@@ -157,7 +157,8 @@ class _AppTextFieldState extends State<AppTextField> {
               },
               controller: widget.controller,
               onChanged: widget.onChanged,
-              cursorColor: widget.cursorColor ?? InterfaceColors.action.defaultColor,
+              cursorColor:
+                  widget.cursorColor ?? InterfaceColors.action.defaultColor,
               cursorHeight: 16,
               cursorWidth: 1,
               buildCounter: widget.buildCounter,
@@ -169,7 +170,9 @@ class _AppTextFieldState extends State<AppTextField> {
                 enabled: widget.enabled,
                 filled: true,
                 //errorText: "\u26A0 Une erreur est survenue",
-                fillColor: widget.enabled ? Colors.white : NeutralColors.formBordersColor,
+                fillColor: widget.enabled
+                    ? Colors.white
+                    : NeutralColors.formBordersColor,
                 hintText: widget.placeHolderText,
                 hintStyle: t.AppTypography.body!.medium!.copyWith(
                   color: NeutralColors.disabledTextColor,

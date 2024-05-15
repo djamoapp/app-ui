@@ -1,8 +1,8 @@
-import 'package:app_ui/core_components/views/transaction_logos/avatar/avatar.dart';
-import 'package:app_ui/core_components/views/transaction_logos/logo/logo.dart';
-import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
-import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
 import 'package:app_ui_example/src/utils/constants.dart';
+import 'package:app_ui_m2/core_components/views/transaction_logos/avatar/avatar.dart';
+import 'package:app_ui_m2/core_components/views/transaction_logos/logo/logo.dart';
+import 'package:app_ui_m2/design_tokens/colors/neutral_colors.dart';
+import 'package:app_ui_m2/design_tokens/layout_and_spacing/app_gaps.dart';
 import 'package:flutter/material.dart';
 
 class TransactionLogoView extends StatelessWidget {

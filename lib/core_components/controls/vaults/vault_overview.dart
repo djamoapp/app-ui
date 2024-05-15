@@ -1,7 +1,8 @@
-import 'package:app_ui/core_components/views/container/app_container.dart';
-import 'package:app_ui/design_tokens/layout_and_spacing/app_spacings.dart';
+import 'package:app_ui_m2/core_components/views/container/app_container.dart';
+import 'package:app_ui_m2/design_tokens/layout_and_spacing/app_spacings.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+
 import '../../../design_tokens/colors/neutral_colors.dart';
 import '../../../design_tokens/layout_and_spacing/app_gaps.dart';
 import '../../../design_tokens/typography/typography.dart';

@@ -1,8 +1,9 @@
-import 'package:app_ui/core_components/views/container/app_container.dart';
-import 'package:app_ui/core_components/views/transfer_way/transfer_way.dart';
-import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
+import 'package:app_ui_m2/core_components/views/container/app_container.dart';
+import 'package:app_ui_m2/core_components/views/transfer_way/transfer_way.dart';
+import 'package:app_ui_m2/design_tokens/layout_and_spacing/app_gaps.dart';
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
+
 import 'horizontal_listview_dot_indicator.dart';
 
 class AppTransferWaysWidget<ID> extends StatelessWidget {

@@ -1,8 +1,8 @@
-import 'package:app_ui/core/constants/constants.dart';
-import 'package:app_ui/core_components/views/section_label/section_label.dart';
-import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
-import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
-import 'package:app_ui/design_tokens/typography/typography.dart';
+import 'package:app_ui_m2/core/constants/constants.dart';
+import 'package:app_ui_m2/core_components/views/section_label/section_label.dart';
+import 'package:app_ui_m2/design_tokens/colors/neutral_colors.dart';
+import 'package:app_ui_m2/design_tokens/layout_and_spacing/app_gaps.dart';
+import 'package:app_ui_m2/design_tokens/typography/typography.dart';
 import 'package:flutter/material.dart';
 
 class AppContainer extends StatelessWidget {
@@ -97,7 +97,8 @@ class AppContainer extends StatelessWidget {
       decoration: boxDecoration ??
           BoxDecoration(
             color: color ?? Colors.white,
-            borderRadius: borderRadius ?? BorderRadius.circular(radiusAll ?? kDefaultBorderRadius),
+            borderRadius: borderRadius ??
+                BorderRadius.circular(radiusAll ?? kDefaultBorderRadius),
           ),
       child: showTitleWidget && innerTitle
           ? Column(

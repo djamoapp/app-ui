@@ -1,4 +1,4 @@
-import 'package:app_ui/migration/app_type_enum.dart';
+import 'package:app_ui_m2/migration/app_type_enum.dart';
 import 'package:flutter/material.dart';
 
 class AppUIStateProvider extends InheritedModel<AppTypeEnum> {

@@ -1,4 +1,4 @@
-import 'package:app_ui/core_components/controls/search_bar/search_bar.dart';
+import 'package:app_ui_m2/core_components/controls/search_bar/search_bar.dart';
 import 'package:flutter/material.dart';
 
 class SearchBarView extends StatelessWidget {

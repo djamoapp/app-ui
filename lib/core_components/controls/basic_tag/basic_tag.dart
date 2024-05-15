@@ -1,9 +1,9 @@
-import 'package:app_ui/core_components/views/tags/tag.dart';
-import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
-import 'package:app_ui/design_tokens/layout_and_spacing/app_spacings.dart';
-import 'package:app_ui/design_tokens/typography/typography.dart';
+import 'package:app_ui_m2/core_components/views/tags/tag.dart';
+import 'package:app_ui_m2/design_tokens/colors/interface_colors.dart';
+import 'package:app_ui_m2/design_tokens/colors/neutral_colors.dart';
+import 'package:app_ui_m2/design_tokens/layout_and_spacing/app_spacings.dart';
+import 'package:app_ui_m2/design_tokens/typography/typography.dart';
 import 'package:flutter/material.dart';
-import 'package:app_ui/design_tokens/colors/interface_colors.dart';
 
 class AppBasicTag extends StatelessWidget {
   const AppBasicTag({

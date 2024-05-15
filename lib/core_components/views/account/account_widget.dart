@@ -1,21 +1,20 @@
-import 'package:app_ui/design_tokens/colors/interface_colors.dart';
-import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
-import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
+import 'package:app_ui_m2/design_tokens/colors/interface_colors.dart';
+import 'package:app_ui_m2/design_tokens/colors/neutral_colors.dart';
+import 'package:app_ui_m2/design_tokens/layout_and_spacing/app_gaps.dart';
+import 'package:app_ui_m2/design_tokens/typography/typography.dart' as t;
 import 'package:flutter/material.dart';
-import 'package:app_ui/design_tokens/typography/typography.dart' as t;
 
 class AppAccountWidget<ID> extends StatelessWidget {
-  const AppAccountWidget(
-      {Key? key,
-      this.selected = true,
-      /*this.onTap, */ 
-      required this.label,
-      this.icon,
-      required this.balance,
-      this.id,
-      this.imagePath,
-    })
-      : super(key: key);
+  const AppAccountWidget({
+    Key? key,
+    this.selected = true,
+    /*this.onTap, */
+    required this.label,
+    this.icon,
+    required this.balance,
+    this.id,
+    this.imagePath,
+  }) : super(key: key);
 
   final ID? id;
 

@@ -1,7 +1,7 @@
+import 'package:app_ui_m2/core_components/views/loader/loader.dart';
+import 'package:app_ui_m2/design_tokens/colors/interface_colors.dart';
+import 'package:app_ui_m2/design_tokens/typography/typography.dart' as t;
 import 'package:flutter/material.dart';
-import 'package:app_ui/core_components/views/loader/loader.dart';
-import 'package:app_ui/design_tokens/colors/interface_colors.dart';
-import 'package:app_ui/design_tokens/typography/typography.dart' as t;
 
 class SecondaryCTA extends StatelessWidget {
   const SecondaryCTA({
@@ -76,7 +76,9 @@ class SecondaryCTA extends StatelessWidget {
         side: MaterialStateProperty.resolveWith(
           (states) => withBorder
               ? BorderSide(
-                  color: enabled && !isLoading ? enabledColor ?? InterfaceColors.action.specialColor! : disabledColor ?? InterfaceColors.action.disabledColor!,
+                  color: enabled && !isLoading
+                      ? enabledColor ?? InterfaceColors.action.specialColor!
+                      : disabledColor ?? InterfaceColors.action.disabledColor!,
                   width: 2,
                 )
               : BorderSide.none,
@@ -94,7 +96,10 @@ class SecondaryCTA extends StatelessWidget {
               Text(
                 label,
                 style: (labelStyle ?? t.AppTypography.title!.small)!.copyWith(
-                  color: enabled && !isLoading ? enabledLabelColor ?? InterfaceColors.action.defaultColor : disabledLabelColor ?? InterfaceColors.action.disabledColor,
+                  color: enabled && !isLoading
+                      ? enabledLabelColor ?? InterfaceColors.action.defaultColor
+                      : disabledLabelColor ??
+                          InterfaceColors.action.disabledColor,
                 ),
                 textAlign: TextAlign.center,
                 overflow: labelOverflow,

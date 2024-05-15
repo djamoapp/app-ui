@@ -1,5 +1,5 @@
-import 'package:app_ui/migration/app_type_enum.dart';
-import 'package:app_ui/migration/app_ui_state_provider.dart';
+import 'package:app_ui_m2/migration/app_type_enum.dart';
+import 'package:app_ui_m2/migration/app_ui_state_provider.dart';
 import 'package:flutter/material.dart';
 
 class AppUIMigrationBuilder extends StatelessWidget {

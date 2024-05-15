@@ -1,6 +1,7 @@
 import 'dart:math';
+
+import 'package:app_ui_m2/design_tokens/colors/neutral_colors.dart';
 import 'package:flutter/material.dart';
-import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
 
 import '../../cached_network_image/app_cached_network_image.dart';
 

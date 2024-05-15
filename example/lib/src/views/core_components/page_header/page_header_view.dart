@@ -1,5 +1,5 @@
+import 'package:app_ui_m2/core_components/page_header/page_header.dart';
 import 'package:flutter/material.dart';
-import 'package:app_ui/core_components/page_header/page_header.dart';
 
 class PageHeaderView extends StatelessWidget {
   const PageHeaderView({Key? key}) : super(key: key);

@@ -1,7 +1,7 @@
-import 'package:app_ui/core_components/controls/buttons/main_cta/primary_cta.dart';
-import 'package:app_ui/core_components/views/popovers/no_action_popover.dart';
-import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
-import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
+import 'package:app_ui_m2/core_components/controls/buttons/main_cta/primary_cta.dart';
+import 'package:app_ui_m2/core_components/views/popovers/no_action_popover.dart';
+import 'package:app_ui_m2/design_tokens/colors/neutral_colors.dart';
+import 'package:app_ui_m2/design_tokens/layout_and_spacing/app_gaps.dart';
 import 'package:flutter/material.dart';
 
 class PopoverView extends StatelessWidget {

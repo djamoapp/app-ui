@@ -1,6 +1,6 @@
+import 'package:app_ui_m2/core_components/views/account/djamo_3d_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:app_ui/core_components/views/account/djamo_3d_icons.dart';
 
 class AccountScrollingSetController extends GetxController {
   Rx<int?> selectedAccount = 0.obs;

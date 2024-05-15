@@ -1,6 +1,6 @@
-import 'package:app_ui/core_components/views/loader/loader.dart';
-import 'package:app_ui/design_tokens/colors/interface_colors.dart';
-import 'package:app_ui/design_tokens/typography/typography.dart' as t;
+import 'package:app_ui_m2/core_components/views/loader/loader.dart';
+import 'package:app_ui_m2/design_tokens/colors/interface_colors.dart';
+import 'package:app_ui_m2/design_tokens/typography/typography.dart' as t;
 import 'package:flutter/material.dart';
 
 class PrimaryCTA extends StatelessWidget {
@@ -75,7 +75,9 @@ class PrimaryCTA extends StatelessWidget {
                 Text(
                   label,
                   style: t.AppTypography.title!.small!.copyWith(
-                    color: enabled && !isLoading ? enabledLabelColor ?? Colors.white : disabledLabelColor ?? Colors.white,
+                    color: enabled && !isLoading
+                        ? enabledLabelColor ?? Colors.white
+                        : disabledLabelColor ?? Colors.white,
                   ),
                   textAlign: TextAlign.center,
                   overflow: labelOverflow,

@@ -1,6 +1,6 @@
+import 'package:app_ui_m2/design_tokens/colors/neutral_colors.dart';
+import 'package:app_ui_m2/design_tokens/typography/typography.dart';
 import 'package:flutter/material.dart';
-import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
-import 'package:app_ui/design_tokens/typography/typography.dart';
 
 class AppPinCodeKeyBoard extends StatelessWidget {
   const AppPinCodeKeyBoard(

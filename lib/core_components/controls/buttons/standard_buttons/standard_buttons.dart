@@ -1,7 +1,7 @@
-import 'package:app_ui/core/enums/standard_button_style.dart';
+import 'package:app_ui_m2/core/enums/standard_button_style.dart';
+import 'package:app_ui_m2/core_components/controls/buttons/standard_buttons/standard_button.dart';
+import 'package:app_ui_m2/design_tokens/typography/typography.dart' as t;
 import 'package:flutter/material.dart';
-import 'package:app_ui/core_components/controls/buttons/standard_buttons/standard_button.dart';
-import 'package:app_ui/design_tokens/typography/typography.dart' as t;
 
 class StandardButtons {
   StandardButtons._();

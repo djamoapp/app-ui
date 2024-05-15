@@ -1,15 +1,15 @@
-import 'package:app_ui/core/enums/standard_button_style.dart';
-import 'package:app_ui/core_components/controls/buttons/main_cta/primary_cta.dart';
-import 'package:app_ui/core_components/controls/buttons/main_cta/secondary_cta.dart';
-import 'package:app_ui/core_components/controls/buttons/standard_buttons/expanded_button.dart';
-import 'package:app_ui/core_components/controls/buttons/standard_buttons/standard_buttons.dart';
-import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
-import 'package:app_ui/design_tokens/iconography/app_icons.dart';
-import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
+import 'package:app_ui_example/src/controllers/core_components/controls/buttons_controller.dart';
+import 'package:app_ui_m2/core/enums/standard_button_style.dart';
+import 'package:app_ui_m2/core_components/controls/buttons/main_cta/primary_cta.dart';
+import 'package:app_ui_m2/core_components/controls/buttons/main_cta/secondary_cta.dart';
+import 'package:app_ui_m2/core_components/controls/buttons/standard_buttons/expanded_button.dart';
+import 'package:app_ui_m2/core_components/controls/buttons/standard_buttons/standard_buttons.dart';
+import 'package:app_ui_m2/design_tokens/colors/neutral_colors.dart';
+import 'package:app_ui_m2/design_tokens/iconography/app_icons.dart';
+import 'package:app_ui_m2/design_tokens/layout_and_spacing/app_gaps.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:app_ui_example/src/controllers/core_components/controls/buttons_controller.dart';
 
 class ButtonsView extends GetView<ButtonsController> {
   const ButtonsView({Key? key}) : super(key: key);

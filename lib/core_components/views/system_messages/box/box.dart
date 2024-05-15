@@ -1,7 +1,7 @@
-import 'package:app_ui/core_components/views/system_messages/box/basic_box.dart';
-import 'package:app_ui/design_tokens/colors/interface_colors.dart';
-import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
-import 'package:app_ui/design_tokens/iconography/app_icons.dart';
+import 'package:app_ui_m2/core_components/views/system_messages/box/basic_box.dart';
+import 'package:app_ui_m2/design_tokens/colors/interface_colors.dart';
+import 'package:app_ui_m2/design_tokens/colors/neutral_colors.dart';
+import 'package:app_ui_m2/design_tokens/iconography/app_icons.dart';
 import 'package:flutter/cupertino.dart';
 
 class AppBox {

@@ -1,9 +1,9 @@
-import 'package:app_ui/core/constants/constants.dart';
-import 'package:app_ui/design_tokens/colors/brand_colors.dart';
-import 'package:app_ui/design_tokens/colors/interface_colors.dart';
-import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
 import 'package:app_ui_example/src/utils/constants.dart';
 import 'package:app_ui_example/src/utils/routes.dart';
+import 'package:app_ui_m2/core/constants/constants.dart';
+import 'package:app_ui_m2/design_tokens/colors/brand_colors.dart';
+import 'package:app_ui_m2/design_tokens/colors/interface_colors.dart';
+import 'package:app_ui_m2/design_tokens/colors/neutral_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

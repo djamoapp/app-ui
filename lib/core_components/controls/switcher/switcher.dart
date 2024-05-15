@@ -1,6 +1,6 @@
-import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
+import 'package:app_ui_m2/design_tokens/colors/interface_colors.dart';
+import 'package:app_ui_m2/design_tokens/colors/neutral_colors.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:app_ui/design_tokens/colors/interface_colors.dart';
 import 'package:flutter/material.dart';
 
 class AppSwitcher extends StatelessWidget {
@@ -28,8 +28,12 @@ class AppSwitcher extends StatelessWidget {
       child: CupertinoSwitch(
         value: value,
         thumbColor: Colors.white,
-        activeColor: enabled ? activeSwitcherColor ?? InterfaceColors.action.defaultColor : InterfaceColors.action.disabledColor,
-        trackColor: enabled ? NeutralColors.bordersHoverColor : NeutralColors.neutral200,
+        activeColor: enabled
+            ? activeSwitcherColor ?? InterfaceColors.action.defaultColor
+            : InterfaceColors.action.disabledColor,
+        trackColor: enabled
+            ? NeutralColors.bordersHoverColor
+            : NeutralColors.neutral200,
         onChanged: enabled ? onChanged : null,
       ),
     );

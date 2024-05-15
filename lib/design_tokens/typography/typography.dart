@@ -1,5 +1,5 @@
-import 'package:app_ui/core/models/typography_text_style.dart';
-import 'package:app_ui/core/styles/app_text_style.dart';
+import 'package:app_ui_m2/core/models/typography_text_style.dart';
+import 'package:app_ui_m2/core/styles/app_text_style.dart';
 import 'package:flutter/cupertino.dart';
 
 class AppTypography {
