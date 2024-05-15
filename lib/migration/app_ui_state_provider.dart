@@ -3,9 +3,12 @@ import 'package:flutter/material.dart';
 
 class AppUIStateProvider extends InheritedModel<AppTypeEnum> {
   final AppTypeEnum type;
+  final Widget Function(AppTypeEnum) builder;
 
-  AppUIStateProvider({required this.type, required Widget child})
-      : super(child: child);
+  AppUIStateProvider({
+    required this.type,
+    required this.builder,
+  }) : super(child: builder(type));
 
   @override
   bool updateShouldNotify(AppUIStateProvider oldWidget) {
