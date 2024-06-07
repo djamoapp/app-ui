@@ -16,14 +16,14 @@ class VCBalanceLimitAlertView extends StatelessWidget {
           children: [
             Text("VC Balance Limit Alert"),
             Divider(),
-            AppGaps.m,
+            AppGapsM2.m,
             AppVCBalanceLimitAlert(
               balance: '100.000',
               level: 0.25,
               cursorPosition: 200000 / 700000,
               maxAmount: '700.000',
             ),
-            AppGaps.m,
+            AppGapsM2.m,
           ],
         ));
   }

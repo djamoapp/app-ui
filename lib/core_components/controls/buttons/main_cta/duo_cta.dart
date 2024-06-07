@@ -41,14 +41,14 @@ class DuoCTA extends StatelessWidget {
           isLoading: isPrimaryCTAloading,
           onPressed: onPrimaryCTApressed,
         ),
-        AppGaps.s,
+        AppGapsM2.s,
         SecondaryCTA(
           withBorder: false,
           enabled: isSecondaryCTAenabled,
           isLoading: false,
           label: secondaryCTAlabel,
           onPressed: onSecondaryCTApressed,
-          labelStyle: AppTypography.label!.bSmall!,
+          labelStyle: AppTypography.label(context).bSmall!,
         ),
       ],
     );

@@ -28,7 +28,7 @@ class SystemDesignItem extends StatelessWidget {
               label,
               style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
             )),
-            AppGaps.m,
+            AppGapsM2.m,
             Container(
               padding: const EdgeInsets.all(5),
               decoration: BoxDecoration(

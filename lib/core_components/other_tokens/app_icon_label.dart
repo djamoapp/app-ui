@@ -36,7 +36,7 @@ class AppIconLabel extends StatelessWidget {
             ),
             Text(
               label,
-              style: labelStyle ?? AppTypography.label!.bSmall,
+              style: labelStyle ?? AppTypography.label(context).bSmall,
             ),
           ],
         ),
@@ -54,7 +54,7 @@ class AppIconLabel extends StatelessWidget {
             ),
             Text(
               label,
-              style: labelStyle ?? AppTypography.label!.bSmall,
+              style: labelStyle ?? AppTypography.label(context).bSmall,
             ),
           ],
         ),

@@ -41,15 +41,16 @@ class AppAccordionItem<T> extends StatelessWidget {
         child: Row(
           children: [
             value == groupValue ? _checkedWidget : _unCheckedWidget,
-            AppGaps.m,
+            AppGapsM2.m,
             Expanded(
               child: Text(
                 label,
-                style: t.AppTypography.title!.medium!
+                style: t.AppTypography.title(context)
+                    .medium!
                     .copyWith(color: Colors.black),
               ),
             ),
-            AppGaps.m,
+            AppGapsM2.m,
             if (value != groupValue)
               Icon(
                 CupertinoIcons.chevron_forward,

@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 class StandardButtons {
   StandardButtons._();
 
-  static StandardButton large({
+  static Widget large({
     Key? key,
     StandardButtonStyle style = StandardButtonStyle.filled,
     IconData? prefixIcon,
@@ -29,35 +29,37 @@ class StandardButtons {
     EdgeInsetsGeometry? padding,
     Widget Function(BuildContext)? childBuilder,
   }) =>
-      StandardButton(
-        key: key,
-        label: label,
-        enabled: enabled,
-        prefixIcon: prefixIcon,
-        style: style,
-        suffixIcon: suffixIcon,
-        textStyle: t.AppTypography.title!.small!.copyWith(
-          fontSize: labelSize,
-        ),
-        prefixIconSize: prefixIconSize,
-        suffixIconSize: suffixIconSize,
-        onPressed: onPressed,
-        borderRadius: borderRadius,
-        enabledColor: enabledColor,
-        enabledShadow: enabledShadow,
-        enabledLabelColor: enabledLabelColor,
-        disabledColor: disabledColor,
-        disabledLabelColor: disabledLabelColor,
-        enabledIconColor: enabledIconColor,
-        disabledIconColor: disabledIconColor,
-        isLoading: isLoading,
-        height: 40,
-        width: double.minPositive,
-        padding: padding,
-        childBuilder: childBuilder,
-      );
+      Builder(builder: (context) {
+        return StandardButton(
+          key: key,
+          label: label,
+          enabled: enabled,
+          prefixIcon: prefixIcon,
+          style: style,
+          suffixIcon: suffixIcon,
+          textStyle: t.AppTypography.title(context).small!.copyWith(
+                fontSize: labelSize,
+              ),
+          prefixIconSize: prefixIconSize,
+          suffixIconSize: suffixIconSize,
+          onPressed: onPressed,
+          borderRadius: borderRadius,
+          enabledColor: enabledColor,
+          enabledShadow: enabledShadow,
+          enabledLabelColor: enabledLabelColor,
+          disabledColor: disabledColor,
+          disabledLabelColor: disabledLabelColor,
+          enabledIconColor: enabledIconColor,
+          disabledIconColor: disabledIconColor,
+          isLoading: isLoading,
+          height: 40,
+          width: double.minPositive,
+          padding: padding,
+          childBuilder: childBuilder,
+        );
+      });
 
-  static StandardButton medium({
+  static Widget medium({
     Key? key,
     StandardButtonStyle style = StandardButtonStyle.filled,
     IconData? prefixIcon,
@@ -80,35 +82,37 @@ class StandardButtons {
     EdgeInsetsGeometry? padding,
     Widget Function(BuildContext)? childBuilder,
   }) =>
-      StandardButton(
-        key: key,
-        label: label,
-        enabled: enabled,
-        prefixIcon: prefixIcon,
-        style: style,
-        suffixIcon: suffixIcon,
-        textStyle: t.AppTypography.label!.bSmall!.copyWith(
-          fontSize: labelSize,
-        ),
-        prefixIconSize: prefixIconSize,
-        suffixIconSize: prefixIconSize,
-        onPressed: onPressed,
-        borderRadius: borderRadius,
-        enabledColor: enabledColor,
-        enabledShadow: enabledShadow,
-        enabledLabelColor: enabledLabelColor,
-        disabledColor: disabledColor,
-        disabledLabelColor: disabledLabelColor,
-        enabledIconColor: enabledIconColor,
-        disabledIconColor: disabledIconColor,
-        isLoading: isLoading,
-        height: 32,
-        width: double.minPositive,
-        padding: padding,
-        childBuilder: childBuilder,
-      );
+      Builder(builder: (context) {
+        return StandardButton(
+          key: key,
+          label: label,
+          enabled: enabled,
+          prefixIcon: prefixIcon,
+          style: style,
+          suffixIcon: suffixIcon,
+          textStyle: t.AppTypography.label(context).bSmall!.copyWith(
+                fontSize: labelSize,
+              ),
+          prefixIconSize: prefixIconSize,
+          suffixIconSize: prefixIconSize,
+          onPressed: onPressed,
+          borderRadius: borderRadius,
+          enabledColor: enabledColor,
+          enabledShadow: enabledShadow,
+          enabledLabelColor: enabledLabelColor,
+          disabledColor: disabledColor,
+          disabledLabelColor: disabledLabelColor,
+          enabledIconColor: enabledIconColor,
+          disabledIconColor: disabledIconColor,
+          isLoading: isLoading,
+          height: 32,
+          width: double.minPositive,
+          padding: padding,
+          childBuilder: childBuilder,
+        );
+      });
 
-  static StandardButton small({
+  static Widget small({
     Key? key,
     StandardButtonStyle style = StandardButtonStyle.filled,
     IconData? prefixIcon,
@@ -131,29 +135,33 @@ class StandardButtons {
     EdgeInsetsGeometry? padding,
     Widget Function(BuildContext)? childBuilder,
   }) =>
-      StandardButton(
-        key: key,
-        label: label,
-        enabled: enabled,
-        prefixIcon: prefixIcon,
-        style: style,
-        suffixIcon: suffixIcon,
-        textStyle: t.AppTypography.body!.bTiny!.copyWith(fontSize: labelSize),
-        prefixIconSize: prefixIconSize,
-        suffixIconSize: suffixIconSize,
-        onPressed: onPressed,
-        borderRadius: borderRadius,
-        enabledColor: enabledColor,
-        enabledShadow: enabledShadow,
-        enabledLabelColor: enabledLabelColor,
-        disabledColor: disabledColor,
-        disabledLabelColor: disabledLabelColor,
-        enabledIconColor: enabledIconColor,
-        disabledIconColor: disabledIconColor,
-        isLoading: isLoading,
-        height: 22,
-        width: double.minPositive,
-        padding: padding,
-        childBuilder: childBuilder,
-      );
+      Builder(builder: (context) {
+        return StandardButton(
+          key: key,
+          label: label,
+          enabled: enabled,
+          prefixIcon: prefixIcon,
+          style: style,
+          suffixIcon: suffixIcon,
+          textStyle: t.AppTypography.body(context)
+              .bTiny!
+              .copyWith(fontSize: labelSize),
+          prefixIconSize: prefixIconSize,
+          suffixIconSize: suffixIconSize,
+          onPressed: onPressed,
+          borderRadius: borderRadius,
+          enabledColor: enabledColor,
+          enabledShadow: enabledShadow,
+          enabledLabelColor: enabledLabelColor,
+          disabledColor: disabledColor,
+          disabledLabelColor: disabledLabelColor,
+          enabledIconColor: enabledIconColor,
+          disabledIconColor: disabledIconColor,
+          isLoading: isLoading,
+          height: 22,
+          width: double.minPositive,
+          padding: padding,
+          childBuilder: childBuilder,
+        );
+      });
 }

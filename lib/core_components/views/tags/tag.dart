@@ -67,7 +67,7 @@ class AppTag extends StatelessWidget {
               size: iconSize,
               color: textAndIconColor,
             ),
-            AppGaps.xs,
+            AppGapsM2.xs,
           ],
           Text(
             text,
@@ -75,13 +75,13 @@ class AppTag extends StatelessWidget {
                 ? this.textStyle?.copyWith(
                       color: textAndIconColor,
                     )
-                : AppTypography.body!.bTiny!.copyWith(
-                    color: textAndIconColor,
-                  ),
+                : AppTypography.body(context).bTiny!.copyWith(
+                      color: textAndIconColor,
+                    ),
             textAlign: TextAlign.center,
           ),
           if (suffixIcon != null) ...[
-            AppGaps.xs,
+            AppGapsM2.xs,
             Icon(
               suffixIcon,
               size: suffixIconSize,

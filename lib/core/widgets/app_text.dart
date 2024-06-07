@@ -30,7 +30,7 @@ class AppText extends StatelessWidget {
               ? 0.8
               : textScaleFactor,
       textAlign: textAlign,
-      style: textStyle ?? AppTypography.label!.medium,
+      style: textStyle ?? AppTypography.label(context).medium,
     );
   }
 }

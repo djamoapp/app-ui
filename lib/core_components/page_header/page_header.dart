@@ -13,10 +13,12 @@ class AppPageHeader extends AppBar {
           backgroundColor: InterfaceColors.action.backGroundColor,
           centerTitle: true,
           title: title != null
-              ? Text(
-                  title,
-                  style: AppTypography.title!.bMedium100,
-                )
+              ? Builder(builder: (context) {
+                  return Text(
+                    title,
+                    style: AppTypography.title(context).bMedium100,
+                  );
+                })
               : Image.asset(
                   "assets/images/djamo-logo-black.png",
                   package: kPackageName,

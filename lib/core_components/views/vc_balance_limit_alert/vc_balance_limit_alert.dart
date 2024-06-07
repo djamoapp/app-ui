@@ -44,14 +44,15 @@ class AppVCBalanceLimitAlert extends StatelessWidget {
         children: [
           Text(
             title ?? "Plafond Limité à 200.000 F CFA",
-            style: t.AppTypography.title!.bMedium100,
+            style: t.AppTypography.title(context).bMedium100,
           ),
           Text(
             subTitle ?? "Commandez une carte physique pour augmenter la limite",
-            style: t.AppTypography.body!.bMedium100!
+            style: t.AppTypography.body(context)
+                .bMedium100!
                 .copyWith(color: NeutralColors.disabledTextColor),
           ),
-          AppGaps.m,
+          AppGapsM2.m,
           LayoutBuilder(
             builder: (ctx, constraint) => Stack(
               alignment: Alignment.center,
@@ -96,28 +97,29 @@ class AppVCBalanceLimitAlert extends StatelessWidget {
               ],
             ),
           ),
-          AppGaps.xs,
+          AppGapsM2.xs,
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
                 balance,
-                style: t.AppTypography.body!.bMedium100!.copyWith(
-                  color: level <= 0.5
-                      ? InterfaceColors.success.defaultColor!
-                      : level > 0.5 && level <= 0.75
-                          ? InterfaceColors.alert.defaultColor!
-                          : InterfaceColors.error.defaultColor!,
-                ),
+                style: t.AppTypography.body(context).bMedium100!.copyWith(
+                      color: level <= 0.5
+                          ? InterfaceColors.success.defaultColor!
+                          : level > 0.5 && level <= 0.75
+                              ? InterfaceColors.alert.defaultColor!
+                              : InterfaceColors.error.defaultColor!,
+                    ),
               ),
               Text(
                 maxAmount,
-                style: t.AppTypography.body!.bMedium100!
+                style: t.AppTypography.body(context)
+                    .bMedium100!
                     .copyWith(color: Colors.black),
               )
             ],
           ),
-          AppGaps.xl,
+          AppGapsM2.xl,
           PrimaryCTA(
             label: buttonLabel ?? "Commander une carte physique",
             onPressed: onButtonTap,

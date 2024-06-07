@@ -89,18 +89,18 @@ class _AppTransactionTypeSwitcherState<T>
                       const Gap(10),
                       Text(
                         item.text!,
-                        style: AppTypography.label!.bSmall!.copyWith(
-                          fontSize: 14,
-                          color: item.value == _currentValue
-                              ? widget.items
-                                      .singleWhere(
-                                        (element) =>
-                                            element.value == _currentValue,
-                                      )
-                                      .selectedColor ??
-                                  NeutralColors.neutral900
-                              : NeutralColors.neutral900,
-                        ),
+                        style: AppTypography.label(context).bSmall!.copyWith(
+                              fontSize: 14,
+                              color: item.value == _currentValue
+                                  ? widget.items
+                                          .singleWhere(
+                                            (element) =>
+                                                element.value == _currentValue,
+                                          )
+                                          .selectedColor ??
+                                      NeutralColors.neutral900
+                                  : NeutralColors.neutral900,
+                            ),
                         overflow: TextOverflow.ellipsis,
                       )
                     ],

@@ -58,14 +58,15 @@ class AppAccountWidget<ID> extends StatelessWidget {
                   Expanded(child: Container()),
                   Text(
                     balance,
-                    style: t.AppTypography.label!.bMedium200,
+                    style: t.AppTypography.label(context).bMedium200,
                   ),
                   Text(
                     label,
-                    style: t.AppTypography.body!.bSmall!
+                    style: t.AppTypography.body(context)
+                        .bSmall!
                         .copyWith(color: NeutralColors.disabledTextColor),
                   ),
-                  AppGaps.s,
+                  AppGapsM2.s,
                   AnimatedContainer(
                     duration: const Duration(milliseconds: 300),
                     height: 4,

@@ -134,7 +134,7 @@ class StandardButton extends StatelessWidget {
                       ? _getEnabledIconColor
                       : _getDisabledIconColor,
                 ),
-                AppGaps.xs,
+                AppGapsM2.xs,
               ],
               Text(
                 label,
@@ -147,7 +147,7 @@ class StandardButton extends StatelessWidget {
                 ),
               ),
               if (suffixIcon != null) ...[
-                AppGaps.xs,
+                AppGapsM2.xs,
                 Icon(
                   suffixIcon,
                   size: suffixIconSize,

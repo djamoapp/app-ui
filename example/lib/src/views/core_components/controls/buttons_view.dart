@@ -30,15 +30,15 @@ class ButtonsView extends GetView<ButtonsController> {
                 fontWeight: FontWeight.bold,
                 fontSize: 30),
           ),
-          AppGaps.m,
+          AppGapsM2.m,
           Text("Primary"),
           Divider(),
           PrimaryCTA(),
-          AppGaps.m,
+          AppGapsM2.m,
           Text("Secondary"),
           Divider(),
           SecondaryCTA(),
-          AppGaps.xl,
+          AppGapsM2.xl,
           const Text(
             "Standard Buttons",
             style: TextStyle(
@@ -46,80 +46,80 @@ class ButtonsView extends GetView<ButtonsController> {
                 fontWeight: FontWeight.bold,
                 fontSize: 30),
           ),
-          AppGaps.m,
+          AppGapsM2.m,
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text("Large"),
               Divider(),
-              AppGaps.m,
+              AppGapsM2.m,
               // Filled
-              AppGaps.m,
+              AppGapsM2.m,
               Row(
                 children: [
                   StandardButtons.large(style: StandardButtonStyle.filled),
-                  AppGaps.l,
+                  AppGapsM2.l,
                   StandardButtons.large(
                       style: StandardButtonStyle.filled, enabled: false),
                 ],
               ),
-              AppGaps.m,
+              AppGapsM2.m,
               Row(
                 children: [
                   StandardButtons.large(
                       style: StandardButtonStyle.filled,
                       suffixIcon: CupertinoIcons.chevron_forward),
-                  AppGaps.l,
+                  AppGapsM2.l,
                   StandardButtons.large(
                       style: StandardButtonStyle.filled,
                       enabled: false,
                       suffixIcon: CupertinoIcons.chevron_forward),
                 ],
               ),
-              AppGaps.m,
+              AppGapsM2.m,
               Row(
                 children: [
                   StandardButtons.large(
                       style: StandardButtonStyle.filled,
                       prefixIcon: AppIcons.noteText),
-                  AppGaps.l,
+                  AppGapsM2.l,
                   StandardButtons.large(
                       style: StandardButtonStyle.filled,
                       enabled: false,
                       prefixIcon: AppIcons.noteText),
                 ],
               ),
-              AppGaps.m,
+              AppGapsM2.m,
               // FilledLight
-              AppGaps.m,
+              AppGapsM2.m,
               Row(
                 children: [
                   StandardButtons.large(style: StandardButtonStyle.filledLight),
-                  AppGaps.l,
+                  AppGapsM2.l,
                   StandardButtons.large(
                       style: StandardButtonStyle.filledLight, enabled: false),
                 ],
               ),
-              AppGaps.m,
+              AppGapsM2.m,
               Row(
                 children: [
                   StandardButtons.large(
                       style: StandardButtonStyle.filledLight,
                       suffixIcon: CupertinoIcons.chevron_forward),
-                  AppGaps.l,
+                  AppGapsM2.l,
                   StandardButtons.large(
                       style: StandardButtonStyle.filledLight,
                       enabled: false,
                       suffixIcon: CupertinoIcons.chevron_forward),
                 ],
               ),
-              AppGaps.m,
+              AppGapsM2.m,
               Row(
                 children: [
                   StandardButtons.large(
                       style: StandardButtonStyle.filledLight,
                       prefixIcon: AppIcons.noteText),
-                  AppGaps.l,
+                  AppGapsM2.l,
                   StandardButtons.large(
                       style: StandardButtonStyle.filledLight,
                       enabled: false,
@@ -127,70 +127,70 @@ class ButtonsView extends GetView<ButtonsController> {
                 ],
               ),
               // Outlined
-              AppGaps.m,
+              AppGapsM2.m,
               Row(
                 children: [
                   StandardButtons.large(style: StandardButtonStyle.outlined),
-                  AppGaps.l,
+                  AppGapsM2.l,
                   StandardButtons.large(
                       style: StandardButtonStyle.outlined, enabled: false),
                 ],
               ),
-              AppGaps.m,
+              AppGapsM2.m,
               Row(
                 children: [
                   StandardButtons.large(
                       style: StandardButtonStyle.outlined,
                       suffixIcon: CupertinoIcons.chevron_forward),
-                  AppGaps.l,
+                  AppGapsM2.l,
                   StandardButtons.large(
                       style: StandardButtonStyle.outlined,
                       enabled: false,
                       suffixIcon: CupertinoIcons.chevron_forward),
                 ],
               ),
-              AppGaps.m,
+              AppGapsM2.m,
               Row(
                 children: [
                   StandardButtons.large(
                       style: StandardButtonStyle.outlined,
                       prefixIcon: AppIcons.noteText),
-                  AppGaps.l,
+                  AppGapsM2.l,
                   StandardButtons.large(
                       style: StandardButtonStyle.outlined,
                       enabled: false,
                       prefixIcon: AppIcons.noteText),
                 ],
               ),
-              AppGaps.m,
+              AppGapsM2.m,
               Row(
                 children: [
                   StandardButtons.large(style: StandardButtonStyle.text),
-                  AppGaps.l,
+                  AppGapsM2.l,
                   StandardButtons.large(
                       style: StandardButtonStyle.text, enabled: false),
                 ],
               ),
-              AppGaps.m,
+              AppGapsM2.m,
               Row(
                 children: [
                   StandardButtons.large(
                       style: StandardButtonStyle.text,
                       suffixIcon: CupertinoIcons.chevron_forward),
-                  AppGaps.l,
+                  AppGapsM2.l,
                   StandardButtons.large(
                       style: StandardButtonStyle.text,
                       enabled: false,
                       suffixIcon: CupertinoIcons.chevron_forward),
                 ],
               ),
-              AppGaps.m,
+              AppGapsM2.m,
               Row(
                 children: [
                   StandardButtons.large(
                       style: StandardButtonStyle.text,
                       prefixIcon: AppIcons.noteText),
-                  AppGaps.l,
+                  AppGapsM2.l,
                   StandardButtons.large(
                       style: StandardButtonStyle.text,
                       enabled: false,
@@ -199,111 +199,111 @@ class ButtonsView extends GetView<ButtonsController> {
               ),
             ],
           ),
-          AppGaps.m,
+          AppGapsM2.m,
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text("Medium"),
               Divider(),
-              AppGaps.m,
+              AppGapsM2.m,
               Row(
                 children: [
                   StandardButtons.medium(style: StandardButtonStyle.filled),
-                  AppGaps.l,
+                  AppGapsM2.l,
                   StandardButtons.medium(
                       style: StandardButtonStyle.filled, enabled: false),
                 ],
               ),
-              AppGaps.m,
+              AppGapsM2.m,
               Row(
                 children: [
                   StandardButtons.medium(
                       style: StandardButtonStyle.filled,
                       suffixIcon: CupertinoIcons.chevron_forward),
-                  AppGaps.l,
+                  AppGapsM2.l,
                   StandardButtons.medium(
                       style: StandardButtonStyle.filled,
                       enabled: false,
                       suffixIcon: CupertinoIcons.chevron_forward),
                 ],
               ),
-              AppGaps.m,
+              AppGapsM2.m,
               Row(
                 children: [
                   StandardButtons.medium(
                       style: StandardButtonStyle.filled,
                       prefixIcon: AppIcons.noteText),
-                  AppGaps.l,
+                  AppGapsM2.l,
                   StandardButtons.medium(
                       style: StandardButtonStyle.filled,
                       enabled: false,
                       prefixIcon: AppIcons.noteText),
                 ],
               ),
-              AppGaps.m,
+              AppGapsM2.m,
               Row(
                 children: [
                   StandardButtons.medium(style: StandardButtonStyle.outlined),
-                  AppGaps.l,
+                  AppGapsM2.l,
                   StandardButtons.medium(
                       style: StandardButtonStyle.outlined, enabled: false),
                 ],
               ),
-              AppGaps.m,
+              AppGapsM2.m,
               Row(
                 children: [
                   StandardButtons.medium(
                       style: StandardButtonStyle.outlined,
                       suffixIcon: CupertinoIcons.chevron_forward),
-                  AppGaps.l,
+                  AppGapsM2.l,
                   StandardButtons.medium(
                       style: StandardButtonStyle.outlined,
                       enabled: false,
                       suffixIcon: CupertinoIcons.chevron_forward),
                 ],
               ),
-              AppGaps.m,
+              AppGapsM2.m,
               Row(
                 children: [
                   StandardButtons.medium(
                       style: StandardButtonStyle.outlined,
                       prefixIcon: AppIcons.noteText),
-                  AppGaps.l,
+                  AppGapsM2.l,
                   StandardButtons.medium(
                       style: StandardButtonStyle.outlined,
                       enabled: false,
                       prefixIcon: AppIcons.noteText),
                 ],
               ),
-              AppGaps.m,
+              AppGapsM2.m,
               Row(
                 children: [
                   StandardButtons.medium(style: StandardButtonStyle.text),
-                  AppGaps.l,
+                  AppGapsM2.l,
                   StandardButtons.medium(
                       style: StandardButtonStyle.text, enabled: false),
                 ],
               ),
-              AppGaps.m,
+              AppGapsM2.m,
               Row(
                 children: [
                   StandardButtons.medium(
                       style: StandardButtonStyle.text,
                       suffixIcon: CupertinoIcons.chevron_forward),
-                  AppGaps.l,
+                  AppGapsM2.l,
                   StandardButtons.medium(
                       style: StandardButtonStyle.text,
                       enabled: false,
                       suffixIcon: CupertinoIcons.chevron_forward),
                 ],
               ),
-              AppGaps.m,
+              AppGapsM2.m,
               Row(
                 children: [
                   StandardButtons.medium(
                       style: StandardButtonStyle.text,
                       prefixIcon: AppIcons.noteText),
-                  AppGaps.l,
+                  AppGapsM2.l,
                   StandardButtons.medium(
                       style: StandardButtonStyle.text,
                       enabled: false,
@@ -312,118 +312,118 @@ class ButtonsView extends GetView<ButtonsController> {
               ),
             ],
           ),
-          AppGaps.m,
+          AppGapsM2.m,
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text("Small"),
               Divider(),
-              AppGaps.m,
+              AppGapsM2.m,
               Row(
                 children: [
                   StandardButtons.small(style: StandardButtonStyle.filled),
-                  AppGaps.l,
+                  AppGapsM2.l,
                   StandardButtons.small(
                       style: StandardButtonStyle.filled, enabled: false),
                 ],
               ),
-              AppGaps.m,
+              AppGapsM2.m,
               Row(
                 children: [
                   StandardButtons.small(
                       style: StandardButtonStyle.filled,
                       suffixIcon: CupertinoIcons.chevron_forward),
-                  AppGaps.l,
+                  AppGapsM2.l,
                   StandardButtons.small(
                       style: StandardButtonStyle.filled,
                       enabled: false,
                       suffixIcon: CupertinoIcons.chevron_forward),
                 ],
               ),
-              AppGaps.m,
+              AppGapsM2.m,
               Row(
                 children: [
                   StandardButtons.small(
                       style: StandardButtonStyle.filled,
                       prefixIcon: AppIcons.noteText),
-                  AppGaps.l,
+                  AppGapsM2.l,
                   StandardButtons.small(
                       style: StandardButtonStyle.filled,
                       enabled: false,
                       prefixIcon: AppIcons.noteText),
                 ],
               ),
-              AppGaps.m,
+              AppGapsM2.m,
               Row(
                 children: [
                   StandardButtons.small(style: StandardButtonStyle.outlined),
-                  AppGaps.l,
+                  AppGapsM2.l,
                   StandardButtons.small(
                       style: StandardButtonStyle.outlined, enabled: false),
                 ],
               ),
-              AppGaps.m,
+              AppGapsM2.m,
               Row(
                 children: [
                   StandardButtons.small(
                       style: StandardButtonStyle.outlined,
                       suffixIcon: CupertinoIcons.chevron_forward),
-                  AppGaps.l,
+                  AppGapsM2.l,
                   StandardButtons.small(
                       style: StandardButtonStyle.outlined,
                       enabled: false,
                       suffixIcon: CupertinoIcons.chevron_forward),
                 ],
               ),
-              AppGaps.m,
+              AppGapsM2.m,
               Row(
                 children: [
                   StandardButtons.small(
                       style: StandardButtonStyle.outlined,
                       prefixIcon: AppIcons.noteText),
-                  AppGaps.l,
+                  AppGapsM2.l,
                   StandardButtons.small(
                       style: StandardButtonStyle.outlined,
                       enabled: false,
                       prefixIcon: AppIcons.noteText),
                 ],
               ),
-              AppGaps.m,
+              AppGapsM2.m,
               Row(
                 children: [
                   StandardButtons.small(style: StandardButtonStyle.text),
-                  AppGaps.l,
+                  AppGapsM2.l,
                   StandardButtons.small(
                       style: StandardButtonStyle.text, enabled: false),
                 ],
               ),
-              AppGaps.m,
+              AppGapsM2.m,
               Row(
                 children: [
                   StandardButtons.small(
                       style: StandardButtonStyle.text,
                       suffixIcon: CupertinoIcons.chevron_forward),
-                  AppGaps.l,
+                  AppGapsM2.l,
                   StandardButtons.small(
                       style: StandardButtonStyle.text,
                       enabled: false,
                       suffixIcon: CupertinoIcons.chevron_forward),
                 ],
               ),
-              AppGaps.m,
+              AppGapsM2.m,
               Row(
                 children: [
                   StandardButtons.small(
                       style: StandardButtonStyle.text,
                       prefixIcon: AppIcons.noteText),
-                  AppGaps.l,
+                  AppGapsM2.l,
                   StandardButtons.small(
                       style: StandardButtonStyle.text,
                       enabled: false,
                       prefixIcon: AppIcons.noteText),
                 ],
               ),
-              AppGaps.m,
+              AppGapsM2.m,
               Container(
                 height: 150,
                 width: 100,

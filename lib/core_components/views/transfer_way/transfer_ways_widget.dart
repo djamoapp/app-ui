@@ -39,7 +39,7 @@ class AppTransferWaysWidget<ID> extends StatelessWidget {
                     scrollDirection: Axis.horizontal,
                     shrinkWrap: true,
                     itemCount: ways.length,
-                    separatorBuilder: (ctx, _) => AppGaps.m,
+                    separatorBuilder: (ctx, _) => AppGapsM2.m,
                     itemBuilder: (ctx, index) => GestureDetector(
                       child: ways[index],
                       onTap: () {
@@ -50,7 +50,7 @@ class AppTransferWaysWidget<ID> extends StatelessWidget {
                     ),
                   ),
                 ),
-                AppGaps.m,
+                AppGapsM2.m,
                 AppHorizontalListviewDotIndicators(
                   scrollController: scrollController,
                   containerWidth: containerWidget,
@@ -67,7 +67,7 @@ class AppTransferWaysWidget<ID> extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 shrinkWrap: true,
                 itemCount: 6,
-                separatorBuilder: (ctx, _) => AppGaps.m,
+                separatorBuilder: (ctx, _) => AppGapsM2.m,
                 itemBuilder: (ctx, index) => Shimmer.fromColors(
                   baseColor: Colors.grey.withAlpha(20),
                   highlightColor: Colors.white.withAlpha(40),
@@ -82,7 +82,7 @@ class AppTransferWaysWidget<ID> extends StatelessWidget {
                           shape: BoxShape.circle,
                         ),
                       ),
-                      AppGaps.xs,
+                      AppGapsM2.xs,
                       Container(
                         height: 16,
                         width: 40,

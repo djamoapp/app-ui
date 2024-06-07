@@ -59,10 +59,10 @@ class AppTransferWay<ID> extends StatelessWidget {
             ),
           ),
         ),
-        AppGaps.xs,
+        AppGapsM2.xs,
         Text(
           label,
-          style: t.AppTypography.body!.bSmall,
+          style: t.AppTypography.body(context).bSmall,
         ),
       ],
     );

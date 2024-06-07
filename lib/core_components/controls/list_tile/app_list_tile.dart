@@ -112,7 +112,7 @@ class AppListTile extends StatelessWidget {
           children: [
             if (leading != null) ...[
               leading!,
-              afterLeadingGap ?? AppGaps.m,
+              afterLeadingGap ?? AppGapsM2.m,
             ],
             Expanded(
               child: Column(
@@ -124,26 +124,27 @@ class AppListTile extends StatelessWidget {
                       Text(
                         title,
                         style: titleStyle ??
-                            AppTypography.label!.bSmall!.copyWith(
-                              color: titleColor ?? NeutralColors.neutral900,
-                            ),
+                            AppTypography.label(context).bSmall!.copyWith(
+                                  color: titleColor ?? NeutralColors.neutral900,
+                                ),
                         textScaleFactor: titleScaleFactor,
                       ),
-                  afterTitleGap ?? AppGaps.xs,
+                  afterTitleGap ?? AppGapsM2.xs,
                   subTitleWidget ??
                       Text(
                         subTitle,
                         style: subTitleStyle ??
-                            AppTypography.body!.small!.copyWith(
-                              color: subTitleColor ?? NeutralColors.neutral700,
-                            ),
+                            AppTypography.body(context).small!.copyWith(
+                                  color:
+                                      subTitleColor ?? NeutralColors.neutral700,
+                                ),
                         textScaleFactor: subTitleScaleFactor,
                       ),
                 ],
               ),
             ),
             if (trailing != null) ...[
-              beforeTrailingGap ?? AppGaps.m,
+              beforeTrailingGap ?? AppGapsM2.m,
               trailing!,
             ],
           ],

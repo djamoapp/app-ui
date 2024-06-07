@@ -24,14 +24,15 @@ class AppTitleWithLabel extends StatelessWidget {
         leading ??
             Text(
               title ?? "Title",
-              style: AppTypography.label!.bSmall!
+              style: AppTypography.label(context)
+                  .bSmall!
                   .copyWith(fontSize: 14, color: NeutralColors.neutral900),
             ),
         trailing ??
             Flexible(
               child: Text(
                 label ?? "Label",
-                style: AppTypography.body!.bTiny!.copyWith(
+                style: AppTypography.body(context).bTiny!.copyWith(
                     fontSize: 14, color: NeutralColors.disabledTextColor),
               ),
             ),

@@ -26,27 +26,27 @@ class SystemMessagesView extends StatelessWidget {
               fontSize: 30,
             ),
           ),
-          AppGaps.m,
+          AppGapsM2.m,
           Text("Error"),
           Divider(),
           AppBox.error(
               "Ceci est un message d’erreur. Quelque chose n’a pas fonctionné correctement."),
-          AppGaps.m,
+          AppGapsM2.m,
           Text("Alert"),
           Divider(),
           AppBox.alert(
               "Ceci est un message d’alerte. Il faut y prêter beaucoup d’attention."),
-          AppGaps.m,
+          AppGapsM2.m,
           Text("Success"),
           Divider(),
           AppBox.success(
               "Ceci est un message de succès. Tout a marché comme il se devait."),
-          AppGaps.m,
+          AppGapsM2.m,
           Text("Info"),
           Divider(),
           AppBox.info(
               "Ceci est un message de succès. Tout a marché comme il se devait."),
-          AppGaps.xl,
+          AppGapsM2.xl,
           const Text(
             "Inline",
             style: TextStyle(
@@ -55,28 +55,28 @@ class SystemMessagesView extends StatelessWidget {
               fontSize: 30,
             ),
           ),
-          AppGaps.m,
+          AppGapsM2.m,
           Text("Error"),
           Divider(),
           AppInline.error(
             "Ceci est un message d’erreur. Il faut y prêter beaucoup d’attention.",
           ),
-          AppGaps.m,
+          AppGapsM2.m,
           Text("Alert"),
           Divider(),
           AppInline.alert(
               "Ceci est un message d’alerte. Il faut y prêter beaucoup d’attention."),
-          AppGaps.m,
+          AppGapsM2.m,
           Text("Success"),
           Divider(),
           AppInline.success(
               "Ceci est un message de succès. Tout a marché comme il se devait."),
-          AppGaps.m,
+          AppGapsM2.m,
           Text("Info"),
           Divider(),
           AppInline.info(
               "Ceci est un message de succès. Tout a marché comme il se devait."),
-          AppGaps.xl,
+          AppGapsM2.xl,
           const Text(
             "SnackBars",
             style: TextStyle(

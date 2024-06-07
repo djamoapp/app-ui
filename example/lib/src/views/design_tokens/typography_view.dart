@@ -24,7 +24,7 @@ class TypographyView extends GetView<TypographyController> {
                 fontWeight: FontWeight.bold,
                 fontSize: 30),
           ),
-          AppGaps.m,
+          AppGapsM2.m,
           Text("Font Name"),
           Divider(),
           const Text(
@@ -34,7 +34,7 @@ class TypographyView extends GetView<TypographyController> {
                 fontWeight: FontWeight.bold,
                 fontSize: 40),
           ),
-          AppGaps.m,
+          AppGapsM2.m,
           Text("Font Weights"),
           Divider(),
           Row(
@@ -69,7 +69,7 @@ class TypographyView extends GetView<TypographyController> {
               ),
             ],
           ),
-          AppGaps.xl,
+          AppGapsM2.xl,
           const Text(
             "Token Set",
             style: TextStyle(
@@ -77,10 +77,10 @@ class TypographyView extends GetView<TypographyController> {
                 fontWeight: FontWeight.bold,
                 fontSize: 30),
           ),
-          AppGaps.m,
+          AppGapsM2.m,
           Text("Typography Token Set"),
           Divider(),
-          AppGaps.m,
+          AppGapsM2.m,
           Container(
             decoration: BoxDecoration(
               border: Border.all(
@@ -106,17 +106,17 @@ class TypographyView extends GetView<TypographyController> {
                     Text("Weight/Size/Line Height"),
                   ],
                 ),
-                AppGaps.m,
+                AppGapsM2.m,
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
                       "Body/Large",
-                      style: AppTypography.body!.large,
+                      style: AppTypography.body(context).large,
                     ),
                     Text(
                       "Light/16/20",
-                      style: AppTypography.body!.large,
+                      style: AppTypography.body(context).large,
                     ),
                   ],
                 ),
@@ -126,11 +126,11 @@ class TypographyView extends GetView<TypographyController> {
                   children: [
                     Text(
                       "Body/Medium",
-                      style: AppTypography.body!.medium,
+                      style: AppTypography.body(context).medium,
                     ),
                     Text(
                       "Light/14/18",
-                      style: AppTypography.body!.medium,
+                      style: AppTypography.body(context).medium,
                     ),
                   ],
                 ),
@@ -140,11 +140,11 @@ class TypographyView extends GetView<TypographyController> {
                   children: [
                     Text(
                       "Body/B-Small",
-                      style: AppTypography.body!.bSmall,
+                      style: AppTypography.body(context).bSmall,
                     ),
                     Text(
                       "Medium/12.5/16",
-                      style: AppTypography.body!.bSmall,
+                      style: AppTypography.body(context).bSmall,
                     ),
                   ],
                 ),
@@ -154,11 +154,11 @@ class TypographyView extends GetView<TypographyController> {
                   children: [
                     Text(
                       "Body/Small",
-                      style: AppTypography.body!.small,
+                      style: AppTypography.body(context).small,
                     ),
                     Text(
                       "Light/12.5/16",
-                      style: AppTypography.body!.small,
+                      style: AppTypography.body(context).small,
                     ),
                   ],
                 ),
@@ -168,11 +168,11 @@ class TypographyView extends GetView<TypographyController> {
                   children: [
                     Text(
                       "Body/B-Tiny",
-                      style: AppTypography.body!.bTiny,
+                      style: AppTypography.body(context).bTiny,
                     ),
                     Text(
                       "Medium/10.5/16",
-                      style: AppTypography.body!.bTiny,
+                      style: AppTypography.body(context).bTiny,
                     ),
                   ],
                 ),
@@ -182,18 +182,18 @@ class TypographyView extends GetView<TypographyController> {
                   children: [
                     Text(
                       "Body/Tiny",
-                      style: AppTypography.body!.tiny,
+                      style: AppTypography.body(context).tiny,
                     ),
                     Text(
                       "Light/10.5/16",
-                      style: AppTypography.body!.tiny,
+                      style: AppTypography.body(context).tiny,
                     ),
                   ],
                 ),
               ],
             ),
           ),
-          AppGaps.m,
+          AppGapsM2.m,
           Container(
             decoration: BoxDecoration(
               border: Border.all(
@@ -219,17 +219,17 @@ class TypographyView extends GetView<TypographyController> {
                     Text("Weight/Size/Line Height"),
                   ],
                 ),
-                AppGaps.m,
+                AppGapsM2.m,
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
                       "Label/Large",
-                      style: AppTypography.label!.large,
+                      style: AppTypography.label(context).large,
                     ),
                     Text(
                       "Book/18/22.5",
-                      style: AppTypography.label!.large,
+                      style: AppTypography.label(context).large,
                     ),
                   ],
                 ),
@@ -239,11 +239,11 @@ class TypographyView extends GetView<TypographyController> {
                   children: [
                     Text(
                       "Label/B-Medium-200",
-                      style: AppTypography.label!.bMedium200,
+                      style: AppTypography.label(context).bMedium200,
                     ),
                     Text(
                       "Medium/16/20",
-                      style: AppTypography.label!.bMedium200,
+                      style: AppTypography.label(context).bMedium200,
                     ),
                   ],
                 ),
@@ -253,11 +253,11 @@ class TypographyView extends GetView<TypographyController> {
                   children: [
                     Text(
                       "Label/B-Medium-100",
-                      style: AppTypography.label!.bMedium100,
+                      style: AppTypography.label(context).bMedium100,
                     ),
                     Text(
                       "Book/16/20",
-                      style: AppTypography.label!.bMedium100,
+                      style: AppTypography.label(context).bMedium100,
                     ),
                   ],
                 ),
@@ -267,11 +267,11 @@ class TypographyView extends GetView<TypographyController> {
                   children: [
                     Text(
                       "Label/B-Small",
-                      style: AppTypography.label!.bSmall,
+                      style: AppTypography.label(context).bSmall,
                     ),
                     Text(
                       "Medium/14/18",
-                      style: AppTypography.label!.bSmall,
+                      style: AppTypography.label(context).bSmall,
                     ),
                   ],
                 ),
@@ -281,18 +281,18 @@ class TypographyView extends GetView<TypographyController> {
                   children: [
                     Text(
                       "Label/Small",
-                      style: AppTypography.label!.small,
+                      style: AppTypography.label(context).small,
                     ),
                     Text(
                       "Book/14/18",
-                      style: AppTypography.label!.small,
+                      style: AppTypography.label(context).small,
                     ),
                   ],
                 ),
               ],
             ),
           ),
-          AppGaps.m,
+          AppGapsM2.m,
           Container(
             decoration: BoxDecoration(
               border: Border.all(
@@ -318,17 +318,17 @@ class TypographyView extends GetView<TypographyController> {
                     Text("Weight/Size/Line Height"),
                   ],
                 ),
-                AppGaps.m,
+                AppGapsM2.m,
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
                       "Title/Large",
-                      style: AppTypography.title!.large,
+                      style: AppTypography.title(context).large,
                     ),
                     Text(
                       "Medium/22.5/29",
-                      style: AppTypography.title!.large,
+                      style: AppTypography.title(context).large,
                     ),
                   ],
                 ),
@@ -338,11 +338,11 @@ class TypographyView extends GetView<TypographyController> {
                   children: [
                     Text(
                       "Title/B-Medium-200",
-                      style: AppTypography.title!.bMedium200,
+                      style: AppTypography.title(context).bMedium200,
                     ),
                     Text(
                       "Bold/20/26",
-                      style: AppTypography.title!.bMedium200,
+                      style: AppTypography.title(context).bMedium200,
                     ),
                   ],
                 ),
@@ -352,11 +352,11 @@ class TypographyView extends GetView<TypographyController> {
                   children: [
                     Text(
                       "Title/B-Medium-100",
-                      style: AppTypography.title!.bMedium100,
+                      style: AppTypography.title(context).bMedium100,
                     ),
                     Text(
                       "Bold/20/26",
-                      style: AppTypography.title!.bMedium100,
+                      style: AppTypography.title(context).bMedium100,
                     ),
                   ],
                 ),
@@ -366,11 +366,11 @@ class TypographyView extends GetView<TypographyController> {
                   children: [
                     Text(
                       "Title/Medium",
-                      style: AppTypography.title!.medium,
+                      style: AppTypography.title(context).medium,
                     ),
                     Text(
                       "Medium/20/26",
-                      style: AppTypography.title!.medium,
+                      style: AppTypography.title(context).medium,
                     ),
                   ],
                 ),
@@ -380,18 +380,18 @@ class TypographyView extends GetView<TypographyController> {
                   children: [
                     Text(
                       "Title/Small",
-                      style: AppTypography.title!.small,
+                      style: AppTypography.title(context).small,
                     ),
                     Text(
                       "Medium/18/22.5",
-                      style: AppTypography.title!.small,
+                      style: AppTypography.title(context).small,
                     ),
                   ],
                 ),
               ],
             ),
           ),
-          AppGaps.m,
+          AppGapsM2.m,
           Container(
             decoration: BoxDecoration(
               border: Border.all(
@@ -417,19 +417,19 @@ class TypographyView extends GetView<TypographyController> {
                     Text("Weight/Size/Line Height"),
                   ],
                 ),
-                AppGaps.m,
+                AppGapsM2.m,
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Flexible(
                         child: Text(
                       "Headline/Large",
-                      style: AppTypography.headLine!.large,
+                      style: AppTypography.headLine(context).large,
                     )),
                     Flexible(
                         child: Text(
                       "Bold/29/37",
-                      style: AppTypography.headLine!.large,
+                      style: AppTypography.headLine(context).large,
                     )),
                   ],
                 ),
@@ -440,12 +440,12 @@ class TypographyView extends GetView<TypographyController> {
                     Flexible(
                         child: Text(
                       "Headline/B-Large",
-                      style: AppTypography.headLine!.bLarge,
+                      style: AppTypography.headLine(context).bLarge,
                     )),
                     Flexible(
                         child: Text(
                       "Bold/29/37",
-                      style: AppTypography.headLine!.bLarge,
+                      style: AppTypography.headLine(context).bLarge,
                     )),
                   ],
                 ),
@@ -456,12 +456,12 @@ class TypographyView extends GetView<TypographyController> {
                     Flexible(
                         child: Text(
                       "Headline/Medium",
-                      style: AppTypography.headLine!.medium,
+                      style: AppTypography.headLine(context).medium,
                     )),
                     Flexible(
                         child: Text(
                       "Bold/26/34",
-                      style: AppTypography.headLine!.medium,
+                      style: AppTypography.headLine(context).medium,
                     )),
                   ],
                 ),

@@ -24,7 +24,7 @@ class RadioView extends GetView<RadioController> {
                 onChanged: controller.onSelectRadio,
               );
             }),
-            AppGaps.l,
+            AppGapsM2.l,
             Obx(() {
               return AppRadio(
                 value: 2,
@@ -32,7 +32,7 @@ class RadioView extends GetView<RadioController> {
                 onChanged: controller.onSelectRadio,
               );
             }),
-            AppGaps.l,
+            AppGapsM2.l,
             Obx(() {
               return AppRadio(
                 value: 3,

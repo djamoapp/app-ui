@@ -58,15 +58,15 @@ class AppAccountCard extends StatelessWidget {
       borderRadius: borderRadius,
       child: Column(
         children: [
-          _leading(),
-          AppGaps.m,
+          _leading(context),
+          AppGapsM2.m,
           trailing,
         ],
       ),
     );
   }
 
-  Widget _leading() {
+  Widget _leading(BuildContext context) {
     return Row(
       //mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -76,7 +76,8 @@ class AppAccountCard extends StatelessWidget {
             children: [
               Text(
                 title,
-                style: AppTypography.label!.bMedium100!
+                style: AppTypography.label(context)
+                    .bMedium100!
                     .copyWith(color: NeutralColors.disabledBackGroundColor),
               ),
               this.enableCountUp
@@ -85,14 +86,14 @@ class AppAccountCard extends StatelessWidget {
                       end: counterUpEnd ?? double.parse(balance),
                       duration: counterDuration,
                       separator: counterSeparator,
-                      style:
-                          balanceTextStyle ?? AppTypography.title!.bMedium200,
+                      style: balanceTextStyle ??
+                          AppTypography.title(context).bMedium200,
                       suffix: " $kDeviseSymbol",
                     )
                   : Text(
                       balance,
-                      style:
-                          balanceTextStyle ?? AppTypography.title!.bMedium200,
+                      style: balanceTextStyle ??
+                          AppTypography.title(context).bMedium200,
                     ),
             ],
           ),

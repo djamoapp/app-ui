@@ -30,7 +30,7 @@ class ColorsView extends GetView<ColorsController> {
                   fontWeight: FontWeight.bold,
                   fontSize: 30),
             ),
-            AppGaps.m,
+            AppGapsM2.m,
             for (int i = 0; i < controller.brandColors.length; i++) ...[
               Text(controller.brandColors[i]["name"]),
               const Divider(),
@@ -44,18 +44,18 @@ class ColorsView extends GetView<ColorsController> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         const Text("Primary"),
-                        AppGaps.s,
+                        AppGapsM2.s,
                         _brandColorWidget(
                             controller.brandColors[i]["color"].primary!),
                       ],
                     ),
-                    AppGaps.m,
+                    AppGapsM2.m,
                     if (controller.brandColors[i]["color"].light != null)
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           const Text("Light"),
-                          AppGaps.s,
+                          AppGapsM2.s,
                           _brandColorWidget(
                               controller.brandColors[i]["color"].light!),
                         ],
@@ -65,28 +65,28 @@ class ColorsView extends GetView<ColorsController> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           const Text("Light 200"),
-                          AppGaps.s,
+                          AppGapsM2.s,
                           _brandColorWidget(
                               controller.brandColors[i]["color"].light200!),
                         ],
                       ),
-                      AppGaps.m,
+                      AppGapsM2.m,
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           const Text("Light 100"),
-                          AppGaps.s,
+                          AppGapsM2.s,
                           _brandColorWidget(
                               controller.brandColors[i]["color"].light100!),
                         ],
                       ),
                     ],
-                    AppGaps.m,
+                    AppGapsM2.m,
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         const Text("Dark"),
-                        AppGaps.s,
+                        AppGapsM2.s,
                         _brandColorWidget(
                             controller.brandColors[i]["color"].dark!),
                       ],
@@ -95,7 +95,7 @@ class ColorsView extends GetView<ColorsController> {
                 ),
               ),
             ],
-            AppGaps.xl,
+            AppGapsM2.xl,
             const Text(
               "Neutral Colors",
               style: TextStyle(
@@ -103,7 +103,7 @@ class ColorsView extends GetView<ColorsController> {
                   fontWeight: FontWeight.bold,
                   fontSize: 30),
             ),
-            AppGaps.m,
+            AppGapsM2.m,
             SizedBox(
               height: 150,
               child: ListView(
@@ -114,17 +114,17 @@ class ColorsView extends GetView<ColorsController> {
                     Column(
                       children: [
                         Text("${900 - (i * 100)}"),
-                        AppGaps.s,
+                        AppGapsM2.s,
                         _neutralColorWidget(
                             NeutralColors.neutral[900 - (i * 100)] as Color),
                       ],
                     ),
-                    AppGaps.m,
+                    AppGapsM2.m,
                   ]
                 ],
               ),
             ),
-            AppGaps.xl,
+            AppGapsM2.xl,
             const Text(
               "Interface Colors",
               style: TextStyle(
@@ -132,11 +132,11 @@ class ColorsView extends GetView<ColorsController> {
                   fontWeight: FontWeight.bold,
                   fontSize: 30),
             ),
-            AppGaps.m,
+            AppGapsM2.m,
             Row(
               children: [
                 const Text("Default"),
-                AppGaps.m,
+                AppGapsM2.m,
                 Expanded(
                   child: SizedBox(
                     height: 150,
@@ -150,12 +150,12 @@ class ColorsView extends GetView<ColorsController> {
                           Column(
                             children: [
                               Text(controller.interfaceColors[i]["name"]),
-                              AppGaps.s,
+                              AppGapsM2.s,
                               _neutralColorWidget(controller
                                   .interfaceColors[i]["color"].defaultColor),
                             ],
                           ),
-                          AppGaps.m,
+                          AppGapsM2.m,
                         ]
                       ],
                     ),
@@ -166,7 +166,7 @@ class ColorsView extends GetView<ColorsController> {
             Row(
               children: [
                 const Text("Disabled"),
-                AppGaps.m,
+                AppGapsM2.m,
                 Expanded(
                   child: SizedBox(
                     height: 150,
@@ -180,12 +180,12 @@ class ColorsView extends GetView<ColorsController> {
                           Column(
                             children: [
                               Text(controller.interfaceColors[i]["name"]),
-                              AppGaps.s,
+                              AppGapsM2.s,
                               _neutralColorWidget(controller
                                   .interfaceColors[i]["color"].disabledColor),
                             ],
                           ),
-                          AppGaps.m,
+                          AppGapsM2.m,
                         ]
                       ],
                     ),
@@ -196,7 +196,7 @@ class ColorsView extends GetView<ColorsController> {
             Row(
               children: [
                 const Text("Background"),
-                AppGaps.m,
+                AppGapsM2.m,
                 Expanded(
                   child: SizedBox(
                     height: 150,
@@ -210,12 +210,12 @@ class ColorsView extends GetView<ColorsController> {
                           Column(
                             children: [
                               Text(controller.interfaceColors[i]["name"]),
-                              AppGaps.s,
+                              AppGapsM2.s,
                               _neutralColorWidget(controller
                                   .interfaceColors[i]["color"].backGroundColor),
                             ],
                           ),
-                          AppGaps.m,
+                          AppGapsM2.m,
                         ]
                       ],
                     ),

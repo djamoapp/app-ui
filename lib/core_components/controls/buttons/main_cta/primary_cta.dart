@@ -77,11 +77,11 @@ class PrimaryCTA extends StatelessWidget {
               : childBuilder?.call() ??
                   Text(
                     label,
-                    style: t.AppTypography.title!.small!.copyWith(
-                      color: enabled && !isLoading
-                          ? enabledLabelColor ?? Colors.white
-                          : disabledLabelColor ?? Colors.white,
-                    ),
+                    style: t.AppTypography.title(context).small!.copyWith(
+                          color: enabled && !isLoading
+                              ? enabledLabelColor ?? Colors.white
+                              : disabledLabelColor ?? Colors.white,
+                        ),
                     textAlign: TextAlign.center,
                     overflow: labelOverflow,
                   ),

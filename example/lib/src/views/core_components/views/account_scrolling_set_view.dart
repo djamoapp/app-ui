@@ -21,7 +21,7 @@ class AccountScrollingSetView extends GetView<AccountScrollingSetController> {
         children: [
           Text("Core Tokens"),
           Divider(),
-          AppGaps.m,
+          AppGapsM2.m,
           Obx(() {
             return AppAccountsScrollingSet<int>(
               onTap: controller.onTap,
@@ -50,10 +50,10 @@ class AccountScrollingSetView extends GetView<AccountScrollingSetController> {
               ],
             );
           }),
-          AppGaps.xl,
+          AppGapsM2.xl,
           const Text("Djamo 3D Icons"),
           const Divider(),
-          AppGaps.m,
+          AppGapsM2.m,
           GridView.count(
             controller: controller.scrollController,
             crossAxisCount: 3,

@@ -41,10 +41,10 @@ class AnalyticsGauge extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 tag,
-                AppGaps.xs,
+                AppGapsM2.xs,
                 Text(
                   amount,
-                  style: AppTypography.body?.bSmall,
+                  style: AppTypography.body(context).bSmall,
                 ),
               ],
             ),
@@ -59,9 +59,9 @@ class AnalyticsGauge extends StatelessWidget {
             progressColor: progressColor,
             center: Text(
               progressLabel,
-              style: AppTypography.body!.bSmall!.copyWith(
-                color: progressColor,
-              ),
+              style: AppTypography.body(context).bSmall!.copyWith(
+                    color: progressColor,
+                  ),
             ),
           ),
         ],

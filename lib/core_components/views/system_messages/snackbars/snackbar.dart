@@ -170,10 +170,12 @@ class AppSnackBar {
             Gap(10),
           ],
           Expanded(
-            child: Text(
-              label,
-              style: AppTypography.body!.small!,
-            ),
+            child: Builder(builder: (context) {
+              return Text(
+                label,
+                style: AppTypography.body(context).small!,
+              );
+            }),
           ),
           if (trailing != null) ...[
             Gap(10),

@@ -53,7 +53,7 @@ class AppToolTip extends StatelessWidget {
         child: Row(
           children: [
             leading,
-            AppGaps.m,
+            AppGapsM2.m,
             Expanded(
               child: SingleChildScrollView(
                 child: Column(
@@ -64,21 +64,21 @@ class AppToolTip extends StatelessWidget {
                     Text(
                       title,
                       textScaleFactor: 1.0,
-                      style: AppTypography.label!.bSmall,
+                      style: AppTypography.label(context).bSmall,
                     ),
                     Text(
                       subTitle,
                       textScaleFactor: 1.0,
-                      style: AppTypography.body!.small!.copyWith(
-                        color: NeutralColors.disabledTextColor,
-                      ),
+                      style: AppTypography.body(context).small!.copyWith(
+                            color: NeutralColors.disabledTextColor,
+                          ),
                     )
                   ],
                 ),
               ),
             ),
             if (onClose != null) ...[
-              AppGaps.m,
+              AppGapsM2.m,
               IconButton(
                 icon: Icon(
                   AppIcons.cross,

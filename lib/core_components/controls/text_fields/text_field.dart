@@ -119,9 +119,9 @@ class _AppTextFieldState extends State<AppTextField> {
         if (widget.label != null) ...[
           Text(
             widget.label!,
-            style: t.AppTypography.label!.bSmall,
+            style: t.AppTypography.label(context).bSmall,
           ),
-          AppGaps.xs,
+          AppGapsM2.xs,
         ],
         Stack(
           children: [
@@ -140,9 +140,9 @@ class _AppTextFieldState extends State<AppTextField> {
               maxLines: widget.maxLines,
               maxLength: widget.maxLength,
               inputFormatters: widget.inputFormatters,
-              style: t.AppTypography.body!.medium!.copyWith(
-                color: NeutralColors.neutral900,
-              ),
+              style: t.AppTypography.body(context).medium!.copyWith(
+                    color: NeutralColors.neutral900,
+                  ),
               validator: (value) {
                 Future.delayed(
                   Duration(seconds: 0),
@@ -174,9 +174,9 @@ class _AppTextFieldState extends State<AppTextField> {
                     ? Colors.white
                     : NeutralColors.formBordersColor,
                 hintText: widget.placeHolderText,
-                hintStyle: t.AppTypography.body!.medium!.copyWith(
-                  color: NeutralColors.disabledTextColor,
-                ),
+                hintStyle: t.AppTypography.body(context).medium!.copyWith(
+                      color: NeutralColors.disabledTextColor,
+                    ),
                 counter: widget.counterWidget,
                 counterText: widget.counterText,
                 contentPadding: const EdgeInsets.only(

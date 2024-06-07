@@ -52,11 +52,11 @@ class AppTransactionPreview extends StatelessWidget {
         children: [
           Text(
             date,
-            style: t.AppTypography.label!.small!.copyWith(
-              color: NeutralColors.disabledTextColor,
-            ),
+            style: t.AppTypography.label(context).small!.copyWith(
+                  color: NeutralColors.disabledTextColor,
+                ),
           ),
-          AppGaps.m,
+          AppGapsM2.m,
           Row(
             children: [
               leading,
@@ -69,11 +69,11 @@ class AppTransactionPreview extends StatelessWidget {
                     if (title != null) ...[
                       Text(
                         title!,
-                        style: t.AppTypography.label!.small!.copyWith(
-                          color: titleColor,
-                        ),
+                        style: t.AppTypography.label(context).small!.copyWith(
+                              color: titleColor,
+                            ),
                       ),
-                      AppGaps.xs,
+                      AppGapsM2.xs,
                     ],
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -83,11 +83,13 @@ class AppTransactionPreview extends StatelessWidget {
                           children: [
                             Text(
                               amount,
-                              style: t.AppTypography.label!.small!.copyWith(
-                                color: amountColor,
-                              ),
+                              style: t.AppTypography.label(context)
+                                  .small!
+                                  .copyWith(
+                                    color: amountColor,
+                                  ),
                             ),
-                            AppGaps.s,
+                            AppGapsM2.s,
                             Container(
                               height: 20,
                               width: 20,
@@ -107,14 +109,15 @@ class AppTransactionPreview extends StatelessWidget {
                         ),
                       ],
                     ),
-                    AppGaps.xs,
+                    AppGapsM2.xs,
                     Text(
                       time,
-                      style: t.AppTypography.body!.small!
+                      style: t.AppTypography.body(context)
+                          .small!
                           .copyWith(color: NeutralColors.disabledTextColor),
                     ),
                     if (errorMessage != null) ...[
-                      AppGaps.xs,
+                      AppGapsM2.xs,
                       AppInline.error(errorMessage!),
                     ],
                   ],
@@ -123,7 +126,7 @@ class AppTransactionPreview extends StatelessWidget {
             ],
           ),
           if (hasGif) ...[
-            AppGaps.xs,
+            AppGapsM2.xs,
             GestureDetector(
               onTap: onGifTap,
               child: Container(
@@ -138,11 +141,11 @@ class AppTransactionPreview extends StatelessWidget {
                     Expanded(
                       child: Text(
                         gifMessage!,
-                        style: t.AppTypography.body!.medium,
+                        style: t.AppTypography.body(context).medium,
                         overflow: TextOverflow.ellipsis,
                       ),
                     ),
-                    AppGaps.xs,
+                    AppGapsM2.xs,
                     Container(
                       padding: const EdgeInsets.all(4),
                       decoration: BoxDecoration(
@@ -162,8 +165,10 @@ class AppTransactionPreview extends StatelessWidget {
                           Gap(2.6),
                           Text(
                             "GIF",
-                            style: t.AppTypography.body!.bTiny!.copyWith(
-                                color: NeutralColors.disabledTextColor),
+                            style: t.AppTypography.body(context)
+                                .bTiny!
+                                .copyWith(
+                                    color: NeutralColors.disabledTextColor),
                           ),
                         ],
                       ),
@@ -173,7 +178,7 @@ class AppTransactionPreview extends StatelessWidget {
               ),
             ),
           ],
-          AppGaps.m,
+          AppGapsM2.m,
           const Divider(
             thickness: 1,
             color: Color(0xffE0E0E0),

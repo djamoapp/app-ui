@@ -9,7 +9,7 @@ import 'package:gap/gap.dart';
 ///
 /// if you use titleBuilder instead of title parameter,
 /// the default typo of title is :
-/// AppTypography.label!.bSmall!.copyWith(
+/// AppTypography.label(context).bSmall!.copyWith(
 ///    fontSize: 14,
 ///    color: NeutralColors.disabledBackGroundColor,
 /// )
@@ -79,18 +79,22 @@ class AppVaultLevel extends StatelessWidget {
                           else
                             Text(
                               title,
-                              style: AppTypography.label!.bSmall!.copyWith(
-                                fontSize: 14,
-                                color: titleColor ??
-                                    NeutralColors.disabledBackGroundColor,
-                              ),
+                              style: AppTypography.label(context)
+                                  .bSmall!
+                                  .copyWith(
+                                    fontSize: 14,
+                                    color: titleColor ??
+                                        NeutralColors.disabledBackGroundColor,
+                                  ),
                             ),
-                          AppGaps.xs,
+                          AppGapsM2.xs,
                           Text(
                             amount,
-                            style: AppTypography.label!.bMedium100!.copyWith(
-                              fontSize: 16,
-                            ),
+                            style: AppTypography.label(context)
+                                .bMedium100!
+                                .copyWith(
+                                  fontSize: 16,
+                                ),
                           ),
                         ],
                       ),
@@ -98,13 +102,13 @@ class AppVaultLevel extends StatelessWidget {
                     trailing ?? Container(),
                   ],
                 ),
-                AppGaps.s,
+                AppGapsM2.s,
                 AppProgressIndicator(
                   level: level,
                   progressColor: progressbarColor,
                   height: 4,
                 ),
-                AppGaps.xs,
+                AppGapsM2.xs,
                 if (subTitleBuilder != null) ...[
                   subTitleBuilder!.call(context),
                 ] else ...[
@@ -113,10 +117,10 @@ class AppVaultLevel extends StatelessWidget {
                     children: [
                       Text(
                         subTitle,
-                        style: AppTypography.label!.bSmall!.copyWith(
-                          fontSize: 10.5,
-                          color: NeutralColors.bordersHoverColor,
-                        ),
+                        style: AppTypography.label(context).bSmall!.copyWith(
+                              fontSize: 10.5,
+                              color: NeutralColors.bordersHoverColor,
+                            ),
                       ),
                     ],
                   )

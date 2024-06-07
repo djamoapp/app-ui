@@ -38,7 +38,9 @@ class AppBasicBox extends StatelessWidget {
           Expanded(
             child: Text(
               text,
-              style: t.AppTypography.body!.small!.copyWith(color: textColor),
+              style: t.AppTypography.body(context)
+                  .small!
+                  .copyWith(color: textColor),
             ),
           )
         ],

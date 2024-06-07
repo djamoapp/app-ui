@@ -192,10 +192,12 @@ extension KeyExtension on Keyboard {
         Icons.backspace,
       );
     } else {
-      return Text(
-        intValue.toString(),
-        style: AppTypography.label!.large,
-      );
+      return Builder(builder: (context) {
+        return Text(
+          intValue.toString(),
+          style: AppTypography.label(context).large,
+        );
+      });
     }
   }
 }

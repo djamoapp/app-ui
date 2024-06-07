@@ -98,7 +98,7 @@ class _AppStepperState extends State<AppStepper> {
             }
           }),
         ),
-        AppGaps.l,
+        AppGapsM2.l,
         Expanded(
           child: PageView(
             controller: _pageController,
@@ -107,7 +107,7 @@ class _AppStepperState extends State<AppStepper> {
                 widget.steps.length, (index) => widget.steps[index].content),
           ),
         ),
-        AppGaps.l,
+        AppGapsM2.l,
         if (widget.controlsBuilder != null)
           widget.controlsBuilder!.call(
             context,
@@ -150,7 +150,7 @@ class _AppStepperState extends State<AppStepper> {
                   },
                 ),
               ),
-              AppGaps.m,
+              AppGapsM2.m,
               Expanded(
                 child: _currentStep == widget.steps.length - 1
                     ? StandardButtons.large(

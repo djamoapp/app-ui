@@ -97,9 +97,9 @@ class AppAmountTextField extends StatelessWidget {
           enabled: enabled,
           hintText: placeHolderText,
           hintStyle: placeHolderStyle ??
-              AppTypography.bigger.large!.copyWith(
-                color: NeutralColors.bordersHoverColor,
-              ),
+              AppTypography.bigger(context).large!.copyWith(
+                    color: NeutralColors.bordersHoverColor,
+                  ),
           border: InputBorder.none,
           suffixIcon: hideCurrency
               ? SizedBox.shrink()
@@ -108,9 +108,9 @@ class AppAmountTextField extends StatelessWidget {
                   children: [
                     Text(
                       currency ?? kDeviseSymbol,
-                      style: AppTypography.headLine!.medium!.copyWith(
-                        color: NeutralColors.bordersHoverColor,
-                      ),
+                      style: AppTypography.headLine(context).medium!.copyWith(
+                            color: NeutralColors.bordersHoverColor,
+                          ),
                     ),
                   ],
                 ),
@@ -118,9 +118,9 @@ class AppAmountTextField extends StatelessWidget {
         textAlign: textAlign,
         cursorColor: cursorColor ?? InterfaceColors.action.defaultColor,
         style: textStyle ??
-            AppTypography.bigger.large!.copyWith(
-              color: InterfaceColors.action.defaultColor,
-            ),
+            AppTypography.bigger(context).large!.copyWith(
+                  color: InterfaceColors.action.defaultColor,
+                ),
       ),
     );
   }

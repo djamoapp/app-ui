@@ -57,55 +57,55 @@ class LaboView extends StatelessWidget {
               child: Row(
                 children: [
                   StandardButtons.small(),
-                  AppGaps.s,
+                  AppGapsM2.s,
                   StandardButtons.medium(),
-                  AppGaps.s,
+                  AppGapsM2.s,
                   StandardButtons.large(),
-                  AppGaps.s,
+                  AppGapsM2.s,
                   StandardButtons.small(
                     style: StandardButtonStyle.filledLight,
                   ),
-                  AppGaps.s,
+                  AppGapsM2.s,
                   StandardButtons.medium(
                     style: StandardButtonStyle.filledLight,
                   ),
-                  AppGaps.s,
+                  AppGapsM2.s,
                   StandardButtons.large(
                     style: StandardButtonStyle.filledLight,
                   ),
-                  AppGaps.s,
+                  AppGapsM2.s,
                   StandardButtons.small(
                     style: StandardButtonStyle.outlined,
                   ),
-                  AppGaps.s,
+                  AppGapsM2.s,
                   StandardButtons.medium(
                     style: StandardButtonStyle.outlined,
                   ),
-                  AppGaps.s,
+                  AppGapsM2.s,
                   StandardButtons.large(
                     style: StandardButtonStyle.outlined,
                   ),
-                  AppGaps.s,
+                  AppGapsM2.s,
                   StandardButtons.small(
                     style: StandardButtonStyle.outlinedLight,
                   ),
-                  AppGaps.s,
+                  AppGapsM2.s,
                   StandardButtons.medium(
                     style: StandardButtonStyle.outlinedLight,
                   ),
-                  AppGaps.s,
+                  AppGapsM2.s,
                   StandardButtons.large(
                     style: StandardButtonStyle.outlinedLight,
                   ),
-                  AppGaps.s,
+                  AppGapsM2.s,
                   StandardButtons.small(
                     style: StandardButtonStyle.text,
                   ),
-                  AppGaps.s,
+                  AppGapsM2.s,
                   StandardButtons.medium(
                     style: StandardButtonStyle.text,
                   ),
-                  AppGaps.s,
+                  AppGapsM2.s,
                   StandardButtons.large(
                     style: StandardButtonStyle.text,
                   ),

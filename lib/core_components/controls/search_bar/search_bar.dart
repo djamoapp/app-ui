@@ -56,7 +56,7 @@ class _AppSearchBarState extends State<AppSearchBar> {
                 }
               },
               controller: widget.controller,
-              style: t.AppTypography.label!.large,
+              style: t.AppTypography.label(context).large,
               cursorColor: InterfaceColors.action.defaultColor,
               cursorHeight: 16,
               cursorWidth: 1,

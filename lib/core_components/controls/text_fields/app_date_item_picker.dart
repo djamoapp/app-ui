@@ -54,7 +54,7 @@ class _AppDateItemPickerState<T> extends State<AppDateItemPicker<T>> {
   void _focusListener() {
     if (_focusNode.hasFocus) {
       _overlayEntry = _createOverlayEntry();
-      Overlay.of(context)!.insert(_overlayEntry);
+      Overlay.of(context).insert(_overlayEntry);
     } else {
       _overlayEntry.remove();
     }
@@ -140,7 +140,7 @@ class _AppDateItemPickerState<T> extends State<AppDateItemPicker<T>> {
                                   )
                                 : Text(
                                     widget.selection[index].toString(),
-                                    style: AppTypography.body!.medium,
+                                    style: AppTypography.body(context).medium,
                                   ),
                           ),
                   ),

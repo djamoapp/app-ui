@@ -66,15 +66,15 @@ class _AppFilterTagState<T> extends State<AppFilterTag<T>> {
           //borderRadius: BorderRadius.circular(16),
           hint: Text(
             widget.label,
-            style: AppTypography.body!.bSmall!.copyWith(
-              color: InterfaceColors.action.defaultColor,
-              fontSize: 14,
-            ),
+            style: AppTypography.body(context).bSmall!.copyWith(
+                  color: InterfaceColors.action.defaultColor,
+                  fontSize: 14,
+                ),
           ),
-          style: AppTypography.body!.bSmall!.copyWith(
-            color: InterfaceColors.action.defaultColor,
-            fontSize: 14,
-          ),
+          style: AppTypography.body(context).bSmall!.copyWith(
+                color: InterfaceColors.action.defaultColor,
+                fontSize: 14,
+              ),
           elevation: 2,
           iconDisabledColor: InterfaceColors.action.defaultColor,
           iconEnabledColor: InterfaceColors.action.defaultColor,

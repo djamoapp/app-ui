@@ -99,7 +99,8 @@ class SecondaryCTA extends StatelessWidget {
             : childBuilder?.call() ??
                 Text(
                   label,
-                  style: (labelStyle ?? t.AppTypography.title!.small)!.copyWith(
+                  style: (labelStyle ?? t.AppTypography.title(context).small)!
+                      .copyWith(
                     color: enabled && !isLoading
                         ? enabledLabelColor ??
                             InterfaceColors.action.defaultColor

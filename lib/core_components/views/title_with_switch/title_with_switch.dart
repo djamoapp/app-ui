@@ -53,25 +53,25 @@ class AppTitleWithSwitch extends StatelessWidget {
               Text(
                 title,
                 style: titleStyle ??
-                    AppTypography.label!.bMedium100!.copyWith(
-                      fontSize: 16,
-                    ),
+                    AppTypography.label(context).bMedium100!.copyWith(
+                          fontSize: 16,
+                        ),
               ),
               if (subTitle != null) ...[
                 const Gap(2),
                 Text(
                   subTitle!,
                   style: subTitleStyle ??
-                      AppTypography.body!.bSmall!.copyWith(
-                        fontSize: 12.5,
-                        color: NeutralColors.disabledBackGroundColor,
-                      ),
+                      AppTypography.body(context).bSmall!.copyWith(
+                            fontSize: 12.5,
+                            color: NeutralColors.disabledBackGroundColor,
+                          ),
                 ),
               ]
             ],
           ),
         ),
-        AppGaps.m,
+        AppGapsM2.m,
         AppSwitcher(
           onChanged: onChanged,
           value: selected,

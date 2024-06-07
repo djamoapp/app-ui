@@ -53,7 +53,7 @@ class AppBasicTag extends StatelessWidget {
       },
       child: AppTag(
         text: this.label,
-        textStyle: labelStyle ?? AppTypography.body?.bSmall,
+        textStyle: labelStyle ?? AppTypography.body(context).bSmall,
         padding: this.padding ??
             const EdgeInsets.only(
               top: AppSpacings.s,

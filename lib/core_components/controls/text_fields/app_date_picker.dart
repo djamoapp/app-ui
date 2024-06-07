@@ -83,7 +83,7 @@ class _AppDatePickerState extends State<AppDatePicker> {
             onChanged: _onDayChanged,
           ),
         ),
-        AppGaps.s,
+        AppGapsM2.s,
         Expanded(
           child: AppDateItemPicker<int>(
             controller: _monthController,
@@ -92,12 +92,12 @@ class _AppDatePickerState extends State<AppDatePicker> {
             selection: List.generate(12, (index) => index + 1),
             selectionItemReplacement: (item, index) => Text(
               _months[index],
-              style: AppTypography.body!.medium,
+              style: AppTypography.body(context).medium,
             ),
             onChanged: _onMonthChanged,
           ),
         ),
-        AppGaps.s,
+        AppGapsM2.s,
         Expanded(
           child: AppDateItemPicker<int>(
             controller: _yearController,

@@ -23,10 +23,10 @@ class PopoverView extends StatelessWidget {
                 fontWeight: FontWeight.bold,
                 fontSize: 30),
           ),
-          AppGaps.m,
+          AppGapsM2.m,
           Text("with Image"),
           Divider(),
-          AppGaps.m,
+          AppGapsM2.m,
           PrimaryCTA(
             label: "Show No Action Popover",
             onPressed: () {

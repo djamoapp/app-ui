@@ -57,20 +57,20 @@ void showAppPopUp(
                 color: InterfaceColors.action.defaultColor,
                 size: 32.37,
               ),
-              if (title != null) AppGaps.m,
+              if (title != null) AppGapsM2.m,
             ],
             if (title != null)
               Text(
                 title,
-                style: AppTypography.title!.bMedium200,
+                style: AppTypography.title(context).bMedium200,
               ),
             const Gap(12),
             Text(
               body,
               textAlign: TextAlign.center,
-              style: AppTypography.body!.bMedium100,
+              style: AppTypography.body(context).bMedium100,
             ),
-            AppGaps.l,
+            AppGapsM2.l,
             Row(
               children: [
                 Expanded(
@@ -85,7 +85,7 @@ void showAppPopUp(
                     },
                   ),
                 ),
-                AppGaps.m,
+                AppGapsM2.m,
                 Expanded(
                   child: StandardButtons.large(
                     label: "Oui",

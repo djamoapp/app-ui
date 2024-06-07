@@ -107,7 +107,7 @@ class AppPhoneNumberTextField extends StatelessWidget {
                 children: [
                   Text(
                     countryCode,
-                    style: t.AppTypography.body!.medium,
+                    style: t.AppTypography.body(context).medium,
                   ),
                   const Gap(2),
                   countryflag,
@@ -122,7 +122,7 @@ class AppPhoneNumberTextField extends StatelessWidget {
             ),
           ),
         ),
-        AppGaps.xs,
+        AppGapsM2.xs,
         Expanded(
           child: AppTextField(
             onTap: onTap,

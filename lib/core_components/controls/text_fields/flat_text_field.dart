@@ -142,7 +142,7 @@ class _AppFlatTextFieldState extends State<AppFlatTextField> {
           if (widget.label != null) ...[
             Row(
               children: [
-                AppGaps.xs,
+                AppGapsM2.xs,
                 Text(
                   widget.label!,
                   style: widget.labelStyle != null
@@ -151,15 +151,15 @@ class _AppFlatTextFieldState extends State<AppFlatTextField> {
                               ? null
                               : NeutralColors.disabledBackGroundColor,
                         )
-                      : AppTypography.label!.bSmall!.copyWith(
-                          color: widget.enabled
-                              ? null
-                              : NeutralColors.disabledBackGroundColor,
-                        ),
+                      : AppTypography.label(context).bSmall!.copyWith(
+                            color: widget.enabled
+                                ? null
+                                : NeutralColors.disabledBackGroundColor,
+                          ),
                 ),
               ],
             ),
-            AppGaps.s,
+            AppGapsM2.s,
           ],
           Stack(
             children: [
@@ -173,9 +173,9 @@ class _AppFlatTextFieldState extends State<AppFlatTextField> {
                 maxLines: widget.maxLines,
                 maxLength: widget.maxLength,
                 inputFormatters: widget.inputFormatters,
-                style: AppTypography.title!.bMedium200!.copyWith(
-                  color: NeutralColors.neutral900,
-                ),
+                style: AppTypography.title(context).bMedium200!.copyWith(
+                      color: NeutralColors.neutral900,
+                    ),
                 validator: (value) {
                   Future.delayed(
                     Duration(seconds: 0),
@@ -204,7 +204,8 @@ class _AppFlatTextFieldState extends State<AppFlatTextField> {
                   counterStyle: widget.counterStyle,
                   counterText: widget.counterText,
                   helperText: _errorText != null ? "" : widget.helperText,
-                  helperStyle: widget.helperStyle ?? AppTypography.body?.small,
+                  helperStyle:
+                      widget.helperStyle ?? AppTypography.body(context).small,
                   errorText: _errorText != null ? "" : null,
                   suffixText: widget.suffixText,
                   prefixText: widget.prefixText,
@@ -219,7 +220,7 @@ class _AppFlatTextFieldState extends State<AppFlatTextField> {
                   fillColor:
                       widget.enabled ? null : NeutralColors.formBordersColor,
                   hintText: widget.placeHolderText,
-                  hintStyle: AppTypography.title!.bMedium200!.copyWith(
+                  hintStyle: AppTypography.title(context).bMedium200!.copyWith(
                       color: widget.enabled
                           ? NeutralColors.neutral200
                           : NeutralColors.bordersHoverColor),

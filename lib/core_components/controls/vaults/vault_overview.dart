@@ -56,17 +56,17 @@ class AppVaultOverview extends StatelessWidget {
               children: [
                 Text(
                   label,
-                  style: AppTypography.label!.bSmall!.copyWith(
-                    fontSize: 14,
-                    color: NeutralColors.disabledBackGroundColor,
-                  ),
+                  style: AppTypography.label(context).bSmall!.copyWith(
+                        fontSize: 14,
+                        color: NeutralColors.disabledBackGroundColor,
+                      ),
                 ),
-                AppGaps.xs,
+                AppGapsM2.xs,
                 Text(
                   balance,
-                  style: AppTypography.label!.bMedium200!.copyWith(
-                    fontSize: 16,
-                  ),
+                  style: AppTypography.label(context).bMedium200!.copyWith(
+                        fontSize: 16,
+                      ),
                 ),
               ],
             ),

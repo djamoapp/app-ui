@@ -26,7 +26,7 @@ class IconsView extends GetView<IconsController> {
                 fontWeight: FontWeight.bold,
                 fontSize: 30),
           ),
-          AppGaps.m,
+          AppGapsM2.m,
           GridView.count(
             controller: controller.scrollController,
             crossAxisCount: 3,
@@ -41,7 +41,7 @@ class IconsView extends GetView<IconsController> {
                 fontWeight: FontWeight.bold,
                 fontSize: 30),
           ),
-          AppGaps.m,
+          AppGapsM2.m,
           Wrap(
             alignment: WrapAlignment.center,
             runSpacing: 30,

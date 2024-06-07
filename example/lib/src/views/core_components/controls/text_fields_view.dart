@@ -25,52 +25,52 @@ class TextFieldsView extends StatelessWidget {
                 fontWeight: FontWeight.bold,
                 fontSize: 30),
           ),
-          AppGaps.m,
+          AppGapsM2.m,
           const AppFlatTextField(
             placeHolderText: "PlaceHolderText",
             label: "Label Text",
           ),
-          AppGaps.m,
+          AppGapsM2.m,
           const Text("Normals"),
           const Divider(),
-          AppGaps.m,
+          AppGapsM2.m,
           const AppTextField(),
-          AppGaps.m,
+          AppGapsM2.m,
           const AppTextField(
             errorText: kDefaultErrorText,
           ),
-          AppGaps.m,
+          AppGapsM2.m,
           const AppTextField(
             enabled: false,
           ),
-          AppGaps.xl,
+          AppGapsM2.xl,
           const Text("With Label"),
           const Divider(),
-          AppGaps.m,
+          AppGapsM2.m,
           const AppTextField(
             label: "Label",
           ),
-          AppGaps.m,
+          AppGapsM2.m,
           const AppTextField(
             label: "Label",
             errorText: kDefaultErrorText,
           ),
-          AppGaps.m,
+          AppGapsM2.m,
           const AppTextField(
             label: "Label",
             enabled: false,
           ),
-          AppGaps.xl,
+          AppGapsM2.xl,
           const Text("Normals with Icon"),
           const Divider(),
-          AppGaps.m,
+          AppGapsM2.m,
           AppTextField(
             suffixIcon: Icon(
               AppIcons.profile,
               color: NeutralColors.neutral[600],
             ),
           ),
-          AppGaps.m,
+          AppGapsM2.m,
           AppTextField(
             suffixIcon: Icon(
               AppIcons.profile,
@@ -78,7 +78,7 @@ class TextFieldsView extends StatelessWidget {
             ),
             errorText: kDefaultErrorText,
           ),
-          AppGaps.m,
+          AppGapsM2.m,
           AppTextField(
             suffixIcon: Icon(
               AppIcons.profile,
@@ -86,10 +86,10 @@ class TextFieldsView extends StatelessWidget {
             ),
             enabled: false,
           ),
-          AppGaps.xl,
+          AppGapsM2.xl,
           const Text("With Label & Icon"),
           const Divider(),
-          AppGaps.m,
+          AppGapsM2.m,
           AppTextField(
             label: "Label",
             suffixIcon: Icon(
@@ -97,7 +97,7 @@ class TextFieldsView extends StatelessWidget {
               color: NeutralColors.neutral[600],
             ),
           ),
-          AppGaps.m,
+          AppGapsM2.m,
           AppTextField(
             label: "Label",
             suffixIcon: Icon(
@@ -106,7 +106,7 @@ class TextFieldsView extends StatelessWidget {
             ),
             errorText: kDefaultErrorText,
           ),
-          AppGaps.m,
+          AppGapsM2.m,
           AppTextField(
             label: "Label",
             suffixIcon: Icon(

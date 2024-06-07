@@ -40,7 +40,8 @@ class AppSectionLabel extends StatelessWidget {
       children: [
         Text(
           label,
-          style: (labelStyle ?? AppTypography.title!.bMedium100)!.copyWith(
+          style:
+              (labelStyle ?? AppTypography.title(context).bMedium100)!.copyWith(
             color: NeutralColors.disabledBackGroundColor,
             fontSize: 16,
           ),
@@ -48,7 +49,7 @@ class AppSectionLabel extends StatelessWidget {
         if (onButtonTap != null)
           StandardButton(
             style: StandardButtonStyle.text,
-            textStyle: buttonLabelStyle ?? AppTypography.label!.bSmall!,
+            textStyle: buttonLabelStyle ?? AppTypography.label(context).bSmall!,
             label: buttonLabel,
             onPressed: onButtonTap,
             borderRadius: kDefaultBorderRadius,

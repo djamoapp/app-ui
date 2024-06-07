@@ -37,7 +37,8 @@ class AppBasicInline extends StatelessWidget {
         Flexible(
           child: Text(
             text,
-            style: t.AppTypography.body!.small!.copyWith(color: textColor),
+            style:
+                t.AppTypography.body(context).small!.copyWith(color: textColor),
           ),
         )
       ],

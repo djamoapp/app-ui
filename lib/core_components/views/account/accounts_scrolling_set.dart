@@ -32,7 +32,7 @@ class AppAccountsScrollingSet<ID> extends StatelessWidget {
           );
         },
         itemCount: accounts.length,
-        separatorBuilder: (BuildContext context, int index) => AppGaps.l,
+        separatorBuilder: (BuildContext context, int index) => AppGapsM2.l,
       ),
     );
   }

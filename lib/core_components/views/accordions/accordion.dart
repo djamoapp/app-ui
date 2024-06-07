@@ -35,7 +35,8 @@ class AppAccordion extends StatelessWidget {
           initiallyExpanded: initiallyExpanded,
           title: Text(
             title,
-            style: t.AppTypography.title!.bMedium100!
+            style: t.AppTypography.title(context)
+                .bMedium100!
                 .copyWith(color: Colors.black),
           ),
           iconColor: Colors.black,
@@ -44,7 +45,7 @@ class AppAccordion extends StatelessWidget {
           children: [
             for (int i = 0; i < items.length; i++) ...[
               items[i],
-              if (items[i] != items.last) AppGaps.s,
+              if (items[i] != items.last) AppGapsM2.s,
             ]
           ],
         ),

@@ -16,7 +16,7 @@ class ControlsView extends GetView<ControlsController> {
       body: ListView.separated(
         padding: const EdgeInsets.all(20),
         itemCount: controller.items.length,
-        separatorBuilder: (context, index) => AppGaps.m,
+        separatorBuilder: (context, index) => AppGapsM2.m,
         itemBuilder: (context, index) => SystemDesignItem(
           label: controller.items[index]["label"],
           onTap: () => controller.onItemTap(index),

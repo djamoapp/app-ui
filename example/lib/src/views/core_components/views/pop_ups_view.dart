@@ -18,7 +18,7 @@ class PopUsView extends StatelessWidget {
         children: [
           Text("Pop-Up With Icon"),
           Divider(),
-          AppGaps.m,
+          AppGapsM2.m,
           PrimaryCTA(
             label: "Show Pop-up with icon",
             onPressed: () {
@@ -28,10 +28,10 @@ class PopUsView extends StatelessWidget {
               );
             },
           ),
-          AppGaps.xl,
+          AppGapsM2.xl,
           Text("Pop-Up With Title"),
           Divider(),
-          AppGaps.m,
+          AppGapsM2.m,
           PrimaryCTA(
             label: "Show Pop-up with title",
             onPressed: () {
@@ -41,10 +41,10 @@ class PopUsView extends StatelessWidget {
               );
             },
           ),
-          AppGaps.xl,
+          AppGapsM2.xl,
           Text("Pop-Up Without head"),
           Divider(),
-          AppGaps.m,
+          AppGapsM2.m,
           PrimaryCTA(
             label: "Show simple Pop-up",
             onPressed: () {

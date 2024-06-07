@@ -62,9 +62,9 @@ class AppVaultTargetTracker extends StatelessWidget {
                 const Gap(5),
                 Text(
                   endDate,
-                  style: AppTypography.body!.bTiny!.copyWith(
-                    color: NeutralColors.disabledTextColor,
-                  ),
+                  style: AppTypography.body(context).bTiny!.copyWith(
+                        color: NeutralColors.disabledTextColor,
+                      ),
                 ),
               ],
             ),

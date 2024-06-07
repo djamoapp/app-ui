@@ -5,143 +5,170 @@ import 'package:flutter/cupertino.dart';
 class AppTypography {
   AppTypography._();
 
-  static final TypographyTextStyle? body = TypographyTextStyle(
-    large: const AppTextStyle(
-      fontSize: 18,
-      lineHeight: 22 / 18,
-      fontWeight: FontWeight.w300,
-    ),
-    bMedium200: const AppTextStyle(
-      fontSize: 16,
-      lineHeight: 20 / 16,
-      fontWeight: FontWeight.w400,
-    ),
-    bMedium100: const AppTextStyle(
-      fontSize: 16,
-      lineHeight: 20 / 16,
-      fontWeight: FontWeight.normal,
-    ),
-    medium: const AppTextStyle(
-      fontSize: 16,
-      lineHeight: 20 / 16,
-      fontWeight: FontWeight.w300,
-    ),
-    bSmall: const AppTextStyle(
-      fontSize: 14.5,
-      lineHeight: 18 / 14.5,
-      fontWeight: FontWeight.w500,
-    ),
-    small: const AppTextStyle(
-      fontSize: 14.5,
-      lineHeight: 18 / 14.5,
-      fontWeight: FontWeight.w300,
-    ),
-    bTiny: const AppTextStyle(
-      fontSize: 12.5,
-      lineHeight: 16 / 12.5,
-      fontWeight: FontWeight.w500,
-    ),
-    tiny: const AppTextStyle(
-      fontSize: 12.5,
-      lineHeight: 16 / 12.5,
-      fontWeight: FontWeight.w300,
-    ),
-  );
+  static TypographyTextStyle body(BuildContext context) => TypographyTextStyle(
+        large: AppTextStyle(
+          context,
+          fontSize: 18,
+          lineHeight: 22 / 18,
+          fontWeight: FontWeight.w300,
+        ),
+        bMedium200: AppTextStyle(
+          context,
+          fontSize: 16,
+          lineHeight: 20 / 16,
+          fontWeight: FontWeight.w400,
+        ),
+        bMedium100: AppTextStyle(
+          context,
+          fontSize: 16,
+          lineHeight: 20 / 16,
+          fontWeight: FontWeight.normal,
+        ),
+        medium: AppTextStyle(
+          context,
+          fontSize: 16,
+          lineHeight: 20 / 16,
+          fontWeight: FontWeight.w300,
+        ),
+        bSmall: AppTextStyle(
+          context,
+          fontSize: 14.5,
+          lineHeight: 18 / 14.5,
+          fontWeight: FontWeight.w500,
+        ),
+        small: AppTextStyle(
+          context,
+          fontSize: 14.5,
+          lineHeight: 18 / 14.5,
+          fontWeight: FontWeight.w300,
+        ),
+        bTiny: AppTextStyle(
+          context,
+          fontSize: 12.5,
+          lineHeight: 16 / 12.5,
+          fontWeight: FontWeight.w500,
+        ),
+        tiny: AppTextStyle(
+          context,
+          fontSize: 12.5,
+          lineHeight: 16 / 12.5,
+          fontWeight: FontWeight.w300,
+        ),
+      );
 
-  static final TypographyTextStyle? label = TypographyTextStyle(
-    large: const AppTextStyle(
-      fontSize: 20,
-      lineHeight: 24.5 / 20,
-      fontWeight: FontWeight.w400,
-    ),
-    bMedium200: const AppTextStyle(
-      fontSize: 18,
-      lineHeight: 22 / 18,
-      fontWeight: FontWeight.w700,
-    ),
-    bMedium100: const AppTextStyle(
-      fontSize: 18,
-      lineHeight: 22 / 18,
-      fontWeight: FontWeight.w500,
-    ),
-    medium: const AppTextStyle(
-      fontSize: 18,
-      lineHeight: 22 / 18,
-      fontWeight: FontWeight.w400,
-    ),
-    bSmall: const AppTextStyle(
-      fontSize: 16,
-      lineHeight: 20 / 16,
-      fontWeight: FontWeight.w500,
-    ),
-    small: const AppTextStyle(
-      fontSize: 16,
-      lineHeight: 20 / 16,
-      fontWeight: FontWeight.w400,
-    ),
-  );
+  static TypographyTextStyle label(BuildContext context) => TypographyTextStyle(
+        large: AppTextStyle(
+          context,
+          fontSize: 20,
+          lineHeight: 24.5 / 20,
+          fontWeight: FontWeight.w400,
+        ),
+        bMedium200: AppTextStyle(
+          context,
+          fontSize: 18,
+          lineHeight: 22 / 18,
+          fontWeight: FontWeight.w700,
+        ),
+        bMedium100: AppTextStyle(
+          context,
+          fontSize: 18,
+          lineHeight: 22 / 18,
+          fontWeight: FontWeight.w500,
+        ),
+        medium: AppTextStyle(
+          context,
+          fontSize: 18,
+          lineHeight: 22 / 18,
+          fontWeight: FontWeight.w400,
+        ),
+        bSmall: AppTextStyle(
+          context,
+          fontSize: 16,
+          lineHeight: 20 / 16,
+          fontWeight: FontWeight.w500,
+        ),
+        small: AppTextStyle(
+          context,
+          fontSize: 16,
+          lineHeight: 20 / 16,
+          fontWeight: FontWeight.w400,
+        ),
+      );
 
-  static final TypographyTextStyle? title = TypographyTextStyle(
-    large: const AppTextStyle(
-      fontSize: 22.5,
-      lineHeight: 29 / 22.5,
-      fontWeight: FontWeight.w500,
-    ),
-    bMedium200: const AppTextStyle(
-      fontSize: 20,
-      lineHeight: 26 / 20,
-      fontWeight: FontWeight.w700,
-    ),
-    bMedium100: const AppTextStyle(
-      fontSize: 20,
-      lineHeight: 26 / 20,
-      fontWeight: FontWeight.w500,
-    ),
-    medium: const AppTextStyle(
-      fontSize: 20,
-      lineHeight: 26 / 20,
-      fontWeight: FontWeight.w400,
-    ),
-    small: const AppTextStyle(
-      fontSize: 20,
-      lineHeight: 24.5 / 20,
-      fontWeight: FontWeight.w500,
-    ),
-  );
+  static TypographyTextStyle title(BuildContext context) => TypographyTextStyle(
+        large: AppTextStyle(
+          context,
+          fontSize: 22.5,
+          lineHeight: 29 / 22.5,
+          fontWeight: FontWeight.w500,
+        ),
+        bMedium200: AppTextStyle(
+          context,
+          fontSize: 20,
+          lineHeight: 26 / 20,
+          fontWeight: FontWeight.w700,
+        ),
+        bMedium100: AppTextStyle(
+          context,
+          fontSize: 20,
+          lineHeight: 26 / 20,
+          fontWeight: FontWeight.w500,
+        ),
+        medium: AppTextStyle(
+          context,
+          fontSize: 20,
+          lineHeight: 26 / 20,
+          fontWeight: FontWeight.w400,
+        ),
+        small: AppTextStyle(
+          context,
+          fontSize: 20,
+          lineHeight: 24.5 / 20,
+          fontWeight: FontWeight.w500,
+        ),
+      );
 
-  static final TypographyTextStyle? headLine = TypographyTextStyle(
-    large: const AppTextStyle(
-      fontSize: 29,
-      lineHeight: 37 / 29,
-      fontWeight: FontWeight.w500,
-    ),
-    bLarge: const AppTextStyle(
-      fontSize: 29,
-      lineHeight: 37 / 29,
-      fontWeight: FontWeight.w700,
-    ),
-    medium: const AppTextStyle(
-      fontSize: 26,
-      lineHeight: 34 / 26,
-      fontWeight: FontWeight.w700,
-    ),
-  );
+  static TypographyTextStyle headLine(BuildContext context) =>
+      TypographyTextStyle(
+        large: AppTextStyle(
+          context,
+          fontSize: 29,
+          lineHeight: 37 / 29,
+          fontWeight: FontWeight.w500,
+        ),
+        bLarge: AppTextStyle(
+          context,
+          fontSize: 29,
+          lineHeight: 37 / 29,
+          fontWeight: FontWeight.w700,
+        ),
+        medium: AppTextStyle(
+          context,
+          fontSize: 26,
+          lineHeight: 34 / 26,
+          fontWeight: FontWeight.w700,
+        ),
+      );
 
-  static final TypographyTextStyle bigger = TypographyTextStyle(
-    thin: const AppTextStyle(
-      fontSize: 48,
-      lineHeight: 56 / 48,
-      fontWeight: FontWeight.w300,
-    ),
-    large: const AppTextStyle(
-      fontSize: 48,
-      lineHeight: 56 / 48,
-      fontWeight: FontWeight.w500,
-    ),
-    bLarge: const AppTextStyle(
-      fontSize: 48,
-      lineHeight: 56 / 48,
-      fontWeight: FontWeight.w700,
-    ),
-  );
+  static TypographyTextStyle bigger(BuildContext context) =>
+      TypographyTextStyle(
+        thin: AppTextStyle(
+          context,
+          fontSize: 48,
+          lineHeight: 56 / 48,
+          fontWeight: FontWeight.w300,
+        ),
+        large: AppTextStyle(
+          context,
+          fontSize: 48,
+          lineHeight: 56 / 48,
+          fontWeight: FontWeight.w500,
+        ),
+        bLarge: AppTextStyle(
+          context,
+          fontSize: 48,
+          lineHeight: 56 / 48,
+          fontWeight: FontWeight.w700,
+        ),
+      );
 }

@@ -25,16 +25,16 @@ class SpacingView extends GetView<SpacingController> {
                   fontWeight: FontWeight.bold,
                   fontSize: 30),
             ),
-            AppGaps.m,
+            AppGapsM2.m,
             for (int i = 0; i < controller.spacings.length; i++) ...[
               Row(
                 children: [
                   _spacingWidget(controller.spacings[i]["size"]),
-                  AppGaps.m,
+                  AppGapsM2.m,
                   Text(controller.spacings[i]["name"]),
-                  AppGaps.m,
+                  AppGapsM2.m,
                   Text(controller.spacings[i]["code"]),
-                  AppGaps.m,
+                  AppGapsM2.m,
                   Text(controller.spacings[i]["size"]
                           .toString()
                           .split(".")
@@ -42,7 +42,7 @@ class SpacingView extends GetView<SpacingController> {
                       "px"),
                 ],
               ),
-              AppGaps.m,
+              AppGapsM2.m,
             ]
           ],
         ),

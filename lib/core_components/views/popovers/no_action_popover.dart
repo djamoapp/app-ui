@@ -47,10 +47,12 @@ void showAppNoActionPopover(
                   height: 120,
                   width: 120,
                 ),
-              AppGaps.s,
+              AppGapsM2.s,
               Text(
                 body,
-                style: AppTypography.body!.large!.copyWith(color: Colors.black),
+                style: AppTypography.body(context)
+                    .large!
+                    .copyWith(color: Colors.black),
                 textAlign: TextAlign.center,
               )
             ],
