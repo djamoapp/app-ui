@@ -129,7 +129,20 @@ flutter:
     - family: App Icons
       fonts:
         - asset: assets/fonts/app_icons/app-icons.ttf
-
     - family: OCRAStd
       fonts:
         - asset: assets/fonts/ocrastd/OCRAStd.otf
+    - family: GTWalsheimPro
+      fonts:
+        - asset: assets/fonts/gt_walsheim_pro/GTWalsheimPro-Bold.ttf
+          weight: 800
+        - asset: assets/fonts/gt_walsheim_pro/GTWalsheimPro-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/gt_walsheim_pro/GTWalsheimPro-Bold.ttf
+          weight: 600
+        - asset: assets/fonts/gt_walsheim_pro/GTWalsheimPro-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/gt_walsheim_pro/GTWalsheimPro-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/gt_walsheim_pro/GTWalsheimPro-Thin.ttf
+          weight: 300

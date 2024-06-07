@@ -1,4 +1,3 @@
-import 'package:app_ui/app_ui.dart' show FontFamily;
 import 'package:app_ui_m2/core/constants/constants.dart';
 import 'package:app_ui_m2/design_tokens/colors/neutral_colors.dart';
 import 'package:app_ui_m2/migration/migration.dart';
@@ -16,7 +15,7 @@ class AppTextStyle extends TextStyle {
           fontFamily: useAppUIMigrate(
             context,
             M2: fontFamily,
-            M3: FontFamily.gTWalsheimPro,
+            M3: "GTWalsheimPro",
           ),
           fontSize: fontSize,
           height: lineHeight,
