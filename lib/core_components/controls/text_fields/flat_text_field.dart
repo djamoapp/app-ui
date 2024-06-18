@@ -1,4 +1,4 @@
-import 'package:app_ui/core_components/views/container/app_container.dart';
+import 'package:app_ui_m2/core_components/views/container/app_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:gap/gap.dart';
@@ -133,27 +133,33 @@ class _AppFlatTextFieldState extends State<AppFlatTextField> {
             left: 16,
             right: 16,
           ),
-      color: widget.enabled ? widget.enabledBackgroundColor ?? Colors.white : widget.disabledBackgroundColor ?? NeutralColors.formBordersColor,
+      color: widget.enabled
+          ? widget.enabledBackgroundColor ?? Colors.white
+          : widget.disabledBackgroundColor ?? NeutralColors.formBordersColor,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           if (widget.label != null) ...[
             Row(
               children: [
-                AppGaps.xs,
+                AppGapsM2.xs,
                 Text(
                   widget.label!,
                   style: widget.labelStyle != null
                       ? widget.labelStyle?.copyWith(
-                          color: widget.enabled ? null : NeutralColors.disabledBackGroundColor,
+                          color: widget.enabled
+                              ? null
+                              : NeutralColors.disabledBackGroundColor,
                         )
-                      : AppTypography.label!.bSmall!.copyWith(
-                          color: widget.enabled ? null : NeutralColors.disabledBackGroundColor,
-                        ),
+                      : AppTypography.label(context).bSmall!.copyWith(
+                            color: widget.enabled
+                                ? null
+                                : NeutralColors.disabledBackGroundColor,
+                          ),
                 ),
               ],
             ),
-            AppGaps.s,
+            AppGapsM2.s,
           ],
           Stack(
             children: [
@@ -167,9 +173,9 @@ class _AppFlatTextFieldState extends State<AppFlatTextField> {
                 maxLines: widget.maxLines,
                 maxLength: widget.maxLength,
                 inputFormatters: widget.inputFormatters,
-                style: AppTypography.title!.bMedium200!.copyWith(
-                  color: NeutralColors.neutral900,
-                ),
+                style: AppTypography.title(context).bMedium200!.copyWith(
+                      color: NeutralColors.neutral900,
+                    ),
                 validator: (value) {
                   Future.delayed(
                     Duration(seconds: 0),
@@ -184,7 +190,8 @@ class _AppFlatTextFieldState extends State<AppFlatTextField> {
                 },
                 controller: widget.controller,
                 onChanged: widget.onChanged,
-                cursorColor: widget.cursorColor ?? InterfaceColors.action.defaultColor,
+                cursorColor:
+                    widget.cursorColor ?? InterfaceColors.action.defaultColor,
                 cursorHeight: widget.cursorHeight ?? 18,
                 cursorWidth: 1,
                 initialValue: widget.initialValue,
@@ -197,7 +204,8 @@ class _AppFlatTextFieldState extends State<AppFlatTextField> {
                   counterStyle: widget.counterStyle,
                   counterText: widget.counterText,
                   helperText: _errorText != null ? "" : widget.helperText,
-                  helperStyle: widget.helperStyle ?? AppTypography.body?.small,
+                  helperStyle:
+                      widget.helperStyle ?? AppTypography.body(context).small,
                   errorText: _errorText != null ? "" : null,
                   suffixText: widget.suffixText,
                   prefixText: widget.prefixText,
@@ -209,9 +217,13 @@ class _AppFlatTextFieldState extends State<AppFlatTextField> {
                   suffixIcon: widget.suffixIcon,
                   enabled: widget.enabled,
                   filled: !widget.enabled,
-                  fillColor: widget.enabled ? null : NeutralColors.formBordersColor,
+                  fillColor:
+                      widget.enabled ? null : NeutralColors.formBordersColor,
                   hintText: widget.placeHolderText,
-                  hintStyle: AppTypography.title!.bMedium200!.copyWith(color: widget.enabled ? NeutralColors.neutral200 : NeutralColors.bordersHoverColor),
+                  hintStyle: AppTypography.title(context).bMedium200!.copyWith(
+                      color: widget.enabled
+                          ? NeutralColors.neutral200
+                          : NeutralColors.bordersHoverColor),
                   contentPadding: const EdgeInsets.all(0),
                   border: const UnderlineInputBorder(
                     borderSide: BorderSide(

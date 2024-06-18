@@ -1,5 +1,5 @@
-import 'package:app_ui/core_components/controls/checkbox/checkbox.dart';
 import 'package:app_ui_example/src/controllers/core_components/controls/checkbox_controller.dart';
+import 'package:app_ui_m2/core_components/controls/checkbox/checkbox.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

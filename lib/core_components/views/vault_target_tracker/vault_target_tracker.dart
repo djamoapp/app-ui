@@ -1,9 +1,10 @@
-import 'package:app_ui/core_components/views/container/app_container.dart';
-import 'package:app_ui/core_components/views/progress_indicator/progress_indicator.dart';
+import 'package:app_ui_m2/core_components/views/container/app_container.dart';
+import 'package:app_ui_m2/core_components/views/progress_indicator/progress_indicator.dart';
+import 'package:app_ui_m2/core_components/views/title_label/title_with_label.dart';
+import 'package:app_ui_m2/design_tokens/iconography/app_icons.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:app_ui/core_components/views/title_label/title_with_label.dart';
-import 'package:app_ui/design_tokens/iconography/app_icons.dart';
+
 import '../../../design_tokens/colors/neutral_colors.dart';
 import '../../../design_tokens/typography/typography.dart';
 
@@ -61,9 +62,9 @@ class AppVaultTargetTracker extends StatelessWidget {
                 const Gap(5),
                 Text(
                   endDate,
-                  style: AppTypography.body!.bTiny!.copyWith(
-                    color: NeutralColors.disabledTextColor,
-                  ),
+                  style: AppTypography.body(context).bTiny!.copyWith(
+                        color: NeutralColors.disabledTextColor,
+                      ),
                 ),
               ],
             ),

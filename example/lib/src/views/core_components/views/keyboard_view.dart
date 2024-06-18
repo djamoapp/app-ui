@@ -1,4 +1,4 @@
-import 'package:app_ui/core_components/views/pin_code_keyboard/app_pin_code_keyboard.dart';
+import 'package:app_ui_m2/core_components/views/pin_code_keyboard/app_pin_code_keyboard.dart';
 import 'package:flutter/material.dart';
 
 class KeyBoardView extends StatelessWidget {

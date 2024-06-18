@@ -1,11 +1,11 @@
-import 'package:app_ui/core_components/views/container/app_container.dart';
+import 'package:app_ui_m2/core_components/views/container/app_container.dart';
+import 'package:app_ui_m2/design_tokens/colors/interface_colors.dart';
+import 'package:app_ui_m2/design_tokens/colors/neutral_colors.dart';
+import 'package:app_ui_m2/design_tokens/iconography/app_icons.dart';
+import 'package:app_ui_m2/design_tokens/layout_and_spacing/app_gaps.dart';
+import 'package:app_ui_m2/design_tokens/typography/typography.dart' as t;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:app_ui/design_tokens/colors/interface_colors.dart';
-import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
-import 'package:app_ui/design_tokens/iconography/app_icons.dart';
-import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
-import 'package:app_ui/design_tokens/typography/typography.dart' as t;
 
 class AppAccordionItem<T> extends StatelessWidget {
   const AppAccordionItem(
@@ -41,15 +41,16 @@ class AppAccordionItem<T> extends StatelessWidget {
         child: Row(
           children: [
             value == groupValue ? _checkedWidget : _unCheckedWidget,
-            AppGaps.m,
+            AppGapsM2.m,
             Expanded(
               child: Text(
                 label,
-                style: t.AppTypography.title!.medium!
+                style: t.AppTypography.title(context)
+                    .medium!
                     .copyWith(color: Colors.black),
               ),
             ),
-            AppGaps.m,
+            AppGapsM2.m,
             if (value != groupValue)
               Icon(
                 CupertinoIcons.chevron_forward,

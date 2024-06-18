@@ -1,6 +1,6 @@
+import 'package:app_ui_m2/design_tokens/colors/brand_colors.dart';
+import 'package:app_ui_m2/design_tokens/colors/interface_colors.dart';
 import 'package:get/get.dart';
-import 'package:app_ui/design_tokens/colors/brand_colors.dart';
-import 'package:app_ui/design_tokens/colors/interface_colors.dart';
 
 class ColorsController extends GetxController {
   final List<Map<String, dynamic>> brandColors = [

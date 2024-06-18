@@ -1,7 +1,8 @@
-import 'package:app_ui/core_components/controls/text_fields/text_field.dart';
-import 'package:app_ui/design_tokens/typography/typography.dart';
+import 'package:app_ui_m2/core_components/controls/text_fields/text_field.dart';
+import 'package:app_ui_m2/design_tokens/typography/typography.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
 import '../../../design_tokens/colors/neutral_colors.dart';
 
 class AppDateItemPicker<T> extends StatefulWidget {
@@ -53,7 +54,7 @@ class _AppDateItemPickerState<T> extends State<AppDateItemPicker<T>> {
   void _focusListener() {
     if (_focusNode.hasFocus) {
       _overlayEntry = _createOverlayEntry();
-      Overlay.of(context)!.insert(_overlayEntry);
+      Overlay.of(context).insert(_overlayEntry);
     } else {
       _overlayEntry.remove();
     }
@@ -139,7 +140,7 @@ class _AppDateItemPickerState<T> extends State<AppDateItemPicker<T>> {
                                   )
                                 : Text(
                                     widget.selection[index].toString(),
-                                    style: AppTypography.body!.medium,
+                                    style: AppTypography.body(context).medium,
                                   ),
                           ),
                   ),

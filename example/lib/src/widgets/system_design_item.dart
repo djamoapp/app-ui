@@ -1,5 +1,5 @@
-import 'package:app_ui/design_tokens/colors/interface_colors.dart';
-import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
+import 'package:app_ui_m2/design_tokens/colors/interface_colors.dart';
+import 'package:app_ui_m2/design_tokens/layout_and_spacing/app_gaps.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -28,7 +28,7 @@ class SystemDesignItem extends StatelessWidget {
               label,
               style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
             )),
-            AppGaps.m,
+            AppGapsM2.m,
             Container(
               padding: const EdgeInsets.all(5),
               decoration: BoxDecoration(

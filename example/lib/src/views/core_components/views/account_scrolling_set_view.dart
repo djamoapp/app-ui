@@ -1,8 +1,8 @@
-import 'package:app_ui/core_components/views/account/account_widget.dart';
-import 'package:app_ui/core_components/views/account/accounts_scrolling_set.dart';
-import 'package:app_ui/core_components/views/account/djamo_3d_icons.dart';
-import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
 import 'package:app_ui_example/src/controllers/core_components/views/account_scrolling_set_controller.dart';
+import 'package:app_ui_m2/core_components/views/account/account_widget.dart';
+import 'package:app_ui_m2/core_components/views/account/accounts_scrolling_set.dart';
+import 'package:app_ui_m2/core_components/views/account/djamo_3d_icons.dart';
+import 'package:app_ui_m2/design_tokens/layout_and_spacing/app_gaps.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -21,7 +21,7 @@ class AccountScrollingSetView extends GetView<AccountScrollingSetController> {
         children: [
           Text("Core Tokens"),
           Divider(),
-          AppGaps.m,
+          AppGapsM2.m,
           Obx(() {
             return AppAccountsScrollingSet<int>(
               onTap: controller.onTap,
@@ -50,10 +50,10 @@ class AccountScrollingSetView extends GetView<AccountScrollingSetController> {
               ],
             );
           }),
-          AppGaps.xl,
+          AppGapsM2.xl,
           const Text("Djamo 3D Icons"),
           const Divider(),
-          AppGaps.m,
+          AppGapsM2.m,
           GridView.count(
             controller: controller.scrollController,
             crossAxisCount: 3,

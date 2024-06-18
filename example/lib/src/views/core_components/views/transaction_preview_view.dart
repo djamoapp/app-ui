@@ -1,9 +1,9 @@
-import 'package:app_ui/core_components/views/tags/tag.dart';
-import 'package:app_ui/core_components/views/transaction_logos/avatar/avatar.dart';
-import 'package:app_ui/design_tokens/colors/brand_colors.dart';
-import 'package:app_ui/design_tokens/colors/interface_colors.dart';
+import 'package:app_ui_m2/core_components/views/tags/tag.dart';
+import 'package:app_ui_m2/core_components/views/transaction_logos/avatar/avatar.dart';
+import 'package:app_ui_m2/core_components/views/transaction_preview/transaction_preview.dart';
+import 'package:app_ui_m2/design_tokens/colors/brand_colors.dart';
+import 'package:app_ui_m2/design_tokens/colors/interface_colors.dart';
 import 'package:flutter/material.dart';
-import 'package:app_ui/core_components/views/transaction_preview/transaction_preview.dart';
 
 class TransactionPreviewView extends StatelessWidget {
   const TransactionPreviewView({Key? key}) : super(key: key);

@@ -1,8 +1,8 @@
-import 'package:app_ui/core_components/views/transaction_logos/avatar/avatar.dart';
-import 'package:app_ui/core_components/views/transaction_logos/logo/logo.dart';
-import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
-import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
 import 'package:app_ui_example/src/utils/constants.dart';
+import 'package:app_ui_m2/core_components/views/transaction_logos/avatar/avatar.dart';
+import 'package:app_ui_m2/core_components/views/transaction_logos/logo/logo.dart';
+import 'package:app_ui_m2/design_tokens/colors/neutral_colors.dart';
+import 'package:app_ui_m2/design_tokens/layout_and_spacing/app_gaps.dart';
 import 'package:flutter/material.dart';
 
 class TransactionLogoView extends StatelessWidget {
@@ -24,7 +24,7 @@ class TransactionLogoView extends StatelessWidget {
                 fontWeight: FontWeight.bold,
                 fontSize: 30),
           ),
-          AppGaps.m,
+          AppGapsM2.m,
           Text("Normal Logos"),
           Divider(),
           SizedBox(
@@ -34,20 +34,20 @@ class TransactionLogoView extends StatelessWidget {
               shrinkWrap: true,
               children: [
                 AppLogo(image: kGlovoLogo),
-                AppGaps.m,
+                AppGapsM2.m,
                 AppLogo(image: kJumiaLogo),
-                AppGaps.m,
+                AppGapsM2.m,
                 AppLogo(image: kKfcLogo),
-                AppGaps.m,
+                AppGapsM2.m,
                 AppLogo(image: kBkLogo),
-                AppGaps.m,
+                AppGapsM2.m,
                 AppLogo(image: kYangoLogo),
-                AppGaps.m,
+                AppGapsM2.m,
                 AppLogo(image: kNetflixLogo),
               ],
             ),
           ),
-          AppGaps.m,
+          AppGapsM2.m,
           Text("Unavailable Logos"),
           Divider(),
           SizedBox(
@@ -57,28 +57,28 @@ class TransactionLogoView extends StatelessWidget {
               shrinkWrap: true,
               children: [
                 AppLogo(image: kOrangeLogo),
-                AppGaps.m,
+                AppGapsM2.m,
                 AppLogo(
                   image: kOrangeLogo,
                   available: false,
                 ),
-                AppGaps.m,
+                AppGapsM2.m,
                 AppLogo(image: kMtnLogo),
-                AppGaps.m,
+                AppGapsM2.m,
                 AppLogo(
                   image: kMtnLogo,
                   available: false,
                 ),
-                AppGaps.m,
+                AppGapsM2.m,
                 AppLogo(image: kSgbciLogo),
-                AppGaps.m,
+                AppGapsM2.m,
                 AppLogo(
                   image: kSgbciLogo,
                   available: false,
                 ),
-                AppGaps.m,
+                AppGapsM2.m,
                 AppLogo(image: kSibLogo),
-                AppGaps.m,
+                AppGapsM2.m,
                 AppLogo(
                   image: kSibLogo,
                   available: false,
@@ -86,7 +86,7 @@ class TransactionLogoView extends StatelessWidget {
               ],
             ),
           ),
-          AppGaps.xl,
+          AppGapsM2.xl,
           const Text(
             "Avatars",
             style: TextStyle(
@@ -94,7 +94,7 @@ class TransactionLogoView extends StatelessWidget {
                 fontWeight: FontWeight.bold,
                 fontSize: 30),
           ),
-          AppGaps.m,
+          AppGapsM2.m,
           Text("Djamo Avatar"),
           Divider(),
           SizedBox(
@@ -107,17 +107,17 @@ class TransactionLogoView extends StatelessWidget {
                   image: kProfile1,
                   showBadge: true,
                 ),
-                AppGaps.m,
+                AppGapsM2.m,
                 AppAvatar(
                   image: kProfile2,
                   showBadge: true,
                 ),
-                AppGaps.m,
+                AppGapsM2.m,
                 AppAvatar(
                   image: kProfile3,
                   showBadge: true,
                 ),
-                AppGaps.m,
+                AppGapsM2.m,
                 AppAvatar(
                   image: kProfile4,
                   showBadge: true,
@@ -125,7 +125,7 @@ class TransactionLogoView extends StatelessWidget {
               ],
             ),
           ),
-          AppGaps.m,
+          AppGapsM2.m,
           Text("Normal Avatars"),
           Divider(),
           SizedBox(
@@ -137,15 +137,15 @@ class TransactionLogoView extends StatelessWidget {
                 AppAvatar(
                   image: kProfile1,
                 ),
-                AppGaps.m,
+                AppGapsM2.m,
                 AppAvatar(
                   image: kProfile2,
                 ),
-                AppGaps.m,
+                AppGapsM2.m,
                 AppAvatar(
                   image: kProfile3,
                 ),
-                AppGaps.m,
+                AppGapsM2.m,
                 AppAvatar(
                   image: kProfile4,
                 ),

@@ -1,8 +1,9 @@
-import 'package:app_ui/core_components/views/container/app_container.dart';
-import 'package:app_ui/core_components/views/transfer_way/transfer_way.dart';
-import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
+import 'package:app_ui_m2/core_components/views/container/app_container.dart';
+import 'package:app_ui_m2/core_components/views/transfer_way/transfer_way.dart';
+import 'package:app_ui_m2/design_tokens/layout_and_spacing/app_gaps.dart';
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
+
 import 'horizontal_listview_dot_indicator.dart';
 
 class AppTransferWaysWidget<ID> extends StatelessWidget {
@@ -38,7 +39,7 @@ class AppTransferWaysWidget<ID> extends StatelessWidget {
                     scrollDirection: Axis.horizontal,
                     shrinkWrap: true,
                     itemCount: ways.length,
-                    separatorBuilder: (ctx, _) => AppGaps.m,
+                    separatorBuilder: (ctx, _) => AppGapsM2.m,
                     itemBuilder: (ctx, index) => GestureDetector(
                       child: ways[index],
                       onTap: () {
@@ -49,7 +50,7 @@ class AppTransferWaysWidget<ID> extends StatelessWidget {
                     ),
                   ),
                 ),
-                AppGaps.m,
+                AppGapsM2.m,
                 AppHorizontalListviewDotIndicators(
                   scrollController: scrollController,
                   containerWidth: containerWidget,
@@ -66,7 +67,7 @@ class AppTransferWaysWidget<ID> extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 shrinkWrap: true,
                 itemCount: 6,
-                separatorBuilder: (ctx, _) => AppGaps.m,
+                separatorBuilder: (ctx, _) => AppGapsM2.m,
                 itemBuilder: (ctx, index) => Shimmer.fromColors(
                   baseColor: Colors.grey.withAlpha(20),
                   highlightColor: Colors.white.withAlpha(40),
@@ -81,7 +82,7 @@ class AppTransferWaysWidget<ID> extends StatelessWidget {
                           shape: BoxShape.circle,
                         ),
                       ),
-                      AppGaps.xs,
+                      AppGapsM2.xs,
                       Container(
                         height: 16,
                         width: 40,

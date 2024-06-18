@@ -1,4 +1,4 @@
-import 'package:app_ui/design_tokens/typography/typography.dart';
+import 'package:app_ui_m2/design_tokens/typography/typography.dart';
 import 'package:flutter/material.dart';
 
 class AppIconLabel extends StatelessWidget {
@@ -36,7 +36,7 @@ class AppIconLabel extends StatelessWidget {
             ),
             Text(
               label,
-              style: labelStyle ?? AppTypography.label!.bSmall,
+              style: labelStyle ?? AppTypography.label(context).bSmall,
             ),
           ],
         ),
@@ -54,7 +54,7 @@ class AppIconLabel extends StatelessWidget {
             ),
             Text(
               label,
-              style: labelStyle ?? AppTypography.label!.bSmall,
+              style: labelStyle ?? AppTypography.label(context).bSmall,
             ),
           ],
         ),

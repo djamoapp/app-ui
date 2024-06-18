@@ -1,8 +1,8 @@
-import 'package:app_ui/core_components/views/container/app_container.dart';
-import 'package:app_ui/design_tokens/colors/interface_colors.dart';
-import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
-import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
-import 'package:app_ui/design_tokens/typography/typography.dart';
+import 'package:app_ui_m2/core_components/views/container/app_container.dart';
+import 'package:app_ui_m2/design_tokens/colors/interface_colors.dart';
+import 'package:app_ui_m2/design_tokens/colors/neutral_colors.dart';
+import 'package:app_ui_m2/design_tokens/layout_and_spacing/app_gaps.dart';
+import 'package:app_ui_m2/design_tokens/typography/typography.dart';
 import 'package:flutter/material.dart';
 
 class AppListTile extends StatelessWidget {
@@ -112,7 +112,7 @@ class AppListTile extends StatelessWidget {
           children: [
             if (leading != null) ...[
               leading!,
-              afterLeadingGap ?? AppGaps.m,
+              afterLeadingGap ?? AppGapsM2.m,
             ],
             Expanded(
               child: Column(
@@ -124,26 +124,27 @@ class AppListTile extends StatelessWidget {
                       Text(
                         title,
                         style: titleStyle ??
-                            AppTypography.label!.bSmall!.copyWith(
-                              color: titleColor ?? NeutralColors.neutral900,
-                            ),
+                            AppTypography.label(context).bSmall!.copyWith(
+                                  color: titleColor ?? NeutralColors.neutral900,
+                                ),
                         textScaleFactor: titleScaleFactor,
                       ),
-                  afterTitleGap ?? AppGaps.xs,
+                  afterTitleGap ?? AppGapsM2.xs,
                   subTitleWidget ??
                       Text(
                         subTitle,
                         style: subTitleStyle ??
-                            AppTypography.body!.small!.copyWith(
-                              color: subTitleColor ?? NeutralColors.neutral700,
-                            ),
+                            AppTypography.body(context).small!.copyWith(
+                                  color:
+                                      subTitleColor ?? NeutralColors.neutral700,
+                                ),
                         textScaleFactor: subTitleScaleFactor,
                       ),
                 ],
               ),
             ),
             if (trailing != null) ...[
-              beforeTrailingGap ?? AppGaps.m,
+              beforeTrailingGap ?? AppGapsM2.m,
               trailing!,
             ],
           ],

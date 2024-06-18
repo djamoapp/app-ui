@@ -1,8 +1,8 @@
+import 'package:app_ui_m2/design_tokens/colors/interface_colors.dart';
+import 'package:app_ui_m2/design_tokens/colors/neutral_colors.dart';
+import 'package:app_ui_m2/design_tokens/iconography/app_icons.dart';
+import 'package:app_ui_m2/design_tokens/typography/typography.dart' as t;
 import 'package:flutter/material.dart';
-import 'package:app_ui/design_tokens/colors/interface_colors.dart';
-import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
-import 'package:app_ui/design_tokens/iconography/app_icons.dart';
-import 'package:app_ui/design_tokens/typography/typography.dart' as t;
 import 'package:flutter/services.dart';
 
 class AppSearchBar extends StatefulWidget {
@@ -56,7 +56,7 @@ class _AppSearchBarState extends State<AppSearchBar> {
                 }
               },
               controller: widget.controller,
-              style: t.AppTypography.label!.large,
+              style: t.AppTypography.label(context).large,
               cursorColor: InterfaceColors.action.defaultColor,
               cursorHeight: 16,
               cursorWidth: 1,

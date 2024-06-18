@@ -1,4 +1,4 @@
-import 'package:app_ui/design_tokens/colors/interface_colors.dart';
+import 'package:app_ui_m2/design_tokens/colors/interface_colors.dart';
 import 'package:flutter/material.dart';
 
 class AppExpandedButton extends StatelessWidget {

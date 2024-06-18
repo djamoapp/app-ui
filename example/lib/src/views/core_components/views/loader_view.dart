@@ -1,4 +1,4 @@
-import 'package:app_ui/core_components/views/loader/loader.dart';
+import 'package:app_ui_m2/core_components/views/loader/loader.dart';
 import 'package:flutter/material.dart';
 
 class LoaderView extends StatelessWidget {

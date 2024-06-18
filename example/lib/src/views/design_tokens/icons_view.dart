@@ -1,7 +1,7 @@
-import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
-import 'package:app_ui/design_tokens/iconography/app_svg_icons.dart';
-import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
 import 'package:app_ui_example/src/controllers/design_tokens/icons_controller.dart';
+import 'package:app_ui_m2/design_tokens/colors/neutral_colors.dart';
+import 'package:app_ui_m2/design_tokens/iconography/app_svg_icons.dart';
+import 'package:app_ui_m2/design_tokens/layout_and_spacing/app_gaps.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
@@ -26,7 +26,7 @@ class IconsView extends GetView<IconsController> {
                 fontWeight: FontWeight.bold,
                 fontSize: 30),
           ),
-          AppGaps.m,
+          AppGapsM2.m,
           GridView.count(
             controller: controller.scrollController,
             crossAxisCount: 3,
@@ -41,7 +41,7 @@ class IconsView extends GetView<IconsController> {
                 fontWeight: FontWeight.bold,
                 fontSize: 30),
           ),
-          AppGaps.m,
+          AppGapsM2.m,
           Wrap(
             alignment: WrapAlignment.center,
             runSpacing: 30,

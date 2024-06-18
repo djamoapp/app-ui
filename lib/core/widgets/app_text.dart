@@ -1,4 +1,4 @@
-import 'package:app_ui/design_tokens/typography/typography.dart';
+import 'package:app_ui_m2/design_tokens/typography/typography.dart';
 import 'package:flutter/material.dart';
 
 class AppText extends StatelessWidget {
@@ -30,7 +30,7 @@ class AppText extends StatelessWidget {
               ? 0.8
               : textScaleFactor,
       textAlign: textAlign,
-      style: textStyle ?? AppTypography.label!.medium,
+      style: textStyle ?? AppTypography.label(context).medium,
     );
   }
 }

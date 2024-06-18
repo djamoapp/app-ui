@@ -1,6 +1,6 @@
-import 'package:app_ui/core/constants/constants.dart';
-import 'package:app_ui/design_tokens/colors/interface_colors.dart';
-import 'package:app_ui/design_tokens/typography/typography.dart';
+import 'package:app_ui_m2/core/constants/constants.dart';
+import 'package:app_ui_m2/design_tokens/colors/interface_colors.dart';
+import 'package:app_ui_m2/design_tokens/typography/typography.dart';
 import 'package:flutter/material.dart';
 
 class AppPageHeader extends AppBar {
@@ -13,10 +13,12 @@ class AppPageHeader extends AppBar {
           backgroundColor: InterfaceColors.action.backGroundColor,
           centerTitle: true,
           title: title != null
-              ? Text(
-                  title,
-                  style: AppTypography.title!.bMedium100,
-                )
+              ? Builder(builder: (context) {
+                  return Text(
+                    title,
+                    style: AppTypography.title(context).bMedium100,
+                  );
+                })
               : Image.asset(
                   "assets/images/djamo-logo-black.png",
                   package: kPackageName,

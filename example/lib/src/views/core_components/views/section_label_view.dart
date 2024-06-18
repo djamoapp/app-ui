@@ -1,4 +1,4 @@
-import 'package:app_ui/core_components/views/section_label/section_label.dart';
+import 'package:app_ui_m2/core_components/views/section_label/section_label.dart';
 import 'package:flutter/material.dart';
 
 class SectionLabelView extends StatelessWidget {

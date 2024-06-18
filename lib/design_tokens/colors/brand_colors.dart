@@ -1,4 +1,4 @@
-import 'package:app_ui/core/models/brand_color.dart';
+import 'package:app_ui_m2/core/models/brand_color.dart';
 import 'package:flutter/material.dart';
 
 class BrandColors {

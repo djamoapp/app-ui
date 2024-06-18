@@ -1,6 +1,6 @@
-import 'package:app_ui/core_components/other_tokens/app_card.dart';
-import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
-import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
+import 'package:app_ui_m2/core_components/other_tokens/app_card.dart';
+import 'package:app_ui_m2/design_tokens/colors/neutral_colors.dart';
+import 'package:app_ui_m2/design_tokens/layout_and_spacing/app_gaps.dart';
 import 'package:flutter/material.dart';
 
 class OtherTokensView extends StatelessWidget {
@@ -22,10 +22,10 @@ class OtherTokensView extends StatelessWidget {
                 fontWeight: FontWeight.bold,
                 fontSize: 30),
           ),
-          AppGaps.m,
+          AppGapsM2.m,
           Text("Active"),
           Divider(),
-          AppGaps.m,
+          AppGapsM2.m,
           AppCard(
             productName: "",
             cardNumbers: "**** **** **** 1003",
@@ -34,10 +34,10 @@ class OtherTokensView extends StatelessWidget {
             accountIsActive: true,
             fullName: "SOULE AREMOU MALICK",
           ),
-          AppGaps.xl,
+          AppGapsM2.xl,
           Text("Locked"),
           Divider(),
-          AppGaps.m,
+          AppGapsM2.m,
           AppCard(
             productName: "",
             cardNumbers: "**** **** **** 1003",

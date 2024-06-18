@@ -1,20 +1,20 @@
-import 'package:app_ui/core/enums/standard_button_style.dart';
-import 'package:app_ui/core/models/transaction_type_switcher_item.dart';
-import 'package:app_ui/core_components/controls/buttons/main_cta/duo_cta.dart';
-import 'package:app_ui/core_components/controls/buttons/main_cta/primary_cta.dart';
-import 'package:app_ui/core_components/controls/buttons/main_cta/secondary_cta.dart';
-import 'package:app_ui/core_components/controls/buttons/standard_buttons/standard_buttons.dart';
-import 'package:app_ui/core_components/controls/list_tile/app_list_tile.dart';
-import 'package:app_ui/core_components/controls/text_fields/amount_text_field.dart';
-import 'package:app_ui/core_components/controls/text_fields/app_date_picker.dart';
-import 'package:app_ui/core_components/controls/text_fields/phone_number_text_field.dart';
-import 'package:app_ui/core_components/controls/text_fields/text_field.dart';
-import 'package:app_ui/core_components/controls/transaction_type_switcher/transaction_type_switcher.dart';
-import 'package:app_ui/core_components/views/tool_tip/tool_tip.dart';
-import 'package:app_ui/design_tokens/colors/interface_colors.dart';
-import 'package:app_ui/design_tokens/iconography/app_icons.dart';
-import 'package:app_ui/design_tokens/iconography/colored_icons.dart';
-import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
+import 'package:app_ui_m2/core/enums/standard_button_style.dart';
+import 'package:app_ui_m2/core/models/transaction_type_switcher_item.dart';
+import 'package:app_ui_m2/core_components/controls/buttons/main_cta/duo_cta.dart';
+import 'package:app_ui_m2/core_components/controls/buttons/main_cta/primary_cta.dart';
+import 'package:app_ui_m2/core_components/controls/buttons/main_cta/secondary_cta.dart';
+import 'package:app_ui_m2/core_components/controls/buttons/standard_buttons/standard_buttons.dart';
+import 'package:app_ui_m2/core_components/controls/list_tile/app_list_tile.dart';
+import 'package:app_ui_m2/core_components/controls/text_fields/amount_text_field.dart';
+import 'package:app_ui_m2/core_components/controls/text_fields/app_date_picker.dart';
+import 'package:app_ui_m2/core_components/controls/text_fields/phone_number_text_field.dart';
+import 'package:app_ui_m2/core_components/controls/text_fields/text_field.dart';
+import 'package:app_ui_m2/core_components/controls/transaction_type_switcher/transaction_type_switcher.dart';
+import 'package:app_ui_m2/core_components/views/tool_tip/tool_tip.dart';
+import 'package:app_ui_m2/design_tokens/colors/interface_colors.dart';
+import 'package:app_ui_m2/design_tokens/iconography/app_icons.dart';
+import 'package:app_ui_m2/design_tokens/iconography/colored_icons.dart';
+import 'package:app_ui_m2/design_tokens/layout_and_spacing/app_gaps.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -57,55 +57,55 @@ class LaboView extends StatelessWidget {
               child: Row(
                 children: [
                   StandardButtons.small(),
-                  AppGaps.s,
+                  AppGapsM2.s,
                   StandardButtons.medium(),
-                  AppGaps.s,
+                  AppGapsM2.s,
                   StandardButtons.large(),
-                  AppGaps.s,
+                  AppGapsM2.s,
                   StandardButtons.small(
                     style: StandardButtonStyle.filledLight,
                   ),
-                  AppGaps.s,
+                  AppGapsM2.s,
                   StandardButtons.medium(
                     style: StandardButtonStyle.filledLight,
                   ),
-                  AppGaps.s,
+                  AppGapsM2.s,
                   StandardButtons.large(
                     style: StandardButtonStyle.filledLight,
                   ),
-                  AppGaps.s,
+                  AppGapsM2.s,
                   StandardButtons.small(
                     style: StandardButtonStyle.outlined,
                   ),
-                  AppGaps.s,
+                  AppGapsM2.s,
                   StandardButtons.medium(
                     style: StandardButtonStyle.outlined,
                   ),
-                  AppGaps.s,
+                  AppGapsM2.s,
                   StandardButtons.large(
                     style: StandardButtonStyle.outlined,
                   ),
-                  AppGaps.s,
+                  AppGapsM2.s,
                   StandardButtons.small(
                     style: StandardButtonStyle.outlinedLight,
                   ),
-                  AppGaps.s,
+                  AppGapsM2.s,
                   StandardButtons.medium(
                     style: StandardButtonStyle.outlinedLight,
                   ),
-                  AppGaps.s,
+                  AppGapsM2.s,
                   StandardButtons.large(
                     style: StandardButtonStyle.outlinedLight,
                   ),
-                  AppGaps.s,
+                  AppGapsM2.s,
                   StandardButtons.small(
                     style: StandardButtonStyle.text,
                   ),
-                  AppGaps.s,
+                  AppGapsM2.s,
                   StandardButtons.medium(
                     style: StandardButtonStyle.text,
                   ),
-                  AppGaps.s,
+                  AppGapsM2.s,
                   StandardButtons.large(
                     style: StandardButtonStyle.text,
                   ),

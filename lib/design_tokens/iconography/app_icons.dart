@@ -1,4 +1,4 @@
-import 'package:app_ui/core/constants/constants.dart';
+import 'package:app_ui_m2/core/constants/constants.dart';
 import 'package:flutter/widgets.dart';
 
 // GENERATED CODE - DO NOT MODIFY BY HAND

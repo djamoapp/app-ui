@@ -1,8 +1,8 @@
-import 'package:app_ui/core_components/views/container/app_container.dart';
+import 'package:app_ui_m2/core_components/views/accordions/accordion_item.dart';
+import 'package:app_ui_m2/core_components/views/container/app_container.dart';
+import 'package:app_ui_m2/design_tokens/layout_and_spacing/app_gaps.dart';
+import 'package:app_ui_m2/design_tokens/typography/typography.dart' as t;
 import 'package:flutter/material.dart';
-import 'package:app_ui/core_components/views/accordions/accordion_item.dart';
-import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
-import 'package:app_ui/design_tokens/typography/typography.dart' as t;
 
 class AppAccordion extends StatelessWidget {
   const AppAccordion({
@@ -35,7 +35,8 @@ class AppAccordion extends StatelessWidget {
           initiallyExpanded: initiallyExpanded,
           title: Text(
             title,
-            style: t.AppTypography.title!.bMedium100!
+            style: t.AppTypography.title(context)
+                .bMedium100!
                 .copyWith(color: Colors.black),
           ),
           iconColor: Colors.black,
@@ -44,7 +45,7 @@ class AppAccordion extends StatelessWidget {
           children: [
             for (int i = 0; i < items.length; i++) ...[
               items[i],
-              if (items[i] != items.last) AppGaps.s,
+              if (items[i] != items.last) AppGapsM2.s,
             ]
           ],
         ),

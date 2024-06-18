@@ -1,9 +1,9 @@
-import 'package:app_ui/core_components/views/container/app_container.dart';
-import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
-import 'package:app_ui/design_tokens/iconography/app_icons.dart';
-import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
-import 'package:app_ui/design_tokens/layout_and_spacing/app_spacings.dart';
-import 'package:app_ui/design_tokens/typography/typography.dart';
+import 'package:app_ui_m2/core_components/views/container/app_container.dart';
+import 'package:app_ui_m2/design_tokens/colors/neutral_colors.dart';
+import 'package:app_ui_m2/design_tokens/iconography/app_icons.dart';
+import 'package:app_ui_m2/design_tokens/layout_and_spacing/app_gaps.dart';
+import 'package:app_ui_m2/design_tokens/layout_and_spacing/app_spacings.dart';
+import 'package:app_ui_m2/design_tokens/typography/typography.dart';
 import 'package:flutter/material.dart';
 
 class AppToolTip extends StatelessWidget {
@@ -53,7 +53,7 @@ class AppToolTip extends StatelessWidget {
         child: Row(
           children: [
             leading,
-            AppGaps.m,
+            AppGapsM2.m,
             Expanded(
               child: SingleChildScrollView(
                 child: Column(
@@ -64,21 +64,21 @@ class AppToolTip extends StatelessWidget {
                     Text(
                       title,
                       textScaleFactor: 1.0,
-                      style: AppTypography.label!.bSmall,
+                      style: AppTypography.label(context).bSmall,
                     ),
                     Text(
                       subTitle,
                       textScaleFactor: 1.0,
-                      style: AppTypography.body!.small!.copyWith(
-                        color: NeutralColors.disabledTextColor,
-                      ),
+                      style: AppTypography.body(context).small!.copyWith(
+                            color: NeutralColors.disabledTextColor,
+                          ),
                     )
                   ],
                 ),
               ),
             ),
             if (onClose != null) ...[
-              AppGaps.m,
+              AppGapsM2.m,
               IconButton(
                 icon: Icon(
                   AppIcons.cross,

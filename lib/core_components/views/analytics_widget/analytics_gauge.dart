@@ -1,9 +1,10 @@
-import 'package:app_ui/core_components/views/container/app_container.dart';
-import 'package:app_ui/design_tokens/colors/interface_colors.dart';
-import 'package:app_ui/design_tokens/layout_and_spacing/app_spacings.dart';
-import 'package:app_ui/design_tokens/typography/typography.dart';
+import 'package:app_ui_m2/core_components/views/container/app_container.dart';
+import 'package:app_ui_m2/design_tokens/colors/interface_colors.dart';
+import 'package:app_ui_m2/design_tokens/layout_and_spacing/app_spacings.dart';
+import 'package:app_ui_m2/design_tokens/typography/typography.dart';
 import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
+
 import '../../../design_tokens/colors/neutral_colors.dart';
 import '../../../design_tokens/layout_and_spacing/app_gaps.dart';
 
@@ -40,10 +41,10 @@ class AnalyticsGauge extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 tag,
-                AppGaps.xs,
+                AppGapsM2.xs,
                 Text(
                   amount,
-                  style: AppTypography.body?.bSmall,
+                  style: AppTypography.body(context).bSmall,
                 ),
               ],
             ),
@@ -58,9 +59,9 @@ class AnalyticsGauge extends StatelessWidget {
             progressColor: progressColor,
             center: Text(
               progressLabel,
-              style: AppTypography.body!.bSmall!.copyWith(
-                color: progressColor,
-              ),
+              style: AppTypography.body(context).bSmall!.copyWith(
+                    color: progressColor,
+                  ),
             ),
           ),
         ],

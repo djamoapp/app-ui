@@ -1,10 +1,10 @@
-import 'package:app_ui/core_components/views/container/app_container.dart';
+import 'package:app_ui_m2/core_components/controls/buttons/main_cta/primary_cta.dart';
+import 'package:app_ui_m2/core_components/views/container/app_container.dart';
+import 'package:app_ui_m2/design_tokens/colors/interface_colors.dart';
+import 'package:app_ui_m2/design_tokens/colors/neutral_colors.dart';
+import 'package:app_ui_m2/design_tokens/layout_and_spacing/app_gaps.dart';
+import 'package:app_ui_m2/design_tokens/typography/typography.dart' as t;
 import 'package:flutter/material.dart';
-import 'package:app_ui/core_components/controls/buttons/main_cta/primary_cta.dart';
-import 'package:app_ui/design_tokens/colors/interface_colors.dart';
-import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
-import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
-import 'package:app_ui/design_tokens/typography/typography.dart' as t;
 
 class AppVCBalanceLimitAlert extends StatelessWidget {
   const AppVCBalanceLimitAlert({
@@ -44,14 +44,15 @@ class AppVCBalanceLimitAlert extends StatelessWidget {
         children: [
           Text(
             title ?? "Plafond Limité à 200.000 F CFA",
-            style: t.AppTypography.title!.bMedium100,
+            style: t.AppTypography.title(context).bMedium100,
           ),
           Text(
             subTitle ?? "Commandez une carte physique pour augmenter la limite",
-            style: t.AppTypography.body!.bMedium100!
+            style: t.AppTypography.body(context)
+                .bMedium100!
                 .copyWith(color: NeutralColors.disabledTextColor),
           ),
-          AppGaps.m,
+          AppGapsM2.m,
           LayoutBuilder(
             builder: (ctx, constraint) => Stack(
               alignment: Alignment.center,
@@ -96,28 +97,29 @@ class AppVCBalanceLimitAlert extends StatelessWidget {
               ],
             ),
           ),
-          AppGaps.xs,
+          AppGapsM2.xs,
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
                 balance,
-                style: t.AppTypography.body!.bMedium100!.copyWith(
-                  color: level <= 0.5
-                      ? InterfaceColors.success.defaultColor!
-                      : level > 0.5 && level <= 0.75
-                          ? InterfaceColors.alert.defaultColor!
-                          : InterfaceColors.error.defaultColor!,
-                ),
+                style: t.AppTypography.body(context).bMedium100!.copyWith(
+                      color: level <= 0.5
+                          ? InterfaceColors.success.defaultColor!
+                          : level > 0.5 && level <= 0.75
+                              ? InterfaceColors.alert.defaultColor!
+                              : InterfaceColors.error.defaultColor!,
+                    ),
               ),
               Text(
                 maxAmount,
-                style: t.AppTypography.body!.bMedium100!
+                style: t.AppTypography.body(context)
+                    .bMedium100!
                     .copyWith(color: Colors.black),
               )
             ],
           ),
-          AppGaps.xl,
+          AppGapsM2.xl,
           PrimaryCTA(
             label: buttonLabel ?? "Commander une carte physique",
             onPressed: onButtonTap,

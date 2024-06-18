@@ -1,7 +1,7 @@
+import 'package:app_ui_m2/core_components/views/system_messages/inline/basic_inline.dart';
+import 'package:app_ui_m2/design_tokens/colors/interface_colors.dart';
+import 'package:app_ui_m2/design_tokens/iconography/app_icons.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:app_ui/core_components/views/system_messages/inline/basic_inline.dart';
-import 'package:app_ui/design_tokens/colors/interface_colors.dart';
-import 'package:app_ui/design_tokens/iconography/app_icons.dart';
 
 const MainAxisAlignment _mainAxisAlignment = MainAxisAlignment.start;
 const double _iconSize = 18;

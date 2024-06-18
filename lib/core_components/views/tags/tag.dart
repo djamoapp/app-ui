@@ -1,7 +1,7 @@
-import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
-import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
-import 'package:app_ui/design_tokens/layout_and_spacing/app_spacings.dart';
-import 'package:app_ui/design_tokens/typography/typography.dart';
+import 'package:app_ui_m2/design_tokens/colors/neutral_colors.dart';
+import 'package:app_ui_m2/design_tokens/layout_and_spacing/app_gaps.dart';
+import 'package:app_ui_m2/design_tokens/layout_and_spacing/app_spacings.dart';
+import 'package:app_ui_m2/design_tokens/typography/typography.dart';
 import 'package:flutter/material.dart';
 
 class AppTag extends StatelessWidget {
@@ -67,7 +67,7 @@ class AppTag extends StatelessWidget {
               size: iconSize,
               color: textAndIconColor,
             ),
-            AppGaps.xs,
+            AppGapsM2.xs,
           ],
           Text(
             text,
@@ -75,13 +75,13 @@ class AppTag extends StatelessWidget {
                 ? this.textStyle?.copyWith(
                       color: textAndIconColor,
                     )
-                : AppTypography.body!.bTiny!.copyWith(
-                    color: textAndIconColor,
-                  ),
+                : AppTypography.body(context).bTiny!.copyWith(
+                      color: textAndIconColor,
+                    ),
             textAlign: TextAlign.center,
           ),
           if (suffixIcon != null) ...[
-            AppGaps.xs,
+            AppGapsM2.xs,
             Icon(
               suffixIcon,
               size: suffixIconSize,

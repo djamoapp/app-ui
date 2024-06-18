@@ -1,9 +1,9 @@
+import 'package:app_ui_m2/core/models/transaction_type_switcher_item.dart';
+import 'package:app_ui_m2/design_tokens/colors/neutral_colors.dart';
+import 'package:app_ui_m2/design_tokens/typography/typography.dart';
 import 'package:custom_sliding_segmented_control/custom_sliding_segmented_control.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:app_ui/core/models/transaction_type_switcher_item.dart';
-import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
-import 'package:app_ui/design_tokens/typography/typography.dart';
 
 class AppTransactionTypeSwitcher<T> extends StatefulWidget {
   const AppTransactionTypeSwitcher(
@@ -89,18 +89,18 @@ class _AppTransactionTypeSwitcherState<T>
                       const Gap(10),
                       Text(
                         item.text!,
-                        style: AppTypography.label!.bSmall!.copyWith(
-                          fontSize: 14,
-                          color: item.value == _currentValue
-                              ? widget.items
-                                      .singleWhere(
-                                        (element) =>
-                                            element.value == _currentValue,
-                                      )
-                                      .selectedColor ??
-                                  NeutralColors.neutral900
-                              : NeutralColors.neutral900,
-                        ),
+                        style: AppTypography.label(context).bSmall!.copyWith(
+                              fontSize: 14,
+                              color: item.value == _currentValue
+                                  ? widget.items
+                                          .singleWhere(
+                                            (element) =>
+                                                element.value == _currentValue,
+                                          )
+                                          .selectedColor ??
+                                      NeutralColors.neutral900
+                                  : NeutralColors.neutral900,
+                            ),
                         overflow: TextOverflow.ellipsis,
                       )
                     ],

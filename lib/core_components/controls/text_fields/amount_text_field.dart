@@ -1,7 +1,7 @@
-import 'package:app_ui/core/constants/constants.dart';
-import 'package:app_ui/design_tokens/colors/interface_colors.dart';
-import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
-import 'package:app_ui/design_tokens/typography/typography.dart';
+import 'package:app_ui_m2/core/constants/constants.dart';
+import 'package:app_ui_m2/design_tokens/colors/interface_colors.dart';
+import 'package:app_ui_m2/design_tokens/colors/neutral_colors.dart';
+import 'package:app_ui_m2/design_tokens/typography/typography.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -97,9 +97,9 @@ class AppAmountTextField extends StatelessWidget {
           enabled: enabled,
           hintText: placeHolderText,
           hintStyle: placeHolderStyle ??
-              AppTypography.bigger.large!.copyWith(
-                color: NeutralColors.bordersHoverColor,
-              ),
+              AppTypography.bigger(context).large!.copyWith(
+                    color: NeutralColors.bordersHoverColor,
+                  ),
           border: InputBorder.none,
           suffixIcon: hideCurrency
               ? SizedBox.shrink()
@@ -108,9 +108,9 @@ class AppAmountTextField extends StatelessWidget {
                   children: [
                     Text(
                       currency ?? kDeviseSymbol,
-                      style: AppTypography.headLine!.medium!.copyWith(
-                        color: NeutralColors.bordersHoverColor,
-                      ),
+                      style: AppTypography.headLine(context).medium!.copyWith(
+                            color: NeutralColors.bordersHoverColor,
+                          ),
                     ),
                   ],
                 ),
@@ -118,9 +118,9 @@ class AppAmountTextField extends StatelessWidget {
         textAlign: textAlign,
         cursorColor: cursorColor ?? InterfaceColors.action.defaultColor,
         style: textStyle ??
-            AppTypography.bigger.large!.copyWith(
-              color: InterfaceColors.action.defaultColor,
-            ),
+            AppTypography.bigger(context).large!.copyWith(
+                  color: InterfaceColors.action.defaultColor,
+                ),
       ),
     );
   }

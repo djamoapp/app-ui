@@ -1,8 +1,8 @@
-import 'package:app_ui/core/constants/constants.dart';
-import 'package:app_ui/core_components/views/container/app_container.dart';
-import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
-import 'package:app_ui/design_tokens/layout_and_spacing/app_gaps.dart';
-import 'package:app_ui/design_tokens/typography/typography.dart';
+import 'package:app_ui_m2/core/constants/constants.dart';
+import 'package:app_ui_m2/core_components/views/container/app_container.dart';
+import 'package:app_ui_m2/design_tokens/colors/neutral_colors.dart';
+import 'package:app_ui_m2/design_tokens/layout_and_spacing/app_gaps.dart';
+import 'package:app_ui_m2/design_tokens/typography/typography.dart';
 import 'package:countup/countup.dart';
 import 'package:flutter/material.dart';
 
@@ -58,15 +58,15 @@ class AppAccountCard extends StatelessWidget {
       borderRadius: borderRadius,
       child: Column(
         children: [
-          _leading(),
-          AppGaps.m,
+          _leading(context),
+          AppGapsM2.m,
           trailing,
         ],
       ),
     );
   }
 
-  Widget _leading() {
+  Widget _leading(BuildContext context) {
     return Row(
       //mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -76,7 +76,8 @@ class AppAccountCard extends StatelessWidget {
             children: [
               Text(
                 title,
-                style: AppTypography.label!.bMedium100!
+                style: AppTypography.label(context)
+                    .bMedium100!
                     .copyWith(color: NeutralColors.disabledBackGroundColor),
               ),
               this.enableCountUp
@@ -85,14 +86,14 @@ class AppAccountCard extends StatelessWidget {
                       end: counterUpEnd ?? double.parse(balance),
                       duration: counterDuration,
                       separator: counterSeparator,
-                      style:
-                          balanceTextStyle ?? AppTypography.title!.bMedium200,
+                      style: balanceTextStyle ??
+                          AppTypography.title(context).bMedium200,
                       suffix: " $kDeviseSymbol",
                     )
                   : Text(
                       balance,
-                      style:
-                          balanceTextStyle ?? AppTypography.title!.bMedium200,
+                      style: balanceTextStyle ??
+                          AppTypography.title(context).bMedium200,
                     ),
             ],
           ),

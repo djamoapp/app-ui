@@ -1,6 +1,8 @@
-import 'package:app_ui/core_components/views/loader/loader.dart';
-import 'package:app_ui/design_tokens/colors/interface_colors.dart';
-import 'package:app_ui/design_tokens/typography/typography.dart' as t;
+import 'package:app_ui/app_ui.dart';
+import 'package:app_ui_m2/core_components/views/loader/loader.dart';
+import 'package:app_ui_m2/design_tokens/colors/interface_colors.dart';
+import 'package:app_ui_m2/design_tokens/typography/typography.dart' as t;
+import 'package:app_ui_m2/migration/app_ui_migration_builder.dart';
 import 'package:flutter/material.dart';
 
 class PrimaryCTA extends StatelessWidget {
@@ -49,37 +51,48 @@ class PrimaryCTA extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(24),
-      ),
-      child: MaterialButton(
-        height: 40,
-        elevation: 0,
-        highlightElevation: 0,
-        materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-        padding: padding,
-        color: enabledColor ?? InterfaceColors.action.defaultColor,
-        disabledColor: disabledColor ?? InterfaceColors.action.disabledColor,
-        minWidth: double.infinity,
-        onPressed: enabled && !isLoading ? onPressed ?? () {} : null,
-        shape: RoundedRectangleBorder(
+    return AppUIMigrationBuilder(
+      M2: Container(
+        decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(24),
         ),
-        child: isLoading
-            ? AppLoader(
-                size: 20,
-                color: progressColor ?? Colors.white,
-              )
-            : childBuilder?.call() ??
-                Text(
-                  label,
-                  style: t.AppTypography.title!.small!.copyWith(
-                    color: enabled && !isLoading ? enabledLabelColor ?? Colors.white : disabledLabelColor ?? Colors.white,
+        child: MaterialButton(
+          height: 40,
+          elevation: 0,
+          highlightElevation: 0,
+          materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+          padding: padding,
+          color: enabledColor ?? InterfaceColors.action.defaultColor,
+          disabledColor: disabledColor ?? InterfaceColors.action.disabledColor,
+          minWidth: double.infinity,
+          onPressed: enabled && !isLoading ? onPressed ?? () {} : null,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(24),
+          ),
+          child: isLoading
+              ? AppLoader(
+                  size: 20,
+                  color: progressColor ?? Colors.white,
+                )
+              : childBuilder?.call() ??
+                  Text(
+                    label,
+                    style: t.AppTypography.title(context).small!.copyWith(
+                          color: enabled && !isLoading
+                              ? enabledLabelColor ?? Colors.white
+                              : disabledLabelColor ?? Colors.white,
+                        ),
+                    textAlign: TextAlign.center,
+                    overflow: labelOverflow,
                   ),
-                  textAlign: TextAlign.center,
-                  overflow: labelOverflow,
-                ),
+        ),
+      ),
+      M3: AppButtonWidget.primary(
+        label: label,
+        isLoading: isLoading,
+        enable: enabled,
+        onPressed: onPressed,
+        backgroundColor: enabledColor ?? InterfaceColors.action.defaultColor,
       ),
     );
   }

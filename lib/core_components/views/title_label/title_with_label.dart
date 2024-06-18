@@ -1,5 +1,6 @@
+import 'package:app_ui_m2/design_tokens/colors/neutral_colors.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:app_ui/design_tokens/colors/neutral_colors.dart';
+
 import '../../../design_tokens/typography/typography.dart';
 
 class AppTitleWithLabel extends StatelessWidget {
@@ -23,14 +24,15 @@ class AppTitleWithLabel extends StatelessWidget {
         leading ??
             Text(
               title ?? "Title",
-              style: AppTypography.label!.bSmall!
+              style: AppTypography.label(context)
+                  .bSmall!
                   .copyWith(fontSize: 14, color: NeutralColors.neutral900),
             ),
         trailing ??
             Flexible(
               child: Text(
                 label ?? "Label",
-                style: AppTypography.body!.bTiny!.copyWith(
+                style: AppTypography.body(context).bTiny!.copyWith(
                     fontSize: 14, color: NeutralColors.disabledTextColor),
               ),
             ),

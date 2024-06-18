@@ -1,4 +1,4 @@
-import 'package:app_ui/core/models/interface_color.dart';
+import 'package:app_ui_m2/core/models/interface_color.dart';
 import 'package:flutter/cupertino.dart';
 
 class InterfaceColors {
