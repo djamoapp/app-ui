@@ -21,6 +21,7 @@ class PrimaryCTA extends StatelessWidget {
     this.disabledLabelColor,
     this.progressColor,
     this.childBuilder,
+    this.useLargeCta = false,
   }) : super(key: key);
 
   final Function()? onPressed;
@@ -48,6 +49,7 @@ class PrimaryCTA extends StatelessWidget {
   final Color? disabledLabelColor;
 
   final Color? progressColor;
+  final bool useLargeCta;
 
   @override
   Widget build(BuildContext context) {
@@ -87,13 +89,25 @@ class PrimaryCTA extends StatelessWidget {
                   ),
         ),
       ),
-      M3: AppButtonWidget.primary(
-        label: label,
-        isLoading: isLoading,
-        enable: enabled,
-        onPressed: onPressed,
-        backgroundColor: enabledColor ?? InterfaceColors.action.defaultColor,
-      ),
+      M3: !useLargeCta
+          ? AppButtonWidget.primary(
+              label: label,
+              isLoading: isLoading,
+              enable: enabled,
+              onPressed: onPressed,
+              backgroundColor:
+                  enabledColor ?? InterfaceColors.action.defaultColor,
+              fillMaxWidthSize: true,
+            )
+          : AppButtonWidget.primaryLarge(
+              label: label,
+              isLoading: isLoading,
+              enable: enabled,
+              onPressed: onPressed,
+              backgroundColor:
+                  enabledColor ?? InterfaceColors.action.defaultColor,
+              fillMaxWidthSize: true,
+            ),
     );
   }
 }
