@@ -3,13 +3,13 @@
 ///  FlutterGen
 /// *****************************************************
 
+import 'package:flutter/services.dart';
 // coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: directives_ordering,unnecessary_import,implicit_dynamic_list_literal,deprecated_member_use
 
 import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flutter/services.dart';
 
 class $AssetsGifGen {
   const $AssetsGifGen();
@@ -262,6 +262,10 @@ class $AssetsIconsColoredGen {
   SvgGenImage get woakBag =>
       const SvgGenImage('assets/icons/colored/woakBag.svg');
 
+  /// File path: assets/icons/colored/bundleOfCash.svg
+  SvgGenImage get bundleOfCash =>
+      const SvgGenImage('assets/icons/colored/bundleOfCash.svg');
+
   /// List of all assets
   List<SvgGenImage> get values => [
         atm,
@@ -306,7 +310,8 @@ class $AssetsIconsColoredGen {
         shoppingBag,
         subscription,
         trophy,
-        woakBag
+        woakBag,
+        bundleOfCash
       ];
 }
 
