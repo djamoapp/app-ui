@@ -25,7 +25,7 @@ dependencies:
   app_ui:
     git:
       url: git@github.com:djamoapp/djamo-mobile-v3.git
-      ref: add-support-for-flutter-3.22.2
+      ref: main
       path: packages/app_ui
 
 dev_dependencies:

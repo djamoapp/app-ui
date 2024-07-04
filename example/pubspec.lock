@@ -13,8 +13,8 @@ packages:
     dependency: transitive
     description:
       path: "packages/app_ui"
-      ref: "add-support-for-flutter-3.22.2"
-      resolved-ref: "121d7e641fdf024e2dfb1ddb06f788b76b0f153c"
+      ref: main
+      resolved-ref: "7e63def9154287737b9e0bce49f9b423b7c3a1d3"
       url: "git@github.com:djamoapp/djamo-mobile-v3.git"
     source: git
     version: "0.1.0+1"
