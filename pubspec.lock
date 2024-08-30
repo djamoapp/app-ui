@@ -29,11 +29,11 @@ packages:
     dependency: "direct main"
     description:
       path: "packages/app_ui"
-      ref: main
-      resolved-ref: "7e63def9154287737b9e0bce49f9b423b7c3a1d3"
+      ref: "app_ui-v0.1.2"
+      resolved-ref: "6c7bd6fa80b80a21e53b44b13b33ada01888aa44"
       url: "git@github.com:djamoapp/djamo-mobile-v3.git"
     source: git
-    version: "0.1.0+1"
+    version: "0.1.2"
   archive:
     dependency: transitive
     description:
@@ -470,6 +470,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.3"
+  jiffy:
+    dependency: transitive
+    description:
+      name: jiffy
+      sha256: "3497caaa36d36a29033e66803c9739ce6bccbc7e241ca46070f76ee9e6f6eb0c"
+      url: "https://pub.dev"
+    source: hosted
+    version: "6.3.1"
   js:
     dependency: transitive
     description:
@@ -1020,5 +1028,5 @@ packages:
     source: hosted
     version: "3.1.1"
 sdks:
-  dart: ">=3.3.0 <4.0.0"
-  flutter: ">=3.19.0"
+  dart: "3.4.3"
+  flutter: ">=3.22.2"
