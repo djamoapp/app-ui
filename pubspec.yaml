@@ -25,8 +25,8 @@ dependencies:
   app_ui:
     git:
       url: git@github.com:djamoapp/djamo-mobile-v3.git
+      ref: main
       path: packages/app_ui
-      ref: app_ui-v0.1.2
 
 dev_dependencies:
   flutter_test:
