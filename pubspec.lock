@@ -29,8 +29,8 @@ packages:
     dependency: "direct main"
     description:
       path: "packages/app_ui"
-      ref: main
-      resolved-ref: "69852959673c78221435394aca09bff4c9cf9ba1"
+      ref: "app_ui-v0.1.3"
+      resolved-ref: "44bce02c9ddab538bb10d5750000908677d1d2af"
       url: "git@github.com:djamoapp/djamo-mobile-v3.git"
     source: git
     version: "0.1.3"
