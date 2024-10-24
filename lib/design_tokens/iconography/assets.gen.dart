@@ -3,13 +3,14 @@
 ///  FlutterGen
 /// *****************************************************
 
-import 'package:flutter/services.dart';
 // coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: directives_ordering,unnecessary_import,implicit_dynamic_list_literal,deprecated_member_use
 
+import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/flutter_svg.dart' as _svg;
+import 'package:vector_graphics/vector_graphics.dart' as _vg;
 
 class $AssetsGifGen {
   const $AssetsGifGen();
@@ -24,8 +25,13 @@ class $AssetsGifGen {
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  /// Directory path: assets/icons/colored
   $AssetsIconsColoredGen get colored => const $AssetsIconsColoredGen();
+
+  /// Directory path: assets/icons/icon_3d
   $AssetsIconsIcon3dGen get icon3d => const $AssetsIconsIcon3dGen();
+
+  /// Directory path: assets/icons/svg
   $AssetsIconsSvgGen get svg => const $AssetsIconsSvgGen();
 }
 
@@ -85,6 +91,9 @@ class $AssetsImagesGen {
   AssetGenImage get heartBrokenBro =>
       const AssetGenImage('assets/images/heart_broken_bro.png');
 
+  /// File path: assets/images/house.png
+  AssetGenImage get house => const AssetGenImage('assets/images/house.png');
+
   /// File path: assets/images/we_sent_you_email.png
   AssetGenImage get weSentYouEmail =>
       const AssetGenImage('assets/images/we_sent_you_email.png');
@@ -96,6 +105,7 @@ class $AssetsImagesGen {
         djamoCardEmpty,
         djamoCardEmptyLock,
         heartBrokenBro,
+        house,
         weSentYouEmail
       ];
 }
@@ -202,6 +212,10 @@ class $AssetsIconsColoredGen {
   SvgGenImage get bankToDjamo =>
       const SvgGenImage('assets/icons/colored/bankToDjamo.svg');
 
+  /// File path: assets/icons/colored/bundleOfCash.svg
+  SvgGenImage get bundleOfCash =>
+      const SvgGenImage('assets/icons/colored/bundleOfCash.svg');
+
   /// File path: assets/icons/colored/celebration.svg
   SvgGenImage get celebration =>
       const SvgGenImage('assets/icons/colored/celebration.svg');
@@ -262,10 +276,6 @@ class $AssetsIconsColoredGen {
   SvgGenImage get woakBag =>
       const SvgGenImage('assets/icons/colored/woakBag.svg');
 
-  /// File path: assets/icons/colored/bundleOfCash.svg
-  SvgGenImage get bundleOfCash =>
-      const SvgGenImage('assets/icons/colored/bundleOfCash.svg');
-
   /// List of all assets
   List<SvgGenImage> get values => [
         atm,
@@ -295,6 +305,7 @@ class $AssetsIconsColoredGen {
         vaultCashIn,
         vault,
         bankToDjamo,
+        bundleOfCash,
         celebration,
         crown,
         donation,
@@ -310,8 +321,7 @@ class $AssetsIconsColoredGen {
         shoppingBag,
         subscription,
         trophy,
-        woakBag,
-        bundleOfCash
+        woakBag
       ];
 }
 
@@ -766,6 +776,10 @@ class $AssetsIconsSvgGen {
   /// File path: assets/icons/svg/web.svg
   SvgGenImage get web => const SvgGenImage('assets/icons/svg/web.svg');
 
+  /// File path: assets/icons/svg/whatsapp.svg
+  SvgGenImage get whatsapp =>
+      const SvgGenImage('assets/icons/svg/whatsapp.svg');
+
   /// List of all assets
   List<SvgGenImage> get values => [
         coinVertical,
@@ -882,12 +896,15 @@ class $AssetsIconsSvgGen {
         vault,
         vaultFilled,
         vaultRemastered,
-        web
+        web,
+        whatsapp
       ];
 }
 
 class Assets {
   Assets._();
+
+  static const String package = 'app_ui_m2';
 
   static const $AssetsGifGen gif = $AssetsGifGen();
   static const $AssetsIconsGen icons = $AssetsIconsGen();
@@ -897,9 +914,18 @@ class Assets {
 }
 
 class AssetGenImage {
-  const AssetGenImage(this._assetName);
+  const AssetGenImage(
+    this._assetName, {
+    this.size,
+    this.flavors = const {},
+  });
 
   final String _assetName;
+
+  static const String package = 'app_ui_m2';
+
+  final Size? size;
+  final Set<String> flavors;
 
   Image image({
     Key? key,
@@ -921,7 +947,8 @@ class AssetGenImage {
     bool matchTextDirection = false,
     bool gaplessPlayback = false,
     bool isAntiAlias = false,
-    String? package = 'app_ui_m2',
+    @Deprecated('Do not specify package for a generated library asset')
+    String? package = package,
     FilterQuality filterQuality = FilterQuality.low,
     int? cacheWidth,
     int? cacheHeight,
@@ -956,7 +983,8 @@ class AssetGenImage {
 
   ImageProvider provider({
     AssetBundle? bundle,
-    String? package = 'app_ui_m2',
+    @Deprecated('Do not specify package for a generated library asset')
+    String? package = package,
   }) {
     return AssetImage(
       _assetName,
@@ -971,15 +999,31 @@ class AssetGenImage {
 }
 
 class SvgGenImage {
-  const SvgGenImage(this._assetName);
+  const SvgGenImage(
+    this._assetName, {
+    this.size,
+    this.flavors = const {},
+  }) : _isVecFormat = false;
+
+  const SvgGenImage.vec(
+    this._assetName, {
+    this.size,
+    this.flavors = const {},
+  }) : _isVecFormat = true;
 
   final String _assetName;
+  final Size? size;
+  final Set<String> flavors;
+  final bool _isVecFormat;
 
-  SvgPicture svg({
+  static const String package = 'app_ui_m2';
+
+  _svg.SvgPicture svg({
     Key? key,
     bool matchTextDirection = false,
     AssetBundle? bundle,
-    String? package = 'app_ui_m2',
+    @Deprecated('Do not specify package for a generated library asset')
+    String? package = package,
     double? width,
     double? height,
     BoxFit fit = BoxFit.contain,
@@ -988,19 +1032,32 @@ class SvgGenImage {
     WidgetBuilder? placeholderBuilder,
     String? semanticsLabel,
     bool excludeFromSemantics = false,
-    SvgTheme theme = const SvgTheme(),
+    _svg.SvgTheme? theme,
     ColorFilter? colorFilter,
     Clip clipBehavior = Clip.hardEdge,
     @deprecated Color? color,
     @deprecated BlendMode colorBlendMode = BlendMode.srcIn,
     @deprecated bool cacheColorFilter = false,
   }) {
-    return SvgPicture.asset(
-      _assetName,
+    final _svg.BytesLoader loader;
+    if (_isVecFormat) {
+      loader = _vg.AssetBytesLoader(
+        _assetName,
+        assetBundle: bundle,
+        packageName: package,
+      );
+    } else {
+      loader = _svg.SvgAssetLoader(
+        _assetName,
+        assetBundle: bundle,
+        packageName: package,
+        theme: theme,
+      );
+    }
+    return _svg.SvgPicture(
+      loader,
       key: key,
       matchTextDirection: matchTextDirection,
-      bundle: bundle,
-      package: package,
       width: width,
       height: height,
       fit: fit,
@@ -1009,10 +1066,8 @@ class SvgGenImage {
       placeholderBuilder: placeholderBuilder,
       semanticsLabel: semanticsLabel,
       excludeFromSemantics: excludeFromSemantics,
-      theme: theme,
-      colorFilter: colorFilter,
-      color: color,
-      colorBlendMode: colorBlendMode,
+      colorFilter: colorFilter ??
+          (color == null ? null : ColorFilter.mode(color, colorBlendMode)),
       clipBehavior: clipBehavior,
       cacheColorFilter: cacheColorFilter,
     );
