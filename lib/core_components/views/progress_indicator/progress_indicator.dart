@@ -11,6 +11,7 @@ class AppProgressIndicator extends StatelessWidget {
     this.borderWidth = 1,
     this.progressColor,
     this.borderRadius = 6,
+    this.backgroundColor,
   }) : super(key: key);
 
   final double level;
@@ -19,6 +20,7 @@ class AppProgressIndicator extends StatelessWidget {
   final Color borderColor;
   final double borderWidth;
   final Color? progressColor;
+  final Color? backgroundColor;
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +37,7 @@ class AppProgressIndicator extends StatelessWidget {
         borderRadius: BorderRadius.circular(borderRadius),
         child: LinearProgressIndicator(
           value: level,
-          backgroundColor: Colors.transparent,
+          backgroundColor:backgroundColor?? Colors.transparent,
           valueColor: AlwaysStoppedAnimation<Color>(
             progressColor ?? InterfaceColors.action.defaultColor!,
           ),
