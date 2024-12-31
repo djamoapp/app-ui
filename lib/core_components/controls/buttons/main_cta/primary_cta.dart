@@ -22,6 +22,7 @@ class PrimaryCTA extends StatelessWidget {
     this.progressColor,
     this.childBuilder,
     this.useLargeCta = false,
+    this.labelStyle,
   }) : super(key: key);
 
   final Function()? onPressed;
@@ -51,6 +52,8 @@ class PrimaryCTA extends StatelessWidget {
   final Color? progressColor;
   final bool useLargeCta;
 
+  final TextStyle? labelStyle;
+
   @override
   Widget build(BuildContext context) {
     return AppUIMigrationBuilder(
@@ -79,11 +82,12 @@ class PrimaryCTA extends StatelessWidget {
               : childBuilder?.call() ??
                   Text(
                     label,
-                    style: t.AppTypography.title(context).small!.copyWith(
-                          color: enabled && !isLoading
-                              ? enabledLabelColor ?? Colors.white
-                              : disabledLabelColor ?? Colors.white,
-                        ),
+                    style: (labelStyle ?? t.AppTypography.title(context).small!)
+                        .copyWith(
+                      color: enabled && !isLoading
+                          ? enabledLabelColor ?? Colors.white
+                          : disabledLabelColor ?? Colors.white,
+                    ),
                     textAlign: TextAlign.center,
                     overflow: labelOverflow,
                   ),

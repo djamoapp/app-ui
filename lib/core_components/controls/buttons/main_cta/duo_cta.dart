@@ -14,6 +14,8 @@ class DuoCTA extends StatelessWidget {
     this.onSecondaryCTApressed,
     this.secondaryCTAlabel = "Secondary",
     this.isSecondaryCTAenabled = true,
+    this.primaryCTAlabelStyle,
+    this.secondaryCTAlabelStyle,
   }) : super(key: key);
 
   final Function()? onPrimaryCTApressed;
@@ -30,6 +32,10 @@ class DuoCTA extends StatelessWidget {
 
   final bool isSecondaryCTAenabled;
 
+  final TextStyle? primaryCTAlabelStyle;
+
+  final TextStyle? secondaryCTAlabelStyle;
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -40,6 +46,7 @@ class DuoCTA extends StatelessWidget {
           enabled: isPrimaryCTAenabled,
           isLoading: isPrimaryCTAloading,
           onPressed: onPrimaryCTApressed,
+          labelStyle: primaryCTAlabelStyle,
         ),
         AppGapsM2.s,
         SecondaryCTA(
@@ -48,7 +55,8 @@ class DuoCTA extends StatelessWidget {
           isLoading: false,
           label: secondaryCTAlabel,
           onPressed: onSecondaryCTApressed,
-          labelStyle: AppTypography.label(context).bSmall!,
+          labelStyle:
+              secondaryCTAlabelStyle ?? AppTypography.label(context).bSmall!,
         ),
       ],
     );

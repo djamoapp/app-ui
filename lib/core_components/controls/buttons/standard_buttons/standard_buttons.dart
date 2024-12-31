@@ -28,6 +28,7 @@ class StandardButtons {
     bool isLoading = false,
     EdgeInsetsGeometry? padding,
     Widget Function(BuildContext)? childBuilder,
+    TextStyle? textStyle,
   }) =>
       Builder(builder: (context) {
         return StandardButton(
@@ -37,9 +38,10 @@ class StandardButtons {
           prefixIcon: prefixIcon,
           style: style,
           suffixIcon: suffixIcon,
-          textStyle: t.AppTypography.title(context).small!.copyWith(
-                fontSize: labelSize,
-              ),
+          textStyle: textStyle ??
+              t.AppTypography.title(context).small!.copyWith(
+                    fontSize: labelSize,
+                  ),
           prefixIconSize: prefixIconSize,
           suffixIconSize: suffixIconSize,
           onPressed: onPressed,
@@ -81,6 +83,7 @@ class StandardButtons {
     bool isLoading = false,
     EdgeInsetsGeometry? padding,
     Widget Function(BuildContext)? childBuilder,
+    TextStyle? textStyle,
   }) =>
       Builder(builder: (context) {
         return StandardButton(
@@ -90,9 +93,10 @@ class StandardButtons {
           prefixIcon: prefixIcon,
           style: style,
           suffixIcon: suffixIcon,
-          textStyle: t.AppTypography.label(context).bSmall!.copyWith(
-                fontSize: labelSize,
-              ),
+          textStyle: textStyle ??
+              t.AppTypography.label(context).bSmall!.copyWith(
+                    fontSize: labelSize,
+                  ),
           prefixIconSize: prefixIconSize,
           suffixIconSize: prefixIconSize,
           onPressed: onPressed,
@@ -134,6 +138,7 @@ class StandardButtons {
     bool isLoading = false,
     EdgeInsetsGeometry? padding,
     Widget Function(BuildContext)? childBuilder,
+    TextStyle? textStyle,
   }) =>
       Builder(builder: (context) {
         return StandardButton(
@@ -143,9 +148,10 @@ class StandardButtons {
           prefixIcon: prefixIcon,
           style: style,
           suffixIcon: suffixIcon,
-          textStyle: t.AppTypography.body(context)
-              .bTiny!
-              .copyWith(fontSize: labelSize),
+          textStyle: textStyle ??
+              t.AppTypography.body(context)
+                  .bTiny!
+                  .copyWith(fontSize: labelSize),
           prefixIconSize: prefixIconSize,
           suffixIconSize: suffixIconSize,
           onPressed: onPressed,
